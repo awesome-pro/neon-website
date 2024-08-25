@@ -70,7 +70,7 @@ const TopBar = ({ isDarkTheme }) => (
         isDarkTheme ? 'text-gray-new-90' : 'text-gray-new-15'
       )}
     >
-      Neon Twin: Dev/preview/test on Neon, ship to prod on RDS - Read how here
+      Unique raised $2B in Series A funding! 🚀
     </span>
     <ChevronIcon
       className={clsx(

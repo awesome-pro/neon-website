@@ -45,9 +45,9 @@ const Footer = ({ isDocPage = false, theme = null }) => {
             </div>
           </div>
           <div className="flex flex-col gap-x-1 gap-y-3 text-[13px] leading-none tracking-extra-tight text-gray-new-40 lg:flex-row lg:self-end lg:leading-tight sm:flex-col sm:self-start">
-            <p>Made in SF and the World</p>
+            <p>Made with 💙 in SF CA</p>
             <p>
-              <span className="lg:hidden">Copyright </span>Ⓒ 2022 – 2024 Neon, Inc.
+              <span className="lg:hidden">Copyright </span>Ⓒ 2022 – 2024 Unique Inc.
             </p>
           </div>
         </div>

@@ -21,23 +21,14 @@
       items:
         - section: Tutorial
           items:
-            - title: 1 - Playing with Unique
-              slug: get-started-with-neon/signing-up
             - title: 2 - Connect Unique to your stack
               slug: get-started-with-neon/connect-neon
             - title: 3 - Branching workflows
               slug: get-started-with-neon/workflow-primer
             - title: 4 - Getting ready for production
               slug: get-started-with-neon/production-checklist
-        - section: Language quickstarts
-          items:
             - title: Quick list
               slug: get-started-with-neon/languages
-            - title: Elixir
-              slug: guides/elixir-ecto
-            - title: Go
-              slug: guides/go
-              ariaLabel: Connect a Go application to Unique
             - title: Java
               slug: guides/java
             - title: Javascript
@@ -52,14 +43,10 @@
           items: 
             - title: Quick list
               slug: get-started-with-neon/frameworks
-            - title: Astro
-              slug: guides/astro
             - title: Django
               slug: guides/django
             - title: Express
               slug: guides/express
-            - title: Laravel
-              slug: guides/laravel
             - title: NestJS
               slug: guides/nestjs
               tag: new
@@ -69,13 +56,8 @@
               slug: guides/node
             - title: Quarkus (JDBC)
               slug: guides/quarkus-jdbc
-            - title: Quarkus (Reactive)
-              slug: guides/quarkus-reactive
             - title: React
               slug: guides/react
-              tag: new
-            - title: Reflex
-              slug: guides/reflex
               tag: new
             - title: Remix
               slug: guides/remix
@@ -84,8 +66,6 @@
             - title: SolidStart
               slug: guides/solid-start
               tag: new
-            - title: SQLAlchemy
-              slug: guides/sqlalchemy
             - title: Symfony
               slug: guides/symfony
     - title: Connect
@@ -99,22 +79,6 @@
           slug: connect/connect-from-any-app
         - title: Unique serverless driver
           slug: serverless/serverless-driver
-        - title: Unique SQL Editor
-          slug: get-started-with-neon/query-with-neon-sql-editor
-        - title: Passwordless auth
-          slug: connect/passwordless-connect
-        - title: Connect securely
-          slug: connect/connect-securely
-        - title: Connect a GUI application
-          slug: connect/connect-postgres-gui
-        - title: Connect with psql
-          slug: connect/query-with-psql-editor
-        - title: Connect with pgcli
-          slug: connect/connect-pgcli
-        - title: Connect with AI
-          slug: connect/connect-ai
-        - title: Connection pooling
-          slug: connect/connection-pooling
         - title: Connection issues
           items:
             - title: Connection errors
@@ -133,8 +97,6 @@
               slug: import/import-from-postgres-pg-import
             - title: Import from a Unique project
               slug: import/import-from-neon
-            - title: Import schema only
-              slug: import/import-schema-only
             - title: Import from Heroku
               slug: import/import-from-heroku
             - title: Import from MySQL
@@ -153,10 +115,6 @@
               slug: guides/logical-replication-postgres-to-neon
             - title: Replicate from RDS
               slug: guides/logical-replication-rds-to-neon
-        - section: Data migration services
-          items:
-            - title: AWS Data Migration Service (DMS)
-              slug: import/migrate-aws-dms
         - section: CSV
           items:
             - title: Import from CSV
@@ -165,202 +123,6 @@
           items:
             - title: LangChainsample data
               slug: import/import-sample-data
-- section: Platform
-  items:
-    - title: Architecture
-      icon: architecture
-      slug: introduction/architecture-overview
-      items:
-        - title: Overview
-          slug: introduction/architecture-overview
-        - title: Autoscaling
-          slug: introduction/autoscaling-architecture
-        - title: Compute lifecycle
-          slug: introduction/compute-lifecycle
-    - title: Features
-      slug: guides/neon-features
-      icon: features
-      items:
-        - title: Autoscaling
-          slug: introduction/autoscaling
-          items:
-            - title: Introduction
-              slug: introduction/autoscaling
-            - title: Architecture
-              slug: introduction/autoscaling-architecture
-            - title: Enable autoscaling
-              slug: guides/autoscaling-guide
-            - title: How the algorithm works
-              slug: guides/autoscaling-algorithm
-        - title: Autosuspend
-          slug: introduction/auto-suspend
-          items:
-            - title: Autosuspend guide
-              slug: guides/auto-suspend-guide
-        - title: Branching
-          slug: guides/branching-intro
-          items:
-            - title: About branching
-              slug: introduction/branching
-            - title: Branch reset and restore
-              slug: introduction/point-in-time-restore
-              items:
-                - title: Reset from parent
-                  slug: guides/reset-from-parent
-                - title: Branch Restore
-                  slug: guides/branch-restore
-            - title: Branching with the CLI
-              slug: guides/branching-neon-cli
-            - title: Branching with the API
-              slug: guides/branching-neon-api
-            - title: Branching with GitHub Actions
-              slug: guides/branching-github-actions
-            - title: Branching — Testing queries
-              slug: guides/branching-test-queries
-            - title: Promote a branch with the Unique API
-              slug: guides/branch-promote
-        - title: Logical replication
-          slug: guides/logical-replication-guide
-          items:
-            - title: Concepts
-              slug: guides/logical-replication-concepts
-            - title: Commands
-              slug: guides/logical-replication-manage
-            - title: Unique specifics
-              slug: guides/logical-replication-neon
-        - title: Read replicas
-          slug: introduction/read-replicas
-          items:
-            - title: Working with read replicas
-              slug: guides/read-replica-guide
-            - title: Data analysis and reporting
-              slug: guides/read-replica-data-analysis
-            - title: Use read replicas with Prisma
-              slug: guides/read-replica-prisma
-        - title: Time Travel
-          slug: guides/time-travel-assist
-          items:
-            - title: Time Travel tutorial
-              slug: guides/time-travel-tutorial
-        - title: Schema diff
-          slug: guides/schema-diff
-          items:
-            - title: Schema diff tutorial
-              slug: guides/schema-diff-tutorial
-        - title: IP Allow
-          slug: introduction/ip-allow
-        - title: Protected branches
-          slug: guides/protected-branches
-    - title: Platform
-      icon: management
-      items:
-        - section: Access control
-          items:
-            - title: Accounts
-              slug: manage/accounts
-            - title: Organizations
-              slug: manage/organizations
-              items:
-                - title: Getting started
-                  slug: manage/organizations
-                - title: Manage Organizations
-                  slug: manage/orgs-manage
-                - title: Transfer projects
-                  slug: manage/orgs-project-transfer
-                - title: API actions
-                  slug: manage/orgs-api
-                - title: CLI actions
-                  slug: manage/orgs-cli
-            - title: Project access
-              slug: manage/project-access
-            - title: Project sharing
-              slug: guides/project-sharing-guide
-            - title: Database access
-              slug: manage/database-access
-            - title: E-mail signup
-              slug: manage/email-signup
-            - title: API keys
-              slug: manage/api-keys
-        - section: Projects
-          items:
-            - title: Object hierarchy
-              slug: manage/overview
-            - title: Projects
-              slug: manage/projects
-            - title: Branches
-              slug: manage/branches
-            - title: Computes
-              slug: manage/endpoints
-            - title: Roles
-              slug: manage/roles
-            - title: Databases
-              slug: manage/databases
-            - title: Tables
-              slug: guides/tables
-            - title: Integrations
-              slug: manage/integrations
-        - section: Monitoring
-          items:
-            - title: Overview
-              slug: introduction/monitoring
-            - title: Monitoring dashboard
-              slug: introduction/monitoring-page
-            - title: System operations
-              slug: manage/operations
-            - title: External tools
-              slug: introduction/monitor-external-tools
-        - section: Security
-          items:
-            - title: Overview
-              slug: security/security-overview
-            - title: Security reporting
-              slug: security/security-reporting
-            - title: SOC 2 compliance
-              slug: security/soc2-compliance
-            - title: Acceptable Use Policy
-              slug: security/acceptable-use-policy
-        - section:
-          items:
-            - title: Backups
-              slug: manage/backups
-    - title: Regions
-      slug: introduction/regions
-      icon: regions
-      items: 
-        - title: Unique Regions
-          slug: introduction/regions
-    - title: Support
-      slug: introduction/support
-      icon: support
-      items: 
-        - title: Unique Support
-          slug: introduction/support
-    - title: Status
-      slug: introduction/status
-      icon: status
-      items: 
-        - title: Unique Status
-          slug: introduction/status
-    - title: Plans and billing
-      slug: introduction/about-billing
-      icon: billing
-      items:
-        - title: Plans
-          slug: introduction/plans
-        - title: Pricing estimation guide
-          slug: introduction/pricing-estimation-guide
-        - title: Extra usage
-          slug: introduction/extra-usage
-        - title: Usage metrics
-          slug: introduction/usage-metrics
-        - title: Sample project billing
-          slug: introduction/billing-sample
-        - title: Monitor billing and usage
-          slug: introduction/monitor-usage
-        - title: Manage billing
-          slug: introduction/manage-billing
-        - title: AWS Marketplace
-          slug: introduction/billing-aws-marketplace
 - section: Develop
   items:
     - title: Frameworks
@@ -442,12 +204,6 @@
               slug: guides/railway
             - title: Render
               slug: guides/render
-        - section: Serverless
-          items:
-            - title: Unique serverless driver
-              slug: serverless/serverless-driver
-            - title: AWS Lambda
-              slug: guides/aws-lambda
         - section: Query
           items:
             - title: Exograph
@@ -468,24 +224,6 @@
               slug: guides/stepzen
             - title: WunderGraph
               slug: guides/wundergraph
-        - section: Develop
-          items:
-            - title: GitHub integration
-              slug: guides/neon-github-integration
-              tag: new
-            - title: Neosync
-              items:
-                - title: Generate synthetic data
-                  slug: guides/neosync-generate
-                - title: Anonymize data
-                  slug: guides/neosync-anonymize
-            - title: Prisma
-              slug: guides/prisma
-            - title: TypeORM
-              slug: guides/typeorm
-            - title: Knex
-              slug: guides/knex
-              tag: new
         - section: Replicate from Unique
           items:
             - title: Airbyte

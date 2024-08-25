@@ -2,8 +2,6 @@ import Container from 'components/shared/container';
 import Link from 'components/shared/link';
 
 import ActiveTabContext from './active-tab-context';
-import BlurWrapper from './blur-wrapper';
-import CodeTabs from './code-tabs';
 import ConnectionString from './connection-string';
 import DotsAnimation from './dots-animation';
 
@@ -27,7 +25,7 @@ const InstantProvisioning = () => (
           />
           <ConnectionString url="postgresql://example@ep-938132.eu-central-1.aws.neon.tech/primary" />
           <DotsAnimation
-            className="absolute -bottom-1.5 left-1/2 aspect-[3.49726] w-[640px] -translate-x-1/2 mix-blend-lighten xl:w-[568px] lg:w-[417px] md:bottom-0 md:h-40 md:w-full md:[mask-image:linear-gradient(to_bottom,black,black_calc(100%-40px),transparent)] sm:overflow-hidden"
+            className="absolute -bottom-1.5  aspect-[3.49726] w-full -translate-x-1/2 mix-blend-lighten xl:w-[568px] lg:w-[417px] md:bottom-0 md:h-40 md:w-full md:[mask-image:linear-gradient(to_bottom,black,black_calc(100%-40px),transparent)] sm:overflow-hidden"
             src="/animations/pages/home/dots-stack.riv"
             artboard="dots"
             intersectionRootMargin="0px 0px 600px 0px"
@@ -54,15 +52,6 @@ const InstantProvisioning = () => (
             See all examples
           </Link>
         </div>
-
-        <BlurWrapper className="w-[652px] p-1.5 xl:w-[580px] lg:w-[417px] md:mt-5 md:w-full md:max-w-[580px]">
-          <div className="pointer-events-none absolute -left-40 -top-44 z-0 h-[482px] w-[470px] rounded-[100%] bg-[linear-gradient(180deg,rgba(25,27,52,0)_0%,#16182D_88.36%)] opacity-65 blur-3xl xl:-left-36 xl:-top-40 xl:h-[427px] xl:w-[417]" />
-          <div className="pointer-events-none absolute -right-32 -top-28 z-0 h-[316px] w-[316px] rounded-[100%] bg-[#16182D] opacity-30 blur-3xl" />
-          <div className="pointer-events-none absolute -bottom-36 -right-36 z-0 h-[377px] w-[377px] rounded-[100%] bg-[#16182D] opacity-40 blur-3xl" />
-          <div className="relative z-20 rounded-[10px] bg-black-new xl:rounded-lg">
-            <CodeTabs />
-          </div>
-        </BlurWrapper>
       </ActiveTabContext>
     </Container>
   </section>
