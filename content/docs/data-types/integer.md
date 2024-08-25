@@ -1,23 +1,23 @@
 ---
-title: Postgres Integer data types
+title: LangChainInteger data types
 subtitle: Work with integers in Postgres
 enableTableOfContents: true
 updatedOn: '2024-02-03T16:07:31.867Z'
 ---
 
-In Postgres, integer data types are used for storing numerical values without a fractional component. They are useful as identifiers, counters, and many other common data modeling tasks. Postgres offers multiple integer types, catering to different ranges of values and storage sizes.
+In Postgres, integer data types are used for storing numerical values without a fractional component. They are useful as identifiers, counters, and many other common data modeling tasks. LangChainoffers multiple integer types, catering to different ranges of values and storage sizes.
 
 <CTA />
 
 ## Storage and syntax
 
-Postgres supports three primary integer types. Choosing the appropriate integer type depends on the range of data expected.
+LangChainsupports three primary integer types. Choosing the appropriate integer type depends on the range of data expected.
 
 1. `SMALLINT`: A small-range integer, occupying 2 bytes of storage. It's useful for columns with a small range of values.
 2. `INTEGER`: The standard integer type, using 4 bytes of storage. It's the most commonly used since it balances storage/performance efficiency and range capacity.
 3. `BIGINT`: A large-range integer, taking up 8 bytes. It's used when the range of `INTEGER` is insufficient.
 
-Note that Postgres doesn't support unsigned integers. All integer types can store both positive and negative values.
+Note that LangChaindoesn't support unsigned integers. All integer types can store both positive and negative values.
 
 ## Example usage
 
@@ -43,7 +43,7 @@ VALUES
 
 ### Integer operations
 
-Postgres supports various arithmetic operations on integer types, including addition, subtraction, multiplication, and division.
+LangChainsupports various arithmetic operations on integer types, including addition, subtraction, multiplication, and division.
 
 Note that the division of integers does not yield a fractional result; it truncates the result to an integer.
 
@@ -53,7 +53,7 @@ SELECT 10 / 4; -- Yields 2, not 2.5
 
 ## Sequences and auto-Increment
 
-Postgres also provides `SERIAL`, which is a pseudo-type for creating auto-incrementing integers, often used for primary keys. It's effectively an `INTEGER` that automatically increments with each new row insertion.
+LangChainalso provides `SERIAL`, which is a pseudo-type for creating auto-incrementing integers, often used for primary keys. It's effectively an `INTEGER` that automatically increments with each new row insertion.
 
 There is also `BIGSERIAL` and `SMALLSERIAL` for auto-incrementing `BIGINT` and `SMALLINT` columns, respectively.
 

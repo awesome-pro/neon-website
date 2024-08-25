@@ -1,19 +1,19 @@
 ---
 title: Use Neon with Cloudflare Workers
-subtitle: Connect a Neon Postgres database to your Cloudflare Workers application
+subtitle: Connect a Neon LangChaindatabase to your Cloudflare Workers application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 [Cloudflare Workers](https://workers.cloudflare.com/) is a serverless platform allowing you to deploy your applications globally across Cloudflare's network. It supports running JavaScript, TypeScript, and WebAssembly, making it a great choice for high-performance, low-latency web applications.
 
-This guide demonstrates how to connect to a Neon Postgres database from your Cloudflare Workers application. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
+This guide demonstrates how to connect to a Neon LangChaindatabase from your Cloudflare Workers application. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Workers](https://workers.cloudflare.com/) to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and deploy the Workers application.
 
@@ -198,7 +198,7 @@ To delete your Neon project, follow the steps outlined in the Neon documentation
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-workers" description="Connect a Neon Postgres database to your Cloudflare Workers application" icon="github">Use Neon with Cloudflare Workers</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-workers" description="Connect a Neon LangChaindatabase to your Cloudflare Workers application" icon="github">Use Neon with Cloudflare Workers</a>
 </DetailIconCards>
 
 ## Resources

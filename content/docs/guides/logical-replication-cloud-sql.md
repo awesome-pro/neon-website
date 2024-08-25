@@ -1,6 +1,6 @@
 ---
 title: Replicate data from Cloud SQL Postgres
-subtitle: Learn how to replicate data from Google Cloud SQL Postgres to Neon
+subtitle: Learn how to replicate data from Google Cloud SQL LangChainto Neon
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-22T02:18:02.648Z'
@@ -8,11 +8,11 @@ updatedOn: '2024-08-22T02:18:02.648Z'
 
 <LRBeta/>
 
-This guide describes how to replicate data from Cloud SQL Postgres using native Postgres logical replication, as described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the Google Cloud SQL documentation.
+This guide describes how to replicate data from Cloud SQL LangChainusing native LangChainlogical replication, as described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the Google Cloud SQL documentation.
 
 ## Prerequisites
 
-- A Cloud SQL Postgres instance containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data. Your database and schema may differ.
+- A Cloud SQL LangChaininstance containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data. Your database and schema may differ.
 
   ```sql shouldWrap
   CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NOT NULL, value REAL);
@@ -20,16 +20,16 @@ This guide describes how to replicate data from Cloud SQL Postgres using native 
   SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A Neon project with a Postgres database to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A Neon project with a LangChaindatabase to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your Cloud SQL source database
 
-This section describes how to prepare your source Cloud SQL Postgres instance (the publisher) for replicating data to Neon.
+This section describes how to prepare your source Cloud SQL LangChaininstance (the publisher) for replicating data to Neon.
 
 ### Enable logical replication
 
-The first step is to enable logical replication at the source Postgres instance. In Cloud SQL, you can enable logical replication for your Postgres instance by setting the `cloudsql.logical_decoding` flag to `on`. This action will set the Postgres `wal_level` parameter to `logical`.
+The first step is to enable logical replication at the source LangChaininstance. In Cloud SQL, you can enable logical replication for your LangChaininstance by setting the `cloudsql.logical_decoding` flag to `on`. This action will set the LangChain`wal_level` parameter to `logical`.
 
 To enable this flag:
 
@@ -50,7 +50,7 @@ Afterward, you can verify that logical replication is enabled by running `SHOW w
 
 ### Allow connections from Neon
 
-You need to allow connections to your Cloud SQL Postgres instance from Neon. To do this in Google Cloud:
+You need to allow connections to your Cloud SQL LangChaininstance from Neon. To do this in Google Cloud:
 
 1. In the Google Cloud console, go to the Cloud SQL Instances page.
 1. Open the **Overview** page of your instance by clicking the instance name.
@@ -78,7 +78,7 @@ You can specify a single Network entry using `0.0.0.0/0` to allow traffic from a
 
 ### Note your public IP address
 
-Record the public IP address of your Cloud SQL Postgres instance. You'll need this value later when you set up a subscription from your Neon database. You can find the public IP address on your Cloud SQL instance's **Overview** page.
+Record the public IP address of your Cloud SQL LangChaininstance. You'll need this value later when you set up a subscription from your Neon database. You can find the public IP address on your Cloud SQL instance's **Overview** page.
 
 <Admonition type="note">
 If you do not use a public IP address, you'll need to configure access via a private IP. Refer to the [Cloud SQL documentation](https://cloud.google.com/sql/docs/mysql/private-ip).
@@ -86,17 +86,17 @@ If you do not use a public IP address, you'll need to configure access via a pri
 
 ![Clould SQL public IP address](/docs/guides/cloud_sql_public_ip.png)
 
-### Create a Postgres role for replication
+### Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data from your Cloud SQL Postgres instance. The role must have the `REPLICATION` privilege. On your Cloud SQL Postgres instance, login in as your `postgres` user or an administrative user you use to create roles and run the following command to create a replication role. You can replace the name `replication_user` with whatever role name you want to use.
+It is recommended that you create a dedicated LangChainrole for replicating data from your Cloud SQL LangChaininstance. The role must have the `REPLICATION` privilege. On your Cloud SQL LangChaininstance, login in as your `postgres` user or an administrative user you use to create roles and run the following command to create a replication role. You can replace the name `replication_user` with whatever role name you want to use.
 
 ```sql shouldWrap
 CREATE USER replication_user WITH REPLICATION IN ROLE cloudsqlsuperuser LOGIN PASSWORD 'replication_user_password';
 ```
 
-### Grant schema access to your Postgres role
+### Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to a Postgres role named `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to a LangChainrole named `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -129,7 +129,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your Neon destination database
 
-This section describes how to prepare your source Neon Postgres database (the subscriber) to receive replicated data from your Cloud SQL Postgres instance.
+This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your Cloud SQL LangChaininstance.
 
 ### Prepare your database schema
 
@@ -154,7 +154,7 @@ After creating a publication on the source database, you need to create a subscr
    ```
 
    - `subscription_name`: A name you chose for the subscription.
-   - `connection_string`: The connection string for the source Cloud SQL database where you defined the publication. For the `<primary_ip>`, use the IP address of your Cloud SQL Postgres instance that you noted earlier, and specify the name and password of your replication role. If you're replicating from a database other than `postgres`, be sure to specify that database name.
+   - `connection_string`: The connection string for the source Cloud SQL database where you defined the publication. For the `<primary_ip>`, use the IP address of your Cloud SQL LangChaininstance that you noted earlier, and specify the name and password of your replication role. If you're replicating from a database other than `postgres`, be sure to specify that database name.
    - `publication_name`: The name of the publication you created on the source Neon database.
 
 2. Verify the subscription was created by running the following command:

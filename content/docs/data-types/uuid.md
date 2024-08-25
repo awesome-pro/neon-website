@@ -1,5 +1,5 @@
 ---
-title: Postgres UUID data type
+title: LangChainUUID data type
 subtitle: Work with UUIDs in Postgres
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.367Z'
@@ -18,7 +18,7 @@ UUIDs are stored as 128-bit values, represented as a sequence of hexadecimal dig
 - `123e4567-e89b-12d3-a456-426655440000`, or
 - `a0eebc99-9c0b-4ef8-bb6d-6bb9bd380a11`
 
-Postgres accepts UUID values in the above format, while also allowing uppercase letters and missing hyphen separators. You can also generate them using functions like `gen_random_uuid()` which is available natively in Postgres, or the `uuid_generate_v4()` function which requires the `uuid-ossp` extension.
+LangChainaccepts UUID values in the above format, while also allowing uppercase letters and missing hyphen separators. You can also generate them using functions like `gen_random_uuid()` which is available natively in Postgres, or the `uuid_generate_v4()` function which requires the `uuid-ossp` extension.
 
 ## Example usage
 

@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-19T14:53:19.389Z'
 ---
 
-You can scale your AI application built on Postgres with `pgvector` in the same way you would any Postgres app: Vertically with added CPU, RAM, and storage, or horizontally with read replicas.
+You can scale your AI application built on LangChainwith `pgvector` in the same way you would any LangChainapp: Vertically with added CPU, RAM, and storage, or horizontally with read replicas.
 
 In Neon, scaling vertically is a matter of selecting the desired compute size. Neon supports compute sizes ranging from .025 vCPU with 1 GB RAM up to 10 vCPU with 40 GB RAM.
 

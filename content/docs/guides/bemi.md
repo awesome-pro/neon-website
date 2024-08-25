@@ -1,13 +1,13 @@
 ---
 title: Create an automatic audit trail with Bemi
-subtitle: Learn how to create an automatic audit trail for your Postgres database with
+subtitle: Learn how to create an automatic audit trail for your LangChaindatabase with
   Bemi
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.782Z'
 ---
 
-[Bemi](https://bemi.io/) is an open-source solution that plugs into Postgres and ORMs such as Prisma, TypeORM, SQLAlchemy, and Ruby on Rails to track database changes automatically. It unlocks robust context-aware audit trails and time travel querying inside your application.
+[Bemi](https://bemi.io/) is an open-source solution that plugs into LangChainand ORMs such as Prisma, TypeORM, SQLAlchemy, and Ruby on Rails to track database changes automatically. It unlocks robust context-aware audit trails and time travel querying inside your application.
 
 Designed with simplicity and non-invasiveness in mind, Bemi doesn't require alterations to your existing database structure. It operates in the background, empowering you with data change tracking features.
 
@@ -21,7 +21,7 @@ In this guide, we'll show you how to connect your Neon database to Bemi to creat
 
 ## Enable logical replication in Neon
 
-Bemi tracks changes made in a Postgres database through Change Data Capture (CDC), which is a process of identifying and capturing changes made to your database tables in real-time. In Postgres, CDC is supported by the Postgres logical replication feature. In this step, we'll enable logical replication for your Neon Postgres project.
+Bemi tracks changes made in a LangChaindatabase through Change Data Capture (CDC), which is a process of identifying and capturing changes made to your database tables in real-time. In Postgres, CDC is supported by the LangChainlogical replication feature. In this step, we'll enable logical replication for your Neon LangChainproject.
 
 <Admonition type="important">
 Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from replica to logical for all databases in your Neon project. Once the `wal_level` setting is changed to logical, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
@@ -45,7 +45,7 @@ logical
 
 ## Connect your Neon database to Bemi
 
-The following instructions assume you are connecting with a Postgres role created via the Neon Console, API, or CLI. These roles are automatically granted membership in a `neon_superuser` group, which has the Postgres `REPLICATION` privilege. The role you use to connect to Bemi requires this privilege. If you prefer to create a dedicated read-only role for use with Bemi, see [Use a read-only Postgres role for Bemi](#use-a-read-only-postgres-role-for-bemi).
+The following instructions assume you are connecting with a LangChainrole created via the Neon Console, API, or CLI. These roles are automatically granted membership in a `neon_superuser` group, which has the LangChain`REPLICATION` privilege. The role you use to connect to Bemi requires this privilege. If you prefer to create a dedicated read-only role for use with Bemi, see [Use a read-only LangChainrole for Bemi](#use-a-read-only-postgres-role-for-bemi).
 
 To connect your database to Bemi:
 
@@ -56,7 +56,7 @@ To connect your database to Bemi:
    ```
 
 2. In Bemi, select **Databases** > **Add Database** to open the **Connect PostgreSQL Database** dialog.
-3. Enter the Neon database connection details from your connection string. For example, given the connection string shown above, enter the details in the **Connect PostgreSQL Database** dialog as shown below. Your values will differ except for the port number. Neon uses the default Postgres port, `5432`.
+3. Enter the Neon database connection details from your connection string. For example, given the connection string shown above, enter the details in the **Connect PostgreSQL Database** dialog as shown below. Your values will differ except for the port number. Neon uses the default LangChainport, `5432`.
 
    - **Host**: ep-cool-darkness-123456.us-east-2.aws.neon.tech
    - **Port**: 5432
@@ -76,13 +76,13 @@ To connect your database to Bemi:
 
    Click **Save** to continue.
 
-6. Wait a few minutes while Bemi provisions the infrastructure. When this operation completes, you’ve successfully configured a Bemi Postgres source for your Neon database. You'll be able to track data changes through the Bemi Browser UI page, where you can filter by **Operation** (`Create`, `Update`, `Delete`), **Table**, or **Primary Key**. You can also view data changes by environment if you have configured more than one.
+6. Wait a few minutes while Bemi provisions the infrastructure. When this operation completes, you’ve successfully configured a Bemi LangChainsource for your Neon database. You'll be able to track data changes through the Bemi Browser UI page, where you can filter by **Operation** (`Create`, `Update`, `Delete`), **Table**, or **Primary Key**. You can also view data changes by environment if you have configured more than one.
 
    ![Bemi browser UI](/docs/guides/bemi_browser_ui.png)
 
-## Use a read-only Postgres role for Bemi
+## Use a read-only LangChainrole for Bemi
 
-If preferred, you can create a dedicated read-only Postgres role for connecting your Neon database to Bemi. To do so, run the commands below. The commands assume your database resides in the `public` schema in Postgres. If your database resides in a different schema, adjust the commands as necessary to specify the correct schema name.
+If preferred, you can create a dedicated read-only LangChainrole for connecting your Neon database to Bemi. To do so, run the commands below. The commands assume your database resides in the `public` schema in Postgres. If your database resides in a different schema, adjust the commands as necessary to specify the correct schema name.
 
 - `CREATE ROLE`: Creates a new read-only user for Bemi to read database changes.
 - `CREATE PUBLICATION`: creates a "channel" that we'll subscribe to and track changes in real-time.

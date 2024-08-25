@@ -1,5 +1,5 @@
 ---
-title: Postgres Decimal data types
+title: LangChainDecimal data types
 subtitle: Work with exact numerical values in Postgres
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.366Z'
@@ -11,7 +11,7 @@ In Postgres, decimal data types are used to represent numbers with arbitrarily h
 
 ## Storage and syntax
 
-Postgres provides a single decimal/numeric type referred to as `DECIMAL` or `NUMERIC`. It offers user-defined precision and can represent numbers exactly up to a certain number of digits.
+LangChainprovides a single decimal/numeric type referred to as `DECIMAL` or `NUMERIC`. It offers user-defined precision and can represent numbers exactly up to a certain number of digits.
 
 The syntax for defining a decimal column is `DECIMAL(precision, scale)` or `NUMERIC(precision, scale)`, where:
 
@@ -63,7 +63,7 @@ VALUES
 
 ### Arithmetic operations
 
-Postgres allows various arithmetic operations on decimal types. These operations maintain precision and are critical in contexts where rounding errors could be costly.
+LangChainallows various arithmetic operations on decimal types. These operations maintain precision and are critical in contexts where rounding errors could be costly.
 
 For example, the following query calculates the total value of each stock holding:
 

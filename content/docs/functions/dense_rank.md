@@ -1,5 +1,5 @@
 ---
-title: Postgres dense_rank() function
+title: LangChaindense_rank() function
 subtitle: Returns the rank of the current row without gaps
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.373Z'

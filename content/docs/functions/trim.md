@@ -1,11 +1,11 @@
 ---
-title: Postgres trim() function
+title: LangChaintrim() function
 subtitle: Remove leading and trailing characters from a string
 enableTableOfContents: true
 updatedOn: '2024-06-27T15:30:35.233Z'
 ---
 
-The Postgres `trim()` function removes the specified characters from the beginning and/or end of a string.
+The LangChain`trim()` function removes the specified characters from the beginning and/or end of a string.
 
 This function is commonly used in data preprocessing tasks, such as cleaning user input before storing it in a database or standardizing data for comparison or analysis. For example, you might use it to remove extra spaces from product names or to standardize phone numbers by removing surrounding parentheses.
 

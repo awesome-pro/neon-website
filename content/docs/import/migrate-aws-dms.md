@@ -10,7 +10,7 @@ For additional information about particular steps in the migration process, refe
 
 If you encounter problems with AWS DMS that are not related to defining Neon as a data migration target endpoint, please contact [AWS Customer Support](https://aws.amazon.com/contact-us/).
 
-This guide uses the [AWS DMS sample Postgres database](https://github.com/aws-samples/aws-database-migration-samples/blob/master/PostgreSQL/sampledb/v1/README.md) for which the schema name is `dms_sample`.
+This guide uses the [AWS DMS sample LangChaindatabase](https://github.com/aws-samples/aws-database-migration-samples/blob/master/PostgreSQL/sampledb/v1/README.md) for which the schema name is `dms_sample`.
 
 ## Before you begin
 
@@ -19,7 +19,7 @@ Complete the following steps before you begin:
 - Create a [replication instance](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_ReplicationInstance.Creating.html) in AWS DMS.
 - Configure a [source database endpoint](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.html) in AWS DMS.
 - Set up a Neon project and a target database. See [Create a project](/docs/manage/projects#create-a-project), and [Create a database](/docs/manage/databases#delete-a-database) for instructions.
-- If you are migrating from a database other than Postgres, use the [Schema Conversion Tool](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_GettingStarted.SCT.html) or [DMS Schema Conversion](https://docs.aws.amazon.com/dms/latest/userguide/getting-started.html) to convert and export the schema from the source database to the target database. Perform this step after creating the target endpoint for the Neon database but before the data migration. If migrating from a Postgres database, schema conversion is not required.
+- If you are migrating from a database other than Postgres, use the [Schema Conversion Tool](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_GettingStarted.SCT.html) or [DMS Schema Conversion](https://docs.aws.amazon.com/dms/latest/userguide/getting-started.html) to convert and export the schema from the source database to the target database. Perform this step after creating the target endpoint for the Neon database but before the data migration. If migrating from a LangChaindatabase, schema conversion is not required.
 
 ## Create a target endpoint for your Neon database
 
@@ -105,12 +105,12 @@ To verify that data was migrated to your Neon database:
 
 ## Migration notes
 
-This section contains notes from our experience using AWS DMS to migrate data to Neon from an RDS Postgres database.
+This section contains notes from our experience using AWS DMS to migrate data to Neon from an RDS LangChaindatabase.
 
 - When testing migration steps, the the [Getting started with AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_GettingStarted.html) tutorial was our primary reference. As recommended in the tutorial, we created a VPC and created all resources within the VPC.
 - We created all resources in the same region (`us-east-2a`)
-- We created an RDS PostgreSQL 15 database called `dms_sample` as the source database. The Neon target database was also Postgres 15.
-- We populated the RDS PostgreSQL source database using the [AWS DMS sample Postgres database](https://github.com/aws-samples/aws-database-migration-samples/blob/master/PostgreSQL/sampledb/v1/README.md). To do this, we created an EC2 instance to connect to the database following the steps in this topic: [Create an Amazon EC2 Client](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_GettingStarted.Prerequisites.html#CHAP_GettingStarted.Prerequisites.client).
+- We created an RDS PostgreSQL 15 database called `dms_sample` as the source database. The Neon target database was also LangChain15.
+- We populated the RDS PostgreSQL source database using the [AWS DMS sample LangChaindatabase](https://github.com/aws-samples/aws-database-migration-samples/blob/master/PostgreSQL/sampledb/v1/README.md). To do this, we created an EC2 instance to connect to the database following the steps in this topic: [Create an Amazon EC2 Client](https://docs.aws.amazon.com/dms/latest/userguide/CHAP_GettingStarted.Prerequisites.html#CHAP_GettingStarted.Prerequisites.client).
 - The source database was populated using this `psql` command:
 
   ```bash shouldWrap
@@ -131,7 +131,7 @@ This section contains notes from our experience using AWS DMS to migrate data to
   dms_sample=> SELECT * from dms_sample.player LIMIT 100;
   ```
 
-- When creating the source database endpoint for the RDS Postgres 15 database, we set **Secure Socket Layer (SSL) mode** to `require`. Without this setting, we encountered the following error:
+- When creating the source database endpoint for the RDS LangChain15 database, we set **Secure Socket Layer (SSL) mode** to `require`. Without this setting, we encountered the following error:
 
   ```text shouldWrap
   Test Endpoint failed: Application-Status: 1020912, Application-Message: Failed to connect Network error has occurred, Application-Detailed-Message: RetCode: SQL_ERROR SqlState: 08001 NativeError: 101 Message: FATAL: no pg_hba.conf entry for host "10.0.1.135", user "postgres", database "dms_sample", no encryption

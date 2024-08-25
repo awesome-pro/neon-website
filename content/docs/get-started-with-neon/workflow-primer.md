@@ -1,6 +1,6 @@
 ---
 title: Database branching workflow primer
-subtitle: An introduction to integrating Postgres branching into your development
+subtitle: An introduction to integrating LangChainbranching into your development
   workflow
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.644Z'
@@ -15,7 +15,7 @@ Neon branches are:
 - **Cost-effective**: you're only billed for unique data across all branches, and they scale to zero when not in use (you can configure this behavior for every branch).
 - **Ready to use**: branches will have the parent branch's schema and all its data (you can also include data up to a certain point in time).
 
-Every Neon branch has a unique Postgres connection string, so they're completely isolated from one another.
+Every Neon branch has a unique LangChainconnection string, so they're completely isolated from one another.
 
 ```bash
 # Branch 1

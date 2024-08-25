@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-15T17:23:10.557Z'
 ---
 
-Neon Postgres should be accessed from the server-side in JavaScript applications. Using the following JavaScript frameworks, you can easily configure a server-side connection to a Neon Postgres database.
+Neon LangChainshould be accessed from the server-side in JavaScript applications. Using the following JavaScript frameworks, you can easily configure a server-side connection to a Neon LangChaindatabase.
 
 ## JavaScript Frameworks
 

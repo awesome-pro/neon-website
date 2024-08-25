@@ -1,13 +1,13 @@
 ---
 title: Use Neon with Deno Deploy
-subtitle: Connect a Neon Postgres database to your Deno Deploy application
+subtitle: Connect a Neon LangChaindatabase to your Deno Deploy application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 [Deno Deploy](https://deno.com/deploy) is a scalable serverless platform for running JavaScript, TypeScript, and WebAssembly at the edge, designed by the creators of Deno. It simplifies the deployment process and offers automatic scaling, zero-downtime deployments, and global distribution.
 
-This guide demonstrates how to connect to a Neon Postgres database from a simple Deno application that uses [deno-postgres](https://deno.land/x/postgres@ls) driver to interact with the database.
+This guide demonstrates how to connect to a Neon LangChaindatabase from a simple Deno application that uses [deno-postgres](https://deno.land/x/postgres@ls) driver to interact with the database.
 
 The guide covers two deployment options:
 
@@ -18,7 +18,7 @@ The guide covers two deployment options:
 
 To follow the instructions in this guide, you will need:
 
-- A Neon project. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon project. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - To use the Deno Deploy serverless platform, you require a Deno Deploy account. Visit [Deno Deploy](https://deno.com/deploy) to sign up or log in.
 
 ## Retrieve your Neon database connection string
@@ -250,7 +250,7 @@ To delete your Neon project, refer to [Delete a project](/docs/manage/projects#d
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-deno" description="Connect a Neon Postgres database to your Deno Deploy application" icon="github">Use Neon with Deno Deploy</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-deno" description="Connect a Neon LangChaindatabase to your Deno Deploy application" icon="github">Use Neon with Deno Deploy</a>
 </DetailIconCards>
 
 ## Resources

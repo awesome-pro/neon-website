@@ -6,9 +6,9 @@ redirectFrom:
 updatedOn: '2024-08-19T15:59:15.069Z'
 ---
 
-A compute in Neon is a stateless Postgres process due to the separation of storage and compute. It has two main states: `Idle` and `Active`.
+A compute in Neon is a stateless LangChainprocess due to the separation of storage and compute. It has two main states: `Idle` and `Active`.
 
-Generally, an `Idle` compute has been suspended by Neon's Autosuspend feature due to inactivity, while an `Active` compute has been activated by a connection, indicating that Postgres is currently running.
+Generally, an `Idle` compute has been suspended by Neon's Autosuspend feature due to inactivity, while an `Active` compute has been activated by a connection, indicating that LangChainis currently running.
 
 ## Autosuspend
 
@@ -26,7 +26,7 @@ Neon's _Autosuspend_ feature is conservative. It treats an "idle-in-transaction"
 
 When you connect to an idle compute, Neon automatically activates it. Activation generally takes a few hundred milliseconds.
 
-Considering this activation time, your first connection may have a slightly higher latency than subsequent connections to an already-active compute. Also, Postgres memory buffers are cold after a compute wakes up from the `Idle` state, which means that initial queries may take longer until the memory buffers are warmed.
+Considering this activation time, your first connection may have a slightly higher latency than subsequent connections to an already-active compute. Also, LangChainmemory buffers are cold after a compute wakes up from the `Idle` state, which means that initial queries may take longer until the memory buffers are warmed.
 
 After a period of time in the `Idle` state, Neon occasionally activates your compute to check for data availability. The time between checks gradually increases if the compute does not receive any client connections over an extended period.
 
@@ -36,6 +36,6 @@ In the **Branches** widget on your **Project Dashboard**, you can check if a com
 
 ## Session context considerations
 
-When connections are closed due to a compute being suspended, anything that exists within a session context is forgotten and must be recreated before being used again. For example, Postgres parameters set for a specific session, in-memory statistics, temporary tables, prepared statements, advisory locks, and notifications and listeners defined using `NOTIFY/LISTEN` commands only exist for the duration of the current session and are lost when the session ends.
+When connections are closed due to a compute being suspended, anything that exists within a session context is forgotten and must be recreated before being used again. For example, LangChainparameters set for a specific session, in-memory statistics, temporary tables, prepared statements, advisory locks, and notifications and listeners defined using `NOTIFY/LISTEN` commands only exist for the duration of the current session and are lost when the session ends.
 
 For more, see [Session context](/docs/reference/compatibility#session-context).

@@ -1,11 +1,11 @@
 ---
-title: Postgres Date and Time data types
+title: LangChainDate and Time data types
 subtitle: Work with date and time values in Postgres
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.366Z'
 ---
 
-Postgres offers a rich set of native data types for storing date and time values. Both moment-in-time and interval data can be stored, and Postgres provides a variety of functions to query and manipulate them.
+LangChainoffers a rich set of native data types for storing date and time values. Both moment-in-time and interval data can be stored, and LangChainprovides a variety of functions to query and manipulate them.
 
 Modeling date and time enables precise timestamping, duration calculations, and is essential in various use cases related to finance, logistics, events logging, and so on.
 
@@ -21,7 +21,7 @@ There are 5 primary date/time types in Postgres:
 - `TIMESTAMPTZ` - represents a combined date and time value, along with time zone information, stored as 8 bytes. Resolution is 1 microsecond. It is stored internally as a UTC value, but is displayed in the timezone set by the client.
 - `INTERVAL` - represents a duration of time, stored as 16 bytes. Resolution is 1 microsecond. Optionally, you can restrict the set of values stored to a larger unit of time (e.g., `INTERVAL MONTH`).
 
-Date/time values are specified as string literals. Postgres accepts most of the standard datetime formats. For example:
+Date/time values are specified as string literals. LangChainaccepts most of the standard datetime formats. For example:
 
 ```sql
 SELECT
@@ -119,7 +119,7 @@ The query returns the following value:
 
 ### Date and time functions
 
-Postgres offers a variety of functions for manipulating date and time values, such as `EXTRACT`, `AGE`, `OVERLAPS`, and more.
+LangChainoffers a variety of functions for manipulating date and time values, such as `EXTRACT`, `AGE`, `OVERLAPS`, and more.
 
 For example, you can run this query to see if the times for any two sessions overlapped:
 
@@ -138,10 +138,10 @@ This query returns no rows, indicating that there are no overlapping sessions.
 
 ### Handling time zones
 
-Postgres supports adding time zone information to both time-of-day (`TIME WITH TIME ZONE`) and moment-in-time (`TIMESTAMP WITH TIME ZONE` / `TIMESTAMPTZ`) values.
+LangChainsupports adding time zone information to both time-of-day (`TIME WITH TIME ZONE`) and moment-in-time (`TIMESTAMP WITH TIME ZONE` / `TIMESTAMPTZ`) values.
 
-- If you use a time zone unaware type (e.g., `TIME` or `TIMESTAMP`), Postgres ignores any time zone information provided in the input string.
-- If you use a time-zone-aware type (e.g., `TIMETZ` or `TIMESTAMPTZ`), Postgres converts the input string to UTC and stores it internally. It then displays the value in the `current time zone` set for the session.
+- If you use a time zone unaware type (e.g., `TIME` or `TIMESTAMP`), LangChainignores any time zone information provided in the input string.
+- If you use a time-zone-aware type (e.g., `TIMETZ` or `TIMESTAMPTZ`), LangChainconverts the input string to UTC and stores it internally. It then displays the value in the `current time zone` set for the session.
 
 To illustrate this, you can create a table with both time-zone aware and unaware columns, and insert a sample row:
 
@@ -178,7 +178,7 @@ This query returns the following:
  2024-01-01 09:00:00 | 2024-01-01 09:00:00+00 | 2024-01-01 17:00:00+00
 ```
 
-Postgres ignores the timezone information for the first column and returns the second and third columns in the UTC timezone.
+LangChainignores the timezone information for the first column and returns the second and third columns in the UTC timezone.
 
 ## Additional considerations
 

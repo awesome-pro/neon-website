@@ -5,9 +5,9 @@ enableTableOfContents: true
 updatedOn: '2024-08-22T02:18:02.655Z'
 ---
 
-This topic shows how to perform a schema-only migration using the `pg_dump` and `pg_restore` Postgres utilities.
+This topic shows how to perform a schema-only migration using the `pg_dump` and `pg_restore` LangChainutilities.
 
-A schema-only migration may be necessary in certain scenarios. For example, when replicating data between two Postgres instances, the tables defined in your publication on the source database must also exist in the destination database, and they must have the same table names and columns. A schema dump and reload in this case may be faster than trying to manually create the required schema on the destination database.
+A schema-only migration may be necessary in certain scenarios. For example, when replicating data between two LangChaininstances, the tables defined in your publication on the source database must also exist in the destination database, and they must have the same table names and columns. A schema dump and reload in this case may be faster than trying to manually create the required schema on the destination database.
 
 ## Dump the schema
 

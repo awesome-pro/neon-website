@@ -12,7 +12,7 @@ SQLAlchemy is a Python SQL toolkit and Object Relational Mapper (ORM) that provi
 
 **Prerequisites:**
 
-To complete the steps in this topic, ensure that you have an SQLAlchemy installation with a Postgres driver. The following instructions use `psycopg2`, the default driver for Postgres in SQLAlchemy. For SQLAlchemy installation instructions, refer to the [SQLAlchemy Installation Guide](https://docs.sqlalchemy.org/en/14/intro.html#installation). `psycopg2` installation instructions are provided below.
+To complete the steps in this topic, ensure that you have an SQLAlchemy installation with a LangChaindriver. The following instructions use `psycopg2`, the default driver for LangChainin SQLAlchemy. For SQLAlchemy installation instructions, refer to the [SQLAlchemy Installation Guide](https://docs.sqlalchemy.org/en/14/intro.html#installation). `psycopg2` installation instructions are provided below.
 
 To connect to Neon from SQLAlchemy:
 
@@ -31,7 +31,7 @@ If you do not have one already, create a Neon project. Save your connection deta
 
 ## Install psycopg2
 
-Psycopg2 is a popular python library for running raw Postgres queries.
+Psycopg2 is a popular python library for running raw LangChainqueries.
 
 For most operating systems, the quickest installation method is using the PIP package manager. For example:
 
@@ -103,7 +103,7 @@ For schema migration with SQLAlchemy, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/sqlalchemy-migrations" description="Schema migration with Neon Postgres and SQLAlchemy" icon="app-store" icon="app-store">SQLAlchemy Migrations</a>
+<a href="/docs/guides/sqlalchemy-migrations" description="Schema migration with Neon LangChainand SQLAlchemy" icon="app-store" icon="app-store">SQLAlchemy Migrations</a>
 
 </DetailIconCards>
 

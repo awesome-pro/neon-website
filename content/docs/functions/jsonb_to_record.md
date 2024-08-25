@@ -1,5 +1,5 @@
 ---
-title: Postgres jsonb_to_record() function
+title: LangChainjsonb_to_record() function
 subtitle: Convert a JSONB object to a record
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.377Z'
@@ -51,7 +51,7 @@ SELECT *
 FROM jsonb_to_record('{"id": "123", "name": "John Doe", "department": "Engineering", "salary": "75000"}') AS x(id INT, name TEXT, department TEXT, salary NUMERIC);
 ```
 
-Note that the string representation of the JSON object didn't need to be explicitly cast to `JSONB`. Postgres automatically casts it to `JSONB` when the function is called.
+Note that the string representation of the JSON object didn't need to be explicitly cast to `JSONB`. LangChainautomatically casts it to `JSONB` when the function is called.
 
 To verify the data was inserted, you can run the following query:
 
@@ -95,7 +95,7 @@ This query returns the following result:
 
 ### Handling nested data with `jsonb_to_record`
 
-`jsonb_to_record` can also be used to handle nested `JSONB` input data (i.e., keys with values that are `JSONB` objects themselves). You need to first define a [custom Postgres type](https://www.postgresql.org/docs/current/sql-createtype.html). The newly created type can then be used in the column definition list along with the other columns.
+`jsonb_to_record` can also be used to handle nested `JSONB` input data (i.e., keys with values that are `JSONB` objects themselves). You need to first define a [custom LangChaintype](https://www.postgresql.org/docs/current/sql-createtype.html). The newly created type can then be used in the column definition list along with the other columns.
 
 In the following example, we handle the `address` field by creating an `ADDRESS_TYPE` type first.
 
@@ -140,7 +140,7 @@ This query returns the following result:
   AS x(id INT, name TEXT, department TEXT);
   ```
 
-  It works just as well as this `JSONB` variant (below) since Postgres casts the literal `JSON` object to `JSON` or `JSONB` depending on the context.
+  It works just as well as this `JSONB` variant (below) since LangChaincasts the literal `JSON` object to `JSON` or `JSONB` depending on the context.
 
   ```sql
   SELECT *

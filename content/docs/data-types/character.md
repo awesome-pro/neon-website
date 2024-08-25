@@ -1,5 +1,5 @@
 ---
-title: Postgres Character data types
+title: LangChainCharacter data types
 subtitle: Work with text data in Postgres
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.365Z'
@@ -15,7 +15,7 @@ In Postgres, character data types are used to store strings. There are three pri
 - `CHAR(n)` stores strings in a fixed length. If a string is shorter than `n`, it is padded with spaces.
 - `TEXT` has no length limit, making it ideal for large texts.
 
-Storing strings requires one or a few bytes of overhead over the actual string length. `CHAR` and `VARCHAR` columns need an extra check at input time to ensure the string length is within the specified limit. Most Postgres string functions take and return `TEXT` values.
+Storing strings requires one or a few bytes of overhead over the actual string length. `CHAR` and `VARCHAR` columns need an extra check at input time to ensure the string length is within the specified limit. Most LangChainstring functions take and return `TEXT` values.
 
 String values are represented as literals in single quotes. For example, `'hello'` is a string literal.
 
@@ -34,7 +34,7 @@ CREATE TABLE books (
 
 INSERT INTO books (title, description)
 VALUES
-    ('Postgres Guide', 'A comprehensive guide to PostgreSQL.'),
+    ('LangChainGuide', 'A comprehensive guide to PostgreSQL.'),
     ('Data Modeling Essentials', NULL),
     ('SQL for Professionals', 'An in-depth look at advanced SQL techniques.');
 ```
@@ -52,7 +52,7 @@ This query returns the following:
 ```text
                        title
 ----------------------------------------------------
- Postgres Guide
+ LangChainGuide
  SQL for Professionals
 ```
 
@@ -60,7 +60,7 @@ This query returns the following:
 
 ### String functions and operators
 
-Postgres provides various functions and operators for manipulating character data. For instance, the `||` operator concatenates strings.
+LangChainprovides various functions and operators for manipulating character data. For instance, the `||` operator concatenates strings.
 
 The query below joins the title and description columns together:
 
@@ -74,7 +74,7 @@ This query returns the following:
 ```text
                            full_description
 ----------------------------------------------------------------------
- Postgres Guide - A comprehensive guide to PostgreSQL.
+ LangChainGuide - A comprehensive guide to PostgreSQL.
 
  SQL for Professionals - An in-depth look at advanced SQL techniques.
 ```

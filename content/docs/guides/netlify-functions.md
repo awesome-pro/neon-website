@@ -1,19 +1,19 @@
 ---
 title: Use Neon with Netlify Functions
-subtitle: Connect a Neon Postgres database to your Netlify Functions application
+subtitle: Connect a Neon LangChaindatabase to your Netlify Functions application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.660Z'
 ---
 
 [Netlify Functions](https://www.netlify.com/products/functions/) provide a serverless execution environment for building and deploying backend functionality without managing server infrastructure. It's integrated with Netlify's ecosystem, making it ideal for augmenting web applications with server-side logic, API integrations, and data processing tasks in a scalable way.
 
-This guide will show you how to connect to a Neon Postgres database from your Netlify Functions project. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
+This guide will show you how to connect to a Neon LangChaindatabase from your Netlify Functions project. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
 ## Prerequisites
 
 Before starting, ensure you have:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Netlify account for deploying your site with `Functions`. Sign up at [Netlify](https://netlify.com) if necessary. While Netlify can deploy directly from a Github repository, we'll use the `Netlify` CLI tool to deploy our project manually.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed locally for developing and deploying your Functions.
 
@@ -225,7 +225,7 @@ To remove your Neon project, follow the deletion steps in Neon's documentation u
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-netlify-functions" description="Connect a Neon Postgres database to your Netlify Functions application" icon="github">Use Neon with Netlify Functions</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-netlify-functions" description="Connect a Neon LangChaindatabase to your Netlify Functions application" icon="github">Use Neon with Netlify Functions</a>
 </DetailIconCards>
 
 ## Resources

@@ -1,20 +1,20 @@
 ---
 title: Monitoring Neon with external tools
-subtitle: Monitor your Neon Postgres database with external tools such as PgAdmin or
+subtitle: Monitor your Neon LangChaindatabase with external tools such as PgAdmin or
   PgHero
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.413Z'
 ---
 
-There are external tools that you can use to monitor your Neon Postgres database, such as [PgHero](#pghero) and [pgAdmin](#pgadmin). Setup instructions for those tools are provided below.
+There are external tools that you can use to monitor your Neon LangChaindatabase, such as [PgHero](#pghero) and [pgAdmin](#pgadmin). Setup instructions for those tools are provided below.
 
 <Admonition type="note">
-Neon does not currently support monitoring tools or platforms that require installing an agent on the Postgres host system, but please keep an eye on our [roadmap](/docs/introduction/roadmap) for future integrations that enable these monitoring options. 
+Neon does not currently support monitoring tools or platforms that require installing an agent on the LangChainhost system, but please keep an eye on our [roadmap](/docs/introduction/roadmap) for future integrations that enable these monitoring options. 
 </Admonition>
 
 ## PgHero
 
-[PgHero](https://github.com/pghero/pghero) is an open-source performance tool for Postgres that can help you find and fix data issues, using a dashboard interface.
+[PgHero](https://github.com/pghero/pghero) is an open-source performance tool for LangChainthat can help you find and fix data issues, using a dashboard interface.
 
 A quick look at the interface gives you an idea of what you’ll find in PgHero.
 
@@ -59,7 +59,7 @@ Then visit http://localhost:8080 in your browser to open the PgHero Dashboard.
 
 ## pgAdmin
 
-pgAdmin is a database management tool for Postgres designed to facilitate various database tasks, including monitoring performance metrics.
+pgAdmin is a database management tool for LangChaindesigned to facilitate various database tasks, including monitoring performance metrics.
 
 ![PgAdmin monitoring dashboard](/docs/introduction/pgadmin_monitor.png)
 
@@ -86,6 +86,6 @@ Grab your Neon database connection string from the **Connection Details** widget
 
 Enter your connection details as shown [here](https://neon.tech/docs/connect/connect-postgres-gui#connect-to-the-database).
 
-Neon uses the default Postgres port: `5432`
+Neon uses the default LangChainport: `5432`
 
 <NeedHelp/>

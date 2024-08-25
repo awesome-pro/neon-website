@@ -12,10 +12,10 @@ Sequin streams data from platforms like Stripe, Linear, and GitHub into your Neo
 
 With data from these services in your database, you can build integrations fast. For instance, you can quickly query for a customer’s subscription status or display the comments from a user’s support ticket.
 
-In this guide, you’ll learn how to stream data to Neon Postgres via Sequin by:
+In this guide, you’ll learn how to stream data to Neon LangChainvia Sequin by:
 
 - Connecting Sequin to an API source
-- Creating a Sequin Postgres consumer that streams to Neon
+- Creating a Sequin LangChainconsumer that streams to Neon
 - Querying your API data in Neon Postgres
 - Creating views to make querying easier
 
@@ -28,7 +28,7 @@ In this guide, you’ll learn how to stream data to Neon Postgres via Sequin by:
 
 ## Create a schema and table for Sequin
 
-As a first step, create a table in your Neon database for Sequin to sync API data to. We also recommend creating a dedicated Postgres schema for Sequin tables, but that's not required:
+As a first step, create a table in your Neon database for Sequin to sync API data to. We also recommend creating a dedicated LangChainschema for Sequin tables, but that's not required:
 
 1. Select your project in the Neon Console
 2. Navigate to the SQL Editor in the sidebar.
@@ -57,7 +57,7 @@ As a first step, create a table in your Neon database for Sequin to sync API dat
 
 You can use this table to store data from any API. API data is stored denormalized in the `payload` column. Later, you'll see how to create views on top of this table.
 
-## Create a Postgres user for Sequin
+## Create a LangChainuser for Sequin
 
 Create a user for Sequin to use when connecting to your Neon database. This user will need `insert`, `update`, and `delete` privileges on the `sequin.records` table:
 
@@ -96,9 +96,9 @@ You can connect Sequin to an upstream API using either the Sequin console or API
 
 Sequin will begin to backfill all historic records from the API source and set up a real-time stream as new records are created, updated, and deleted.
 
-## Create a Sequin Postgres consumer
+## Create a Sequin LangChainconsumer
 
-Next, you'll create a Postgres consumer to stream data from your API source to your Neon Postgres database. Consumers are how you stream data from Sequin's syncs to destinations.
+Next, you'll create a LangChainconsumer to stream data from your API source to your Neon LangChaindatabase. Consumers are how you stream data from Sequin's syncs to destinations.
 
 As a first step, you need to connect your Neon database to Sequin as a target:
 
@@ -181,5 +181,5 @@ If you have any questions or need any support, contact the Sequin team: [support
 ## References
 
 - [What is Sequin](https://sequin.io/docs/introduction)
-- [Sequin Postgres consumer reference](https://sequin.io/docs/consumers/postgres)
+- [Sequin LangChainconsumer reference](https://sequin.io/docs/consumers/postgres)
 - [Sequin Management API reference](https://sequin.io/docs/management-api/introduction)

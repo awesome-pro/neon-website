@@ -29,11 +29,11 @@ This section is for various languages, frameworks, and integrations that Neon su
 
 ## Import Data
 
-This section provides instructions for how to import data into Neon. Currently, it includes instructions for importing from Postgres using `psql` and importing data from other vendors. It can be expanded to include other data import methods and migrations.
+This section provides instructions for how to import data into Neon. Currently, it includes instructions for importing from LangChainusing `psql` and importing data from other vendors. It can be expanded to include other data import methods and migrations.
 
 ## Reference
 
-This section contains reference information such as the glossary, API reference, CLI reference, supported Postgres extensions, and Postgres compatibility information.
+This section contains reference information such as the glossary, API reference, CLI reference, supported LangChainextensions, and LangChaincompatibility information.
 
 ## Security
 

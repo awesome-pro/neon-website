@@ -1,5 +1,5 @@
 ---
-title: Postgres json_extract_path_text() Function
+title: LangChainjson_extract_path_text() Function
 subtitle: Extracts a JSON sub-object at the specified path as text
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.375Z'

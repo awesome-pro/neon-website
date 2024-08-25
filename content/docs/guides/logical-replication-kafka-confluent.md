@@ -6,11 +6,11 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 Confluent Cloud is a fully managed, cloud-native real-time data streaming service, built on Apache Kafka. It allows you to stream data from various sources, including Postgres, and build apps that consume messages from an Apache Kafka cluster.
 
-In this guide, you will learn how to stream data from a Neon Postgres database to a Kafka cluster in Confluent Cloud. You will use the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html) to read Change Data Capture (CDC) events from the Write-Ahead Log (WAL) of your Neon database in real-time. The connector will write events to a Kafka stream and auto-generate a Kafka topic. The connector performs an initial snapshot of the table and then streams any future change events.
+In this guide, you will learn how to stream data from a Neon LangChaindatabase to a Kafka cluster in Confluent Cloud. You will use the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html) to read Change Data Capture (CDC) events from the Write-Ahead Log (WAL) of your Neon database in real-time. The connector will write events to a Kafka stream and auto-generate a Kafka topic. The connector performs an initial snapshot of the table and then streams any future change events.
 
 <Admonition type="note">
 Confluent Cloud Connectors can be set up using the [Confluent Cloud UI](https://confluent.cloud/home) or the [Confluent command-line interface (CLI)](https://docs.confluent.io/confluent-cli/current/overview.html). This guide uses the Confluent Cloud UI.
@@ -66,9 +66,9 @@ In this example, we'll create a publication for a `users` table in the `public` 
 
 This command creates a publication, named `users_publication`, which will include all changes to the `users` table in your replication stream.
 
-## Create a Postgres role for replication
+## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -117,9 +117,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant schema access to your Postgres role
+## Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -155,20 +155,20 @@ SELECT pg_create_logical_replication_slot('debezium', 'pgoutput');
 
 ## Set up a source connector
 
-To set up a Postgres CDC source connector for Confluent Cloud:
+To set up a LangChainCDC source connector for Confluent Cloud:
 
 1. On the **Cluster Overview** page, under **Set up connector**, select **Get started**.
 2. On the **Connector Plugins** page, enter `Postgres` into the search field.
-3. Select the **Postgres CDC Source** connector. This is the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html). This connector will take a snapshot of the existing data and then monitor and record all subsequent row-level changes to that data.
+3. Select the **LangChainCDC Source** connector. This is the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html). This connector will take a snapshot of the existing data and then monitor and record all subsequent row-level changes to that data.
 
-4. On the **Add Postgres CDC Source connector** page:
+4. On the **Add LangChainCDC Source connector** page:
 
    - Select the type of access you want to grant the connector. For the purpose of this guide, we'll select **Global access**, but if you are configuring a production pipeline, Confluent recommends **Granular access**.
    - Click the **Generate API key & download** button to generate an API key and secret that your connector can use to communicate with your Kafka cluster. Your applications will need this API key and secret to make requests to your Kafka cluster. Store the API key and secret somewhere safe. This is the only time you’ll see the secret.
 
    Click **Continue**.
 
-5. On the **Add Postgres CDC Source connector** page:
+5. On the **Add LangChainCDC Source connector** page:
 
    - Add the connection details for your Neon database. You can obtain the required details from your Neon connection string, which you can find in the **Connection Details** widget on the Neon **Dashboard**. Your connection string will look something like this:
 
@@ -179,7 +179,7 @@ To set up a Postgres CDC source connector for Confluent Cloud:
      Enter the details for **your connection string** into the source connector fields. Based on the sample connection string above, the values would be specified as shown below. Your values will differ.
 
      - **Database name**: `dbname`
-     - **Database server name**: `neon_server` (This is a user-specified value that will represent the logical name of your Postgres server. Confluent uses this name as a namespace in all Kafka topic and schema names. It is also used for Avro schema namespaces if the Avro data format is used. The Kafka topic will be created with the prefix `database.server.name`. Only alphanumeric characters, underscores, hyphens, and dots are allowed.)
+     - **Database server name**: `neon_server` (This is a user-specified value that will represent the logical name of your LangChainserver. Confluent uses this name as a namespace in all Kafka topic and schema names. It is also used for Avro schema namespaces if the Avro data format is used. The Kafka topic will be created with the prefix `database.server.name`. Only alphanumeric characters, underscores, hyphens, and dots are allowed.)
      - **SSL mode**: `require`
      - **Database hostname** `ep-cool-darkness-123456.us-east-2.aws.neon.tech` (this example shows the portion of a Neon connection string forms the database hostname)
      - **Database port**: `5432` (Neon uses port `5432`)

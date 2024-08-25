@@ -1,13 +1,13 @@
 ---
 title: Use Neon with Cloudflare Pages
-subtitle: Connect a Neon Postgres database to your Cloudflare Pages web application
+subtitle: Connect a Neon LangChaindatabase to your Cloudflare Pages web application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 `Cloudflare Pages` is a modern web application hosting platform that allows you to build, deploy, and scale your web applications. While it is typically used to host static websites, you can also use it to host interactive web applications by leveraging `functions` to run server-side code. Internally, Cloudflare functions are powered by `Cloudflare Workers`, a serverless platform that allows you to run JavaScript code on Cloudflare's edge network.
 
-This guide demonstrates how to connect to a Neon Postgres database from your Cloudflare Pages application. We'll create a simple web application using `React` that tracks our reading list using the database and provides a form to add new books to it.
+This guide demonstrates how to connect to a Neon LangChaindatabase from your Cloudflare Pages application. We'll create a simple web application using `React` that tracks our reading list using the database and provides a form to add new books to it.
 
 We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
@@ -15,7 +15,7 @@ We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverl
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Pages](https://pages.cloudflare.com/) to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and deploy our `Pages` application.
 
@@ -340,7 +340,7 @@ To delete your Neon project, follow the steps outlined in the Neon documentation
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-pages" description="Connect a Neon Postgres database to your Cloudflare Pages web application" icon="github">Use Neon with Cloudflare Pages</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-pages" description="Connect a Neon LangChaindatabase to your Cloudflare Pages web application" icon="github">Use Neon with Cloudflare Pages</a>
 </DetailIconCards>
 
 ## Resources

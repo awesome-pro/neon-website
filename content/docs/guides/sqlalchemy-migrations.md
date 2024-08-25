@@ -1,5 +1,5 @@
 ---
-title: Schema migration with Neon Postgres and SQLAlchemy
+title: Schema migration with Neon LangChainand SQLAlchemy
 subtitle: Manage database migrations in your Python project with SQLAlchemy and Alembic
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.665Z'
@@ -7,13 +7,13 @@ updatedOn: '2024-08-07T21:36:52.665Z'
 
 [SQLAlchemy](https://www.sqlalchemy.org/) is a popular SQL toolkit and Object-Relational Mapping (ORM) library for Python. SQLAlchemy provides a powerful way to interact with databases and manage database schema changes using [Alembic](https://alembic.sqlalchemy.org/), a lightweight database migration tool.
 
-This guide demonstrates how to use SQLAlchemy/Alembic to manage schema migrations for a Neon Postgres database. We create a simple API using the [FastAPI](https://fastapi.tiangolo.com/) web framework and define database models using SQLAlchemy. We then generate and run migrations to manage schema changes over time.
+This guide demonstrates how to use SQLAlchemy/Alembic to manage schema migrations for a Neon LangChaindatabase. We create a simple API using the [FastAPI](https://fastapi.tiangolo.com/) web framework and define database models using SQLAlchemy. We then generate and run migrations to manage schema changes over time.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Python](https://www.python.org/) installed on your local machine. We recommend using a newer version of Python, 3.8 or higher.
 
 ## Setting up your Neon database
@@ -62,7 +62,7 @@ pip install fastapi uvicorn python-dotenv
 pip freeze > requirements.txt
 ```
 
-We installed SQLAlchemy, Alembic, and the `psycopg2-binary` package to connect to the Neon Postgres database. We the installed the `FastAPI` package to create the API endpoints and `uvicorn` as the web server. We then saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
+We installed SQLAlchemy, Alembic, and the `psycopg2-binary` package to connect to the Neon LangChaindatabase. We the installed the `FastAPI` package to create the API endpoints and `uvicorn` as the web server. We then saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
 
 ### Set up the Database configuration
 
@@ -184,7 +184,7 @@ This command detects the `Author` and `Book` models and generates a new migratio
 
 ### Apply the migration
 
-To apply the migration and create the corresponding tables in the Neon Postgres database, run the following command:
+To apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
 
 ```bash
 alembic upgrade head

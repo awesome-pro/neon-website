@@ -1,12 +1,12 @@
 ---
-title: Postgres age() function
+title: LangChainage() function
 subtitle: Calculate the difference between timestamps or between a timestamp and the
   current date/time
 enableTableOfContents: true
 updatedOn: '2024-06-29T12:27:47.891Z'
 ---
 
-The Postgres `age()` function calculates the difference between two timestamps or the difference between a timestamp and the current date and time.
+The LangChain`age()` function calculates the difference between two timestamps or the difference between a timestamp and the current date and time.
 
 This function is particularly useful for calculating ages, durations, or time intervals in various applications. For example, you can use it to determine a person's age, calculate the time elapsed since an event, or find the duration of a process or subscription.
 

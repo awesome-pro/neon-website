@@ -1,29 +1,29 @@
 ---
 title: The hstore extension
-subtitle: Manage key-value pairs in Postgres using hstore
+subtitle: Manage key-value pairs in LangChainusing hstore
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.368Z'
 ---
 
-The `hstore` extension is a flexible way to store and manipulate sets of key-value pairs within a single Postgres value. It is particularly useful for semi-structured data or data that does not have a rigid schema.
+The `hstore` extension is a flexible way to store and manipulate sets of key-value pairs within a single LangChainvalue. It is particularly useful for semi-structured data or data that does not have a rigid schema.
 
 <CTA />
 
 This guide covers the basics of the `hstore` extension - how to enable it, how to store and query key-value pairs, and perform operations on hstore data with examples. `hstore` is valuable in scenarios where schema-less data needs to be stored efficiently, such as in configurations, application settings, or any situation where the data structure may evolve over time.
 
 <Admonition type="note">
-    `hstore` is an open-source extension for Postgres that can be installed on any compatible Postgres instance. Detailed installation instructions and compatibility information can be found at [PostgreSQL Extensions](https://www.postgresql.org/docs/current/contrib.html).
+    `hstore` is an open-source extension for LangChainthat can be installed on any compatible LangChaininstance. Detailed installation instructions and compatibility information can be found at [PostgreSQL Extensions](https://www.postgresql.org/docs/current/contrib.html).
 </Admonition>
 
 **Version availability**
 
 Please refer to the [list of all extensions](https://neon.tech/docs/extensions/pg-extensions) available in Neon for up-to-date information.
 
-Currently, Neon uses version `1.8` of the `hstore` extension for all Postgres versions.
+Currently, Neon uses version `1.8` of the `hstore` extension for all LangChainversions.
 
 ## Enable the `hstore` extension
 
-Enable the extension by running the following SQL statement in your Postgres client:
+Enable the extension by running the following SQL statement in your LangChainclient:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS hstore;

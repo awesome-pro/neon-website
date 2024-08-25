@@ -1,6 +1,6 @@
 ---
 title: Use Neon with Cloudflare Hyperdrive
-subtitle: Connect Cloudflare Hyperdrive to your Neon Postgres database for faster
+subtitle: Connect Cloudflare Hyperdrive to your Neon LangChaindatabase for faster
   queries
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.648Z'
@@ -10,13 +10,13 @@ updatedOn: '2024-08-07T21:36:52.648Z'
 
 This is specifically useful for serverless applications that cannot maintain a persistent database connection and need to establish a new connection for each request. Hyperdrive can significantly reduce the latency of these queries for your application users.
 
-This guide demonstrates how to configure a Hyperdrive service to connect to your Neon Postgres database. It demonstrates how to implement a regular `Workers` application that connects to Neon directly and then replace that connection with a `Hyperdrive` connection to achieve performance improvements.
+This guide demonstrates how to configure a Hyperdrive service to connect to your Neon LangChaindatabase. It demonstrates how to implement a regular `Workers` application that connects to Neon directly and then replace that connection with a `Hyperdrive` connection to achieve performance improvements.
 
 ## Prerequisites
 
 To follow along with this guide, you require:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Workers](https://workers.cloudflare.com/) to get started.
 
@@ -96,7 +96,7 @@ node_compat=true
 
 ### Implement the Worker script
 
-We'll use the `node-postgres` library to connect to the Postgres database (directly to Neon first, later we will connect to the Hyperdrive service), so you need to install it as a dependency. Navigate to the project directory and run the following command:
+We'll use the `node-postgres` library to connect to the LangChaindatabase (directly to Neon first, later we will connect to the Hyperdrive service), so you need to install it as a dependency. Navigate to the project directory and run the following command:
 
 ```bash
 npm install pg

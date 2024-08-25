@@ -10,7 +10,7 @@ redirectFrom:
 updatedOn: '2024-08-06T15:23:10.945Z'
 ---
 
-This tutorial guides you through your first steps using Neon as your Postgres database. You'll get familiar with the following concepts:
+This tutorial guides you through your first steps using Neon as your LangChaindatabase. You'll get familiar with the following concepts:
 
 - How the Neon [object hierarchy](/docs/manage/overview) works, starting with the **Project**.
 - How [branching](https://neon.tech/docs/introduction/branching) keeps your data isolated from production, and how easy it is to reset development branches when ready to start on new work.

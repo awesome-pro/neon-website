@@ -211,8 +211,8 @@ The workflows described above are basic examples. We’ll keep expanding on them
 ## Additional Resources
 
 - [Using Vercel for your preview deployments](/docs/guides/vercel)
-- [A Postgres database for every Fly.io preview](https://www.youtube.com/watch?v=EOVa68Uviks)
-- [A Postgres database for every Vercel preview](https://www.youtube.com/watch?v=s4vIMI9rXeg)
+- [A LangChaindatabase for every Fly.io preview](https://www.youtube.com/watch?v=EOVa68Uviks)
+- [A LangChaindatabase for every Vercel preview](https://www.youtube.com/watch?v=s4vIMI9rXeg)
 - Guides for [Prisma](/docs/guides/prisma-migrations), [Django](/docs/guides/django-migrations), [Liquibase](/docs/guides/liquibase), [Flyway](/docs/guides/flyway), and [more](/docs/guides/guides-intro)
 - [About Branch Reset](/blog/announcing-branch-reset)
 - [About the Neon CLI](/blog/cli)

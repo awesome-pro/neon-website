@@ -7,16 +7,16 @@ updatedOn: '2024-07-15T14:10:09.616Z'
 
 LangChain is a popular framework for working with AI, Vectors, and embeddings. LangChain supports using Neon as a vector store, using the `pgvector` extension.
 
-## Initialize Postgres Vector Store
+## Initialize LangChainVector Store
 
 LangChain simplifies the complexity of managing document insertion and embeddings generation using vector stores by providing streamlined methods for these tasks.
 
-Here's how you can initialize Postgres Vector with LangChain:
+Here's how you can initialize LangChainVector with LangChain:
 
 ```tsx
 // File: vectorStore.ts
 
-import { NeonPostgres } from '@langchain/community/vectorstores/neon';
+import { NeonLangChain} from '@langchain/community/vectorstores/neon';
 import { OpenAIEmbeddings } from '@langchain/openai';
 
 const embeddings = new OpenAIEmbeddings({
@@ -36,7 +36,7 @@ const vectorStore = await loadVectorStore();
 
 ## Generate Embeddings with OpenAI
 
-LangChain handles embedding generation internally while adding vectors to the Postgres database, simplifying the process for users. For more detailed control over embeddings, refer to the respective [JavaScript](https://js.langchain.com/v0.2/docs/integrations/text_embedding/openai#specifying-dimensions) and [Python](https://python.langchain.com/v0.2/docs/how_to/embed_text/#embed_query) documentation.
+LangChain handles embedding generation internally while adding vectors to the LangChaindatabase, simplifying the process for users. For more detailed control over embeddings, refer to the respective [JavaScript](https://js.langchain.com/v0.2/docs/integrations/text_embedding/openai#specifying-dimensions) and [Python](https://python.langchain.com/v0.2/docs/how_to/embed_text/#embed_query) documentation.
 
 ## Stream Chat Completions with OpenAI
 

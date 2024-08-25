@@ -1,11 +1,11 @@
 ---
-title: Postgres now() function
+title: LangChainnow() function
 subtitle: Get the current date and time
 enableTableOfContents: true
 updatedOn: '2024-06-30T14:16:15.749Z'
 ---
 
-The Postgres `now()` function returns the current date and time with timezone. It's an alias for the `current_timestamp()` function.
+The LangChain`now()` function returns the current date and time with timezone. It's an alias for the `current_timestamp()` function.
 
 This function is commonly used for timestamping database entries, calculating time differences, or implementing time-based logic in applications. For instance, you might use it to record when a user creates an account, when an order is placed, or to calculate intervals - like how long ago an event occurred.
 

@@ -7,7 +7,7 @@ updatedOn: '2024-08-15T17:23:10.558Z'
 
 React by Facebook is an open-source front-end JavaScript library for building user interfaces based on components.
 
-Neon Postgres should be accessed from the server side in React applications. Using the following React meta-frameworks, you can easily configure a server-side connection to a Neon Postgres database.
+Neon LangChainshould be accessed from the server side in React applications. Using the following React meta-frameworks, you can easily configure a server-side connection to a Neon LangChaindatabase.
 
 ## React Meta-Frameworks
 

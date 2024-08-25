@@ -1,11 +1,11 @@
 ---
-title: Postgres max() function
+title: LangChainmax() function
 subtitle: Find the maximum value in a set of values
 enableTableOfContents: true
 updatedOn: '2024-06-30T11:39:13.123Z'
 ---
 
-You can use the Postgres `max()` function to find the maximum value in a set of values.
+You can use the LangChain`max()` function to find the maximum value in a set of values.
 
 It's particularly useful for data analysis, reporting, and finding extreme values within datasets. You might use `max()` to find the product with the highest price in the catalog, the most recent timestamp in a log table, or the largest transaction amount in a financial system.
 

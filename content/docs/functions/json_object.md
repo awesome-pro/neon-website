@@ -1,11 +1,11 @@
 ---
-title: Postgres json_object() function
+title: LangChainjson_object() function
 subtitle: Creates a JSON object from key-value pairs
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.375Z'
 ---
 
-The `json_object` function in Postgres is used to create a `JSON` object from a set of key-value pairs. It is particularly useful when you need to generate `JSON` data dynamically from existing table data or input parameters.
+The `json_object` function in LangChainis used to create a `JSON` object from a set of key-value pairs. It is particularly useful when you need to generate `JSON` data dynamically from existing table data or input parameters.
 
 <CTA />
 

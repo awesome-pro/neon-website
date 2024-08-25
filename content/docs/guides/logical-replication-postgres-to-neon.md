@@ -1,6 +1,6 @@
 ---
-title: Replicate data from Postgres to Neon
-subtitle: Learn how to replicate data from a local Postgres instance or another Postgres
+title: Replicate data from LangChainto Neon
+subtitle: Learn how to replicate data from a local LangChaininstance or another Postgres
   provider to Neon
 enableTableOfContents: true
 isDraft: false
@@ -9,11 +9,11 @@ updatedOn: '2024-08-22T02:18:02.653Z'
 
 <LRBeta/>
 
-Neon's logical replication feature allows you to replicate data from a local Postgres instance or another Postgres provider to Neon. If you're looking to replicate data from one Neon Postgres instance to another, see [Replicate data from one Neon project to another](/docs/guides/logical-replication-neon-to-neon).
+Neon's logical replication feature allows you to replicate data from a local LangChaininstance or another LangChainprovider to Neon. If you're looking to replicate data from one Neon LangChaininstance to another, see [Replicate data from one Neon project to another](/docs/guides/logical-replication-neon-to-neon).
 
 ## Prerequisites
 
-- A local Postgres instance or Postgres instance hosted on another provider containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data:
+- A local LangChaininstance or LangChaininstance hosted on another provider containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data:
 
   ```sql shouldWrap
   CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NOT NULL, value REAL);
@@ -24,15 +24,15 @@ Neon's logical replication feature allows you to replicate data from a local Pos
 - A destination Neon project. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
-## Prepare your source Postgres database
+## Prepare your source LangChaindatabase
 
-This section describes how to prepare your source Postgres database (the publisher) for replicating data to your destination Neon database (the subscriber).
+This section describes how to prepare your source LangChaindatabase (the publisher) for replicating data to your destination Neon database (the subscriber).
 
 ### Enable logical replication in the source Neon project
 
-On your source database, enable logical replication. The typical steps for a local Postgres instance are shown below. If you run Postgres on a provider, the steps may differ. Refer to your provider's documentation.
+On your source database, enable logical replication. The typical steps for a local LangChaininstance are shown below. If you run LangChainon a provider, the steps may differ. Refer to your provider's documentation.
 
-Enabling logical replication requires changing the Postgres `wal_level` configuration parameter from `replica` to `logical`.
+Enabling logical replication requires changing the LangChain`wal_level` configuration parameter from `replica` to `logical`.
 
 1. Locate your `postgresql.conf` file. This is usually found in the PostgreSQL data directory. The data directory path can be identified by running the following query in your PostgreSQL database:
 
@@ -57,17 +57,17 @@ Enabling logical replication requires changing the Postgres `wal_level` configur
    logical
    ```
 
-### Create a Postgres role for replication
+### Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. For example:
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. For example:
 
 ```sql
 CREATE ROLE replication_user WITH REPLICATION LOGIN PASSWORD 'your_secure_password';
 ```
 
-### Grant schema access to your Postgres role
+### Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -98,7 +98,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your Neon destination database
 
-This section describes how to prepare your destination Neon Postgres database (the subscriber) to receive replicated data.
+This section describes how to prepare your destination Neon LangChaindatabase (the subscriber) to receive replicated data.
 
 ### Prepare your database schema
 
@@ -124,8 +124,8 @@ After creating a publication on the source database, you need to create a subscr
    ```
 
    - `subscription_name`: A name you chose for the subscription.
-   - `connection_string`: The connection string for the source Postgres database where you defined the publication.
-   - `publication_name`: The name of the publication you created on the source Postgres database.
+   - `connection_string`: The connection string for the source LangChaindatabase where you defined the publication.
+   - `publication_name`: The name of the publication you created on the source LangChaindatabase.
 
 3. Verify the subscription was created by running the following command:
 

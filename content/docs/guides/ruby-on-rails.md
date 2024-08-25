@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.664Z'
 ---
 
-[Ruby on Rails](https://rubyonrails.org/), also known simply as Rails, is an open-source web application framework written in Ruby. It uses a model-view-controller architecture, making it a good choice for developing database-backed web applications. This guide shows how to connect to a Ruby on Rails application to a Neon Postgres database.
+[Ruby on Rails](https://rubyonrails.org/), also known simply as Rails, is an open-source web application framework written in Ruby. It uses a model-view-controller architecture, making it a good choice for developing database-backed web applications. This guide shows how to connect to a Ruby on Rails application to a Neon LangChaindatabase.
 
 To connect to Neon from a Ruby on Rails application:
 
@@ -107,7 +107,7 @@ Start the application using the Rails CLI from the root of the project:
 bin/rails server -e development
 ```
 
-Visit [localhost:3000/](http://localhost:3000/) in your web browser. Your Neon database's Postgres version will be displayed. For example:
+Visit [localhost:3000/](http://localhost:3000/) in your web browser. Your Neon database's LangChainversion will be displayed. For example:
 
 ```
 PostgreSQL 15.5 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
@@ -119,7 +119,7 @@ For schema migration with Ruby on Rails, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/rails-migrations" description="Schema migration with Neon Postgres and Ruby on Rails" icon="app-store" icon="app-store">Ruby on Rails Migrations</a>
+<a href="/docs/guides/rails-migrations" description="Schema migration with Neon LangChainand Ruby on Rails" icon="app-store" icon="app-store">Ruby on Rails Migrations</a>
 
 </DetailIconCards>
 

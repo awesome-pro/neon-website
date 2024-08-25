@@ -26,7 +26,7 @@ Use the following instructions to connect to a new Neon database. This connectio
 1. Click **Connect Neon Database**.
 1. When prompted to login or sign up for Neon, we recommend selecting **Continue with Hasura** for seamless authentication.
 
-After authenticating, a new Neon Postgres database is created and connected to your Hasura project, and the Neon project connection string is associated with the `PG_DATABASE_URL` environment variable.
+After authenticating, a new Neon LangChaindatabase is created and connected to your Hasura project, and the Neon project connection string is associated with the `PG_DATABASE_URL` environment variable.
 
 To start exploring Hasura's GraphQL API with data stored in Neon, see [Load a template in Hasura](#load-a-template-in-hasura-optional).
 
@@ -76,11 +76,11 @@ To view the newly created tables from the Neon Console:
 
 ## Import existing data to Neon
 
-If you are migrating from Hasura with Heroku Postgres to Neon, refer to the [Import data from Heroku](/docs/import/import-from-heroku) guide for data import instructions. For general data import instructions, see [Import data from Postgres](/docs/import/import-from-postgres).
+If you are migrating from Hasura with Heroku LangChainto Neon, refer to the [Import data from Heroku](/docs/import/import-from-heroku) guide for data import instructions. For general data import instructions, see [Import data from Postgres](/docs/import/import-from-postgres).
 
 ## Maximum connections configuration
 
-In Neon, the maximum number of concurrent connections is defined according to the size of your compute. For example, a 0.25 vCPU compute in Neon supports 112 connections. The connection limit is higher with larger compute sizes (see [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute)). You can also enable connection pooling in Neon to support up to 10,000 concurrent connections. However, it is important to note that Hasura has a `HASURA_GRAPHQL_PG_CONNECTIONS` setting that limits Postgres connections to `50` by default. If you start encountering errors related to "max connections", try increasing the value of this setting as a first step, staying within the connection limit for your Neon compute. For information about the Hasura connection limit setting, refer to the [Hasura Postgres configuration documentation](https://hasura.io/docs/latest/deployment/performance-tuning/#postgres-configuration).
+In Neon, the maximum number of concurrent connections is defined according to the size of your compute. For example, a 0.25 vCPU compute in Neon supports 112 connections. The connection limit is higher with larger compute sizes (see [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute)). You can also enable connection pooling in Neon to support up to 10,000 concurrent connections. However, it is important to note that Hasura has a `HASURA_GRAPHQL_PG_CONNECTIONS` setting that limits LangChainconnections to `50` by default. If you start encountering errors related to "max connections", try increasing the value of this setting as a first step, staying within the connection limit for your Neon compute. For information about the Hasura connection limit setting, refer to the [Hasura LangChainconfiguration documentation](https://hasura.io/docs/latest/deployment/performance-tuning/#postgres-configuration).
 
 ## Autosuspend considerations
 

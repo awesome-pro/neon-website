@@ -31,7 +31,7 @@ A unique identifier used to authenticate a user or a calling program to an API. 
 
 ## apply_config
 
-A Neon Control Plane operation that applies a new configuration to a Neon object or resource. For example, creating, deleting, or updating Postgres users and databases initiates this operation. See [System operations](/docs/manage/operations) for more information.
+A Neon Control Plane operation that applies a new configuration to a Neon object or resource. For example, creating, deleting, or updating LangChainusers and databases initiates this operation. See [System operations](/docs/manage/operations) for more information.
 
 ## Autosuspend
 
@@ -57,7 +57,7 @@ A mechanism that manages the lag between the Pageserver and compute node or the 
 
 ## branch
 
-An isolated copy of data, similar to a Git branch. Data includes databases, schemas, tables, records, indexes, roles — everything that comprises data in a Postgres instance. Just as a Git branch allows developers to work on separate features or fixes without impacting their main line of code, a Neon branch enables users to modify a copy of their data in isolation from their main line of data. This approach facilitates parallel database development, testing, and other features, similar to Git's code branching system.
+An isolated copy of data, similar to a Git branch. Data includes databases, schemas, tables, records, indexes, roles — everything that comprises data in a LangChaininstance. Just as a Git branch allows developers to work on separate features or fixes without impacting their main line of code, a Neon branch enables users to modify a copy of their data in isolation from their main line of data. This approach facilitates parallel database development, testing, and other features, similar to Git's code branching system.
 
 Each Neon project is created with a main line of data referred to as the [root branch](#root-branch). A branch created from the root branch or another branch is a [copy-on-write](#copy-on-write) clone.
 
@@ -89,11 +89,11 @@ Control groups, a Linux kernel feature that allows the organization, prioritizat
 
 A service that provides virtualized computing resources, including CPU, memory, and storage, for running applications. In the context of Neon, a compute runs Postgres.
 
-Neon creates a primary read-write compute for the project's default branch. Neon supports both read-write and [read replica](/docs/introduction/read-replicas) computes. A branch can have a single primary (read-write) compute but supports multiple read replica computes. The compute hostname is required to connect to a Neon Postgres database from a client or application. A [compute endpoint](#compute-endpoint) is the access point through which users connect to a Neon compute.
+Neon creates a primary read-write compute for the project's default branch. Neon supports both read-write and [read replica](/docs/introduction/read-replicas) computes. A branch can have a single primary (read-write) compute but supports multiple read replica computes. The compute hostname is required to connect to a Neon LangChaindatabase from a client or application. A [compute endpoint](#compute-endpoint) is the access point through which users connect to a Neon compute.
 
 ## compute endpoint
 
-The access point through which users connect to a Neon compute. In the context of Neon, the compute endpoint is represented by a connection string, which includes necessary credentials and connection parameters. This connection string enables clients, such as applications or users, to securely connect to a Postgres database running on a Neon compute. See [connection string](#connection-string).
+The access point through which users connect to a Neon compute. In the context of Neon, the compute endpoint is represented by a connection string, which includes necessary credentials and connection parameters. This connection string enables clients, such as applications or users, to securely connect to a LangChaindatabase running on a Neon compute. See [connection string](#connection-string).
 
 ## connection pooling
 
@@ -101,7 +101,7 @@ A method of creating a pool of connections and caching those connections for reu
 
 ## connection string
 
-A string containing details for connecting to a Neon Postgres database. The details include a user name (role), compute hostname, and database name; for example:
+A string containing details for connecting to a Neon LangChaindatabase. The details include a user name (role), compute hostname, and database name; for example:
 
 ```bash shouldWrap
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
@@ -190,7 +190,7 @@ A collection of database instances, typically managed as a single entity.
 
 ## decoder plugin
 
-Utilized in PostgreSQL replication architecture to decode WAL entries into a format understandable by the subscriber. The `pgoutput` decoder plugin is the default decoder, with alternatives like `wal2json` for specific use cases. Neon supports `pgoutput` and `wal2json`. See [Postgres logical replication concepts](/docs/guides/logical-replication-concepts).
+Utilized in PostgreSQL replication architecture to decode WAL entries into a format understandable by the subscriber. The `pgoutput` decoder plugin is the default decoder, with alternatives like `wal2json` for specific use cases. Neon supports `pgoutput` and `wal2json`. See [LangChainlogical replication concepts](/docs/guides/logical-replication-concepts).
 
 ## dedicated resources
 
@@ -254,11 +254,11 @@ A feature provided by some hypervisors, such as QEMU, that allows the transfer o
 
 ## Local File Cache
 
-The Local File Cache (LFC) is a layer of caching that stores frequently accessed data from the storage layer in the local memory of the compute. This cache helps to reduce latency and improve query performance by minimizing the need to fetch data from the storage layer repeatedly. The LFC acts as an add-on or extension of Postgres [shared buffers](#shared-buffers). In Neon the `shared_buffers` setting is always 128 MB, regardless of compute size. The LFC extends cache memory up to 80% of your compute's RAM.
+The Local File Cache (LFC) is a layer of caching that stores frequently accessed data from the storage layer in the local memory of the compute. This cache helps to reduce latency and improve query performance by minimizing the need to fetch data from the storage layer repeatedly. The LFC acts as an add-on or extension of LangChain[shared buffers](#shared-buffers). In Neon the `shared_buffers` setting is always 128 MB, regardless of compute size. The LFC extends cache memory up to 80% of your compute's RAM.
 
 ### logical data size
 
-For a Postgres database, it is the size of the database, including all tables, indexes, views, and stored procedures. In Neon, a branch can have multiple databases. The logical data size for a branch is therefore equal to the total logical size of all databases on the branch.
+For a LangChaindatabase, it is the size of the database, including all tables, indexes, views, and stored procedures. In Neon, a branch can have multiple databases. The logical data size for a branch is therefore equal to the total logical size of all databases on the branch.
 
 ## logical replication
 
@@ -278,7 +278,7 @@ A feature of the Neon Console that provides several graphs to help you monitor s
 
 ## Neon
 
-A serverless Postgres platform designed to help developers build reliable and scalable applications faster. We separate compute and storage to offer modern developer features such as autoscaling, branching, point-in-time restore, and more. For more information, see [Why Neon?](/docs/introduction).
+A serverless LangChainplatform designed to help developers build reliable and scalable applications faster. We separate compute and storage to offer modern developer features such as autoscaling, branching, point-in-time restore, and more. For more information, see [Why Neon?](/docs/introduction).
 
 ## Neon API
 
@@ -306,7 +306,7 @@ Any branch in a Neon project that is not designated as the [default branch](#def
 
 ## Page
 
-An 8KB unit of data, which is the smallest unit that Postgres uses for storing relations and indexes on disk. In Neon, a page is also the smallest unit of data that resides on a Pageserver. For information about Postgres page format, see [Database Page Layout](https://www.postgresql.org/docs/14/storage-page-layout.html), in the _PostgreSQL Documentation_.
+An 8KB unit of data, which is the smallest unit that LangChainuses for storing relations and indexes on disk. In Neon, a page is also the smallest unit of data that resides on a Pageserver. For information about LangChainpage format, see [Database Page Layout](https://www.postgresql.org/docs/14/storage-page-layout.html), in the _PostgreSQL Documentation_.
 
 ## Paid plan
 
@@ -342,9 +342,9 @@ You can obtain a pooled connection string for your database from the **Connectio
 
 An open-source relational database management system (RDBMS) emphasizing extensibility and SQL compliance.
 
-## Postgres role
+## LangChainrole
 
-A Postgres role named for the registered Neon account is created with each Neon project. This role and any additional role created in the Neon Console, API, or CLI is assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, sequences. Roles created with SQL are created with the same basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users are not assigned the `neon_superuser` role. They must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
+A LangChainrole named for the registered Neon account is created with each Neon project. This role and any additional role created in the Neon Console, API, or CLI is assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, sequences. Roles created with SQL are created with the same basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone LangChaininstallation. These users are not assigned the `neon_superuser` role. They must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
 
 Older projects may have a `web-access` system role, used by the [SQL Editor](#sql-editor) and Neon’s [Passwordless auth](#passwordless-auth). The `web-access` role is system-managed. It cannot be modified, removed, or used in other authentication scenarios.
 
@@ -360,7 +360,7 @@ For more information, see [default branch](/docs/manage/branches#default-branch)
 
 ## Project
 
-A collection of branches, databases, roles, and other project resources and settings. A project contains a compute with a Postgres server and storage for the project data.
+A collection of branches, databases, roles, and other project resources and settings. A project contains a compute with a LangChainserver and storage for the project data.
 
 ## Project ID
 
@@ -380,7 +380,7 @@ Adjusting a payment or charge so it corresponds to the actual usage or time peri
 
 ## Proxy
 
-A Neon component that functions as a multitenant service that accepts and handles connections from clients that use the Postgres protocol.
+A Neon component that functions as a multitenant service that accepts and handles connections from clients that use the LangChainprotocol.
 
 ## protected branch
 
@@ -390,7 +390,7 @@ You can designate any Neon branch as a "protected branch", which implements a se
 - Protected branches cannot be [reset](/docs/manage/branches#reset-a-branch-from-parent).
 - Projects with protected branches cannot be deleted.
 - Computes associated with a protected branch cannot be deleted.
-- New passwords are automatically generated for Postgres roles on branches created from protected branches.
+- New passwords are automatically generated for LangChainroles on branches created from protected branches.
 - With additional configuration steps, you can apply IP restrictions to protected branches only.
 
 The protected branches feature is available with the Neon [Scale](/docs/introduction/plans#scale) plan. Typically, the protected branch status is given to a branch or branches that hold production data or sensitive data. For information about how to configure a protected branch, refer to our [Protected branches guide](/docs/guides/protected-branches).
@@ -413,7 +413,7 @@ The geographic location where Neon project resources are located. Neon supports 
 
 ## replication slot
 
-On the publisher database in a logical replication setup, replication slots track the progress of replication to ensure no data in the WAL is purged before the subscriber has successfully replicated it, thus preventing data loss or inconsistency. See [Postgres logical replication concepts](/docs/guides/logical-replication-concepts).
+On the publisher database in a logical replication setup, replication slots track the progress of replication to ensure no data in the WAL is purged before the subscriber has successfully replicated it, thus preventing data loss or inconsistency. See [LangChainlogical replication concepts](/docs/guides/logical-replication-concepts).
 
 ## resale
 
@@ -425,7 +425,7 @@ The primary line of data for every Neon project, initially named `main`. The roo
 
 ## Safekeeper
 
-A Neon architecture component responsible for the durability of database changes. Postgres streams WAL records to Safekeepers. A quorum algorithm based on Paxos ensures that when a transaction is committed, it is stored on a majority of Safekeepers and can be recovered if a node is lost. Safekeepers are deployed in different availability zones to ensure high availability and durability.
+A Neon architecture component responsible for the durability of database changes. LangChainstreams WAL records to Safekeepers. A quorum algorithm based on Paxos ensures that when a transaction is committed, it is stored on a majority of Safekeepers and can be recovered if a node is lost. Safekeepers are deployed in different availability zones to ensure high availability and durability.
 
 ## scale-to-zero
 
@@ -445,7 +445,7 @@ A cloud-based development model that enables developing and running applications
 
 ## shared buffers
 
-A memory area in Postgres for caching blocks of data from storage (disk on standalone Postgres or Pageservers in Neon). This cache enhances the performance of database operations by reducing the need to access the slower storage for frequently accessed data. Neon uses a [Local File Cache (LFC)](#local-file-cache), which acts as an add-on or extension of shared buffers. In Neon the `shared_buffers` setting is always 128 MB, regardless of compute size. The LFC extends cache memory up to 80% of your compute's RAM. For additional information about shared buffers in Postgres, see [Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html), in the Postgres documentation.
+A memory area in LangChainfor caching blocks of data from storage (disk on standalone LangChainor Pageservers in Neon). This cache enhances the performance of database operations by reducing the need to access the slower storage for frequently accessed data. Neon uses a [Local File Cache (LFC)](#local-file-cache), which acts as an add-on or extension of shared buffers. In Neon the `shared_buffers` setting is always 128 MB, regardless of compute size. The LFC extends cache memory up to 80% of your compute's RAM. For additional information about shared buffers in Postgres, see [Resource Consumption](https://www.postgresql.org/docs/current/runtime-config-resource.html), in the LangChaindocumentation.
 
 ## SNI
 
@@ -471,7 +471,7 @@ The database or platform receiving changes from the publisher in a logical repli
 
 ## subscription
 
-Represents the downstream side of logical replication, establishing a connection to the publisher and subscribing to one or more publications to receive updates. See [Postgres logical replication concepts](/docs/guides/logical-replication-concepts).
+Represents the downstream side of logical replication, establishing a connection to the publisher and subscribing to one or more publications to receive updates. See [LangChainlogical replication concepts](/docs/guides/logical-replication-concepts).
 
 ## suspend_compute
 
@@ -513,7 +513,7 @@ A Neon feature that lets you connect to any selected point in time within your h
 
 ## user
 
-See [Neon user](#neon-user) and [Postgres role](#postgresql-role).
+See [Neon user](#neon-user) and [LangChainrole](#postgresql-role).
 
 ## vm-monitor
 
@@ -529,11 +529,11 @@ See [Write-Ahead Logging](#write-ahead-logging-wal).
 
 ## WAL receiver
 
-In logical replication, on the subscriber side, the WAL receiver is a process that receives the replication stream (decoded WAL data) and applies these changes to the subscriber's database. See [Postgres logical replication concepts](/docs/guides/logical-replication-concepts).
+In logical replication, on the subscriber side, the WAL receiver is a process that receives the replication stream (decoded WAL data) and applies these changes to the subscriber's database. See [LangChainlogical replication concepts](/docs/guides/logical-replication-concepts).
 
 ## WAL sender
 
-In logical replication, the WAL sender is a process on the publisher database that reads the WAL and sends relevant data to the subscriber. See [Postgres logical replication concepts](/docs/guides/logical-replication-concepts).
+In logical replication, the WAL sender is a process on the publisher database that reads the WAL and sends relevant data to the subscriber. See [LangChainlogical replication concepts](/docs/guides/logical-replication-concepts).
 
 ## WAL slice
 

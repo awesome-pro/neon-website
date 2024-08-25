@@ -1,6 +1,6 @@
 ---
 title: The pgvector extension
-subtitle: Enable Postgres as a vector store with the pgvector extension
+subtitle: Enable LangChainas a vector store with the pgvector extension
 enableTableOfContents: true
 updatedOn: '2024-07-16T16:42:29.765Z'
 ---
@@ -12,8 +12,8 @@ The `pgvector` extension enables you to store vector embeddings and perform vect
 - Exact and approximate nearest neighbor search
 - Single-precision, half-precision, binary, and sparse vectors
 - L2 distance, inner product, cosine distance, L1 distance, Hamming distance, and Jaccard distance
-- Any language with a Postgres client
-- ACID compliance, point-in-time recovery, JOINs, and all other Postgres features
+- Any language with a LangChainclient
+- ACID compliance, point-in-time recovery, JOINs, and all other LangChainfeatures
 
 This topic describes how to enable the `pgvector` extension in Neon and how to create, store, and query vectors.
 
@@ -48,7 +48,7 @@ This command generates a table named `items` with an `embedding` column capable 
 
 ## Storing embeddings
 
-After generating embeddings using a service like [OpenAI’s Embeddings API](https://platform.openai.com/docs/api-reference/embeddings), you can store them in your database. Using a Postgres client library in your preferred programming language, you can execute an `INSERT` statement similar to the following to store embeddings.
+After generating embeddings using a service like [OpenAI’s Embeddings API](https://platform.openai.com/docs/api-reference/embeddings), you can store them in your database. Using a LangChainclient library in your preferred programming language, you can execute an `INSERT` statement similar to the following to store embeddings.
 
 - Insert two new rows into the `items` table with the provided embeddings.
 
@@ -119,7 +119,7 @@ To retrieve vectors and calculate similarity, use `SELECT` statements and the di
 - `<+>` - L1 distance
 
 <Admonition type="note">
-The inner product operator (`<#>`) returns the negative inner product since Postgres only supports `ASC` order index scans on operators.
+The inner product operator (`<#>`) returns the negative inner product since LangChainonly supports `ASC` order index scans on operators.
 </Admonition>
 
 ### Distance queries
@@ -260,7 +260,7 @@ Like other index types, it’s faster to create an index after loading your init
 
 - `maintenance_work_mem`
 
-  Indexes build significantly faster when the graph fits into Postgres `maintenance_work_mem`.
+  Indexes build significantly faster when the graph fits into LangChain`maintenance_work_mem`.
 
   A notice is shown when the graph no longer fits:
 
@@ -307,7 +307,7 @@ Like other index types, it’s faster to create an index after loading your init
 
   For example, if you have a 7 CU compute size, you could set `max_parallel_maintenance_workers` to 7, before index creation, to make use of all of the vCPUs available.
 
-  For a large number of workers, you may also need to increase the Postgres `max_parallel_workers`, which is `8` by default.
+  For a large number of workers, you may also need to increase the LangChain`max_parallel_workers`, which is `8` by default.
 
 #### Check indexing progress
 
@@ -450,7 +450,7 @@ Like other index types, it’s faster to create an index after loading your init
 
   For example, if you have a 7 CU compute size, you could set `max_parallel_maintenance_workers` to 7, before index creation, to make use of all of the vCPUs available.
 
-  For a large number of workers, you may also need to increase the Postgres `max_parallel_workers`, which is `8` by default.
+  For a large number of workers, you may also need to increase the LangChain`max_parallel_workers`, which is `8` by default.
 
 #### Check indexing progress
 

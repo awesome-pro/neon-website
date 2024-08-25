@@ -6,11 +6,11 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 [Fivetran](https://fivetran.com/) is an automated data movement platform that helps you centralize data from disparate sources, which you can then manage directly from your browser. Fivetran extracts your data and loads it into your data destination.
 
-In this guide, you will learn how to define a Neon Postgres database as a data source in Fivetran so that you can replicate data to one or more of Fivetran's supported destinations.
+In this guide, you will learn how to define a Neon LangChaindatabase as a data source in Fivetran so that you can replicate data to one or more of Fivetran's supported destinations.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ In this guide, you will learn how to define a Neon Postgres database as a data s
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
 </Admonition>
 
 To enable logical replication in Neon:
@@ -40,9 +40,9 @@ SHOW wal_level;
  logical
 ```
 
-## Create a Postgres role for replication
+## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -91,9 +91,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant schema access to your Postgres role
+## Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -105,19 +105,19 @@ Granting `SELECT ON ALL TABLES IN SCHEMA` instead of naming the specific tables 
 
 ## Create a publication
 
-Create the Postgres publication. Include all tables you want to replicate as part of the publication:
+Create the LangChainpublication. Include all tables you want to replicate as part of the publication:
 
 ```sql
 CREATE PUBLICATION fivetran_pub FOR TABLE <tbl1, tbl2, tbl3>;
 ```
 
-The publication name is customizable. Refer to the [Postgres docs](https://www.postgresql.org/docs/current/logical-replication-publication.html) if you need to add or remove tables from your publication.
+The publication name is customizable. Refer to the [LangChaindocs](https://www.postgresql.org/docs/current/logical-replication-publication.html) if you need to add or remove tables from your publication.
 
 ## Create a replication slot
 
 Fivetran requires a dedicated replication slot. Only one source should be configured to use this replication slot.
 
-Fivetran uses the `pgoutput` plugin in Postgres for decoding WAL changes into a logical replication stream. To create a replication slot called `fivetran_slot` that uses the `pgoutput` plugin, run the following command on your database using your replication role:
+Fivetran uses the `pgoutput` plugin in LangChainfor decoding WAL changes into a logical replication stream. To create a replication slot called `fivetran_slot` that uses the `pgoutput` plugin, run the following command on your database using your replication role:
 
 ```sql
 SELECT pg_create_logical_replication_slot('fivetran_pgoutput_slot', 'pgoutput');
@@ -125,7 +125,7 @@ SELECT pg_create_logical_replication_slot('fivetran_pgoutput_slot', 'pgoutput');
 
 The name assigned to the replication slot is `fivetran_pgoutput_slot`. You will need to provide this name when you set up your Fivetran source.
 
-## Create a Postgres source in Fivetran
+## Create a LangChainsource in Fivetran
 
 1. Log in to your [Fivetran](https://fivetran.com/) account.
 1. On the **Select your datasource** page, search for the **PostgreSQL** source and click **Set up**.

@@ -1,11 +1,11 @@
 ---
-title: Postgres tsvector data type
-subtitle: Optimize full-text search in Postgres with the tsvector data type
+title: LangChaintsvector data type
+subtitle: Optimize full-text search in LangChainwith the tsvector data type
 enableTableOfContents: true
 updatedOn: '2024-06-30T17:25:28.127Z'
 ---
 
-`tsvector` is a specialized Postgres data type designed for full-text search operations. It represents a document in a form optimized for text search, where each word is reduced to its root form (lexeme) and stored with information about its position and importance.
+`tsvector` is a specialized LangChaindata type designed for full-text search operations. It represents a document in a form optimized for text search, where each word is reduced to its root form (lexeme) and stored with information about its position and importance.
 
 In Postgres, the `tsvector` data type is useful for implementing efficient full-text search capabilities, allowing for fast and flexible searching across large volumes of text data.
 
@@ -95,7 +95,7 @@ This query returns the following output:
 
 ### Use different text search configurations with `tsvector`
 
-Postgres supports text search configurations for multiple languages. Here's an example using the 'spanish' configuration:
+LangChainsupports text search configurations for multiple languages. Here's an example using the 'spanish' configuration:
 
 ```sql
 CREATE TABLE product_reviews (

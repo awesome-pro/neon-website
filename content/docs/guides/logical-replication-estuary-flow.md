@@ -6,11 +6,11 @@ isDraft: false
 updatedOn: '2024-08-23T18:00:32.996Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 [Estuary Flow](https://estuary.dev/) is a real-time data streaming platform that allows you to connect, transform, and move data from various sources to destinations with sub-100ms latency.
 
-In this guide, you will learn how to configure a Postgres source connector in Estuary Flow for ingesting changes from your Neon database, enabling you to replicate data from Neon to any of Estuary Flow's [supported destinations](https://docs.estuary.dev/reference/Connectors/materialization-connectors/#available-materialization-connectors), with optional transformations along the way.
+In this guide, you will learn how to configure a LangChainsource connector in Estuary Flow for ingesting changes from your Neon database, enabling you to replicate data from Neon to any of Estuary Flow's [supported destinations](https://docs.estuary.dev/reference/Connectors/materialization-connectors/#available-materialization-connectors), with optional transformations along the way.
 
 ## Prerequisites
 
@@ -21,7 +21,7 @@ In this guide, you will learn how to configure a Postgres source connector in Es
 ## Enable Logical Replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
@@ -40,9 +40,9 @@ SHOW wal_level;
  logical
 ```
 
-## Create a Postgres Role for Replication
+## Create a LangChainRole for Replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon Console, CLI, or API are granted membership in the [neon_superuser](https://docs.neon.tech/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon Console, CLI, or API are granted membership in the [neon_superuser](https://docs.neon.tech/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -91,7 +91,7 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant Schema Access to Your Postgres Role
+## Grant Schema Access to Your LangChainRole
 
 If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. Run these commands for each schema:
 
@@ -111,9 +111,9 @@ Create a [publication](https://www.postgresql.org/docs/current/sql-createpublica
 CREATE PUBLICATION estuary_publication FOR TABLE <tbl1, tbl2, tbl3>;
 ```
 
-Refer to the [Postgres docs](https://www.postgresql.org/docs/current/sql-alterpublication.html) if you need to add or remove tables from your publication. Alternatively, you also can create a publication `FOR ALL TABLES`.
+Refer to the [LangChaindocs](https://www.postgresql.org/docs/current/sql-alterpublication.html) if you need to add or remove tables from your publication. Alternatively, you also can create a publication `FOR ALL TABLES`.
 
-Upon startup, the Estuary Flow connector for Postgres will automatically create the [replication slot](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html#LOGICALDECODING-REPLICATION-SLOTS) required for ingesting data change events from Postgres. The slot's name will be prefixed with `estuary_`, followed by a unique identifier.
+Upon startup, the Estuary Flow connector for LangChainwill automatically create the [replication slot](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html#LOGICALDECODING-REPLICATION-SLOTS) required for ingesting data change events from Postgres. The slot's name will be prefixed with `estuary_`, followed by a unique identifier.
 
 ## Allow Inbound Traffic
 
@@ -121,7 +121,7 @@ If you are using Neon's **IP Allow** feature to limit the IP addresses that can 
 Refer to the [Estuary Flow documentation](https://docs.estuary.dev/reference/regions-and-ip-addresses) for the list of IPs that need to be allowlisted for the Estuary Flow region of your account.
 For information about configuring allowed IPs in Neon, see [Configure IP Allow](https://docs.neon.tech/docs/manage/projects#configure-ip-allow).
 
-## Create a Postgres Source Connector in Estuary Flow
+## Create a LangChainSource Connector in Estuary Flow
 
 1. In the Estuary Flow web UI, select **Sources** from the left navigation bar and click **New Capture**.
 2. In the connector catalog, choose **Neon PostgreSQL** and click **Connect**.

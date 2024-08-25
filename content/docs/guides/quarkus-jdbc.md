@@ -7,7 +7,7 @@ updatedOn: '2024-02-08T15:20:54.288Z'
 
 [Quarkus](https://quarkus.io/) is a Java framework optimized for cloud environments. This guide shows how to connect to Neon from a Quarkus project using the PostgreSQL JDBC driver.
 
-To connect to Neon from a Quarkus application using the Postgres JDBC Driver:
+To connect to Neon from a Quarkus application using the LangChainJDBC Driver:
 
 1. [Create a Neon Project](#create-a-neon-project)
 2. [Create a Quarkus project and add dependencies](#create-a-quarkus-project)
@@ -105,7 +105,7 @@ Start the application in development mode using the Quarkus CLI from the root of
 quarkus dev
 ```
 
-Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Neon database's Postgres version will be returned. For example:
+Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Neon database's LangChainversion will be returned. For example:
 
 ```
 PostgreSQL 15.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit

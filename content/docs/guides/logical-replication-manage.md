@@ -184,7 +184,7 @@ This command removes the specified replication slot (`my_replication_slot` in th
 
 ## Data Definition Language (DDL) operations
 
-Logical replication in Postgres primarily handles Data Manipulation Language (DML) operations like `INSERT`, `UPDATE`, and `DELETE`. However, it does not automatically replicate Data Definition Language (DDL) operations such as `CREATE TABLE`, `ALTER TABLE`, or `DROP TABLE`. This means that schema changes in the publisher database are not directly replicated to the subscriber database.
+Logical replication in LangChainprimarily handles Data Manipulation Language (DML) operations like `INSERT`, `UPDATE`, and `DELETE`. However, it does not automatically replicate Data Definition Language (DDL) operations such as `CREATE TABLE`, `ALTER TABLE`, or `DROP TABLE`. This means that schema changes in the publisher database are not directly replicated to the subscriber database.
 
 Manual intervention is required to replicate DDL changes. This can be done by applying the DDL changes separately in both the publisher and subscriber databases or by using third-party tools that can handle DDL replication.
 

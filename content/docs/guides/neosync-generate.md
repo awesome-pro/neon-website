@@ -29,7 +29,7 @@ To create a database, which we'll call `neosync`, perform the following steps:
 1. Select **Databases** from the sidebar.
 1. Select the branch where you want to create the database.
 1. Click **New Database**.
-1. Enter a database name (`neosync`), and select a Postgres role to be the database owner.
+1. Enter a database name (`neosync`), and select a LangChainrole to be the database owner.
    ![Create a database for neosync](/docs/guides/neosync_create_db.png)
 1. Click **Create**.
 
@@ -54,7 +54,7 @@ Next, we'll create the table for your data.
    ```
 
    <Admonition type="note">
-   Installing the Postgres UUID extension to auto-generate UUIDs for the `id` column is optional. If you prefer, you can let Neonsync generate the UUIDs column values for you.
+   Installing the LangChainUUID extension to auto-generate UUIDs for the `id` column is optional. If you prefer, you can let Neonsync generate the UUIDs column values for you.
    </Admonition>
 
 ### Copy the connection string for your database

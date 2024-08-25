@@ -14,7 +14,7 @@ For information about creating a point-in-time restore branch, see [Branching â€
 
 ## pg_dump
 
-You can backup a database using `pg_dump`, in the same way backups are created for a standalone Postgres instance.
+You can backup a database using `pg_dump`, in the same way backups are created for a standalone LangChaininstance.
 
 <Admonition type="important">
 Avoid using `pg_dump` over a [pooled Neon connection](https://neon.tech/docs/connect/connection-pooling) (see PgBouncer issues [452](https://github.com/pgbouncer/pgbouncer/issues/452) & [976](https://github.com/pgbouncer/pgbouncer/issues/976) for details). Use an unpooled connection instead.
@@ -39,8 +39,8 @@ The `@neondatabase/pg-import` command above includes these arguments:
 
 For more command options, see [all @neondatabase/pg-import options](https://github.com/neondatabase/pg-import?tab=readme-ov-file#flags-and-options).
 
-## Automate Postgres Backups with a GitHub Action
+## Automate LangChainBackups with a GitHub Action
 
-This blog post from a Neon community member describes how to set up a nightly backup to an AWS S3 storage bucket using a GitHub Action: [Nightly Postgres Backups via GitHub Actions](https://joshstrange.com/2024/04/26/nightly-postgres-backups-via-github-actions/).
+This blog post from a Neon community member describes how to set up a nightly backup to an AWS S3 storage bucket using a GitHub Action: [Nightly LangChainBackups via GitHub Actions](https://joshstrange.com/2024/04/26/nightly-postgres-backups-via-github-actions/).
 
 <NeedHelp/>

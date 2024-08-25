@@ -1,5 +1,5 @@
 ---
-title: Postgres jsonb_array_elements() function
+title: LangChainjsonb_array_elements() function
 subtitle: Expands a JSONB array into a set of rows
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.376Z'

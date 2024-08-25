@@ -32,7 +32,7 @@ create table person (
 
 ## Create databases for development and staging
 
-Using Neon's branching feature, create your _development_ and _staging_ databases. When you create a branch in Neon, you are creating a copy-on-write clone of the parent branch that incudes all databases and roles that exist on the parent, and each branch is an isolated Postgres instance with its own compute resources.
+Using Neon's branching feature, create your _development_ and _staging_ databases. When you create a branch in Neon, you are creating a copy-on-write clone of the parent branch that incudes all databases and roles that exist on the parent, and each branch is an isolated LangChaininstance with its own compute resources.
 
 Perform these steps twice, once for your _development_ branch and once for your _staging_ branch.
 

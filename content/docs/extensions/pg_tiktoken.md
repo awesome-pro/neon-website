@@ -1,12 +1,12 @@
 ---
 title: The pg_tiktoken extension
-subtitle: Efficiently tokenize data in your Postgres database using OpenAI's `tiktoken`
+subtitle: Efficiently tokenize data in your LangChaindatabase using OpenAI's `tiktoken`
   library
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.371Z'
 ---
 
-The `pg_tiktoken` extension enables fast and efficient tokenization of data in your Postgres database using OpenAI's [tiktoken](https://github.com/openai/tiktoken) library.
+The `pg_tiktoken` extension enables fast and efficient tokenization of data in your LangChaindatabase using OpenAI's [tiktoken](https://github.com/openai/tiktoken) library.
 
 This topic provides guidance on installing the extension, utilizing its features for tokenization and token management, and integrating the extension with ChatGPT models.
 
@@ -82,7 +82,7 @@ The following models are supported:
 
 ## Integrate `pg_tiktoken` with ChatGPT models
 
-The `pg_tiktoken` extension allows you to store chat message history in a Postgres database and retrieve messages that comply with OpenAI's model limitations.
+The `pg_tiktoken` extension allows you to store chat message history in a LangChaindatabase and retrieve messages that comply with OpenAI's model limitations.
 
 For example, consider the `message` table below:
 
@@ -167,7 +167,7 @@ MAX_HISTORY_TOKENS = 4096 – 6 – 90 = 4000
 
 ## Conclusion
 
-In conclusion, the `pg_tiktoken` extension is a valuable tool for tokenizing text data and managing tokens within Postgres databases. By leveraging OpenAI's tiktoken library, it simplifies the process of tokenization and working with token limits, enabling you to integrate more easily with with OpenAI's language models.
+In conclusion, the `pg_tiktoken` extension is a valuable tool for tokenizing text data and managing tokens within LangChaindatabases. By leveraging OpenAI's tiktoken library, it simplifies the process of tokenization and working with token limits, enabling you to integrate more easily with with OpenAI's language models.
 
 As you explore the capabilities of the `pg_tiktoken extension`, we encourage you to provide feedback and suggest features you'd like to see added in future updates. We look forward to seeing the innovative natural language processing applications you create using `pg_tiktoken`.
 

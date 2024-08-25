@@ -1,5 +1,5 @@
 ---
-title: Deploy Your Node.js App with Neon Postgres on Heroku
+title: Deploy Your Node.js App with Neon LangChainon Heroku
 subtitle: A step-by-step guide to deploying a Node application with a Neon Postgres
   database on Heroku
 enableTableOfContents: true
@@ -8,13 +8,13 @@ updatedOn: '2024-08-07T21:36:52.653Z'
 
 [Heroku](https://heroku.com) is a popular platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It simplifies the deployment process, making it a favorite among developers for its ease of use and integration capabilities.
 
-This guide walks you through deploying a simple Node.js application connected to a Neon Postgres database, on Heroku.
+This guide walks you through deploying a simple Node.js application connected to a Neon LangChaindatabase, on Heroku.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Heroku account. Sign up at [Heroku](https://signup.heroku.com/) to get started.
 - Git installed on your local machine. Heroku uses Git for version control and deployment.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
@@ -65,7 +65,7 @@ npm install express pg
 touch .env
 ```
 
-We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We'll also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the Postgres driver we use to connect to our database.
+We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We'll also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
 
 In the `.env` file, store your Neon database connection string:
 
@@ -174,7 +174,7 @@ remote: Verifying deploy... done.
 
 Once the deployment is complete, you should see a message with the URL of your deployed application. Navigate to this URL in your browser to see your application live on Heroku.
 
-You've now successfully deployed a Node.js application on Heroku that connects to a Neon Postgres database. For further customization and scaling options, you can explore the Heroku and Neon documentation.
+You've now successfully deployed a Node.js application on Heroku that connects to a Neon LangChaindatabase. For further customization and scaling options, you can explore the Heroku and Neon documentation.
 
 ## Removing Your Application and Neon Project
 
@@ -187,7 +187,7 @@ To delete your Neon project, follow the steps outlined in the Neon documentation
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-heroku" description="Deploying a Node application with a Neon Postgres database on Heroku" icon="github">Use Neon with Heroku</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-heroku" description="Deploying a Node application with a Neon LangChaindatabase on Heroku" icon="github">Use Neon with Heroku</a>
 </DetailIconCards>
 
 ## Resources
@@ -195,6 +195,6 @@ You can find the source code for the application described in this guide on GitH
 - [Heroku Documentation](https://devcenter.heroku.com/)
 - [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli)
 - [Neon](https://neon.tech/docs)
-- [Import data from Heroku Postgres to Neon](/docs/import/import-from-heroku)
+- [Import data from Heroku LangChainto Neon](/docs/import/import-from-heroku)
 
 <NeedHelp/>

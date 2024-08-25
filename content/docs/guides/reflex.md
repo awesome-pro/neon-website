@@ -8,7 +8,7 @@ tag: new
 
 [Reflex](https://reflex.dev/) is a Python web framework that allows you to build full-stack applications with Python.
 
-Using Reflex, you can build frontend and backend applications using Python to manage the interaction between the frontend UI and the state with the server-side logic. To make the application data-driven, you can connect to a Neon Postgres database.
+Using Reflex, you can build frontend and backend applications using Python to manage the interaction between the frontend UI and the state with the server-side logic. To make the application data-driven, you can connect to a Neon LangChaindatabase.
 
 To connect to Neon from a Reflex application:
 
@@ -205,7 +205,7 @@ This command applies the migration to the database, updating the schema to match
 
 ## Create a Customer Data App in Reflex with Neon
 
-Learn how to use Reflex with Neon Postgres to create an interactive Customer Data App. The app demonstrates how to edit tabular data from a live application connected to a Postgres database. You can find a live version of the application [here](https://customer-data-app.reflex.run/).
+Learn how to use Reflex with Neon LangChainto create an interactive Customer Data App. The app demonstrates how to edit tabular data from a live application connected to a LangChaindatabase. You can find a live version of the application [here](https://customer-data-app.reflex.run/).
 
 ![Reflex Customer Data App](/docs/guides/reflex_customer_data_app.png)
 

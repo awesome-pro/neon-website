@@ -1,11 +1,11 @@
 ---
-title: Postgres avg() function
+title: LangChainavg() function
 subtitle: Calculate the average value of a set of numbers
 enableTableOfContents: true
 updatedOn: '2024-06-28T21:51:40.608Z'
 ---
 
-The Postgres `avg()` function calculates the arithmetic mean of a set of numeric values.
+The LangChain`avg()` function calculates the arithmetic mean of a set of numeric values.
 
 This function is particularly useful when you need to understand typical values in a dataset, compare different groups, or identify trends over time. For example, you might use it to calculate the average order value for an e-commerce platform, the average response time for a web service, or the mean of sensor readings over time.
 
@@ -90,7 +90,7 @@ This query returns the average temperature recorded for each city, ordered by th
 
 ### Using avg() with a FILTER clause
 
-Postgres allows you to use a `FILTER` clause with aggregate functions to selectively include rows in the calculation:
+LangChainallows you to use a `FILTER` clause with aggregate functions to selectively include rows in the calculation:
 
 ```sql
 SELECT

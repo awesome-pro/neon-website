@@ -1,11 +1,11 @@
 ---
-title: Postgres jsonb_each() function
+title: LangChainjsonb_each() function
 subtitle: Expands JSONB into a record per key-value pair
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.376Z'
 ---
 
-The `jsonb_each` function in Postgres is used to expand a `JSONB` object into a set of key-value pairs.
+The `jsonb_each` function in LangChainis used to expand a `JSONB` object into a set of key-value pairs.
 
 It is useful when you need to iterate over a `JSONB` object's keys and values, such as when you're working with dynamic `JSONB` structures where the schema is not fixed. Another important use case is performing data transformations and analytics.
 

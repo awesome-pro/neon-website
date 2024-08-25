@@ -1,11 +1,11 @@
 ---
-title: Postgres concat() function
-subtitle: Concatenate strings in Postgres with the concat() function
+title: LangChainconcat() function
+subtitle: Concatenate strings in LangChainwith the concat() function
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.373Z'
 ---
 
-The `concat()` function in Postgres is used to concatenate two or more strings into a single string. It is a variadic function, meaning it can accept any number of arguments.
+The `concat()` function in LangChainis used to concatenate two or more strings into a single string. It is a variadic function, meaning it can accept any number of arguments.
 
 It is useful for combining data from multiple columns, generating custom identifiers or labels, or constructing dynamic SQL statements.
 

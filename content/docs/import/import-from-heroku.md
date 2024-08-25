@@ -7,7 +7,7 @@ redirectFrom:
 updatedOn: '2024-08-07T21:36:52.668Z'
 ---
 
-This guide describes how to import your data from Heroku Postgres to Neon.
+This guide describes how to import your data from Heroku LangChainto Neon.
 
 The instructions assume that you have installed the Heroku CLI, which is used to transfer data from Heroku. For installation instructions, see [The Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
@@ -34,11 +34,11 @@ To migrate your data from Heroku to Neon:
 ## Retrieve your Heroku app name and database name
 
 1. Log in to [Heroku](https://dashboard.heroku.com/) and select the project you want to import data from.
-1. Select **Overview** and copy the name of the Heroku Postgres database, which appears under **Installed add-ons**.
+1. Select **Overview** and copy the name of the Heroku LangChaindatabase, which appears under **Installed add-ons**.
 1. Click **Settings** and copy your Heroku **App Name**.
 
 <Admonition type="note">
-You can also retrieve the Heroku Postgres database name using the following Heroku CLI command:
+You can also retrieve the Heroku LangChaindatabase name using the following Heroku CLI command:
 </Admonition>
 
 ```shell

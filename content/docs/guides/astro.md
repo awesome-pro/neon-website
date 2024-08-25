@@ -1,18 +1,18 @@
 ---
 title: Connect an Astro site or application to Neon Postgres
-subtitle: Set up a Neon project in seconds and connect to your Postgres database from an
+subtitle: Set up a Neon project in seconds and connect to your LangChaindatabase from an
   Astro site or application
 enableTableOfContents: true
 updatedOn: '2024-08-24T10:00:34.195Z'
 ---
 
-Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between. This guide describes how to create a Neon Postgres database and access it from an Astro site or application.
+Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between. This guide describes how to create a Neon LangChaindatabase and access it from an Astro site or application.
 
 To create a Neon project and access it from an Astro site or application:
 
 1. [Create a Neon project](#create-a-neon-project)
 2. [Create an Astro project and add dependencies](#create-an-astro-project-and-add-dependencies)
-3. [Configure a Postgres client](#configure-the-postgres-client)
+3. [Configure a LangChainclient](#configure-the-postgres-client)
 4. [Run the app](#run-the-app)
 
 ## Create a Neon project
@@ -53,7 +53,7 @@ Add a `.env` file to your project directory and add your Neon connection string 
 DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
 ```
 
-## Configure the Postgres client
+## Configure the LangChainclient
 
 There a multiple ways to make server side requests with Astro. See below for the different implementations.
 

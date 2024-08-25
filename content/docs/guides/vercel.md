@@ -39,7 +39,7 @@ Prerequisites:
 
 - A [Vercel account](https://vercel.com).
 - A Vercel project. If you do not have one, see [Creating a project](https://vercel.com/docs/concepts/projects/overview#creating-a-project), in the _Vercel documentation_.
-- The integration initially sets the `DATABASE_URL` and `DATABASE_URL_UNPOOLED`environment variables for your Vercel **Production** and **Development** environments. When you create a preview deployment, the integration will also set these variables for your **Preview** environment. Variables of the same name will be overwritten. To use different Postgres variables with the Neon integration, see [Configure Vercel environment variables](#configure-environment-variables).
+- The integration initially sets the `DATABASE_URL` and `DATABASE_URL_UNPOOLED`environment variables for your Vercel **Production** and **Development** environments. When you create a preview deployment, the integration will also set these variables for your **Preview** environment. Variables of the same name will be overwritten. To use different LangChainvariables with the Neon integration, see [Configure Vercel environment variables](#configure-environment-variables).
 
 To add the integration:
 
@@ -168,7 +168,7 @@ You can manage Vercel environment variables as well as the default database and 
 
 ### Configure environment variables
 
-The Neon Vercel Integration automatically sets the environment variables `DATABASE_URL` (pooled connection) and `DATABASE_URL_UNPOOLED` (direct connection) for your Vercel **Production** and **Development** environments. See [Connection pooling](/docs/connect/connection-pooling) for more information. When you create a preview deployment, the integration also sets these same variables for the Vercel **Preview** environment. If you want to define your database connection using different Postgres environment variables, the integration also supports the following:
+The Neon Vercel Integration automatically sets the environment variables `DATABASE_URL` (pooled connection) and `DATABASE_URL_UNPOOLED` (direct connection) for your Vercel **Production** and **Development** environments. See [Connection pooling](/docs/connect/connection-pooling) for more information. When you create a preview deployment, the integration also sets these same variables for the Vercel **Preview** environment. If you want to define your database connection using different LangChainenvironment variables, the integration also supports the following:
 
 - `PGHOST` (set to a pooled Neon database connection string)
 - `PGHOST_UNPOOLED` (set to a direct Neon database connection string)
@@ -208,7 +208,7 @@ Your change will be reflected in your Vercel **Preview** environment variables o
 
 ## Disconnect the integration
 
-If you want to disconnect the Neon Vercel Integration from your Vercel project, you can do so from the Neon Console. Disconnecting stops the integration from creating preview branches and setting environment variables for those branches in Vercel. It does not remove the integration from your Vercel project. To fully remove the integration from your Vercel project, you must do so in Vercel. See [Manage the Neon Postgres integration in Vercel](#manage-the-integration-in-vercel) for instructions.
+If you want to disconnect the Neon Vercel Integration from your Vercel project, you can do so from the Neon Console. Disconnecting stops the integration from creating preview branches and setting environment variables for those branches in Vercel. It does not remove the integration from your Vercel project. To fully remove the integration from your Vercel project, you must do so in Vercel. See [Manage the Neon LangChainintegration in Vercel](#manage-the-integration-in-vercel) for instructions.
 
 To disconnect the Neon integration from your Vercel project:
 
@@ -228,9 +228,9 @@ The Neon Vercel Integration can be used with more than one Vercel project, but i
 
 1. Make sure the Neon Vercel Integration that you added previously has access to the Vercel project that you want to use with the Neon Vercel Integration.
    1. On the Vercel Dashboard, select **Integrations**.
-   1. Find the Neon Postgres integration, and select **Manage**.
-   1. On the Neon Postgres integration page, select **Manage Access**.
-   1. On the **Manage Access for Neon Postgres** modal, make sure that the Neon Postgres integration has access to the Vercel project. You can do so by selecting **Specific Projects** and choosing a Vercel project or by granting access to **All Projects**. If you previously granted access to **All Projects**, no change is necessary.
+   1. Find the Neon LangChainintegration, and select **Manage**.
+   1. On the Neon LangChainintegration page, select **Manage Access**.
+   1. On the **Manage Access for Neon Postgres** modal, make sure that the Neon LangChainintegration has access to the Vercel project. You can do so by selecting **Specific Projects** and choosing a Vercel project or by granting access to **All Projects**. If you previously granted access to **All Projects**, no change is necessary.
    1. Click **Save**.
 1. Navigate to this URL: [https://vercel.com/integrations/neon/new](https://vercel.com/integrations/neon/new).
 1. Follow the prompts. When you reach the **Integrate Neon** dialog, select the Vercel project you want to add the integration to. Vercel projects that are already integrated with Neon are identified as `CONNECTED`.
@@ -279,9 +279,9 @@ To avoid this issue, you can reinstall the integration to update to the latest v
 
 ### Stored passwords missing in the selected Neon project
 
-Neon projects created after March, 2023 store role passwords in a secure storage vault associated with the project, allowing passwords to be retrieved by the Neon Vercel integration for the purpose of setting Postgres connection environment variables in Vercel. Projects created before March 2023, do not store role passwords, and are therefore not compatible with the Neon Vercel integration. The current workaround for this issue is to migrate your data to a new Neon project. See [Import data from another Neon project](/docs/import/import-from-neon).
+Neon projects created after March, 2023 store role passwords in a secure storage vault associated with the project, allowing passwords to be retrieved by the Neon Vercel integration for the purpose of setting LangChainconnection environment variables in Vercel. Projects created before March 2023, do not store role passwords, and are therefore not compatible with the Neon Vercel integration. The current workaround for this issue is to migrate your data to a new Neon project. See [Import data from another Neon project](/docs/import/import-from-neon).
 
-## Video: A Postgres database for Every Preview Deployment
+## Video: A LangChaindatabase for Every Preview Deployment
 
 Watch this video from the Neon DevRel team for an overview of the Neon Vercel Integration.
 

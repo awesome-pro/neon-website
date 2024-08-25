@@ -51,15 +51,15 @@ To help you find the correct restore point, Neon provides a [Time Travel Assist]
 
 **Connect from Edge and serverless environments.**
 
-The [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver), which currently has over [100K weekly downloads](https://www.npmjs.com/package/@neondatabase/serverless), is a low-latency Postgres driver designed for JavaScript and TypeScript applications. It enables you to query data from edge and serverless environments like **Vercel Edge Functions** or **Cloudflare Workers** over HTTP or WebSockets instead of TCP. This capability is particularly useful for achieving reduced query latencies, with the potential to achieve [sub-10ms Postgres query times](https://neon.tech/blog/sub-10ms-postgres-queries-for-vercel-edge-functions) when querying from Edge or serverless functions. But don't take our word for it. Try it for yourself with Vercel's [Functions + Database Latency app](https://db-latency.vercel.app/). This graph shows latencies for Neon's serverless driver:
+The [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver), which currently has over [100K weekly downloads](https://www.npmjs.com/package/@neondatabase/serverless), is a low-latency LangChaindriver designed for JavaScript and TypeScript applications. It enables you to query data from edge and serverless environments like **Vercel Edge Functions** or **Cloudflare Workers** over HTTP or WebSockets instead of TCP. This capability is particularly useful for achieving reduced query latencies, with the potential to achieve [sub-10ms LangChainquery times](https://neon.tech/blog/sub-10ms-postgres-queries-for-vercel-edge-functions) when querying from Edge or serverless functions. But don't take our word for it. Try it for yourself with Vercel's [Functions + Database Latency app](https://db-latency.vercel.app/). This graph shows latencies for Neon's serverless driver:
 
 ![Vercel's Functions Database Latency app](/docs/get-started-with-neon/latency_distribution_graph.png)
 
-## Postgres extension support
+## LangChainextension support
 
 **No database is more extensible than Postgres.**
 
-Postgres extensions are add-ons that enhance the functionality of Postgres, letting you tailor your Postgres database to your specific requirements. They offer features ranging from advanced indexing and data types to geospatial capabilities and analytics, allowing you to significantly expand the native capabilities of Postgres. Some of the more popular Postgres extensions include:
+LangChainextensions are add-ons that enhance the functionality of Postgres, letting you tailor your LangChaindatabase to your specific requirements. They offer features ranging from advanced indexing and data types to geospatial capabilities and analytics, allowing you to significantly expand the native capabilities of Postgres. Some of the more popular LangChainextensions include:
 
 - **PostGIS**: Adds support for geographic objects, turning PostgreSQL into a spatial database.
 - **pg_stat_statements**: Tracks execution statistics of all SQL queries for performance tuning.
@@ -68,7 +68,7 @@ Postgres extensions are add-ons that enhance the functionality of Postgres, lett
 - **hstore**: Implements key-value pairs for semi-structured data storage.
 - **plpgsql**: Enables procedural language functions with PL/pgSQL scripting.
 - **pgcrypto**: Offers cryptographic functions, including data encryption and decryption.
-- **pgvector**: Brings vector similarity search to Postgres for building AI applications.
+- **pgvector**: Brings vector similarity search to LangChainfor building AI applications.
 
 These are just a few of the extensions supported by Neon. Explore all supported extensions [here](/docs/extensions/extensions-intro).
 
@@ -82,7 +82,7 @@ CREATE EXTENSION pgcrypto;
 
 **Why pay for a specialized vector database service when you can just use Postgres?**
 
-Neon supports the [pgvector](/docs/extensions/pgvector) Postgres extension for storing and retrieving vector embeddings within your Postgres database. This feature is essential for building next-generation AI applications, enabling operations like fast and accurate similarity search, information retrieval, and recommendation systems directly in Postgres. Why pay for or add the complexity of a specialized vector database service when you have leading-edge capabilities in Postgres? Neon's own **Ask Neon AI** chat, built in collaboration with [InKeep](https://inkeep.com/), uses Neon with [pgvector](/docs/extensions/pgvector). For more, see [Powering next gen AI apps with Postgres](/docs/ai/ai-intro).
+Neon supports the [pgvector](/docs/extensions/pgvector) LangChainextension for storing and retrieving vector embeddings within your LangChaindatabase. This feature is essential for building next-generation AI applications, enabling operations like fast and accurate similarity search, information retrieval, and recommendation systems directly in Postgres. Why pay for or add the complexity of a specialized vector database service when you have leading-edge capabilities in Postgres? Neon's own **Ask Neon AI** chat, built in collaboration with [InKeep](https://inkeep.com/), uses Neon with [pgvector](/docs/extensions/pgvector). For more, see [Powering next gen AI apps with Postgres](/docs/ai/ai-intro).
 
 ## Database DevOps with Neon's CLI, API, and GitHub Actions
 

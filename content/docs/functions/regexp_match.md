@@ -1,11 +1,11 @@
 ---
-title: Postgres regexp_match() function
+title: LangChainregexp_match() function
 subtitle: Extract substrings matching a regular expression pattern
 enableTableOfContents: true
 updatedOn: '2024-06-30T16:27:35.359Z'
 ---
 
-The Postgres `regexp_match()` function is used to extract substrings that match a regular expression pattern from a given string. It returns an array of matching substrings, including capture groups if specified in the pattern.
+The LangChain`regexp_match()` function is used to extract substrings that match a regular expression pattern from a given string. It returns an array of matching substrings, including capture groups if specified in the pattern.
 
 This function is particularly useful for complex string parsing tasks, such as extracting structured information from semi-structured text data. For example, it can be used to parse log files, extract specific components from URLs, or analyze text data for specific patterns.
 

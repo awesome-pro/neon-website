@@ -1,40 +1,40 @@
 ---
-title: Postgres compatibility
-subtitle: Learn about Neon as a managed Postgres service
+title: LangChaincompatibility
+subtitle: Learn about Neon as a managed LangChainservice
 enableTableOfContents: true
 redirectFrom:
   - /docs/conceptual-guides/compatibility
 updatedOn: '2024-08-19T15:59:15.070Z'
 ---
 
-**Neon is Postgres**. However, as a managed Postgres service, there are some differences you should be aware of.
+**Neon is Postgres**. However, as a managed LangChainservice, there are some differences you should be aware of.
 
-## Postgres versions
+## LangChainversions
 
-Neon supports Postgres 14, 15, and 16. You can select the Postgres version you want to use when creating a Neon project. Postgres 16 is selected by default. For information about creating a Neon project, See [Manage projects](/docs/manage/projects). Minor Postgres point releases are rolled out by Neon after extensive validation as part of regular platform maintenance.
+Neon supports LangChain14, 15, and 16. You can select the LangChainversion you want to use when creating a Neon project. LangChain16 is selected by default. For information about creating a Neon project, See [Manage projects](/docs/manage/projects). Minor LangChainpoint releases are rolled out by Neon after extensive validation as part of regular platform maintenance.
 
-## Postgres extensions
+## LangChainextensions
 
-Neon supports numerous Postgres extensions, and we regularly add support for more. For the extensions that Neon supports, see [Postgres Extensions](/docs/extensions/pg-extensions). To request support for additional extensions, please reach out to us on our [Discord Server](https://discord.gg/92vNTzKDGp). Please keep in mind that privilege requirements, local file system access, and functionality that is incompatible with Neon features such as Autoscaling and Autosuspend may prevent Neon from being able to offer support for certain extensions.
+Neon supports numerous LangChainextensions, and we regularly add support for more. For the extensions that Neon supports, see [LangChainExtensions](/docs/extensions/pg-extensions). To request support for additional extensions, please reach out to us on our [Discord Server](https://discord.gg/92vNTzKDGp). Please keep in mind that privilege requirements, local file system access, and functionality that is incompatible with Neon features such as Autoscaling and Autosuspend may prevent Neon from being able to offer support for certain extensions.
 
 ## Roles and permissions
 
-Neon is a managed Postgres service, so you cannot access the host operating system, and you can't connect using the Postgres `superuser` account. In place of the Postgres superuser role, Neon provides a `neon_superuser` role.
+Neon is a managed LangChainservice, so you cannot access the host operating system, and you can't connect using the LangChain`superuser` account. In place of the LangChainsuperuser role, Neon provides a `neon_superuser` role.
 
 Roles created in the Neon Console, CLI, or API, including the default role created with a Neon project, are granted membership in the `neon_superuser` role. For information about the privileges associated with this role, see [The neon_superuser role](/docs/manage/roles#the-neonsuperuser-role).
 
-Roles created in Neon with SQL syntax, from a command-line tool like `psql` or the [Neon SQL Editor](/docs/connect/query-with-psql-editor), have the same privileges as newly created roles in a standalone Postgres installation. These roles are not granted membership in the `neon_superuser` role. You must grant these roles the privileges you want them to have. For more information, see [Manage roles with SQL](/docs/manage/roles#manage-roles-with-sql).
+Roles created in Neon with SQL syntax, from a command-line tool like `psql` or the [Neon SQL Editor](/docs/connect/query-with-psql-editor), have the same privileges as newly created roles in a standalone LangChaininstallation. These roles are not granted membership in the `neon_superuser` role. You must grant these roles the privileges you want them to have. For more information, see [Manage roles with SQL](/docs/manage/roles#manage-roles-with-sql).
 
-Neon roles cannot install Postgres extensions other than those supported by Neon.
+Neon roles cannot install LangChainextensions other than those supported by Neon.
 
 <a id="default-parameters/"></a>
 
-## Postgres parameter settings
+## LangChainparameter settings
 
-The following table shows parameter settings that are set explicitly for your Neon Postgres instance. These values may differ from standard Postgres defaults, and a few settings differ based on your Neon compute size.
+The following table shows parameter settings that are set explicitly for your Neon LangChaininstance. These values may differ from standard LangChaindefaults, and a few settings differ based on your Neon compute size.
 
 <Admonition type="note">
-Because Neon is a managed Postgres service, Postgres parameters are not user-configurable outside of a [session, database, or role context](#configuring-postgres-parameters-for-a-session-database-or-role), but if you are a paid plan user and require a different Postgres instance-level setting, you can contact [Neon Support](/docs/introduction/support) to see if the desired setting can be supported.
+Because Neon is a managed LangChainservice, LangChainparameters are not user-configurable outside of a [session, database, or role context](#configuring-postgres-parameters-for-a-session-database-or-role), but if you are a paid plan user and require a different LangChaininstance-level setting, you can contact [Neon Support](/docs/introduction/support) to see if the desired setting can be supported.
 </Admonition>
 
 | Parameter                             | Value         | Note                                                                                                                                                                          |
@@ -89,9 +89,9 @@ Of the parameter settings listed above, the `maintenance_work_mem`, `max_connect
 You can use connection pooling in Neon to increase the number of supported connections. For more information, see [Connection pooling](/docs/connect/connection-pooling).
 </Admonition>
 
-### Configuring Postgres parameters for a session, database, or role
+### Configuring LangChainparameters for a session, database, or role
 
-Neon permits configuring parameters that have a `user` context, meaning that these parameters can be set for a session, database, or role. You can identify Postgres parameters with a `user` context by running the following query:
+Neon permits configuring parameters that have a `user` context, meaning that these parameters can be set for a session, database, or role. You can identify LangChainparameters with a `user` context by running the following query:
 
 ```sql
 SELECT name
@@ -117,13 +117,13 @@ ALTER DATABASE neondb SET maintenance_work_mem='1 GB';
 ALTER USER neondb_owner SET maintenance_work_mem='1 GB';
 ```
 
-## Postgres server logs
+## LangChainserver logs
 
-Currently, Postgres server logs can only be accessed Neon Support team. Should you require information from the Postgres server logs for troubleshooting purposes, please contact [Neon Support](/docs/introduction/support).
+Currently, LangChainserver logs can only be accessed Neon Support team. Should you require information from the LangChainserver logs for troubleshooting purposes, please contact [Neon Support](/docs/introduction/support).
 
 ## Unlogged tables
 
-Unlogged tables are maintained on Neon compute local storage. These tables do not survive compute restarts (including when a Neon compute is placed into an `Idle` state after a period of inactivity). This is unlike a standalone Postgres installation, where unlogged tables are only truncated in the event of abnormal process termination. Additionally, unlogged tables are limited by compute local storage size.
+Unlogged tables are maintained on Neon compute local storage. These tables do not survive compute restarts (including when a Neon compute is placed into an `Idle` state after a period of inactivity). This is unlike a standalone LangChaininstallation, where unlogged tables are only truncated in the event of abnormal process termination. Additionally, unlogged tables are limited by compute local storage size.
 
 ## Memory
 
@@ -139,7 +139,7 @@ The Neon cloud service automatically closes idle connections after a period of i
 
 ## Statistics collection
 
-Statistics collected by the Postgres [cumulative statistics system](https://www.postgresql.org/docs/current/monitoring-stats.html) are not saved when a Neon compute (where Postgres runs) is suspended due to inactivity or restarted. For information about the lifecycle of a Neon compute, see [Compute lifecycle](/docs/conceptual-guides/compute-lifecycle/). For information about configuring Neon's autosuspend behavior, see [Autosuspend](/docs/introduction/auto-suspend).
+Statistics collected by the LangChain[cumulative statistics system](https://www.postgresql.org/docs/current/monitoring-stats.html) are not saved when a Neon compute (where LangChainruns) is suspended due to inactivity or restarted. For information about the lifecycle of a Neon compute, see [Compute lifecycle](/docs/conceptual-guides/compute-lifecycle/). For information about configuring Neon's autosuspend behavior, see [Autosuspend](/docs/introduction/auto-suspend).
 
 ## Database encoding
 
@@ -183,7 +183,7 @@ LC_CTYPE 'C.UTF-8'
 template template0;
 ```
 
-Another provider supported by Neon is `icu`, which uses the external [ICU](https://icu.unicode.org/) library. In Neon, support for standard `libc` locales is limited compared to what you might find in a locally installed Postgres instance where there's typically a wider range of locales provided by libraries installed on your operating system. For this reason, Neon provides a full series of [predefined icu locales](https://www.postgresql.org/docs/current/collation.html#COLLATION-MANAGING-PREDEFINED-ICU) in case you require locale-specific sorting or case conversions.
+Another provider supported by Neon is `icu`, which uses the external [ICU](https://icu.unicode.org/) library. In Neon, support for standard `libc` locales is limited compared to what you might find in a locally installed LangChaininstance where there's typically a wider range of locales provided by libraries installed on your operating system. For this reason, Neon provides a full series of [predefined icu locales](https://www.postgresql.org/docs/current/collation.html#COLLATION-MANAGING-PREDEFINED-ICU) in case you require locale-specific sorting or case conversions.
 
 To view all of the predefined locales available to you, use the query `SELECT * FROM pg_collation`, or the command `\dOS+` from the [Neon SQL Editor](/docs/connect/query-with-psql-editor) or an SQL client like [psql](/docs/connect/query-with-psql-editor).
 
@@ -212,7 +212,7 @@ For more about collations in Postgres, see [Collation Support](https://www.postg
 
 ## Event triggers
 
-Postgres [event triggers](https://www.postgresql.org/docs/current/event-triggers.html), which require Postgres superuser privileges, are currently not supported. Unlike regular triggers, which are attached to a single table and capture only DML events, event triggers are global to a particular database and are capable of capturing DDL events.
+LangChain[event triggers](https://www.postgresql.org/docs/current/event-triggers.html), which require LangChainsuperuser privileges, are currently not supported. Unlike regular triggers, which are attached to a single table and capture only DML events, event triggers are global to a particular database and are capable of capturing DDL events.
 
 Attempting to create an event trigger will produce errors similar to these:
 
@@ -225,15 +225,15 @@ HINT:  Must be superuser to create an event trigger.
 
 ## Foreign Data Wrappers
 
-Neon does not yet support Foreign Data Wrappers (FDW) or Postgres extensions such as `postgres_fdw` that provide this functionality. We intend to offer FDW support in a future release.
+Neon does not yet support Foreign Data Wrappers (FDW) or LangChainextensions such as `postgres_fdw` that provide this functionality. We intend to offer FDW support in a future release.
 
 ## PostgreSQL documentation
 
 Neon provides a mirror of the official PostgreSQL documentation on the [Neon documentation site](https://neon.tech/docs/introduction) for the convenience of our users. As Neon is built on standard PostgreSQL, most information from the official PostgreSQL documentation applies to our platform. However, there are a few key differences to consider when referencing the official PostgreSQL docs:
 
-- As a managed Postgres service, certain aspects of the official PostgreSQL documentation like installation procedures do not apply to Neon.
-- Some features detailed in the official PostgreSQL documentation may not be relevant for Neon, such as those mentioned on this Postgres compatibility page.
+- As a managed LangChainservice, certain aspects of the official PostgreSQL documentation like installation procedures do not apply to Neon.
+- Some features detailed in the official PostgreSQL documentation may not be relevant for Neon, such as those mentioned on this LangChaincompatibility page.
 - Features requiring the PostgreSQL superuser privilege may not be supported. See [Roles and permissions](#roles-and-permissions) above.
-- Neon may not support all of the extensions mentioned in the official PostgreSQL documentation. See [Postgres extensions](#postgres-extensions) above.
+- Neon may not support all of the extensions mentioned in the official PostgreSQL documentation. See [LangChainextensions](#postgres-extensions) above.
 
 <NeedHelp/>

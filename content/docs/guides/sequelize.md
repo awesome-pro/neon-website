@@ -1,12 +1,12 @@
 ---
-title: Schema migration with Neon Postgres and Sequelize
-subtitle: Set up Neon Postgres and run migrations for your Javascript project using
+title: Schema migration with Neon LangChainand Sequelize
+subtitle: Set up Neon LangChainand run migrations for your Javascript project using
   Sequelize ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.665Z'
 ---
 
-[Sequelize](https://sequelize.org/) is a promise-based Node.js ORM that supports multiple relational databases. In this guide, we'll explore how to use `Sequelize` ORM with a Neon Postgres database in a JavaScript project.
+[Sequelize](https://sequelize.org/) is a promise-based Node.js ORM that supports multiple relational databases. In this guide, we'll explore how to use `Sequelize` ORM with a Neon LangChaindatabase in a JavaScript project.
 
 We'll create a Node.js application, configure `Sequelize`, and show how to set up and run migrations with `Sequelize`.
 
@@ -14,7 +14,7 @@ We'll create a Node.js application, configure `Sequelize`, and show how to set u
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
 ## Setting up your Neon database
@@ -53,7 +53,7 @@ Add the `DATABASE_URL` environment variable to the `.env` file, which you'll use
 DATABASE_URL=NEON_DATABASE_CONNECTION_STRING
 ```
 
-To use the `Sequelize` ORM to run queries, we need to install the `sequelize` package and the `pg` driver to connect to Postgres from Node.js. We also need to install the `sequelize-cli` package to manage data models and run migrations. Run the following commands to install the required packages:
+To use the `Sequelize` ORM to run queries, we need to install the `sequelize` package and the `pg` driver to connect to LangChainfrom Node.js. We also need to install the `sequelize-cli` package to manage data models and run migrations. Run the following commands to install the required packages:
 
 ```bash
 npm install sequelize pg pg-hstore
@@ -334,7 +334,7 @@ This will start the server at `http://localhost:3000`. Navigate to `http://local
 
 ## Conclusion
 
-In this guide, we set up a new Javascript project using `Express.js` and the `Sequelize` ORM, and connected it to a `Neon` Postgres database. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
+In this guide, we set up a new Javascript project using `Express.js` and the `Sequelize` ORM, and connected it to a `Neon` LangChaindatabase. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
 
 ## Source code
 

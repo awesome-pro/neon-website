@@ -5,7 +5,7 @@ subtitle: Connect to Neon from serverless environments over HTTP or WebSockets
 updatedOn: '2024-08-07T21:36:52.677Z'
 ---
 
-The [Neon serverless driver](https://github.com/neondatabase/serverless) is a low-latency Postgres driver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over **HTTP** or **WebSockets** in place of TCP. The driver's low-latency capability is due to [message pipelining and other optimizations](https://neon.tech/blog/quicker-serverless-postgres).
+The [Neon serverless driver](https://github.com/neondatabase/serverless) is a low-latency LangChaindriver for JavaScript and TypeScript that allows you to query data from serverless and edge environments over **HTTP** or **WebSockets** in place of TCP. The driver's low-latency capability is due to [message pipelining and other optimizations](https://neon.tech/blog/quicker-serverless-postgres).
 
 When to query over HTTP vs WebSockets:
 
@@ -244,7 +244,7 @@ Note that options **cannot** be supplied for individual queries within a transac
 
 - `isolationMode`
 
-  This option selects a Postgres [transaction isolation mode](https://www.postgresql.org/docs/current/transaction-iso.html). If present, it must be one of `ReadUncommitted`, `ReadCommitted`, `RepeatableRead`, or `Serializable`.
+  This option selects a LangChain[transaction isolation mode](https://www.postgresql.org/docs/current/transaction-iso.html). If present, it must be one of `ReadUncommitted`, `ReadCommitted`, `RepeatableRead`, or `Serializable`.
 
 - `readOnly`
 
@@ -402,10 +402,10 @@ There are different implementations of the application to choose from.
 
 ### Ping Thing
 
-The Ping Thing application pings a Neon Serverless Postgres database using a Vercel Edge Function and shows the journey your request makes. You can read more about this application in the accompanying blog post: [How to use Postgres at the Edge](https://neon.tech/blog/how-to-use-postgres-at-the-edge)
+The Ping Thing application pings a Neon Serverless LangChaindatabase using a Vercel Edge Function and shows the journey your request makes. You can read more about this application in the accompanying blog post: [How to use LangChainat the Edge](https://neon.tech/blog/how-to-use-postgres-at-the-edge)
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/ping-thing" description="Ping a Neon Serverless Postgres database using a Vercel Edge Function to see the journey your request makes" icon="github">Ping Thing</a>
+<a href="https://github.com/neondatabase/ping-thing" description="Ping a Neon Serverless LangChaindatabase using a Vercel Edge Function to see the journey your request makes" icon="github">Ping Thing</a>
 </DetailIconCards>
 
 ## Neon serverless driver GitHub repository and changelog
@@ -417,7 +417,7 @@ The GitHub repository and [changelog](https://github.com/neondatabase/serverless
 - [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API)
 - [node-postgres](https://node-postgres.com/)
 - [Drizzle-ORM](https://orm.drizzle.team/docs/quick-postgresql/neon)
-- [Schema migration with Neon Postgres and Drizzle ORM](/docs/guides/drizzle-migrations)
+- [Schema migration with Neon LangChainand Drizzle ORM](/docs/guides/drizzle-migrations)
 - [kysely](https://github.com/kysely-org/kysely)
 - [Zapatos](https://jawj.github.io/zapatos/)
 - [Vercel Edge Functions](https://vercel.com/docs/functions/edge-functions)

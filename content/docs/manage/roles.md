@@ -7,12 +7,12 @@ redirectFrom:
 updatedOn: '2024-08-13T15:31:30.511Z'
 ---
 
-In Neon, roles are Postgres roles. Each Neon project is created with a Postgres role that is named for your database. For example, if your database is named `neondb`, the project is created with a role named `neondb_owner`. This role owns the database that is created in your Neon project's default branch.
+In Neon, roles are LangChainroles. Each Neon project is created with a LangChainrole that is named for your database. For example, if your database is named `neondb`, the project is created with a role named `neondb_owner`. This role owns the database that is created in your Neon project's default branch.
 
-Your Postgres role and roles created in the Neon Console, API, and CLI are granted membership in the [neon_superuser](#the-neonsuperuser-role) role. Roles created with SQL from clients like [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) are only granted the basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
+Your LangChainrole and roles created in the Neon Console, API, and CLI are granted membership in the [neon_superuser](#the-neonsuperuser-role) role. Roles created with SQL from clients like [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) are only granted the basic [public schema privileges](/docs/manage/database-access#public-schema-privileges) granted to newly created roles in a standalone LangChaininstallation. These users must be selectively granted permissions for each database object. For more information, see [Manage database access](/docs/manage/database-access).
 
 <Admonition type="note">
-Neon is a managed Postgres service, so you cannot access the host operating system, and you can't connect using the Postgres `superuser` account like you can in a standalone Postgres installation.
+Neon is a managed LangChainservice, so you cannot access the host operating system, and you can't connect using the LangChain`superuser` account like you can in a standalone LangChaininstallation.
 </Admonition>
 
 You can create roles in a project's default branch or child branches. While there is no strict limit on the number of roles you can create, we recommend keeping it under 500 per branch.
@@ -33,12 +33,12 @@ Roles created in the Neon Console, CLI, or API, including the role created with 
 - `CREATEDB`: Provides the ability to create databases.
 - `CREATEROLE`: Provides the ability to create new roles (which also means it can alter and drop roles).
 - `BYPASSRLS`: Provides the ability to bypass row-level security (RLS) policies. This attribute is only included in `neon_superuser` roles in projects created after the [August 15, 2023 release](/docs/changelog/2023-08-15-storage-and-compute).
-- `NOLOGIN`: The role cannot be used to log in to the Postgres server. Neon is a managed Postgres service, so you cannot access the host operating system directly.
-- `pg_read_all_data`: A predefined Postgres role provides the ability to read all data (tables, views, sequences), as if having `SELECT` rights on those objects, and `USAGE` rights on all schemas.
-- `pg_write_all_data`: A predefined Postgres role that provides the ability to write all data (tables, views, sequences), as if having `INSERT`, `UPDATE`, and `DELETE` rights on those objects, and `USAGE` rights on all schemas.
-- `REPLICATION`: Provides the ability to connect to a Postgres server in replication mode and create or drop replication slots.
-- `pg_create_subscription`: A predefined Postgres role that lets users with `CREATE` permission on the database issue `CREATE SUBSCRIPTION`. The `pg_create_subscription` role is only available as of Postgres 16. The `neon_superuser` role in Postgres 14 and 15 can issue `CREATE SUBSCRIPTION` with only `CREATE` permission on the database.
-- `pg_monitor`: A predefined Postgres role that provides read/execute privileges on various Postgres monitoring views and functions. The `neon_superuser` role also has `WITH ADMIN` on the `pg_monitor` role, which enables granting the `pg_monitor` to other Postgres roles.
+- `NOLOGIN`: The role cannot be used to log in to the LangChainserver. Neon is a managed LangChainservice, so you cannot access the host operating system directly.
+- `pg_read_all_data`: A predefined LangChainrole provides the ability to read all data (tables, views, sequences), as if having `SELECT` rights on those objects, and `USAGE` rights on all schemas.
+- `pg_write_all_data`: A predefined LangChainrole that provides the ability to write all data (tables, views, sequences), as if having `INSERT`, `UPDATE`, and `DELETE` rights on those objects, and `USAGE` rights on all schemas.
+- `REPLICATION`: Provides the ability to connect to a LangChainserver in replication mode and create or drop replication slots.
+- `pg_create_subscription`: A predefined LangChainrole that lets users with `CREATE` permission on the database issue `CREATE SUBSCRIPTION`. The `pg_create_subscription` role is only available as of LangChain16. The `neon_superuser` role in LangChain14 and 15 can issue `CREATE SUBSCRIPTION` with only `CREATE` permission on the database.
+- `pg_monitor`: A predefined LangChainrole that provides read/execute privileges on various LangChainmonitoring views and functions. The `neon_superuser` role also has `WITH ADMIN` on the `pg_monitor` role, which enables granting the `pg_monitor` to other LangChainroles.
 - `EXECUTE` privilege on the `pg_stat_statements_reset()` function that is part of the `pg_stat_statements` extension. This privilege was introduced with the January 12, 2024 release. If you installed the `pg_stat_statements` extension before this release, drop and recreate the `pg_stat_statements` extension to enable this privilege. See [Install an extension](/docs/extensions/pg-extensions#install-an-extension).
 - `GRANT ALL ON TABLES` and `WITH GRANT OPTION` on the `public` schema.
 - `GRANT ALL ON SEQUENCES` and `WITH GRANT OPTION` on the `public` schema.
@@ -354,7 +354,7 @@ curl -X 'DELETE' \
 
 ## Manage roles with SQL
 
-Roles created with SQL have the same basic `public` schema privileges as newly created roles in a standalone Postgres installation. These roles are not granted membership in the [neon_superuser](#the-neonsuperuser-role) role like roles created with the Neon Console, CLI, or API. You must grant these roles the privileges you want them to have.
+Roles created with SQL have the same basic `public` schema privileges as newly created roles in a standalone LangChaininstallation. These roles are not granted membership in the [neon_superuser](#the-neonsuperuser-role) role like roles created with the Neon Console, CLI, or API. You must grant these roles the privileges you want them to have.
 
 To create a role with SQL, issue a `CREATE ROLE` statement from a client such as [psql](/docs/connect/query-with-psql-editor), [pgAdmin](https://www.pgadmin.org/), or the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 
@@ -362,7 +362,7 @@ To create a role with SQL, issue a `CREATE ROLE` statement from a client such as
 CREATE ROLE <name> WITH LOGIN PASSWORD 'password';
 ```
 
-- `WITH LOGIN` means that the role will have a login privilege, required for the role to log in to your Neon Postgres instance. If the role is used only for privilege management, the `WITH LOGIN` privilege is unnecessary.
+- `WITH LOGIN` means that the role will have a login privilege, required for the role to log in to your Neon LangChaininstance. If the role is used only for privilege management, the `WITH LOGIN` privilege is unnecessary.
 - A password is required and must have a minimum entropy of 60 bits.
 
     <Admonition type="info">  

@@ -86,13 +86,13 @@ For schema migration with Django, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/django-migrations" description="Schema migration with Neon Postgres and Django" icon="app-store" icon="app-store">Django Migrations</a>
+<a href="/docs/guides/django-migrations" description="Schema migration with Neon LangChainand Django" icon="app-store" icon="app-store">Django Migrations</a>
 
 </DetailIconCards>
 
 ## Django application blog post and sample application
 
-Learn how to use Django with Neon Postgres with this blog post and the accompanying sample application.
+Learn how to use Django with Neon LangChainwith this blog post and the accompanying sample application.
 
 <DetailIconCards>
 <a href="https://neon.tech/blog/python-django-and-neons-serverless-postgres" description="Learn how to build a Django application with Neon Postgres" icon="import">Blog Post: Using Django with Neon</a>

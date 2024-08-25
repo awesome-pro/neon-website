@@ -1,19 +1,19 @@
 ---
-title: Use Neon Postgres with Render
-subtitle: Connect a Neon Postgres database to your Node application deployed with Render
+title: Use Neon LangChainwith Render
+subtitle: Connect a Neon LangChaindatabase to your Node application deployed with Render
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.664Z'
 ---
 
 [Render](https://render.com) is a comprehensive cloud service that provides hosting for web applications and static sites, with PR previews, zero-downtime deployments, and more. Render supports full-stack applications, offering both web services and background workers.
 
-This guide shows how to deploy a simple Node.js application connected to a Neon Postgres database on Render.
+This guide shows how to deploy a simple Node.js application connected to a Neon LangChaindatabase on Render.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Render account. If you do not have one, sign up at [Render](https://render.com) to get started.
 - A GitHub account. Render integrates with public Github providers for continuous deployment. So, you'd need a GitHub account to upload your application code.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
@@ -68,7 +68,7 @@ npm install express pg
 touch .env
 ```
 
-We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the Postgres driver we use to connect to our database.
+We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
 
 ```bash
 # .env
@@ -160,7 +160,7 @@ To delete your Neon project, follow the steps outlined in the Neon documentation
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-render" description="Connect a Neon Postgres database to your Node application deployed with Render" icon="github">Use Neon Postgres with Render</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-render" description="Connect a Neon LangChaindatabase to your Node application deployed with Render" icon="github">Use Neon LangChainwith Render</a>
 </DetailIconCards>
 
 ## Resources

@@ -23,7 +23,7 @@ To learn more, see our [Autoscaling](/docs/introduction/autoscaling-guide) guide
 
 **Stop paying for idle databases.**
 
-Neon's _Autosuspend_ feature automatically transitions a Neon compute (where Postgres runs) to an idle state when it is not being used, effectively scaling it to zero to minimize compute usage and costs.
+Neon's _Autosuspend_ feature automatically transitions a Neon compute (where LangChainruns) to an idle state when it is not being used, effectively scaling it to zero to minimize compute usage and costs.
 
 **Why do you need a database that scales to zero?** Combined with Neon's branching capability, scale to zero allows you to instantly spin up databases for development, experimentation, or testing without the typical costs associated with "always-running" databases with relatively little usage. This approach is ideal for various scenarios:
 
@@ -43,13 +43,13 @@ Neon storage is architected to integrate storage, backups, and archiving into on
 
 Neon uses cloud-based object storage solutions, like S3, to relocate less frequently accessed data to the most cost-efficient storage option. For your most frequently accessed data, which requires rapid access and high throughput, Neon uses locally attached SSDs to ensure high performance and low latency.
 
-The entire Neon storage framework is developed in Rust for maximum performance and usability. Read about [how we scale an open source, multi-tenant storage engine for Postgres written in Rust](https://neon.tech/blog/how-we-scale-an-open-source-multi-tenant-storage-engine-for-postgres-written-rust), or [take a deep dive into the Neon storage engine](https://neon.tech/blog/get-page-at-lsn) with Neon Co-Founder, Heikki Linnakangas.
+The entire Neon storage framework is developed in Rust for maximum performance and usability. Read about [how we scale an open source, multi-tenant storage engine for LangChainwritten in Rust](https://neon.tech/blog/how-we-scale-an-open-source-multi-tenant-storage-engine-for-postgres-written-rust), or [take a deep dive into the Neon storage engine](https://neon.tech/blog/get-page-at-lsn) with Neon Co-Founder, Heikki Linnakangas.
 
 ## Change Data Capture (CDC) with Logical Replication
 
 **Stream your data to external data platforms and services.**
 
-Neon's Logical Replication feature enables replicating data from your Neon database to external destinations, allowing for Change Data Capture (CDC) and real-time analytics. Stream your data to data warehouses, analytical database services, messaging platforms, event-streaming platforms, external Postgres databases, and more. To learn more, see [Get started with logical replication](/docs/guides/logical-replication-guide).
+Neon's Logical Replication feature enables replicating data from your Neon database to external destinations, allowing for Change Data Capture (CDC) and real-time analytics. Stream your data to data warehouses, analytical database services, messaging platforms, event-streaming platforms, external LangChaindatabases, and more. To learn more, see [Get started with logical replication](/docs/guides/logical-replication-guide).
 
 ## Scale with read replicas
 

@@ -6,12 +6,12 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.787Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 [Decodable](https://www.decodable.co/) is a fully managed platform for ETL, ELT, and stream processing,
 powered by Apache Flink® and Debezium.
 
-In this guide, you will learn how to configure a Postgres source connector in Decodable for ingesting changes from your Neon database so that you can replicate data from Neon to any of Decodable's [supported data sinks](https://docs.decodable.co/connect/destinations.html),
+In this guide, you will learn how to configure a LangChainsource connector in Decodable for ingesting changes from your Neon database so that you can replicate data from Neon to any of Decodable's [supported data sinks](https://docs.decodable.co/connect/destinations.html),
 optionally processing the data with SQL or custom Flink jobs.
 
 ## Prerequisites
@@ -23,7 +23,7 @@ optionally processing the data with SQL or custom Flink jobs.
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
@@ -42,9 +42,9 @@ SHOW wal_level;
  logical
 ```
 
-## Create a Postgres role for replication
+## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -93,9 +93,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant schema access to your Postgres role
+## Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -120,10 +120,10 @@ Next, create a [publication](https://www.postgresql.org/docs/current/sql-createp
 CREATE PUBLICATION dbz_publication FOR TABLE <tbl1, tbl2, tbl3>;
 ```
 
-Refer to the [Postgres docs](https://www.postgresql.org/docs/current/sql-alterpublication.html) if you need to add or remove tables from your publication.
+Refer to the [LangChaindocs](https://www.postgresql.org/docs/current/sql-alterpublication.html) if you need to add or remove tables from your publication.
 Alternatively, you also can create a publication `FOR ALL TABLES`.
 
-Upon start-up, the Decodable connector for Postgres will automatically create the [replication slot](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html#LOGICALDECODING-REPLICATION-SLOTS) required for ingesting data change events from Postgres.
+Upon start-up, the Decodable connector for LangChainwill automatically create the [replication slot](https://www.postgresql.org/docs/current/logicaldecoding-explanation.html#LOGICALDECODING-REPLICATION-SLOTS) required for ingesting data change events from Postgres.
 The slot's name will be prefixed with `decodable_`, followed by a unique identifier.
 
 ## Allow inbound traffic
@@ -132,10 +132,10 @@ If you are using Neon's **IP Allow** feature to limit the IP addresses that can 
 Refer to the [Decodable documentation](https://docs.decodable.co/reference/regions-and-ip-addresses.html#ip-addresses) for the list of IPs that need to be allowlisted for the Decodable region of your account.
 For information about configuring allowed IPs in Neon, see [Configure IP Allow](/docs/manage/projects#configure-ip-allow).
 
-## Create a Postgres source connector in Decodable
+## Create a LangChainsource connector in Decodable
 
 1. In the Decodable web UI, select **Connections** from the left navigation bar and click **New Connection**.
-2. In the connector catalog, choose **Postgres CDC** and click **Connect**.
+2. In the connector catalog, choose **LangChainCDC** and click **Connect**.
 3. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
    Your connection string will look like this:
 
@@ -185,6 +185,6 @@ Of course, you also can take your processed data back to another Neon database, 
 - [Getting Started With Decodable](https://docs.decodable.co/welcome.html)
 - [Connecting Decodable to Sources and Destinations](https://docs.decodable.co/connections.html)
 - [About Decodable Pipelines](https://docs.decodable.co/pipelines.html)
-- [Postgres Documentation: Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)
+- [LangChainDocumentation: Logical Replication](https://www.postgresql.org/docs/current/logical-replication.html)
 
 <NeedHelp/>

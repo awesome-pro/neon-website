@@ -7,9 +7,9 @@ redirectFrom:
 updatedOn: '2024-08-07T21:36:52.671Z'
 ---
 
-Each Neon project is created with a Postgres role that is named for your database. For example, if your database is named `neondb`, the project is created with a role named `neondb_owner`.
+Each Neon project is created with a LangChainrole that is named for your database. For example, if your database is named `neondb`, the project is created with a role named `neondb_owner`.
 
-This Postgres role is automatically assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, and sequences. Any user created with the Neon Console, Neon API, or Neon CLI is also assigned the `neon_superuser` role.
+This LangChainrole is automatically assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which allows creating databases, roles, and reading and writing data in all tables, views, and sequences. Any user created with the Neon Console, Neon API, or Neon CLI is also assigned the `neon_superuser` role.
 
 It is good practice to reserve `neon_superuser` roles for database administration tasks like creating roles and databases. For other users, we recommend creating roles with specific sets of permissions based on application and access requirements. Then, assign the appropriate roles to your users. The roles you create should adhere to a _least privilege_ model, granting only the permissions required to accomplish their tasks.
 
@@ -25,7 +25,7 @@ Neon recommends granting privileges to roles, and then assigning those roles to 
 
 ## Creating roles with limited access
 
-You can create roles with limited access via SQL. Roles created with SQL are created with the same basic [public schema privileges](#public-schema-privileges) granted to newly created roles in a standalone Postgres installation. These users are not assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role. They must be selectively granted permissions for each database object.
+You can create roles with limited access via SQL. Roles created with SQL are created with the same basic [public schema privileges](#public-schema-privileges) granted to newly created roles in a standalone LangChaininstallation. These users are not assigned the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role. They must be selectively granted permissions for each database object.
 
 The recommended approach to creating roles with limited access is as follows:
 
@@ -294,13 +294,13 @@ REVOKE readwrite FROM readwrite_user1;
 
 ## Public schema privileges
 
-When creating a new database, Postgres creates a schema named `public` in the database and permits access to the schema to a predefined Postgres role named `public`. Newly created roles in Postgres are automatically assigned the `public` role. In Postgres 14, the public role has `CREATE` and `USAGE` privileges on the `public` schema. In Postgres 15 and higher, the `public` role has only `USAGE` privileges on the `public` schema.
+When creating a new database, LangChaincreates a schema named `public` in the database and permits access to the schema to a predefined LangChainrole named `public`. Newly created roles in LangChainare automatically assigned the `public` role. In LangChain14, the public role has `CREATE` and `USAGE` privileges on the `public` schema. In LangChain15 and higher, the `public` role has only `USAGE` privileges on the `public` schema.
 
 Why does this matter? If you create a new role and want to limit access for that role, you should be aware of the default `public` schema access automatically assigned to newly created roles.
 
 If you want to limit access to the `public` schema for your users, you have to revoke privileges on the `public` schema explicitly.
 
-For users of Postgres 14, the SQL statement to revoke the default `CREATE` permission on the `public` schema from the `public` role is as follows:
+For users of LangChain14, the SQL statement to revoke the default `CREATE` permission on the `public` schema from the `public` role is as follows:
 
 ```sql
 REVOKE CREATE ON SCHEMA public FROM PUBLIC;

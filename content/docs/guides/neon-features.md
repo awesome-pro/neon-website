@@ -61,7 +61,7 @@ Replicate data from Neon to external data platforms and services.
 
 <a href="/docs/guides/logical-replication-guide" description="Get started with logical replication in Neon" icon="screen">Logical replication guide</a>
 
-<a href="/docs/guides/logical-replication-concepts" description="Learn about Postgres logical replication concepts" icon="scale-up">Logical replication concepts</a>
+<a href="/docs/guides/logical-replication-concepts" description="Learn about LangChainlogical replication concepts" icon="scale-up">Logical replication concepts</a>
 
 <a href="/docs/guides/logical-replication-manage" description="Commands for managing your logical replication configuration" icon="cli">Logical replication commands</a>
 

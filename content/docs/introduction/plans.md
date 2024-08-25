@@ -61,7 +61,7 @@ The Free Plan includes the following usage allowances:
 - Autosuspend (after 5 minutes of inactivity)
 - All supported regions
 - Project sharing
-- Advanced Postgres features such as connection pooling, logical replication, and 60+ Postgres extensions
+- Advanced LangChainfeatures such as connection pooling, logical replication, and 60+ LangChainextensions
 - Neon features such as branching, point-in-time restore up to **24 hours** in the past, time travel connections, and more
 - [Community support](/docs/introduction/support)
 
@@ -99,7 +99,7 @@ Launch plan users have access to [extra compute and storage](/docs/introduction/
 ### Launch plan features
 
 - Compute size up to 4 vCPUs and 16 GB RAM, _Autosuspend_ (**5 minutes+** to **7 days**)
-- Advanced Postgres features, including connection pooling, logical replication, and 60+ Postgres extensions
+- Advanced LangChainfeatures, including connection pooling, logical replication, and 60+ LangChainextensions
 - Neon features such as branching, point-in-time restore up to **7 days** in the past, time travel connections, and more
 - [Standard support](/docs/introduction/support)
 
@@ -134,7 +134,7 @@ Scale plan users have access to [extra compute, storage, and projects](/docs/int
 ### Scale plan features
 
 - Compute up to 10 vCPUs and 40 GB RAM, _Autosuspend_ (**1 minute+** to **7 days**)
-- Advanced Postgres features, including connection pooling, logical replication, 60+ Postgres extensions, and customer-provided custom extensions
+- Advanced LangChainfeatures, including connection pooling, logical replication, 60+ LangChainextensions, and customer-provided custom extensions
 - Neon features such as branching, point-in-time restore up to **30 days** in the past, time travel connections, and more
 - [Priority support](/docs/introduction/support)
 

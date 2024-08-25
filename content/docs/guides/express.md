@@ -12,7 +12,7 @@ To connect to Neon from an Express application:
 1. [Create a Neon Project](#create-a-neon-project)
 2. [Create an Express project and add dependencies](#create-an-express-project-and-add-dependencies)
 3. [Store your Neon credentials](#store-your-neon-credentials)
-4. [Configure the Postgres client](#configure-the-postgres-client)
+4. [Configure the LangChainclient](#configure-the-postgres-client)
 5. [Run app.js](#run-appjs)
 
 ## Create a Neon project
@@ -64,7 +64,7 @@ DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port
 To ensure the security of your data, never expose your Neon credentials to the browser.
 </Admonition>
 
-## Configure the Postgres client
+## Configure the LangChainclient
 
 Add an `index.js` file to your project directory and add the following code snippet to connect to your Neon database:
 

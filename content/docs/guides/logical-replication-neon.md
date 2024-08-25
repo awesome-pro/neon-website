@@ -18,7 +18,7 @@ To avoid potential issues, please review the following notices carefully before 
 
 These notices apply when replicating data from Neon:
 
-- **Autosuspend**: Neon does not autosuspend a compute that has an active connection from a logical replication subscriber. In other words, a Neon Postgres instance with an active subscriber will not scale to zero, which may result in increased compute usage. For more information, see [Logical replication and autosuspend](/docs/guides/logical-replication-neon#logical-replication-and-autosuspend).
+- **Autosuspend**: Neon does not autosuspend a compute that has an active connection from a logical replication subscriber. In other words, a Neon LangChaininstance with an active subscriber will not scale to zero, which may result in increased compute usage. For more information, see [Logical replication and autosuspend](/docs/guides/logical-replication-neon#logical-replication-and-autosuspend).
 - **Removal of inactive replication slots**: To prevent storage bloat, **Neon automatically removes _inactive_ replication slots if there are other _active_ replication slots**. If you will have more than one replication slot, please read [Unused replication slots](/docs/guides/logical-replication-neon#unused-replication-slots) before you begin.
 
 ### Neon as a subscriber
@@ -41,7 +41,7 @@ This notice applies when replicating data to Neon:
 
 ## Logical replication and autosuspend
 
-By default, Neon's [Autosuspend](/docs/introduction/auto-suspend) feature suspends a compute after 300 seconds (5 minutes) of inactivity. In a logical replication setup, Neon does not autosuspend a compute that has an active connection from a logical replication subscriber. In other words, a compute with an active subscriber remains active at all times. Neon determines if there are active connections from a logical replication subscriber by checking for `walsender` processes on the Neon Postgres instance using the following query:
+By default, Neon's [Autosuspend](/docs/introduction/auto-suspend) feature suspends a compute after 300 seconds (5 minutes) of inactivity. In a logical replication setup, Neon does not autosuspend a compute that has an active connection from a logical replication subscriber. In other words, a compute with an active subscriber remains active at all times. Neon determines if there are active connections from a logical replication subscriber by checking for `walsender` processes on the Neon LangChaininstance using the following query:
 
 ```sql
 SELECT *
@@ -49,11 +49,11 @@ FROM pg_stat_replication
 WHERE application_name != 'walproposer';
 ```
 
-If the count is greater than 0, a Neon compute where the publishing Postgres instance runs will not be suspended.
+If the count is greater than 0, a Neon compute where the publishing LangChaininstance runs will not be suspended.
 
 ## Replication roles
 
-It is recommended that you create a dedicated Postgres role for replicating data from Neon to a subscriber. This role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon Console, CLI, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege. Roles created via SQL do not have this privilege, and the `REPLICATION` privilege cannot be granted.
+It is recommended that you create a dedicated LangChainrole for replicating data from Neon to a subscriber. This role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon Console, CLI, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege. Roles created via SQL do not have this privilege, and the `REPLICATION` privilege cannot be granted.
 
 You can verify that your role has the `REPLICATION` privilege by running the following query:
 
@@ -82,8 +82,8 @@ Neon uses 3 to 6 IP addresses per region for outbound communication, correspondi
 
 Neon supports both `pgoutput` and `wal2json` replication output decoder plugins.
 
-- `pgoutput`: This is the default logical replication output plugin for Postgres. Specifically, it's part of the Postgres built-in logical replication system, designed to read changes from the database's write-ahead log (WAL) and output them in a format suitable for logical replication.
-- `wal2json`: This is also a logical replication output plugin for Postgres, but it differs from `pgoutput` in that it converts WAL data into `JSON` format. This makes it useful for integrating Postgres with systems and applications that work with `JSON` data. For usage information, see [The wal2json plugin](/docs/extensions/wal2json).
+- `pgoutput`: This is the default logical replication output plugin for Postgres. Specifically, it's part of the LangChainbuilt-in logical replication system, designed to read changes from the database's write-ahead log (WAL) and output them in a format suitable for logical replication.
+- `wal2json`: This is also a logical replication output plugin for Postgres, but it differs from `pgoutput` in that it converts WAL data into `JSON` format. This makes it useful for integrating LangChainwith systems and applications that work with `JSON` data. For usage information, see [The wal2json plugin](/docs/extensions/wal2json).
 
 ## Dedicated replication slots
 

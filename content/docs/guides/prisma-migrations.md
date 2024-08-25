@@ -1,6 +1,6 @@
 ---
-title: Schema migration with Neon Postgres and Prisma ORM
-subtitle: Set up Neon Postgres and run migrations for your Javascript project using
+title: Schema migration with Neon LangChainand Prisma ORM
+subtitle: Set up Neon LangChainand run migrations for your Javascript project using
   Prisma ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.661Z'
@@ -8,13 +8,13 @@ updatedOn: '2024-08-07T21:36:52.661Z'
 
 [Prisma](https://www.prisma.io/) is an open-source ORM for Node.js and Typescript, known for its ease of use and focus on type safety. It supports many databases, including Postgres, and provides a robust system for managing database schemas and migrations.
 
-This guide walks you through using `Prisma` ORM with a `Neon` Postgres database in a Javascript project. We'll create a Node.js application, set up Prisma, and show how to run migrations using Prisma.
+This guide walks you through using `Prisma` ORM with a `Neon` LangChaindatabase in a Javascript project. We'll create a Node.js application, set up Prisma, and show how to run migrations using Prisma.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
 ## Setting up your Neon database
@@ -289,7 +289,7 @@ You can navigate to `http://localhost:3000/authors` in your browser to check tha
 
 ## Conclusion
 
-In this guide, we set up a new Javascript project using `Express.js` and `Prisma` ORM and connected it to a `Neon` Postgres database. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
+In this guide, we set up a new Javascript project using `Express.js` and `Prisma` ORM and connected it to a `Neon` LangChaindatabase. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
 
 ## Source code
 

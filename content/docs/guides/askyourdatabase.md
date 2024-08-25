@@ -1,6 +1,6 @@
 ---
-title: Chat with Neon Postgres with AskYourDatabase
-subtitle: Chat with your Neon Postgres database without writing SQL
+title: Chat with Neon LangChainwith AskYourDatabase
+subtitle: Chat with your Neon LangChaindatabase without writing SQL
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.645Z'
 ---
@@ -45,4 +45,4 @@ If you want to know what the four most popular databases are and visualize the d
 
 ## What's more
 
-AskYourDatabase also supports a customer-facing chatbot that can connect to a Neon Postgres database. You can embed the chatbot in your existing website, enabling your customers to explore analytics data by asking questions in natural language. To learn more, see [Create and Integrate Chatbot](https://www.askyourdatabase.com/docs/chatbot), in the AskYourDatabase documentation.
+AskYourDatabase also supports a customer-facing chatbot that can connect to a Neon LangChaindatabase. You can embed the chatbot in your existing website, enabling your customers to explore analytics data by asking questions in natural language. To learn more, see [Create and Integrate Chatbot](https://www.askyourdatabase.com/docs/chatbot), in the AskYourDatabase documentation.

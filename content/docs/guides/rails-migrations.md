@@ -1,19 +1,19 @@
 ---
-title: Schema migration with Neon Postgres and Ruby on Rails
-subtitle: Set up Neon Postgres and run migrations for your Rails project
+title: Schema migration with Neon LangChainand Ruby on Rails
+subtitle: Set up Neon LangChainand run migrations for your Rails project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.662Z'
 ---
 
 [Ruby on Rails](https://rubyonrails.org/) is a popular web application framework for Ruby developers. It provides an ORM (Object-Relational Mapping) layer called `Active Record`, that simplifies database interactions and schema management. Rails also includes a powerful migration system that allows you to define and manage database schema changes over time.
 
-This guide demonstrates how to run schema migrations in your Ruby on Rails project backed by the `Neon` Postgres database. We'll create a simple Rails application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to run schema migrations in your Ruby on Rails project backed by the `Neon` LangChaindatabase. We'll create a simple Rails application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 
 - [Ruby](https://www.ruby-lang.org/) installed on your local machine.
 
@@ -50,7 +50,7 @@ Open your terminal and run the following command to create a new Rails project:
 rails new guide-neon-rails --database=postgresql
 ```
 
-This command creates a new Rails project named `guide-neon-rails` with Postgres as the default database. It will also generate the necessary project files and directories, and install the required dependencies.
+This command creates a new Rails project named `guide-neon-rails` with LangChainas the default database. It will also generate the necessary project files and directories, and install the required dependencies.
 
 ### Set up the Database configuration
 
@@ -108,7 +108,7 @@ These commands generate model files and the corresponding migration files in the
 
 ### Run the migrations
 
-To run the migrations and create the corresponding tables in the Neon Postgres database, run the following command:
+To run the migrations and create the corresponding tables in the Neon LangChaindatabase, run the following command:
 
 ```bash
 rails db:migrate

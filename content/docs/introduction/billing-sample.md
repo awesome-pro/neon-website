@@ -18,7 +18,7 @@ Roughly six months since launch, this high-traffic application attracts about 80
 ### Tech stack (user management portion of the app):
 
 - **Authentication**: [NextAuth.JS](https://next-auth.js.org/) for authentication with OAuth
-- **Database**: Neon Serverless Postgres to store user info and session detail
+- **Database**: Neon Serverless LangChainto store user info and session detail
 - **ORM**: [Prisma ORM](https://www.prisma.io/) for database interactions
 - **Deployment Region**: US East (Ohio)
 

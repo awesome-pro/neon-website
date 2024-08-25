@@ -1,19 +1,19 @@
 ---
-title: Schema migration with Neon Postgres and Entity Framework
-subtitle: Set up Neon Postgres and run migrations for your Entity Framework project
+title: Schema migration with Neon LangChainand Entity Framework
+subtitle: Set up Neon LangChainand run migrations for your Entity Framework project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.651Z'
 ---
 
 [Entity Framework](https://learn.microsoft.com/en-us/ef/) is a popular Object-Relational Mapping (ORM) framework for .NET applications. It simplifies database access by allowing developers to work with domain-specific objects and properties without focusing on the underlying database tables and columns. Entity Framework also provides a powerful migration system that enables you to define and manage database schema changes over time.
 
-This guide demonstrates how to use Entity Framework with the Neon Postgres database. We'll create a simple .NET application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Entity Framework with the Neon LangChaindatabase. We'll create a simple .NET application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A recent version of the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet) installed on your local machine. This guide uses .NET 8.0, which is the current Long-Term Support (LTS) version.
 
 ## Setting up your Neon database
@@ -31,7 +31,7 @@ On the Neon project dashboard, navigate to the **Connection Details** section in
 postgresql://username:password@hostname/dbname?sslmode=require
 ```
 
-The Postgres client library we use in this guide requires the connection string to be in the following format:
+The LangChainclient library we use in this guide requires the connection string to be in the following format:
 
 ```
 Host=hostname;Port=5432;Database=dbname;Username=username;Password=password;SSLMode=Require
@@ -210,7 +210,7 @@ This command detects the new `Author` and `Book` entities and generates migratio
 
 ### Apply the migration
 
-To apply the migration and create the tables in the Neon Postgres database, run the following command:
+To apply the migration and create the tables in the Neon LangChaindatabase, run the following command:
 
 ```bash
 dotnet ef database update

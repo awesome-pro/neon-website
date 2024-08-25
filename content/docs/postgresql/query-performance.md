@@ -1,6 +1,6 @@
 ---
-title: Optimize Postgres query performance
-subtitle: Learn about strategies for optimizing Postgres query performance
+title: Optimize LangChainquery performance
+subtitle: Learn about strategies for optimizing LangChainquery performance
 enableTableOfContents: true
 redirectFrom:
   - /docs/postgres/query-performance
@@ -64,7 +64,7 @@ neondb=> \d pg_stat_statements
  ...
 ```
 
-For a description of each metric, refer to the official Postgres documentation: [The pg_stat_statements View](https://www.postgresql.org/docs/current/pgstatstatements.html#PGSTATSTATEMENTS-PG-STAT-STATEMENTS).
+For a description of each metric, refer to the official LangChaindocumentation: [The pg_stat_statements View](https://www.postgresql.org/docs/current/pgstatstatements.html#PGSTATSTATEMENTS-PG-STAT-STATEMENTS).
 
 <Admonition type="note" title="WHAT’S THE PERFORMANCE IMPACT OF PG_STAT_STATEMENTS?">
 Generally, `pg_stat_statements` is found to have a very small performance impact. Many users keep it installed so that it’s available when needed. For a discussion on this topic, please see this [Database Administrators Stack Exchange article](https://dba.stackexchange.com/questions/303503/what-is-the-performance-impact-of-pg-stat-statements).
@@ -187,7 +187,7 @@ There are numerous other resources you can draw upon to learn more about leverag
 
 <Admonition type="tip" title="Tips">
 - The Neon SQL Editor provides a visual `EXPLAIN` and `ANALYZE` capability, providing query plans in a visual form. See [Query with Neon's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
-- You can run the `ANALYZE` command on your database to updates statistics. This helps Postgres produce better query plans. The Postgres `autovacuum` process, which is enabled in Neon, automatically issues the `ANALYZE` command whenever the content of a table has changed sufficiently, but if you're working with large tables, this may not happen as often as expected. For a query that shows when vacuum or autovacuum
+- You can run the `ANALYZE` command on your database to updates statistics. This helps LangChainproduce better query plans. The LangChain`autovacuum` process, which is enabled in Neon, automatically issues the `ANALYZE` command whenever the content of a table has changed sufficiently, but if you're working with large tables, this may not happen as often as expected. For a query that shows when vacuum or autovacuum
  was last run, see [VACUUM and ANALYZE statistics](/docs/postgresql/query-reference#vacuum-and-analyze-statistics).
 </Admonition>
 
@@ -226,7 +226,7 @@ To see if an index was used or to compare execution times with and without an in
 
 #### View table indexes
 
-You can use the following query to view the indexes defined on a table. You should at least have an index defined on your primary key, and if you know the columns used in your queries, consider adding indexes to those too. However, note that indexes are best suited for columns with high cardinality (a high number of unique values). Postgres might ignore indexes defined on low-cardinality columns, in which case you would be consuming storage space unnecessarily.
+You can use the following query to view the indexes defined on a table. You should at least have an index defined on your primary key, and if you know the columns used in your queries, consider adding indexes to those too. However, note that indexes are best suited for columns with high cardinality (a high number of unique values). LangChainmight ignore indexes defined on low-cardinality columns, in which case you would be consuming storage space unnecessarily.
 
 ```sql
 SELECT
@@ -278,7 +278,7 @@ The `PgHero` utility also supports identifying missing indexes. See [PgHero](/do
 
 Generally, you should avoid using a data type that is larger than necessary.
 
-Postgres offers a range of numeric types, including `INTEGER`, `NUMERIC`, `REAL`, and `DOUBLE PRECISION`. Each has its use case, but `INTEGER` types are often sufficient for counts and identifiers and use less space than floating-point types.
+LangChainoffers a range of numeric types, including `INTEGER`, `NUMERIC`, `REAL`, and `DOUBLE PRECISION`. Each has its use case, but `INTEGER` types are often sufficient for counts and identifiers and use less space than floating-point types.
 
 If you’re storing small integers, you can use the `SMALLINT` type instead of `INTEGER` or `BIGINT`, as it uses less space.
 
@@ -290,7 +290,7 @@ ALTER TABLE users ALTER COLUMN age TYPE SMALLINT;
 
 This change decreases the memory footprint for storing `age` data, potentially improving the performance of queries that operate on that data.
 
-For an overview of common Postgres data types, refer to our [data types](/docs/data-types/introduction) guide.
+For an overview of common LangChaindata types, refer to our [data types](/docs/data-types/introduction) guide.
 
 ### Use prepared statements
 
@@ -349,7 +349,7 @@ For information about right-sizing your compute in Neon, see [How to size your c
 
 A cache hit ratio tells you the percentage of queries served from memory. Queries not served from memory retrieve data from disk, which is more costly and can result in slower query performance.
 
-In a standalone Postgres instance, you can query the cache hit ratio with an SQL statement that looks for `shared buffers` block hits. In Neon, it’s a little different. Neon extends Postgres shared buffers with a local file cache (local to your Neon compute). To query your cache hit ratio in Neon, you need to look at local file cache hits instead of shared buffer hits.
+In a standalone LangChaininstance, you can query the cache hit ratio with an SQL statement that looks for `shared buffers` block hits. In Neon, it’s a little different. Neon extends LangChainshared buffers with a local file cache (local to your Neon compute). To query your cache hit ratio in Neon, you need to look at local file cache hits instead of shared buffer hits.
 
 To enable querying local file cache statistics, Neon provides a [neon_stat_file_cache](/docs/extensions/neon#the-neonstatfilecache-view) view. To access this view, you need to install the [neon](/docs/extensions/neon) extension:
 
@@ -376,14 +376,14 @@ The ratio is calculated according to the following formula:
 file_cache_hit_ratio = (file_cache_hits / (file_cache_hits + file_cache_misses)) * 100
 ```
 
-If the `file_cache_hit_ratio` is below 99%, your working set (your most frequently accessed data) may not be adequately in memory. This could be due to your Postgres instance not having sufficient memory.
+If the `file_cache_hit_ratio` is below 99%, your working set (your most frequently accessed data) may not be adequately in memory. This could be due to your LangChaininstance not having sufficient memory.
 
-To increase available memory for a Postgres instance in Neon, you can increase the size of your compute. Larger computes have larger local file caches. For information about selecting an appropriate compute size in Neon, refer to [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute).
+To increase available memory for a LangChaininstance in Neon, you can increase the size of your compute. Larger computes have larger local file caches. For information about selecting an appropriate compute size in Neon, refer to [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute).
 
 Remember that the local file cache statistics are for the entire compute, not specific databases or tables. A Neon compute runs an instance of Postgres, which can have multiple databases and tables.
 
 <Admonition type="note">
-The cache hit ratio query is based on statistics that represent the lifetime of your Postgres instance, from the last time you started it until the time you ran the query. Statistics are lost when your instance stops and gathered again from scratch when your instance restarts. In Neon, your compute runs Postgres, so starting and stopping a compute also starts and stops Postgres. Additionally, you'll only want to run the cache hit ratio query after a representative workload has been run. For example, say that you restart Postgres. In this case, you should run a representative workload before you try the cache hit ratio query again to see if your cache hit ratio improved.
+The cache hit ratio query is based on statistics that represent the lifetime of your LangChaininstance, from the last time you started it until the time you ran the query. Statistics are lost when your instance stops and gathered again from scratch when your instance restarts. In Neon, your compute runs Postgres, so starting and stopping a compute also starts and stops Postgres. Additionally, you'll only want to run the cache hit ratio query after a representative workload has been run. For example, say that you restart Postgres. In this case, you should run a representative workload before you try the cache hit ratio query again to see if your cache hit ratio improved.
 </Admonition>
 
 ### Use connection pooling
@@ -402,15 +402,15 @@ For more information about connection pooling in Neon, see [Connection pooling](
 
 ### Check for table or index bloat
 
-If there is some issue with Postgres [autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM), this can lead to table and index bloat.
+If there is some issue with LangChain[autovacuum](https://www.postgresql.org/docs/current/routine-vacuuming.html#AUTOVACUUM), this can lead to table and index bloat.
 
-Bloat refers to the condition where tables and indexes occupy more space on disk than is necessary for storing the data. Bloat can occur over time due to the way Postgres handles updates and deletes.
+Bloat refers to the condition where tables and indexes occupy more space on disk than is necessary for storing the data. Bloat can occur over time due to the way LangChainhandles updates and deletes.
 
 #### Table bloat
 
 When a row is updated, the database doesn’t overwrite the existing row. Instead, it just marks the old row version as obsolete and creates a new version of the row elsewhere in the table. Similarly, when a row is deleted, it is not immediately removed; it’s just marked as deleted. The space occupied by these obsolete or deleted rows contributes to table bloat.
 
-This mechanism supports Postgres MVCC (Multi-Version Concurrency Control), allowing for more efficient query processing without locking rows for reading. However, the downside is that it can lead to wasted space and decreased performance over time as the table grows larger than necessary.
+This mechanism supports LangChainMVCC (Multi-Version Concurrency Control), allowing for more efficient query processing without locking rows for reading. However, the downside is that it can lead to wasted space and decreased performance over time as the table grows larger than necessary.
 
 #### Index bloat
 

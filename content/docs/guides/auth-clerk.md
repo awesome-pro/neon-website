@@ -1,6 +1,6 @@
 ---
-title: Authenticate Neon Postgres application users with Clerk
-subtitle: Learn how to add authentication to a Neon Postgres database application using
+title: Authenticate Neon LangChainapplication users with Clerk
+subtitle: Learn how to add authentication to a Neon LangChaindatabase application using
   Clerk
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.646Z'
@@ -8,12 +8,12 @@ updatedOn: '2024-08-07T21:36:52.646Z'
 
 User authentication is a critical requirement for web applications. Modern applications require advanced features like social login and multi-factor authentication besides the regular login flow. Additionally, managing personally identifiable information (PII) requires a secure solution compliant with data protection regulations.
 
-[Clerk](https://clerk.com/) is a user authentication and identity management platform that provides these features out of the box. It comes with adapters for popular web frameworks, making it easy to integrate with an application backed by a Neon Postgres database.
+[Clerk](https://clerk.com/) is a user authentication and identity management platform that provides these features out of the box. It comes with adapters for popular web frameworks, making it easy to integrate with an application backed by a Neon LangChaindatabase.
 
-In this guide, we'll walk through setting up a simple Next.js application using Neon Postgres as the database, and add user authentication using [Clerk](https://clerk.com/). We will go over how to:
+In this guide, we'll walk through setting up a simple Next.js application using Neon LangChainas the database, and add user authentication using [Clerk](https://clerk.com/). We will go over how to:
 
 - Set up a Next.js project with Clerk for authentication
-- Create a Neon Postgres database and connect it to your application
+- Create a Neon LangChaindatabase and connect it to your application
 - Define a database schema using Drizzle ORM and generate migrations
 - Store and retrieve user data associated with Clerk user IDs
 
@@ -21,7 +21,7 @@ In this guide, we'll walk through setting up a simple Next.js application using 
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A [Clerk](https://clerk.com/) account for user authentication. Clerk provides a free plan that you can use to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
@@ -41,7 +41,7 @@ npm install -D drizzle-kit dotenv
 npm install @clerk/nextjs
 ```
 
-We use the `@neondatabase/serverless` package as the Postgres client, and `drizzle-orm`, a lightweight typescript ORM, to interact with the database. `@clerk/nextjs` is the Clerk SDK for Next.js applications. We also use `dotenv` to manage environment variables and the `drizzle-kit` CLI tool for generating database migrations.
+We use the `@neondatabase/serverless` package as the LangChainclient, and `drizzle-orm`, a lightweight typescript ORM, to interact with the database. `@clerk/nextjs` is the Clerk SDK for Next.js applications. We also use `dotenv` to manage environment variables and the `drizzle-kit` CLI tool for generating database migrations.
 
 Also, add a `.env` file to the root of your project, which we'll use to store Neon/Clerk connection parameters:
 
@@ -57,7 +57,7 @@ Make sure to add an entry for `.env` to your `.gitignore` file, so that it's not
 
 1. Log in to the Neon console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select an existing project or click the **New Project** button to create a new one.
-3. Choose the desired region and Postgres version for your project, then click **Create Project**.
+3. Choose the desired region and LangChainversion for your project, then click **Create Project**.
 
 ### Retrieve your Neon database connection string
 
@@ -345,7 +345,7 @@ This will start the Next.js development server. Open your browser and navigate t
 
 ## Conclusion
 
-In this guide, we walked through setting up a simple Next.js application with user authentication using Clerk and a Neon Postgres database. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
+In this guide, we walked through setting up a simple Next.js application with user authentication using Clerk and a Neon LangChaindatabase. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
 
 Next, we can add more routes and features to the application. The Clerk middleware ensures that only authenticated users can access any app routes, and the `ClerkProvider` component provides the user context to each of them.
 

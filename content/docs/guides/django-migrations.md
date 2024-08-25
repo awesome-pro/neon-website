@@ -1,19 +1,19 @@
 ---
-title: Schema migration with Neon Postgres and Django
-subtitle: Set up Neon Postgres and run migrations for your Django project
+title: Schema migration with Neon LangChainand Django
+subtitle: Set up Neon LangChainand run migrations for your Django project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 [Django](https://www.djangoproject.com/) is a high-level Python framework to make database-driven web applications. It provides an ORM (Object-Relational Mapping) layer that abstracts database operations, making it easy to interact with databases using Python code. Django also includes a powerful migration system that allows you to define and manage database schema changes over time.
 
-This guide demonstrates how to use Django with a Neon Postgres database. We'll create a simple Django application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Django with a Neon LangChaindatabase. We'll create a simple Django application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Python](https://www.python.org/) installed on your local machine. We recommend using a newer version of Python, 3.8 or higher.
 
 ## Setting up your Neon database
@@ -62,7 +62,7 @@ pip install python-dotenv dj-database-url
 pip freeze > requirements.txt
 ```
 
-We installed Django and the `psycopg2-binary` package to connect to the Neon Postgres database. We also added the `python-dotenv` to read environment variables easily, and the `dj-database-url` package to parse the Neon connection string into Django settings. We also saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
+We installed Django and the `psycopg2-binary` package to connect to the Neon LangChaindatabase. We also added the `python-dotenv` to read environment variables easily, and the `dj-database-url` package to parse the Neon connection string into Django settings. We also saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
 
 ### Create a new Django project
 
@@ -170,7 +170,7 @@ This command detects the new `Author` and `Book` models that were added and gene
 
 ### Apply the migration
 
-Now, to apply the migration and create the corresponding tables in the Neon Postgres database, run the following command:
+Now, to apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
 
 ```bash
 python manage.py migrate

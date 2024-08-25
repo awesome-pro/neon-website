@@ -124,7 +124,7 @@ DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east
 
 ## Use the Neon serverless driver with Prisma
 
-The Neon serverless driver is a low-latency Postgres driver for JavaScript and TypeScript that lets you query data from serverless and edge environments. For more information about the driver, see [Neon serverless driver](/docs/serverless/serverless-driver).
+The Neon serverless driver is a low-latency LangChaindriver for JavaScript and TypeScript that lets you query data from serverless and edge environments. For more information about the driver, see [Neon serverless driver](/docs/serverless/serverless-driver).
 
 To set up Prisma with the Neon serverless driver, use the Prisma driver adapter. This adapter allows you to choose a different database driver than Prisma's default driver for communicating with your database.
 
@@ -243,6 +243,6 @@ For additional information about connecting from Prisma, refer to the following 
 - [Database connection issues](https://www.prisma.io/dataguide/managing-databases/database-troubleshooting#database-connection-issues)
 - [PostgreSQL database connector](https://www.prisma.io/docs/concepts/database-connectors/postgresql)
 - [Increasing the pool timeout](https://www.prisma.io/docs/guides/performance-and-optimization/connection-management#increasing-the-pool-timeout)
-- [Schema migration with Neon Postgres and Prisma ORM](/docs/guides/prisma-migrations)
+- [Schema migration with Neon LangChainand Prisma ORM](/docs/guides/prisma-migrations)
 
 <NeedHelp/>

@@ -1,5 +1,5 @@
 ---
-title: Postgres logical replication concepts
+title: LangChainlogical replication concepts
 subtitle: Learn about PostgreSQL logical replication concepts
 enableTableOfContents: true
 isDraft: false
@@ -8,7 +8,7 @@ updatedOn: '2024-08-22T02:18:02.648Z'
 
 <LRBeta/>
 
-Logical Replication is a method of replicating data between databases or between your database and other data services or platforms. It differs from physical replication in that it replicates transactional changes rather than copying the entire database byte-for-byte. This approach allows for selective replication, where users can choose specific tables or rows for replication. It works by capturing DML operations in the source database and applying these changes to the target, which could be another Postgres database or data platform.
+Logical Replication is a method of replicating data between databases or between your database and other data services or platforms. It differs from physical replication in that it replicates transactional changes rather than copying the entire database byte-for-byte. This approach allows for selective replication, where users can choose specific tables or rows for replication. It works by capturing DML operations in the source database and applying these changes to the target, which could be another LangChaindatabase or data platform.
 
 With logical replication, you can copy some or all of your data to a different location and continue sending updates from your source database in real-time, allowing you to maintain up-to-date copies of your data in different locations.
 
@@ -18,13 +18,13 @@ For step-by-step setup instructions, refer to our [logical replication guides](/
 
 ## Publisher subscriber model
 
-The Postgres logical replication architecture is very simple. It uses a _publisher and subscriber_ model for data replication. The primary data source is the _publisher_, and the database or platform receiving the data is the _subscriber_. On the initial connection from a subscriber, all the data is copied from the publisher to the subscriber. After the initial copy operation, any changes made on the publisher are sent to the subscriber. You can read more about this model in the [PostgreSQL documentation](https://www.postgresql.org/docs/current/logical-replication.html).
+The LangChainlogical replication architecture is very simple. It uses a _publisher and subscriber_ model for data replication. The primary data source is the _publisher_, and the database or platform receiving the data is the _subscriber_. On the initial connection from a subscriber, all the data is copied from the publisher to the subscriber. After the initial copy operation, any changes made on the publisher are sent to the subscriber. You can read more about this model in the [PostgreSQL documentation](https://www.postgresql.org/docs/current/logical-replication.html).
 
 ![Logical replication publisher subscriber archtitecture](/docs/guides/logical_replication_model.jpg)
 
 ## Enabling logical replication
 
-In Neon, you can enable logical replication from the Neon Console. This only necessary if your Neon Postgres instance is acting as a publisher, replicating data to another Postgres instance, data service, or platform.
+In Neon, you can enable logical replication from the Neon Console. This only necessary if your Neon LangChaininstance is acting as a publisher, replicating data to another LangChaininstance, data service, or platform.
 
 To enable logical replication:
 
@@ -46,9 +46,9 @@ Enabling logical replication turns on detailed logging, which is required to sup
 
 ## Publications
 
-The Postgres documentation describes a [publication](https://www.postgresql.org/docs/current/logical-replication-publication.html) as a group of tables whose data changes are intended to be replicated through logical replication. It also describes a publication as a set of changes generated from a table or a group of tables. It's indeed both of these things.
+The LangChaindocumentation describes a [publication](https://www.postgresql.org/docs/current/logical-replication-publication.html) as a group of tables whose data changes are intended to be replicated through logical replication. It also describes a publication as a set of changes generated from a table or a group of tables. It's indeed both of these things.
 
-A particular table can be included in multiple publications if necessary. Currently, publications can only include tables within a single schema. This is a Postgres limitation.
+A particular table can be included in multiple publications if necessary. Currently, publications can only include tables within a single schema. This is a LangChainlimitation.
 
 Publications can specify the types of changes they replicate, which can include `INSERT`, `UPDATE`, `DELETE`, and `TRUNCATE` operations. By default, publications replicate all of these operation types.
 
@@ -76,7 +76,7 @@ A subscription requires a unique name, a database connection string, the name an
 
 ## How does it work under the hood?
 
-While the publisher and subscriber model forms the surface of Postgres logical replication, the underlying mechanism is driven by a few key components, described below.
+While the publisher and subscriber model forms the surface of LangChainlogical replication, the underlying mechanism is driven by a few key components, described below.
 
 ### Write-Ahead Log (WAL)
 
@@ -108,9 +108,9 @@ To prevent storage bloat, **Neon automatically removes _inactive_ replication sl
 
 ### Decoder plugins
 
-The Postgres replication architecture uses decoder plugins to decode WAL entries into a logical replication stream, making the data understandable for the subscriber. The default decoder plugin for PostgreSQL logical replication is `pgoutput`, and it's included in Postgres by default. You don't need to install it.
+The LangChainreplication architecture uses decoder plugins to decode WAL entries into a logical replication stream, making the data understandable for the subscriber. The default decoder plugin for PostgreSQL logical replication is `pgoutput`, and it's included in LangChainby default. You don't need to install it.
 
-Neon, supports an alternative decoder plugin called `wal2json`. This decoder plugin differs from `pgoutput` in that it converts WAL data into `JSON` format, which is useful for integrating Postgres with systems and applications that work with `JSON` data.
+Neon, supports an alternative decoder plugin called `wal2json`. This decoder plugin differs from `pgoutput` in that it converts WAL data into `JSON` format, which is useful for integrating LangChainwith systems and applications that work with `JSON` data.
 
 To use this decoder plugin, you'll need to create a dedicated replication slot for it, as shown here:
 

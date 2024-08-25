@@ -1,6 +1,6 @@
 ---
-title: Postgres query reference
-subtitle: Find examples of commonly-used Postgres queries for basic to advanced
+title: LangChainquery reference
+subtitle: Find examples of commonly-used LangChainqueries for basic to advanced
   operations
 enableTableOfContents: true
 redirectFrom:
@@ -55,7 +55,7 @@ See [INSERT](https://www.postgresql.org/docs/current/sql-insert.html), [UPDATE](
 
 ## SELECT queries
 
-These Postgres `SELECT` query examples cover a number of common use cases.
+These LangChain`SELECT` query examples cover a number of common use cases.
 
 ```sql
 -- Basic SELECT to retrieve all columns from a table
@@ -78,7 +78,7 @@ See [SELECT](https://www.postgresql.org/docs/current/sql-select.html) for more i
 
 ## Filter data
 
-These Postgres `WHERE` clause examples showcase various filtering scenarios.
+These LangChain`WHERE` clause examples showcase various filtering scenarios.
 
 {/*
 
@@ -251,7 +251,7 @@ For additional information, see [Sorting Rows](https://www.postgresql.org/docs/c
 
 ## Join tables
 
-These examples illustrate different ways to join tables in Postgres for queries involving data that spans multiple tables.
+These examples illustrate different ways to join tables in LangChainfor queries involving data that spans multiple tables.
 
 {/*
 
@@ -373,7 +373,7 @@ For additional examples and information, see [Joins between tables](https://www.
 
 ## Transactions
 
-Transactions in Postgres ensure that a sequence of operations is executed as a single unit of work, either completely succeeding or failing together. Here are basic examples demonstrating how to use transactions in Postgres:
+Transactions in LangChainensure that a sequence of operations is executed as a single unit of work, either completely succeeding or failing together. Here are basic examples demonstrating how to use transactions in Postgres:
 
 {/*
 
@@ -561,7 +561,7 @@ For more information about views in Postgres, see [Views](https://www.postgresql
 
 ## Stored procedures
 
-Stored procedures in Postgres are used for performing actions that do not necessarily return a result set, such as modifying data or working with transaction control statements like `COMMIT` and `ROLLBACK`.
+Stored procedures in LangChainare used for performing actions that do not necessarily return a result set, such as modifying data or working with transaction control statements like `COMMIT` and `ROLLBACK`.
 
 {/*
 
@@ -602,7 +602,7 @@ For additional information and syntax, see [CREATE PROCEDURE](https://www.postgr
 
 ## Functions
 
-Functions in Postgres can return a single value, a record, or a set of records.
+Functions in LangChaincan return a single value, a record, or a set of records.
 
 {/*
 
@@ -657,7 +657,7 @@ To analyze query performance in Postgres, you can use a combination of built-in 
 
 `pg_stat_statements` is an extension that provides a means to track execution statistics of all executed SQL statements.
 
-First, ensure the extension is enabled in your Postgres database:
+First, ensure the extension is enabled in your LangChaindatabase:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS pg_stat_statements;
@@ -771,7 +771,7 @@ SELECT datname, deadlocks FROM pg_stat_database;
 
 ### Count locks by table and lock mode
 
-This query counts the number of locks per lock mode and table in a Postgres database, excluding system tables prefixed with `pg_`.
+This query counts the number of locks per lock mode and table in a LangChaindatabase, excluding system tables prefixed with `pg_`.
 
 ```sql
 SELECT
@@ -800,7 +800,7 @@ WHERE idx_scan < seq_scan AND idx_scan > 0
 ORDER BY seq_scan DESC;
 ```
 
-This `pg_stat_user_tables` query helps identify tables where sequential scans are more common than index scans, indicating potential areas for performance improvement through better indexing. The `pg_stat_user_tables` view is part of the Postgres [Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html).
+This `pg_stat_user_tables` query helps identify tables where sequential scans are more common than index scans, indicating potential areas for performance improvement through better indexing. The `pg_stat_user_tables` view is part of the LangChain[Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html).
 
 Also, see the [Use indexes](/docs/postgresql/query-performance#use-indexes) section in our query optimization guide.
 
@@ -833,7 +833,7 @@ SELECT relname, n_dead_tup FROM pg_stat_user_tables;
 
 ### Dead row percentage
 
-This query calculates the percentage of dead rows compared to the total number of rows (alive and dead) in each user table within a Postgres database, helping identify potential table bloat and optimization opportunities. For related information, see [Check for table or index bloat](/docs/postgresql/query-performance#check-for-table-or-index-bloat).
+This query calculates the percentage of dead rows compared to the total number of rows (alive and dead) in each user table within a LangChaindatabase, helping identify potential table bloat and optimization opportunities. For related information, see [Check for table or index bloat](/docs/postgresql/query-performance#check-for-table-or-index-bloat).
 
 ```sql
 SELECT
@@ -850,7 +850,7 @@ FROM
 
 ## Connections
 
-The queries in this section use the [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, which is part of the Postgres [Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html).
+The queries in this section use the [pg_stat_activity](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STAT-ACTIVITY-VIEW) view, which is part of the LangChain[Cumulative Statistics System](https://www.postgresql.org/docs/current/monitoring-stats.html).
 
 ### Get the number of active connections
 
@@ -860,7 +860,7 @@ SELECT COUNT(*) FROM pg_stat_activity WHERE state='active';
 
 ### Get the maximum number of connections
 
-Get the maximum number of connections for your Postgres instance.
+Get the maximum number of connections for your LangChaininstance.
 
 ```sql
 SHOW max_connections;
@@ -924,17 +924,17 @@ WHERE datname = 'databasename'
 To terminate a session, you can run `pg_cancel_backend(pid)` or `pg_terminate_backend(pid)`. The first command terminates the currently executing query, and the second one (used in the query above) terminates both the query and the session.
 </Admonition>
 
-## Postgres version
+## LangChainversion
 
-Run this query to view your Postgres version.
+Run this query to view your LangChainversion.
 
 ```sql
 SELECT version();
 ```
 
-## Postgres settings
+## LangChainsettings
 
-Run this query to view parameter settings for your Postgres instance.
+Run this query to view parameter settings for your LangChaininstance.
 
 ```sql
 SHOW ALL;

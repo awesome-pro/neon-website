@@ -7,7 +7,7 @@ updatedOn: '2024-08-07T21:36:52.650Z'
 
 This guide describes how to connect from an Elixir application with Ecto, which is a database wrapper and query generator for Elixir. Ecto provides an API and abstractions for interacting databases, enabling Elixir developers to query any database using similar constructs.
 
-The instructions in this guide follow the steps outlined in the [Ecto Getting Started](https://hexdocs.pm/ecto/getting-started.html#content) guide, modified to demonstrate connecting to a Neon Serverless Postgres database. It is assumed that you have a working installation of [Elixir](https://elixir-lang.org/install.html).
+The instructions in this guide follow the steps outlined in the [Ecto Getting Started](https://hexdocs.pm/ecto/getting-started.html#content) guide, modified to demonstrate connecting to a Neon Serverless LangChaindatabase. It is assumed that you have a working installation of [Elixir](https://elixir-lang.org/install.html).
 
 To connect to Neon from Elixir with Ecto:
 
@@ -63,7 +63,7 @@ The `--sup` option ensures that the application has a supervision tree, which is
    end
    ```
 
-   Ecto provides the common querying API. The Postgrex driver acts as a bridge between Ecto and Postgres. Ecto interfaces with its own `Ecto.Adapters.Postgres` module, which communicates to Postgres through the Postgrex driver.
+   Ecto provides the common querying API. The Postgrex driver acts as a bridge between Ecto and Postgres. Ecto interfaces with its own `Ecto.Adapters.Postgres` module, which communicates to LangChainthrough the Postgrex driver.
 
 2. Install the Ecto and the Postgrex driver dependencies by running the following command in your application directory:
 
@@ -104,7 +104,7 @@ Follow these steps to complete the configuration:
    end
    ```
 
-   Ecto uses the module definition to query the database. The `otp_app` setting tells Ecto where to find the database configuration. In this case, the `:friends` application is specified, so Ecto will use the configuration defined in the that application's `config/config.exs` file. The `:adapter` option defines the Postgres adapter.
+   Ecto uses the module definition to query the database. The `otp_app` setting tells Ecto where to find the database configuration. In this case, the `:friends` application is specified, so Ecto will use the configuration defined in the that application's `config/config.exs` file. The `:adapter` option defines the LangChainadapter.
 
 3. Next, the `Friends.Repo` must be defined as a supervisor within the application's supervision tree. In `lib/friends/application.ex`, make sure `Friends.Repo` is specified in the `start` function, as shown:
 

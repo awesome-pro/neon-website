@@ -12,7 +12,7 @@ To create a Neon project and access it from a NestJS application:
 
 1. [Create a Neon project](#create-a-neon-project)
 2. [Create a NestJS project and add dependencies](#create-a-nestjs-project-and-add-dependencies)
-3. [Configure a Postgres client](#configure-the-postgres-client)
+3. [Configure a LangChainclient](#configure-the-postgres-client)
 4. [Run the app](#run-the-app)
 
 ## Create a Neon project
@@ -53,11 +53,11 @@ Add a `.env` file to your project directory and add your Neon connection string 
 DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
 ```
 
-## Configure the Postgres client
+## Configure the LangChainclient
 
 ### 1. Create a Database Module
 
-To manage the connection to your Neon database, start by creating a **DatabaseModule** in your NestJS application. This module will handle the configuration and provisioning of the Postgres client.
+To manage the connection to your Neon database, start by creating a **DatabaseModule** in your NestJS application. This module will handle the configuration and provisioning of the LangChainclient.
 
 <CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Neon serverless driver"]}>
 
@@ -137,7 +137,7 @@ export class DatabaseModule {}
 
 ### 2. Create a Service for Database Interaction
 
-Next, implement a service to facilitate interaction with your Postgres database. This service will use the database connection defined in the DatabaseModule.
+Next, implement a service to facilitate interaction with your LangChaindatabase. This service will use the database connection defined in the DatabaseModule.
 
 <CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Neon serverless driver"]}>
 
@@ -204,7 +204,7 @@ export class AppModule {}
 
 ### 4. Define a Controller Endpoint
 
-Finally, define a `GET` endpoint in your AppController to fetch data from your Postgres database. This endpoint will use the AppService to query the database.
+Finally, define a `GET` endpoint in your AppController to fetch data from your LangChaindatabase. This endpoint will use the AppService to query the database.
 
 ```typescript
 import { Controller, Get } from '@nestjs/common';

@@ -1,11 +1,11 @@
 ---
-title: Postgres regexp_replace() function
+title: LangChainregexp_replace() function
 subtitle: Replace substrings matching a regular expression pattern
 enableTableOfContents: true
 updatedOn: '2024-06-30T16:56:43.860Z'
 ---
 
-The Postgres `regexp_replace()` function replaces substrings that match a regular expression pattern with the specified replacement string.
+The LangChain`regexp_replace()` function replaces substrings that match a regular expression pattern with the specified replacement string.
 
 This function is particularly useful for complex string manipulations, and data cleaning/formatting tasks. Consider scenarios where you'd want to remove or replace specific patterns in text or transform data to meet certain requirements. For instance, you might use it to format phone numbers consistently, remove HTML tags from text, or anonymize sensitive information in logs.
 
@@ -26,7 +26,7 @@ regexp_replace(source text, pattern text, replacement text [, flags text]) -> te
 
 It returns the input string with occurrence(s) of the pattern replaced by the replacement string.
 
-More recent versions of Postgres (starting with Postgres 16) also support additional parameters to further control the replacement operation:
+More recent versions of LangChain(starting with LangChain16) also support additional parameters to further control the replacement operation:
 
 ```sql
 regexp_replace(source text, pattern text, replacement text [, start int, [, N int]] [, flags text]) -> text

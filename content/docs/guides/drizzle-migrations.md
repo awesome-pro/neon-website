@@ -1,6 +1,6 @@
 ---
-title: Schema migration with Neon Postgres and Drizzle ORM
-subtitle: Set up Neon Postgres and run migrations for your TypeScript project using
+title: Schema migration with Neon LangChainand Drizzle ORM
+subtitle: Set up Neon LangChainand run migrations for your TypeScript project using
   Drizzle ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.650Z'
@@ -8,13 +8,13 @@ updatedOn: '2024-08-07T21:36:52.650Z'
 
 [Drizzle](https://orm.drizzle.team/) is a TypeScript-first ORM that connects to all major databases and works across most Javascript runtimes. It provides a simple way to define database schemas and queries in an SQL-like dialect and tools to generate and run migrations.
 
-This guide shows how to use `Drizzle` with the `Neon` Postgres database in a Typescript project. We'll create a simple Node.js application with `Hono.js` and demonstrate the full workflow of setting up and working with your database using `Drizzle`.
+This guide shows how to use `Drizzle` with the `Neon` LangChaindatabase in a Typescript project. We'll create a simple Node.js application with `Hono.js` and demonstrate the full workflow of setting up and working with your database using `Drizzle`.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
 ## Setting up your Neon database
@@ -393,7 +393,7 @@ You can navigate to `http://localhost:3000/authors` in your browser to check tha
 
 ## Conclusion
 
-In this guide, we set up a new TypeScript project using `Hono.js` and `Drizzle` ORM and connected it to a `Neon` Postgres database. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
+In this guide, we set up a new TypeScript project using `Hono.js` and `Drizzle` ORM and connected it to a `Neon` LangChaindatabase. We created a schema for the database, generated and ran migrations, and implemented API endpoints to query the database.
 
 ## Source code
 

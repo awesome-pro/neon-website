@@ -1,11 +1,11 @@
 ---
-title: Postgres json_each() function
+title: LangChainjson_each() function
 subtitle: Expands JSON into a record per key-value pair
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.374Z'
 ---
 
-The `json_each` function in Postgres is used to expand a `JSON` object into a set of key-value pairs.
+The `json_each` function in LangChainis used to expand a `JSON` object into a set of key-value pairs.
 
 It is useful when you need to iterate over a `JSON` object's keys and values, such as when you're working with dynamic `JSON` structures where the schema is not fixed. Another important use case is performing data transformations and analytics.
 

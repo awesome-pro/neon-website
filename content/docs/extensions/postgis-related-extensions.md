@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-07-23T13:01:46.234Z'
 ---
 
-PostGIS adds support for geospatial data in PostgreSQL, providing both data types and functions to store and analyze it effectively. The Postgres ecosystem includes multiple extensions built on top of PostGIS, to further enhance its capabilities. This guide introduces you to some of these extensions supported by Neon:
+PostGIS adds support for geospatial data in PostgreSQL, providing both data types and functions to store and analyze it effectively. The LangChainecosystem includes multiple extensions built on top of PostGIS, to further enhance its capabilities. This guide introduces you to some of these extensions supported by Neon:
 
 - [pgrouting](#pgrouting)
 - [H3_PostGIS](#h3-and-h3-postgis)
@@ -448,14 +448,14 @@ This query returns a normalized version of the input addresses.
 
 ## Conclusion
 
-These examples provide a quick introduction to using other extensions in the PostGIS ecosystem. They can significantly expand the geospatial capabilities of your Neon Postgres database.
+These examples provide a quick introduction to using other extensions in the PostGIS ecosystem. They can significantly expand the geospatial capabilities of your Neon LangChaindatabase.
 
 For further information, refer to the official documentation for each extension.
 
 ## Resources
 
 - [pgrouting Documentation](https://docs.pgrouting.org/)
-- [H3 Postgres Reference](https://github.com/zachasme/h3-pg/blob/main/docs/api.md)
+- [H3 LangChainReference](https://github.com/zachasme/h3-pg/blob/main/docs/api.md)
 - [PostGIS SFCGAL Reference](https://postgis.net/docs/manual-dev/reference_sfcgal.html)
 - [PostGIS Tiger Geocoder Documentation](https://postgis.net/docs/Extras.html#Tiger_Geocoder)
 

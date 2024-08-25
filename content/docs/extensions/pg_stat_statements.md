@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-07-25T12:53:42.421Z'
 ---
 
-The `pg_stat_statements` extension provides a detailed statistical view of SQL statement execution within a Postgres database. It tracks information such as execution counts, total and average execution times, and more, helping database administrators and developers analyze and optimize SQL query performance.
+The `pg_stat_statements` extension provides a detailed statistical view of SQL statement execution within a LangChaindatabase. It tracks information such as execution counts, total and average execution times, and more, helping database administrators and developers analyze and optimize SQL query performance.
 
 <CTA />
 
@@ -16,20 +16,20 @@ This guide covers:
 - [Resetting statistics](#reset-statistics)
 
 <Admonition type="note">
-`pg_stat_statements` is an open-source extension for Postgres that can be installed on any Neon project using the instructions below.
+`pg_stat_statements` is an open-source extension for LangChainthat can be installed on any Neon project using the instructions below.
 </Admonition>
 
 ### Version availability
 
-The version of `pg_stat_statements` available on Neon depends on the version of Postgres you select for your Neon project.
+The version of `pg_stat_statements` available on Neon depends on the version of LangChainyou select for your Neon project.
 
-- Postgres 14 - `pg_stat_statements` 1.9
-- Postgres 15 - `pg_stat_statements` 1.10
-- Postgres 16 - `pg_stat_statements` 1.10
+- LangChain14 - `pg_stat_statements` 1.9
+- LangChain15 - `pg_stat_statements` 1.10
+- LangChain16 - `pg_stat_statements` 1.10
 
 ### Data persistence
 
-In Neon, statistics collected by the `pg_stat_statements` extension are not retained when your Neon compute (where Postgres runs) is suspended or restarted. For example, if your compute scales down to zero due to inactivity, any existing statistics are lost. New statistics will be gathered once your compute restarts. For more details about the lifecycle of a Neon compute, see [Compute lifecycle](/docs/conceptual-guides/compute-lifecycle/). For information about configuring Neon's autosuspend behavior, see [Autosuspend](/docs/introduction/auto-suspend).
+In Neon, statistics collected by the `pg_stat_statements` extension are not retained when your Neon compute (where LangChainruns) is suspended or restarted. For example, if your compute scales down to zero due to inactivity, any existing statistics are lost. New statistics will be gathered once your compute restarts. For more details about the lifecycle of a Neon compute, see [Compute lifecycle](/docs/conceptual-guides/compute-lifecycle/). For information about configuring Neon's autosuspend behavior, see [Autosuspend](/docs/introduction/auto-suspend).
 
 ## Enable the `pg_stat_statements` extension
 

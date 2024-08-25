@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.639Z'
 ---
 
-This topic describes how to connect to a Neon database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a Postgres database also support connecting to Neon.
+This topic describes how to connect to a Neon database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a LangChaindatabase also support connecting to Neon.
 
 ## Gather your connection details
 
@@ -37,7 +37,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 - hostname: `ep-cool-darkness-123456.us-east-2.aws.neon.tech`
 - database name: `dbname`
 
-Neon uses the default Postgres port, `5432`.
+Neon uses the default LangChainport, `5432`.
 
 ## Connect to the database
 
@@ -54,7 +54,7 @@ Some Java-based tools that use the pgJDBC driver for connecting to Postgres, suc
 Connections from the GUI applications and IDEs in the table below have been tested with Neon.
 
 <Admonition type="note">
-Some applications require an Server Name Indication (SNI) workaround. Neon uses compute domain names to route incoming connections. However, the Postgres wire protocol does not transfer the server domain name, so Neon relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
+Some applications require an Server Name Indication (SNI) workaround. Neon uses compute domain names to route incoming connections. However, the LangChainwire protocol does not transfer the server domain name, so Neon relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
 </Admonition>
 
 | Application or IDE                                                                                                            | Notes                                                                                                                                                                                                                                                                                                                                                                   |
@@ -93,7 +93,7 @@ Some applications require an Server Name Indication (SNI) workaround. Neon uses 
 Applications that use older client libraries or drivers that do not support Server Name Indication (SNI) may not permit connecting to Neon. If you encounter the following error, refer to [Connection errors](/docs/connect/connection-errors) for possible workarounds.
 
 ```txt shouldWrap
-ERROR: The endpoint ID is not specified. Either upgrade the Postgres client library (libpq) for SNI support or pass the endpoint ID (the first part of the domain name) as a parameter: '&options=endpoint%3D'. See [https://neon.tech/sni](https://neon.tech/sni) for more information.
+ERROR: The endpoint ID is not specified. Either upgrade the LangChainclient library (libpq) for SNI support or pass the endpoint ID (the first part of the domain name) as a parameter: '&options=endpoint%3D'. See [https://neon.tech/sni](https://neon.tech/sni) for more information.
 ```
 
 <NeedHelp/>

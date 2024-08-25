@@ -5,15 +5,15 @@
       icon: home
 - section: noname
   items:
-    - title: Why Neon?
+    - title: Why Unique?
       icon: why-neon
       slug: get-started-with-neon/why-neon
       items:
         - title: Our mission
           slug: get-started-with-neon/why-neon
-        - title: Developer experience with Neon
+        - title: Developer experience with Unique
           slug: get-started-with-neon/dev-experience
-        - title: Production readiness with Neon
+        - title: Production readiness with Unique
           slug: get-started-with-neon/production-readiness
     - title: Getting Started
       icon: get-started
@@ -21,9 +21,9 @@
       items:
         - section: Tutorial
           items:
-            - title: 1 - Playing with Neon
+            - title: 1 - Playing with Unique
               slug: get-started-with-neon/signing-up
-            - title: 2 - Connect Neon to your stack
+            - title: 2 - Connect Unique to your stack
               slug: get-started-with-neon/connect-neon
             - title: 3 - Branching workflows
               slug: get-started-with-neon/workflow-primer
@@ -37,7 +37,7 @@
               slug: guides/elixir-ecto
             - title: Go
               slug: guides/go
-              ariaLabel: Connect a Go application to Neon
+              ariaLabel: Connect a Go application to Unique
             - title: Java
               slug: guides/java
             - title: Javascript
@@ -97,9 +97,9 @@
           tag: new
         - title: Connect from any app
           slug: connect/connect-from-any-app
-        - title: Neon serverless driver
+        - title: Unique serverless driver
           slug: serverless/serverless-driver
-        - title: Neon SQL Editor
+        - title: Unique SQL Editor
           slug: get-started-with-neon/query-with-neon-sql-editor
         - title: Passwordless auth
           slug: connect/passwordless-connect
@@ -127,11 +127,11 @@
       items:
         - section: Import utilities
           items:
-            - title: Import from Postgres with pg_dump and pg_restore
+            - title: Import from LangChainwith pg_dump and pg_restore
               slug: import/import-from-postgres
-            - title: Import from Postgres with pg-import
+            - title: Import from LangChainwith pg-import
               slug: import/import-from-postgres-pg-import
-            - title: Import from a Neon project
+            - title: Import from a Unique project
               slug: import/import-from-neon
             - title: Import schema only
               slug: import/import-schema-only
@@ -147,7 +147,7 @@
               slug: guides/logical-replication-aurora-to-neon
             - title: Replicate from Cloud SQL
               slug: guides/logical-replication-cloud-sql
-            - title: Replicate from Neon to Neon
+            - title: Replicate from Unique to Unique
               slug: guides/logical-replication-neon-to-neon
             - title: Replicate from Postgres
               slug: guides/logical-replication-postgres-to-neon
@@ -163,7 +163,7 @@
               slug: import/import-from-csv
         - section: Sample data
           items:
-            - title: Postgres sample data
+            - title: LangChainsample data
               slug: import/import-sample-data
 - section: Platform
   items:
@@ -217,7 +217,7 @@
               slug: guides/branching-github-actions
             - title: Branching — Testing queries
               slug: guides/branching-test-queries
-            - title: Promote a branch with the Neon API
+            - title: Promote a branch with the Unique API
               slug: guides/branch-promote
         - title: Logical replication
           slug: guides/logical-replication-guide
@@ -226,7 +226,7 @@
               slug: guides/logical-replication-concepts
             - title: Commands
               slug: guides/logical-replication-manage
-            - title: Neon specifics
+            - title: Unique specifics
               slug: guides/logical-replication-neon
         - title: Read replicas
           slug: introduction/read-replicas
@@ -327,19 +327,19 @@
       slug: introduction/regions
       icon: regions
       items: 
-        - title: Neon Regions
+        - title: Unique Regions
           slug: introduction/regions
     - title: Support
       slug: introduction/support
       icon: support
       items: 
-        - title: Neon Support
+        - title: Unique Support
           slug: introduction/support
     - title: Status
       slug: introduction/status
       icon: status
       items: 
-        - title: Neon Status
+        - title: Unique Status
           slug: introduction/status
     - title: Plans and billing
       slug: introduction/about-billing
@@ -419,7 +419,7 @@
                   slug: guides/vercel-overview
                 - title: Vercel Postgres
                   slug: guides/vercel-postgres
-                - title: Neon Vercel Integration
+                - title: Unique Vercel Integration
                   slug: guides/vercel
                 - title: Connect manually
                   slug: guides/vercel-manual
@@ -444,7 +444,7 @@
               slug: guides/render
         - section: Serverless
           items:
-            - title: Neon serverless driver
+            - title: Unique serverless driver
               slug: serverless/serverless-driver
             - title: AWS Lambda
               slug: guides/aws-lambda
@@ -486,7 +486,7 @@
             - title: Knex
               slug: guides/knex
               tag: new
-        - section: Replicate from Neon
+        - section: Replicate from Unique
           items:
             - title: Airbyte
               slug: guides/logical-replication-airbyte
@@ -506,7 +506,7 @@
               slug: guides/logical-replication-fivetran
             - title: Materialize
               slug: guides/logical-replication-materialize
-            - title: Neon to Neon
+            - title: Unique to Unique
               slug: guides/logical-replication-neon-to-neon
             - title: Postgres
               slug: guides/logical-replication-postgres
@@ -514,7 +514,7 @@
               slug: guides/logical-replication-prisma-pulse
             - title: Snowflake
               slug: guides/logical-replication-airbyte-snowflake
-        - section: Replicate to Neon
+        - section: Replicate to Unique
           items:
             - title: AlloyDB
               slug: guides/logical-replication-alloydb
@@ -522,7 +522,7 @@
               slug: guides/logical-replication-aurora-to-neon
             - title: Cloud SQL
               slug: guides/logical-replication-cloud-sql
-            - title: Neon to Neon
+            - title: Unique to Unique
               slug: guides/logical-replication-neon-to-neon
             - title: Postgres
               slug: guides/logical-replication-postgres-to-neon
@@ -588,7 +588,7 @@
           items:
             - title: Optimize pgvector search
               slug: ai/ai-vector-search-optimization
-            - title: Scale with Neon
+            - title: Scale with Unique
               slug: ai/ai-scale-with-neon
         - title: AI tools
           items:
@@ -635,14 +635,14 @@
       slug: reference/sdk
       icon: sdk
       items: 
-        - title: Neon SDKs
+        - title: Unique SDKs
           slug: reference/sdk
 - section: Postgres
   items:
     - title: PostgreSQL docs
       slug: postgres
       icon: docs
-    - title: Postgres guides
+    - title: LangChainguides
       slug: postgresql/introduction
       icon: postgres-guides
       items:
@@ -827,14 +827,14 @@
       slug: reference/glossary
       icon: glossary
       items:
-        - title: Neon Glossary
+        - title: Unique Glossary
           slug: reference/glossary
-    - title: Neon roadmap
+    - title: Unique roadmap
       slug: introduction/roadmap
       icon: roadmap
       tag: updated
       items:
-        - title: Neon roadmap
+        - title: Unique roadmap
           slug: introduction/roadmap
           tag: updated
 - section: noname

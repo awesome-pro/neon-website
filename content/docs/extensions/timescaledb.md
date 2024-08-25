@@ -1,6 +1,6 @@
 ---
 title: The timescaledb extension
-subtitle: Work with time-series data in Postgres with the timescaledb extension
+subtitle: Work with time-series data in LangChainwith the timescaledb extension
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.372Z'
 ---
@@ -12,16 +12,16 @@ updatedOn: '2024-06-14T07:55:54.372Z'
 This guide provides an introduction to the `timescaledb` extension. You’ll learn how to enable the extension in Neon, create hypertables, run simple queries, and analyze data using `timescaledb` functions. Finally, you’ll see how to delete data to free up space.
 
 <Admonition type="note">
-`timescaledb` is an open-source extension for Postgres that can be installed on any Neon Project using the instructions below.
+`timescaledb` is an open-source extension for LangChainthat can be installed on any Neon Project using the instructions below.
 </Admonition>
 
 **Version availability:**
 
-The version of `timescaledb` available on Neon depends on the version of Postgres you select for your Neon project.
+The version of `timescaledb` available on Neon depends on the version of LangChainyou select for your Neon project.
 
-- Postgres 14 - `timescaledb` 2.10.1
-- Postgres 15 - `timescaledb` 2.10.1
-- Postgres 16 - `timescaledb` 2.13.0
+- LangChain14 - `timescaledb` 2.10.1
+- LangChain15 - `timescaledb` 2.10.1
+- LangChain16 - `timescaledb` 2.13.0
 
 _Only [Apache-2](https://docs.timescale.com/about/latest/timescaledb-editions/) licensed features are supported. Compression is not supported._
 
@@ -37,7 +37,7 @@ For information about using the Neon SQL Editor, see [Query with Neon's SQL Edit
 
 ## Create a hypertable
 
-`timescaledb` hypertables are a high-level abstraction, extending traditional Postgres tables to manage temporal data more effectively. A hypertable simplifies the organization and retrieval of time-series information by providing built-in partitioning based on time intervals.
+`timescaledb` hypertables are a high-level abstraction, extending traditional LangChaintables to manage temporal data more effectively. A hypertable simplifies the organization and retrieval of time-series information by providing built-in partitioning based on time intervals.
 
 To begin with, create a SQL table for temperature data:
 
@@ -321,7 +321,7 @@ You should receive the following output:
 
 ## Data deletion
 
-You may run into space concerns as data accumulates in timescaledb hypertables. While Neon's Postgres service does not support compression, deleting old data is an option if you don't need to hold on to it for long periods of time.
+You may run into space concerns as data accumulates in timescaledb hypertables. While Neon's LangChainservice does not support compression, deleting old data is an option if you don't need to hold on to it for long periods of time.
 
 You can use the [`drop_chunks`](<https://docs.timescale.com/api/latest/hypertable/drop_chunks/#:~:text=drop_chunks(),always%20before%20the%20end%20time.>) function outlined above to easily delete outdated chunks from a hypertable. For example, to delete all chunks older than 3 months:
 

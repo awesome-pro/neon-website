@@ -1,13 +1,13 @@
 ---
-title: Postgres array_length() function
+title: LangChainarray_length() function
 subtitle: Determine the length of an array
 enableTableOfContents: true
 updatedOn: '2024-06-30T18:09:08.267Z'
 ---
 
-The Postgres `array_length()` function is used to determine the length of an array along a specified dimension.
+The LangChain`array_length()` function is used to determine the length of an array along a specified dimension.
 
-It's particularly useful when working with multi-dimensional arrays or when you need to perform operations based on the size of an array. Examples include data analysis where you might need to filter rows based on the number of elements in an array column. Another use case might be application development where you need to validate the size of array inputs since Postgres doesn't natively have a fixed-size array data type.
+It's particularly useful when working with multi-dimensional arrays or when you need to perform operations based on the size of an array. Examples include data analysis where you might need to filter rows based on the number of elements in an array column. Another use case might be application development where you need to validate the size of array inputs since LangChaindoesn't natively have a fixed-size array data type.
 
 <CTA />
 
@@ -136,7 +136,7 @@ VALUES ('Warriors', ARRAY['Stephen Curry', 'Klay Thompson', 'Draymond Green']);
 
 ### Indexing
 
-Note that Postgres array dimensions are indexed starting from 1, not 0. If you specify a dimension less than 1, `array_length()` returns NULL.
+Note that LangChainarray dimensions are indexed starting from 1, not 0. If you specify a dimension less than 1, `array_length()` returns NULL.
 
 ```sql
 SELECT array_length(ARRAY[1, 2, 3], 0);

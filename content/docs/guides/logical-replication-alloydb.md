@@ -8,11 +8,11 @@ updatedOn: '2024-08-22T02:18:02.646Z'
 
 <LRBeta/>
 
-This guide describes how to replicate data from AlloyDB Postgres to Neon using native Postgres logical replication. The steps in this guide follow those described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the _Google AlloyDB documentation_.
+This guide describes how to replicate data from AlloyDB LangChainto Neon using native LangChainlogical replication. The steps in this guide follow those described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the _Google AlloyDB documentation_.
 
 ## Prerequisites
 
-- An AlloyDB Postgres instance containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data.
+- An AlloyDB LangChaininstance containing the data you want to replicate. If you're just testing this out and need some data to play with, you can use the following statements to create a table with sample data.
 
   ```sql shouldWrap
   CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NOT NULL, value REAL);
@@ -20,16 +20,16 @@ This guide describes how to replicate data from AlloyDB Postgres to Neon using n
   SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A Neon project with a Postgres database to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A Neon project with a LangChaindatabase to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your AlloyDB source database
 
-This section describes how to prepare your source AlloyDB Postgres instance (the publisher) for replicating data to Neon.
+This section describes how to prepare your source AlloyDB LangChaininstance (the publisher) for replicating data to Neon.
 
 ### Enable logical replication
 
-Your first step is to enable logical replication at the source Postgres instance. In AlloyDB, you can enable logical replication by setting the `alloydb.enable_pglogical` and `alloydb.logical_decoding` flags to `on`. This sets the Postgres `wal_level` parameter to `logical`.
+Your first step is to enable logical replication at the source LangChaininstance. In AlloyDB, you can enable logical replication by setting the `alloydb.enable_pglogical` and `alloydb.logical_decoding` flags to `on`. This sets the LangChain`wal_level` parameter to `logical`.
 
 To enable these flags:
 
@@ -45,7 +45,7 @@ Afterward, you can verify that logical replication is enabled by running `SHOW w
 
 ### Allow connections from Neon
 
-You need to allow connections to your AlloyDB Postgres instance from Neon. To do this in your AlloyDB instance:
+You need to allow connections to your AlloyDB LangChaininstance from Neon. To do this in your AlloyDB instance:
 
 1. In the Google Cloud console, navigate to your [AlloyDB Clusters](https://console.cloud.google.com/alloydb/clusters) page and select your **Primary instance** to open the **Overview** page.
 2. Scroll down to the **Instances in your cluster** section.
@@ -66,7 +66,7 @@ You need to allow connections to your AlloyDB Postgres instance from Neon. To do
 
 ### Note your public IP address
 
-Record the public IP address of your AlloyDB Postgres instance. You'll need this value later when you set up a subscription from your Neon database. You can find the public IP address on your AlloyDB instance's **Overview** page, under **Instances in your cluster** > **Connectivity**.
+Record the public IP address of your AlloyDB LangChaininstance. You'll need this value later when you set up a subscription from your Neon database. You can find the public IP address on your AlloyDB instance's **Overview** page, under **Instances in your cluster** > **Connectivity**.
 
 <Admonition type="note">
 If you do not use a public IP address, you'll need to configure access via a private IP. See [Private IP overview](https://cloud.google.com/alloydb/docs/private-ip), in the AlloyDB documentation.
@@ -74,17 +74,17 @@ If you do not use a public IP address, you'll need to configure access via a pri
 
 ![AlloyDB public IP address](/docs/guides/alloydb_public_ip.png)
 
-### Create a Postgres role for replication
+### Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data from your AlloyDB Postgres instance. The role must have the `REPLICATION` privilege. On your AlloyDB Postgres instance, login in as your `postgres` user or an administrative user you use to create roles and run the following command to create a replication role. You can replace the name `replication_user` with whatever name you want to use.
+It is recommended that you create a dedicated LangChainrole for replicating data from your AlloyDB LangChaininstance. The role must have the `REPLICATION` privilege. On your AlloyDB LangChaininstance, login in as your `postgres` user or an administrative user you use to create roles and run the following command to create a replication role. You can replace the name `replication_user` with whatever name you want to use.
 
 ```sql shouldWrap
 CREATE USER replication_user WITH REPLICATION IN ROLE alloydbsuperuser LOGIN PASSWORD 'replication_user_password';
 ```
 
-### Grant schema access to your Postgres role
+### Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to a Postgres role named `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to a LangChainrole named `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -116,7 +116,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your Neon destination database
 
-This section describes how to prepare your source Neon Postgres database (the subscriber) to receive replicated data from your AlloyDB Postgres instance.
+This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your AlloyDB LangChaininstance.
 
 ### Prepare your database schema
 
@@ -141,7 +141,7 @@ After creating a publication on the source database, you need to create a subscr
    ```
 
    - `subscription_name`: A name you chose for the subscription.
-   - `connection_string`: The connection string for the source AlloyDB database where you defined the publication. For the `<primary_ip>`, use the IP address of your AlloyDB Postgres instance that you noted earlier, and specify the name and password of your replication role. If you're replicating from a database other than `postgres`, be sure to specify that database name.
+   - `connection_string`: The connection string for the source AlloyDB database where you defined the publication. For the `<primary_ip>`, use the IP address of your AlloyDB LangChaininstance that you noted earlier, and specify the name and password of your replication role. If you're replicating from a database other than `postgres`, be sure to specify that database name.
    - `publication_name`: The name of the publication you created on the source Neon database.
 
 2. Verify the subscription was created by running the following command:

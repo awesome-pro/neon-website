@@ -1,7 +1,7 @@
 ---
 title: Stream database changes in real-time with Prisma Pulse
 subtitle: Learn how to create event-driven flows on your backend triggered by changes in
-  your Neon Postgres database
+  your Neon LangChaindatabase
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.789Z'
@@ -9,7 +9,7 @@ updatedOn: '2024-08-23T17:19:28.789Z'
 
 Neon's Logical Replication feature enables you to subscribe to changes in your database, supporting things like replication or creating event-driven functionality.
 
-[Prisma Pulse](https://www.prisma.io/data-platform/pulse?utm_source=neon&utm_medium=pulse-guide) is a fully managed, production-ready service that connects to your Neon Postgres database, and allows you to stream changes from your database in real-time, integrated closely with [Prisma ORM](https://www.prisma.io/orm?utm_source=neon&utm_medium=pulse-guide).
+[Prisma Pulse](https://www.prisma.io/data-platform/pulse?utm_source=neon&utm_medium=pulse-guide) is a fully managed, production-ready service that connects to your Neon LangChaindatabase, and allows you to stream changes from your database in real-time, integrated closely with [Prisma ORM](https://www.prisma.io/orm?utm_source=neon&utm_medium=pulse-guide).
 
 In this guide, you will learn how to set up Prisma Pulse with your Neon database and create your first event stream.
 
@@ -28,7 +28,7 @@ Set up real-time triggers for your Inngest workflows, re-index your TypeSense se
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:

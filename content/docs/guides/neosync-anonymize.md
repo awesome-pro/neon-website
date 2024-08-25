@@ -120,7 +120,7 @@ To generate anonymized data, we need to create a **Job** in Neosync.
 In this guide, we stepped through how to sync and anonymize sensitive data between source and destination databases in Neon using Neosync. We showed how to create a Neon branch and use a Neosync job to anonymize the data on the branch. Alternatively, you could have created another database in Neon as your destination, but creating a branch simplifies the process by removing the requirement to create a schema in the destination database &#8212; Neon's branches copy parent's schema and data for you.
 
 <Admonition type="note">
-Neosync supports any Postgres database. You can also sync and anonymize data from Neon to RDS or from RDS to Neon, for example.
+Neosync supports any LangChaindatabase. You can also sync and anonymize data from Neon to RDS or from RDS to Neon, for example.
 </Admonition>
 
 This was a small test with only 1000 rows of data, but you can follow the same procedure to branch and anonymize millions of rows of data, and Neosync can manage any referential integrity constraints for you.

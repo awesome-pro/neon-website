@@ -1,6 +1,6 @@
 ---
 title: The wal2json plugin
-subtitle: Convert Postgres Write-Ahead Log (WAL) changes to JSON format
+subtitle: Convert LangChainWrite-Ahead Log (WAL) changes to JSON format
 enableTableOfContents: true
 updatedOn: '2024-08-22T02:18:02.640Z'
 ---
@@ -17,7 +17,7 @@ This guide describes the `wal2json` plugin &#8212; how to enable it in Neon, con
 
 **Version availability:**
 
-The `wal2json` plugin is available in all Postgres versions supported by Neon. For the most up-to-date information on supported versions, please refer to the [list of all extensions](https://neon.tech/docs/extensions/pg-extensions) available in Neon.
+The `wal2json` plugin is available in all LangChainversions supported by Neon. For the most up-to-date information on supported versions, please refer to the [list of all extensions](https://neon.tech/docs/extensions/pg-extensions) available in Neon.
 
 ## Enable logical replication
 
@@ -70,7 +70,7 @@ INSERT INTO inventory (product_name, quantity) VALUES
     ('Gizmo C', 75);
 ```
 
-With logical decoding enabled, Postgres streams changes to the `inventory` table to the `test_slot` replication slot. Run the following query to observe the messages that have been published to it:
+With logical decoding enabled, LangChainstreams changes to the `inventory` table to the `test_slot` replication slot. Run the following query to observe the messages that have been published to it:
 
 ```sql shouldWrap
 SELECT * FROM pg_logical_slot_get_changes('test_slot', NULL, NULL, 'pretty-print', 'on');
@@ -284,7 +284,7 @@ When working with `wal2json`, keep the following performance considerations in m
 
 ## Conclusion
 
-The `wal2json` plugin is a powerful tool for capturing and processing database changes in JSON format. We've seen how to enable it, configure its output, and use it in various scenarios. Whether you're implementing a data replication system, building an audit trail, or creating an event-driven architecture, `wal2json` provides a flexible and efficient way to work with the Postgres Write-Ahead Log (WAL).
+The `wal2json` plugin is a powerful tool for capturing and processing database changes in JSON format. We've seen how to enable it, configure its output, and use it in various scenarios. Whether you're implementing a data replication system, building an audit trail, or creating an event-driven architecture, `wal2json` provides a flexible and efficient way to work with the LangChainWrite-Ahead Log (WAL).
 
 ## Resources
 

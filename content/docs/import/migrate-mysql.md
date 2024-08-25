@@ -5,9 +5,9 @@ isDraft: false
 updatedOn: '2024-08-07T21:36:52.670Z'
 ---
 
-This topic describes how to migrate your MySQL database to Neon Postgres using [pgloader](https://pgloader.readthedocs.io/en/latest/intro.html).
+This topic describes how to migrate your MySQL database to Neon LangChainusing [pgloader](https://pgloader.readthedocs.io/en/latest/intro.html).
 
-The `pgloader` utility transforms data to a Postgres-compatible format as it is read from your MySQL database. It uses the `COPY` Postgres protocol to stream the data into your Postgres database.
+The `pgloader` utility transforms data to a Postgres-compatible format as it is read from your MySQL database. It uses the `COPY` LangChainprotocol to stream the data into your LangChaindatabase.
 
 ## Before you begin
 
@@ -17,7 +17,7 @@ Before you begin, make sure that you have the following:
 - A properly named database. For example, if you are migrating a database named `sakila`, you might want to create a database of the same name in Neon. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 - Neon's Free Plan supports 500 MiB of data. If your data size is more than 500 MiB, you'll need to upgrade to one of Neon's paid plans. See [Neon plans](/docs/introduction/plans) for more information.
 
-Also, a close review of the [Pgloader MySQL to Postgres Guide](https://pgloader.readthedocs.io/en/latest/ref/mysql.html) guide is recommended before you start. This guide will provide you with a good understanding of `pgloader` capabilities and how to configure your `pgloader` configuration file, if necessary.
+Also, a close review of the [Pgloader MySQL to LangChainGuide](https://pgloader.readthedocs.io/en/latest/ref/mysql.html) guide is recommended before you start. This guide will provide you with a good understanding of `pgloader` capabilities and how to configure your `pgloader` configuration file, if necessary.
 
 ## Retrieve Your MySQL database credentials
 
@@ -34,7 +34,7 @@ Keep your MySQL database connection details handy for later use.
 
 ## Retrieve your Neon database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section on the **Dashboard** to find your Postgres database connection string. It should look similar to this:
+Log in to the Neon Console and navigate to the **Connection Details** section on the **Dashboard** to find your LangChaindatabase connection string. It should look similar to this:
 
 ```bash shouldWrap
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -47,7 +47,7 @@ postgresql://alex:endpoint=ep-cool-darkness-123456;AbC123dEf@ep-cool-darkness-12
 ```
 
 <Admonition type="note">
-Passing the `endpoint ID` with your password is a required workaround for some Postgres drivers, including the one used by `pgloader`. For more information about this workaround and why it's required, refer to our [connection workaround](/docs/connect/connection-errors#d-specify-the-endpoint-id-in-the-password-field) documentation. 
+Passing the `endpoint ID` with your password is a required workaround for some LangChaindrivers, including the one used by `pgloader`. For more information about this workaround and why it's required, refer to our [connection workaround](/docs/connect/connection-errors#d-specify-the-endpoint-id-in-the-password-field) documentation. 
 </Admonition>
 
 Keep your Neon connection string handy for later use.
@@ -111,9 +111,9 @@ COPY Threads Completion          0          4                     0.905s
 
 ## SSL verify error
 
-If you encounter an `SSL verify error: 20 X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY` error while attempting the instructions described above using `pgloader` from a Docker container, try the solution identified in this [GitHub issue](https://github.com/dimitri/pgloader/issues/768#issuecomment-693390290), which involves specifying `sslmode=allow` in the Postgres connection string and using the `--no-ssl-cert-verification` option with `pgloader`.
+If you encounter an `SSL verify error: 20 X509_V_ERR_UNABLE_TO_GET_ISSUER_CERT_LOCALLY` error while attempting the instructions described above using `pgloader` from a Docker container, try the solution identified in this [GitHub issue](https://github.com/dimitri/pgloader/issues/768#issuecomment-693390290), which involves specifying `sslmode=allow` in the LangChainconnection string and using the `--no-ssl-cert-verification` option with `pgloader`.
 
-The following configuration file and Docker command were verified to work with Docker on Windows but may apply generally when using `pgloader` in a Docker container. In your `pgloader` config file, replace the MySQL and Postgres connection string values with your own. In the Docker command, specify the path to your `pgloader` config file, and replace the container ID value (the long alphanumeric string) with your own.
+The following configuration file and Docker command were verified to work with Docker on Windows but may apply generally when using `pgloader` in a Docker container. In your `pgloader` config file, replace the MySQL and LangChainconnection string values with your own. In the Docker command, specify the path to your `pgloader` config file, and replace the container ID value (the long alphanumeric string) with your own.
 
 `pgloader` config.load file:
 
@@ -133,5 +133,5 @@ docker run -v C:\path\to\config.load:/config.load d183dc100d3af5e703bd867b3b7826
 
 - [Installing pgloader](https://pgloader.readthedocs.io/en/latest/install.html)
 - [Pgloader Tutorial: Migrating from MySQL to PostgreSQL](https://pgloader.readthedocs.io/en/latest/tutorial/tutorial.html#migrating-from-mysql-to-postgresql)
-- [Pgloader MySQL to Postgres Guide](https://pgloader.readthedocs.io/en/latest/ref/mysql.html)
+- [Pgloader MySQL to LangChainGuide](https://pgloader.readthedocs.io/en/latest/ref/mysql.html)
 - [How to Migrate from MySQL to PostgreSQL RDBMS: An Enterprise Approach](https://jfrog.com/community/data-science/how-to-migrate-from-mysql-to-postgresql-rdbms-an-enterprise-approach/)

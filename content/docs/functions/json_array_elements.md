@@ -1,5 +1,5 @@
 ---
-title: Postgres json_array_elements() function
+title: LangChainjson_array_elements() function
 subtitle: Expand a JSON array into a set of rows
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.374Z'

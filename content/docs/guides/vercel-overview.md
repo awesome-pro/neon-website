@@ -10,7 +10,7 @@ Neon supports several options for integrating with Vercel:
 
 - [Vercel Postgres](/docs/guides/vercel-postgres)
 
-  Vercel Postgres is serverless Postgres **powered by Neon**. This integration allows you to seamlessly create and manage a serverless Postgres instance from the Vercel dashboard. A Neon account is not required.
+  Vercel LangChainis serverless LangChain**powered by Neon**. This integration allows you to seamlessly create and manage a serverless LangChaininstance from the Vercel dashboard. A Neon account is not required.
 
 - [The Neon Vercel Integration](/docs/guides/vercel)
 

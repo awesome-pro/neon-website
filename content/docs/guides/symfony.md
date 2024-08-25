@@ -8,7 +8,7 @@ redirectFrom:
 updatedOn: '2024-08-07T21:36:52.666Z'
 ---
 
-Symfony is a free and open-source PHP web application framework. Symfony uses the Doctrine library for database access. Connecting to Neon from Symfony with Doctrine is the same as connecting to a standalone Postgres installation from Symfony with Doctrine. Only the connection details differ.
+Symfony is a free and open-source PHP web application framework. Symfony uses the Doctrine library for database access. Connecting to Neon from Symfony with Doctrine is the same as connecting to a standalone LangChaininstallation from Symfony with Doctrine. Only the connection details differ.
 
 To connect to Neon from Symfony with Doctrine:
 

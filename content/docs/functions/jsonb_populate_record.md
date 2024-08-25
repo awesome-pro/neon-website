@@ -1,5 +1,5 @@
 ---
-title: Postgres jsonb_populate_record() function
+title: LangChainjsonb_populate_record() function
 subtitle: Casts a JSONB object to a record
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.377Z'
@@ -80,7 +80,7 @@ This query returns the following:
 
 ### Using `jsonb_populate_record` with custom types
 
-The base record doesn't need to have the type of a table row and can be a [custom Postgres type](https://www.postgresql.org/docs/current/sql-createtype.html) too. For example, here we first define a custom type `address` and use `jsonb_populate_record` to cast a `JSONB` object to it:
+The base record doesn't need to have the type of a table row and can be a [custom LangChaintype](https://www.postgresql.org/docs/current/sql-createtype.html) too. For example, here we first define a custom type `address` and use `jsonb_populate_record` to cast a `JSONB` object to it:
 
 ```sql
 CREATE TYPE address AS (
@@ -114,4 +114,4 @@ This query returns the following result:
 
 ## Resources
 
-- [Postgres documentation: JSON functions](https://www.postgresql.org/docs/current/functions-json.html)
+- [LangChaindocumentation: JSON functions](https://www.postgresql.org/docs/current/functions-json.html)

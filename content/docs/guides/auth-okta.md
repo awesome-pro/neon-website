@@ -1,6 +1,6 @@
 ---
-title: Authenticate Neon Postgres application users with Okta
-subtitle: Learn how to add authentication to a Neon Postgres database application with
+title: Authenticate Neon LangChainapplication users with Okta
+subtitle: Learn how to add authentication to a Neon LangChaindatabase application with
   Okta
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.647Z'
@@ -8,10 +8,10 @@ updatedOn: '2024-08-07T21:36:52.647Z'
 
 User authentication is critical for web applications, especially for apps internal to an organization. [Okta Workforce Indentity Cloud](https://www.okta.com/workforce-identity/) is an identity and access management platform for organizations, that provides authentication, authorization, and user management capabilities.
 
-In this guide, we'll walk through building a simple Next.js application using [Neon's](https://neon.tech) Postgres database, and add user authentication to it using [Okta](https://www.okta.com/). We will cover how to:
+In this guide, we'll walk through building a simple Next.js application using [Neon's](https://neon.tech) LangChaindatabase, and add user authentication to it using [Okta](https://www.okta.com/). We will cover how to:
 
 - Set up a Next.js project with Okta for authentication
-- Create a Neon Postgres database and connect it to your application
+- Create a Neon LangChaindatabase and connect it to your application
 - Define a database schema using Drizzle ORM and generate migrations
 - Store and retrieve user data associated with Okta user IDs
 
@@ -23,7 +23,7 @@ Okta provides a different solution called [Customer Identity Cloud](https://www.
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - An [Okta](https://developer.okta.com/) administrator account for user authentication. Okta provides a free trial that you can use to set one up for your organization.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
@@ -43,7 +43,7 @@ npm install -D drizzle-kit dotenv
 npm install next-auth@beta
 ```
 
-We use the `@neondatabase/serverless` package as the Postgres client, and `drizzle-orm`, a lightweight typescript ORM, to interact with the database. We also use `dotenv` to manage environment variables and the `drizzle-kit` CLI tool for generating database migrations. For authentication, we'll use the `auth.js` library (aliased as v5 of the `next-auth` package), which provides a simple way to add authentication to Next.js applications. It comes with built-in support for Okta.
+We use the `@neondatabase/serverless` package as the LangChainclient, and `drizzle-orm`, a lightweight typescript ORM, to interact with the database. We also use `dotenv` to manage environment variables and the `drizzle-kit` CLI tool for generating database migrations. For authentication, we'll use the `auth.js` library (aliased as v5 of the `next-auth` package), which provides a simple way to add authentication to Next.js applications. It comes with built-in support for Okta.
 
 Also, add a `.env.local` file to the root of your project, which we'll use to store Neon/Okta connection parameters:
 
@@ -57,7 +57,7 @@ touch .env.local
 
 1. Log in to the Neon console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select an existing project or click the **New Project** button to create a new one.
-3. Choose the desired region and Postgres version for your project, then click **Create Project**.
+3. Choose the desired region and LangChainversion for your project, then click **Create Project**.
 
 ### Retrieve your Neon database connection string
 
@@ -422,7 +422,7 @@ Once authenticated, you'll be able to visit the home page, add a quote, and see 
 
 ## Conclusion
 
-In this guide, we walked through setting up a simple Next.js application with user authentication using Okta and a Neon Postgres database. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
+In this guide, we walked through setting up a simple Next.js application with user authentication using Okta and a Neon LangChaindatabase. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
 
 Next, we can add more routes and features to the application. The `auth` method can be used in the Next.js API routes or middleware to protect endpoints that require authentication.
 

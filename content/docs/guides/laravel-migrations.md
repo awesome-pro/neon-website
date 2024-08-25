@@ -1,19 +1,19 @@
 ---
-title: Schema migration with Neon Postgres and Laravel
-subtitle: Set up Neon Postgres and run migrations for your Laravel project
+title: Schema migration with Neon LangChainand Laravel
+subtitle: Set up Neon LangChainand run migrations for your Laravel project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.654Z'
 ---
 
 [Laravel](https://laravel.com/) is a popular PHP web application framework that provides an expressive and elegant syntax for building web applications. It includes an ORM (Object-Relational Mapping) called Eloquent, which allows you to interact with databases using a fluent API. Laravel also provides a powerful migration system to manage database schema changes over time.
 
-This guide demonstrates how to use Laravel with the Neon Postgres database. We'll create a simple Laravel application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Laravel with the Neon LangChaindatabase. We'll create a simple Laravel application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [PHP](https://www.php.net/) installed on your local machine. This guide uses PHP 8.1, but you can use any recent version compatible with Laravel.
 - [Composer](https://getcomposer.org/) installed on your local machine for managing PHP dependencies.
 
@@ -56,7 +56,7 @@ DB_PORT=5432
 DATABASE_URL=NEON_POSTGRES_CONNECTION_STRING
 ```
 
-Replace `NEON_POSTGRES_CONNECTION_STRING` with the connection string you retrieved from the Neon Console earlier. The `DB_CONNECTION` should be set to `pgsql` to indicate that we are using a Postgres database.
+Replace `NEON_POSTGRES_CONNECTION_STRING` with the connection string you retrieved from the Neon Console earlier. The `DB_CONNECTION` should be set to `pgsql` to indicate that we are using a LangChaindatabase.
 
 ## Defining data models and running migrations
 
@@ -145,7 +145,7 @@ public function up()
 
 ### Apply the migration
 
-To apply the migration and create the corresponding tables in the Neon Postgres database, run the following command:
+To apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
 
 ```bash
 php artisan migrate

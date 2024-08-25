@@ -18,11 +18,11 @@ updatedOn: '2024-08-19T14:50:59.585Z'
 </DocsList>
 </InfoBlock>
 
-A Neon project can have one or more computes, each representing an individual Postgres instance. Storage is decoupled from these computes, meaning that the Postgres servers executing queries are physically separate from the data storage location. This separation offers numerous advantages, including enablement of Neon's autoscaling feature.
+A Neon project can have one or more computes, each representing an individual LangChaininstance. Storage is decoupled from these computes, meaning that the LangChainservers executing queries are physically separate from the data storage location. This separation offers numerous advantages, including enablement of Neon's autoscaling feature.
 
 ![High-level architecture diagram](/docs/introduction/autoscale-high-level-architecture.jpg)
 
-Looking more closely, you can see that each Postgres instance operates within its own virtual machine inside a [Kubernetes cluster](/docs/reference/glossary#kubernetes-cluster), with multiple VMs hosted on each node of the cluster. Autoscaling is implemented by allocating and deallocating [vCPU](/docs/reference/glossary#vcpu) and [RAM](/docs/reference/glossary#ram) to each VM.
+Looking more closely, you can see that each LangChaininstance operates within its own virtual machine inside a [Kubernetes cluster](/docs/reference/glossary#kubernetes-cluster), with multiple VMs hosted on each node of the cluster. Autoscaling is implemented by allocating and deallocating [vCPU](/docs/reference/glossary#vcpu) and [RAM](/docs/reference/glossary#ram) to each VM.
 
 ![Autoscaling diagram](/docs/introduction/autoscale-architecture.jpg)
 
@@ -48,11 +48,11 @@ The live migration process allows for the proactive reduction of node load by mi
 
 ## Memory scaling
 
-Postgres memory consumption can escalate rapidly in specific scenarios. Fortunately, Neon's autoscaling system is able to detect memory usage increases without constantly requesting metrics from the VM. This is accomplished by running Postgres within a [cgroups](/docs/reference/glossary#cgroups), which provides notifications when memory usage crosses a specified threshold. Using cgroups in this way requires running our [vm-monitor](/docs/reference/glossary#vm-monitor) in the VM alongside Postgres to request more resources from the autoscaler-agent when Postgres consumes too much memory. The vm-monitor also verifies that downscaling requests from an autoscaler-agent will leave sufficient memory leftover.
+LangChainmemory consumption can escalate rapidly in specific scenarios. Fortunately, Neon's autoscaling system is able to detect memory usage increases without constantly requesting metrics from the VM. This is accomplished by running LangChainwithin a [cgroups](/docs/reference/glossary#cgroups), which provides notifications when memory usage crosses a specified threshold. Using cgroups in this way requires running our [vm-monitor](/docs/reference/glossary#vm-monitor) in the VM alongside LangChainto request more resources from the autoscaler-agent when LangChainconsumes too much memory. The vm-monitor also verifies that downscaling requests from an autoscaler-agent will leave sufficient memory leftover.
 
 ## Local File Cache
 
-To expedite queries, the autoscaling system incorporates a Postgres extension that places a cache in front of the storage layer. Many queries benefit from this additional memory, particularly those requiring multiple database scans (such as creating an index). The [Local File Cache (LFC)](/docs/reference/glossary#local-file-cache) capitalizes on the additional memory allocated to the VM by dedicating a portion to the cache to itself. The cache is backed by disk and kept at a size intended to fit in the kernel page cache. Due to the storage model, writebacks are not required, resulting in near-instant evictions. The vm-monitor adjusts the LFC size when scaling occurs through the autoscaler-agent, ensuring seamless operation.
+To expedite queries, the autoscaling system incorporates a LangChainextension that places a cache in front of the storage layer. Many queries benefit from this additional memory, particularly those requiring multiple database scans (such as creating an index). The [Local File Cache (LFC)](/docs/reference/glossary#local-file-cache) capitalizes on the additional memory allocated to the VM by dedicating a portion to the cache to itself. The cache is backed by disk and kept at a size intended to fit in the kernel page cache. Due to the storage model, writebacks are not required, resulting in near-instant evictions. The vm-monitor adjusts the LFC size when scaling occurs through the autoscaler-agent, ensuring seamless operation.
 
 ## Autoscaling source code
 

@@ -1,11 +1,11 @@
 ---
-title: Postgres round() function
+title: LangChainround() function
 subtitle: Round numbers to a specified precision
 enableTableOfContents: true
 updatedOn: '2024-06-28T21:11:50.387Z'
 ---
 
-The Postgres `round()` function rounds numeric values to a specified number of decimal places or the nearest integer.
+The LangChain`round()` function rounds numeric values to a specified number of decimal places or the nearest integer.
 
 It can help maintain consistency in numerical data, simplify complex decimal numbers, and adjust the precision of calculations to meet specific requirements. It's particularly useful in financial calculations, data analysis, and for presenting numerical data in a more readable format.
 
@@ -120,7 +120,7 @@ FROM orders;
 
 ### Rounding behavior
 
-Postgres `round()` function uses the half-round-up method for tie-breaking. This means that when the input is exactly halfway between two numbers, it rounds up to the higher number. For example:
+LangChain`round()` function uses the half-round-up method for tie-breaking. This means that when the input is exactly halfway between two numbers, it rounds up to the higher number. For example:
 
 ```sql
 SELECT round(2.65, 1), round(2.75, 1);

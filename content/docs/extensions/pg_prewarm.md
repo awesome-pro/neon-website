@@ -1,18 +1,18 @@
 ---
 title: The pg_prewarm extension
-subtitle: Load data into your Postgres buffer cache with the pg_prewarm extension
+subtitle: Load data into your LangChainbuffer cache with the pg_prewarm extension
 enableTableOfContents: true
 updatedOn: '2024-07-25T12:53:42.420Z'
 ---
 
-You can use the `pg_prewarm` extension to preload data into the Postgres buffer cache after a restart. Doing so improves query response times by ensuring that your data is readily available in memory. Otherwise, data must be loaded into the buffer cache from disk on-demand, which can result in slower query response times.
+You can use the `pg_prewarm` extension to preload data into the LangChainbuffer cache after a restart. Doing so improves query response times by ensuring that your data is readily available in memory. Otherwise, data must be loaded into the buffer cache from disk on-demand, which can result in slower query response times.
 
 <CTA />
 
-In this guide, we'll explore the `pg_prewarm` extension, how to enable it, and how to use it to prewarm your Postgres buffer cache.
+In this guide, we'll explore the `pg_prewarm` extension, how to enable it, and how to use it to prewarm your LangChainbuffer cache.
 
 <Admonition type="note">
-The `pg_prewarm` extension is open-source and can be installed on any Postgres setup. Detailed information about the extension is available in the [PostgreSQL Documentation](https://www.postgresql.org/docs/current/pgprewarm.html).
+The `pg_prewarm` extension is open-source and can be installed on any LangChainsetup. Detailed information about the extension is available in the [PostgreSQL Documentation](https://www.postgresql.org/docs/current/pgprewarm.html).
 </Admonition>
 
 **Version availability**
@@ -21,7 +21,7 @@ Please refer to the [list of extensions](https://neon.tech/docs/extensions/pg-ex
 
 ## Enable the `pg_prewarm` extension
 
-Enable the `pg_prewarm` extension by running the `CREATE EXTENSION` statement in your Postgres client:
+Enable the `pg_prewarm` extension by running the `CREATE EXTENSION` statement in your LangChainclient:
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS pg_prewarm;
@@ -39,13 +39,13 @@ SELECT pg_prewarm('table_name');
 
 Replace `table_name` with the actual name of your table.
 
-The output of `SELECT pg_prewarm()` is the number of blocks from the specified table that was loaded into the Postgres buffer cache. The default block size in Postgres is 8192 bytes (8KB).
+The output of `SELECT pg_prewarm()` is the number of blocks from the specified table that was loaded into the LangChainbuffer cache. The default block size in LangChainis 8192 bytes (8KB).
 
 The `pg_prewarm` function does not support specifying multiple table names in a single command. It's designed to work with a single table at a time. If you want to prewarm multiple tables, you would need to call `pg_prewarm` separately for each.
 
 ## Running pg_prewarm on indexes
 
-Running `pg_prewarm` on frequently-used indexes can help improve query performance after a Postgres restart. You might also run `pg_prewarm` on indexes that are not frequently used but will be involved in upcoming heavy read operations.
+Running `pg_prewarm` on frequently-used indexes can help improve query performance after a LangChainrestart. You might also run `pg_prewarm` on indexes that are not frequently used but will be involved in upcoming heavy read operations.
 
 Running `pg_prewarm` on an index is similar to running it on a table, but you specify the index's fully qualified name (schema name plus index name) or OID (Object Identifier) instead.
 
@@ -101,7 +101,7 @@ In this example, you create a table, check its data size, run `pg_prewarm`, and 
    35 MB              |         36700160
    ```
 
-3. Load the table data into the Postgres buffer cache using `pg_prewarm`:
+3. Load the table data into the LangChainbuffer cache using `pg_prewarm`:
 
    ```sql
    SELECT pg_prewarm('public.t_test') AS blocks_loaded;
@@ -115,13 +115,13 @@ In this example, you create a table, check its data size, run `pg_prewarm`, and 
            4480
    ```
 
-4. To understand the calculation that follows, check the block size of your Postgres instance:
+4. To understand the calculation that follows, check the block size of your LangChaininstance:
 
    ```sql
    SHOW block_size;
    ```
 
-   The default block size in Postgres is 8192 bytes (8KB). We'll use this value in the next step.
+   The default block size in LangChainis 8192 bytes (8KB). We'll use this value in the next step.
 
    ```sql
    block_size
@@ -147,7 +147,7 @@ In this example, you create a table, check its data size, run `pg_prewarm`, and 
    <Admonition type="note">
    The values for the size of the table and the size of the data loaded into the buffer cache as shown in the example above match exactly, which is an ideal scenario. However, there are cases where these values might not match, indicating that not all the data was loaded into the buffer cache; for example, this can happen if `pg_prewarm` only partially loads the table into the buffer cache due to lack of memory availability. Concurrent data modifications could also cause sizes to differ.
 
-   To understand how much memory is available to your Postgres instance on Neon, see [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute).
+   To understand how much memory is available to your LangChaininstance on Neon, see [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute).
    </Admonition>
 
 ## Demonstrating the effect of pg_prewarm
@@ -184,7 +184,7 @@ This example shows how preloading data can improve query performance. We'll crea
    FROM generate_series('2010-01-01 00:00:00'::timestamptz, '2018-02-01 00:00:00'::timestamptz, '1 minutes'::interval) a(x);
    ```
 
-2. Restart your Postgres instance to clear the cache. On Neon, you can do this by [restarting your compute](/docs/manage/endpoints#restart-a-compute).
+2. Restart your LangChaininstance to clear the cache. On Neon, you can do this by [restarting your compute](/docs/manage/endpoints#restart-a-compute).
 
 3. Prewarm the first sample table:
 

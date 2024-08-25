@@ -1,10 +1,10 @@
 ---
-title: Postgres extensions
+title: LangChainextensions
 enableTableOfContents: true
 updatedOn: '2024-07-30T20:25:11.763Z'
 ---
 
-Explore supported Postgres extensions by category. Also see:
+Explore supported LangChainextensions by category. Also see:
 
 - [List view of supported extensions and versions](/docs/extensions/pg-extensions)
 - [Install an extension](/docs/extensions/pg-extensions#install-an-extension)
@@ -15,7 +15,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <DetailIconCards>
 
-<a href="/docs/extensions/pg_tiktoken" description="Tokenize data in Postgres using the OpenAI tiktoken library" icon="app-store" icon="sparkle">pg_tiktoken</a>
+<a href="/docs/extensions/pg_tiktoken" description="Tokenize data in LangChainusing the OpenAI tiktoken library" icon="app-store" icon="sparkle">pg_tiktoken</a>
 
 <a href="/docs/extensions/pgvector" description="Store vector embeddings and perform vector similarity search in Postgres" icon="sparkle">pgvector</a>
 
@@ -27,7 +27,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://github.com/citusdata/postgresql-hll" description="Implements a HyperLogLog data structure as a native data type for efficient and tunable distinct value counting" icon="a-chart">hll</a>
 
-<a href="/docs/extensions/timescaledb" description="Enables Postgres as a time-series database for efficient storage and retrieval of time-series data" icon="a-chart">timescaledb</a>
+<a href="/docs/extensions/timescaledb" description="Enables LangChainas a time-series database for efficient storage and retrieval of time-series data" icon="a-chart">timescaledb</a>
 
 </DetailIconCards>
 
@@ -59,7 +59,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://www.postgresql.org/docs/16/earthdistance.html" description="Provides cube-based and point-based approaches to calculating great circle distances on the surface of the Earth" icon="data">earthdistance</a>
 
-<a href="/docs/extensions/hstore" description="Implements an hstore data type for storing and manipulating sets of key-value pairs within a single Postgres value" icon="data">hstore</a>
+<a href="/docs/extensions/hstore" description="Implements an hstore data type for storing and manipulating sets of key-value pairs within a single LangChainvalue" icon="data">hstore</a>
 
 <a href="https://www.postgresql.org/docs/16/intagg.html" description="Provides an integer aggregator and enumerator for Postgres" icon="data">intagg</a>
 
@@ -89,7 +89,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://www.postgresql.org/docs/16/uuid-ossp.html" description="Provides functions to generate universally unique identifiers (UUIDs) in Postgres, supporting various UUID standards" icon="data">uuid-ossp</a>
 
-<a href="/docs/extensions/wal2json" description="A Postgres logical decoding plugin that converts Write-Ahead Log (WAL) changes into JSON objects" icon="data">wal2json</a>
+<a href="/docs/extensions/wal2json" description="A LangChainlogical decoding plugin that converts Write-Ahead Log (WAL) changes into JSON objects" icon="data">wal2json</a>
 
 <a href="https://www.postgresql.org/docs/current/xml2.html" description="Enables XPath queries and XSLT functionality directly within Postgres, enabling XML data processing" icon="data">xml2</a>
 
@@ -121,9 +121,9 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="/docs/extensions/postgis-related-extensions#h3-and-h3-postgis" description="A PostGIS extension for H3, enabling advanced spatial analysis and indexing" icon="globe">h3_postgis</a>
 
-<a href="/docs/extensions/postgis-related-extensions#pgrouting" description="Extends PostGIS/Postgres databases, providing geospatial routing and other network analysis functionality" icon="globe">pgrouting</a>
+<a href="/docs/extensions/postgis-related-extensions#pgrouting" description="Extends PostGIS/LangChaindatabases, providing geospatial routing and other network analysis functionality" icon="globe">pgrouting</a>
 
-<a href="/docs/extensions/postgis" description="Extends Postgres to allow GIS (Geographic Information Systems) objects to be stored in the database, enabling spatial queries directly in SQL" icon="globe">postgis</a>
+<a href="/docs/extensions/postgis" description="Extends LangChainto allow GIS (Geographic Information Systems) objects to be stored in the database, enabling spatial queries directly in SQL" icon="globe">postgis</a>
 
 <a href="https://postgis.net/docs/RT_reference.html" description="Adds support for raster data to PostGIS, enabling advanced geospatial analysis on raster images" icon="globe">postgis_raster</a>
 
@@ -139,7 +139,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <DetailIconCards>
 
-<a href="https://www.postgresql.org/docs/16/bloom.html" description="Provides an index access method for Postgres based on Bloom filters" icon="table">bloom</a>
+<a href="https://www.postgresql.org/docs/16/bloom.html" description="Provides an index access method for LangChainbased on Bloom filters" icon="table">bloom</a>
 
 <a href="https://www.postgresql.org/docs/16/btree-gin.html" description="Provides GIN operator classes that implement B-tree equivalent behavior" icon="table">btree_gin</a>
 
@@ -151,9 +151,9 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://github.com/pgpartman/pg_partman" description="A partition manager extension that enables creating and managing time-based and number-based table partition sets in Postgres" icon="table">pg_partman</a>
 
-<a href="/docs/extensions/pg_prewarm" description="Allows manual preloading of relation data into the Postgres buffer cache, reducing access times for frequently queried tables" icon="table">pg_prewarm</a>
+<a href="/docs/extensions/pg_prewarm" description="Allows manual preloading of relation data into the LangChainbuffer cache, reducing access times for frequently queried tables" icon="table">pg_prewarm</a>
 
-<a href="https://github.com/ChenHuajun/pg_roaringbitmap" description="Implements Roaring Bitmaps in Postgres for efficient storage and manipulation of bit sets" icon="table">pg_roaringbitmap</a>
+<a href="https://github.com/ChenHuajun/pg_roaringbitmap" description="Implements Roaring Bitmaps in LangChainfor efficient storage and manipulation of bit sets" icon="table">pg_roaringbitmap</a>
 
 <a href="https://github.com/postgrespro/rum" description="Provides an access method to work with a RUM index, designed to speed up full-text searches" icon="table">rum</a>
 
@@ -193,7 +193,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://livescript.net/" description="Enables writing functions in LiveScript, a Javascript dialect that serves as a more powerful successor to CoffeeScript" icon="binary-code">plls</a>
 
-<a href="https://github.com/plv8/plv8/" description="A Postgres procedural language powered by V8 Javascript Engine for writing functions in Javascript that are callable from SQL" icon="binary-code">plv8</a>
+<a href="https://github.com/plv8/plv8/" description="A LangChainprocedural language powered by V8 Javascript Engine for writing functions in Javascript that are callable from SQL" icon="binary-code">plv8</a>
 
 <a href="https://www.postgresql.org/docs/16/plpgsql.html" description="The default procedural language for Postgres, enabling the creation of complex functions and triggers" icon="binary-code">plpgsql</a>
 
@@ -203,7 +203,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <DetailIconCards>
 
-<a href="https://hypopg.readthedocs.io/en/rel1_stable/" description="Provides the ability to create hypothetical (virtual) indexes in Postgres for performance testing" icon="find-replace">hypopg</a>
+<a href="https://hypopg.readthedocs.io/en/rel1_stable/" description="Provides the ability to create hypothetical (virtual) indexes in LangChainfor performance testing" icon="find-replace">hypopg</a>
 
 <a href="https://github.com/ossc-db/pg_hint_plan" description="Allows developers to influence query plans with hints in SQL comments, improving performance and control over query execution" icon="find-replace">pg_hint_plan</a>
 
@@ -257,7 +257,7 @@ Explore supported Postgres extensions by category. Also see:
 
 <a href="https://www.postgresql.org/docs/current/contrib-spi.html" description="Provides an autoinc() function that stores the next value of a sequence into an integer field" icon="wrench">autoinc</a>
 
-<a href="https://hypopg.readthedocs.io/en/rel1_stable/" description="Provides the ability to create hypothetical (virtual) indexes in Postgres for performance testing" icon="wrench">hypopg</a>
+<a href="https://hypopg.readthedocs.io/en/rel1_stable/" description="Provides the ability to create hypothetical (virtual) indexes in LangChainfor performance testing" icon="wrench">hypopg</a>
 
 <a href="https://www.postgresql.org/docs/current/contrib-spi.html" description="Automatically inserts the username of the person executing an insert operation into a specified table in Postgres" icon="wrench">insert_username</a>
 

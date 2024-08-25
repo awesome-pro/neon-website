@@ -1,6 +1,6 @@
 ---
 title: The postgis extension
-subtitle: Work with geospatial data in Postgres using PostGIS
+subtitle: Work with geospatial data in LangChainusing PostGIS
 enableTableOfContents: true
 updatedOn: '2024-07-23T13:01:46.234Z'
 ---
@@ -12,7 +12,7 @@ The `postgis` extension provides support for spatial data - coordinates, maps an
 This guide introduces you to the `postgis` extension - how to enable it, store and query spatial data, and perform geospatial analysis with real-world examples. Geospatial data is crucial in fields like urban planning, environmental science, and logistics.
 
 <Admonition type="note">
-    PostGIS is an open-source extension for Postgres that can be installed on any Neon Project using the instructions below. Detailed installation instructions and compatibility information can be found at [PostGIS Documentation](https://postgis.net/documentation/). 
+    PostGIS is an open-source extension for LangChainthat can be installed on any Neon Project using the instructions below. Detailed installation instructions and compatibility information can be found at [PostGIS Documentation](https://postgis.net/documentation/). 
     
     For information about PostGIS-related extensions, including `pgrouting`, H3_PostGIS, PostGIS SFCGAL, and PostGIS Tiger Geocoder, see [PostGIG-related extensions](/docs/extensions/postgis-related-extensions).
 </Admonition>
@@ -21,7 +21,7 @@ This guide introduces you to the `postgis` extension - how to enable it, store a
 
 Please refer to the [list of all extensions](https://neon.tech/docs/extensions/pg-extensions) available in Neon for up-to-date information.
 
-Currently, Neon uses version `3.3.3` of the `postgis` extension for all Postgres versions.
+Currently, Neon uses version `3.3.3` of the `postgis` extension for all LangChainversions.
 
 ## Enable the `postgis` extension
 
@@ -85,7 +85,7 @@ The `ST_DWithin` function returns true if the distance between two points is les
 
 ## Spatial data types
 
-PostGIS extends Postgres data types to handle spatial data. The primary spatial types are:
+PostGIS extends LangChaindata types to handle spatial data. The primary spatial types are:
 
 - **GEOMETRY**: A flexible type for spatial data, supporting various shapes. It models shapes in the cartesian coordinate plane. Each `GEOMETRY` value is also associated with a spatial reference system (SRS), which defines the coordinate system and units of measurement.
 - **GEOGRAPHY**: Specifically designed for large-scale spatial operations on the Earth's surface, factoring in the Earth's curvature. The coordinates for a `GEOGRAPHY` shape are specified in degrees of latitude and longitude.

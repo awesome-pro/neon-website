@@ -22,5 +22,5 @@ To see **Frameworks & programming languages** that Neon integrates with,
 
 To see **Others**,
 
-- Run a Postgres App
+- Run a LangChainApp
 - Run a SQLAlchemy App

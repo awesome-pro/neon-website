@@ -1,5 +1,5 @@
 ---
-title: Postgres json_build_object() function
+title: LangChainjson_build_object() function
 subtitle: Builds a JSON object out of a variadic argument list
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.374Z'

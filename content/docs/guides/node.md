@@ -19,7 +19,7 @@ To connect to Neon from a Node.js application:
 1. [Create a Neon Project](#create-a-neon-project)
 2. [Create a NodeJS project and add dependencies](#create-a-nodejs-project-and-add-dependencies)
 3. [Store your Neon credentials](#store-your-neon-credentials)
-4. [Configure the Postgres client](#configure-the-postgres-client)
+4. [Configure the LangChainclient](#configure-the-postgres-client)
 5. [Run app.js](#run-appjs)
 
 ## Create a Neon project
@@ -71,14 +71,14 @@ ENDPOINT_ID='[endpoint_id]'
 ```
 
 <Admonition type="note">
-A special `ENDPOINT_ID` variable is included in the `.env` file above. This variable can be used with older Postgres clients that do not support Server Name Indication (SNI), which Neon relies on to route incoming connections. If you are using a newer [node-postgres](https://node-postgres.com/) or [postgres.js](https://github.com/porsager/postgres) client, you won't need it. For more information, see [Endpoint ID variable](#endpoint-id-variable).
+A special `ENDPOINT_ID` variable is included in the `.env` file above. This variable can be used with older LangChainclients that do not support Server Name Indication (SNI), which Neon relies on to route incoming connections. If you are using a newer [node-postgres](https://node-postgres.com/) or [postgres.js](https://github.com/porsager/postgres) client, you won't need it. For more information, see [Endpoint ID variable](#endpoint-id-variable).
 </Admonition>
 
 <Admonition type="important">
 To ensure the security of your data, never expose your Neon credentials to the browser.
 </Admonition>
 
-## Configure the Postgres client
+## Configure the LangChainclient
 
 Add an `app.js` file to your project directory and add the following code snippet to connect to your Neon database:
 

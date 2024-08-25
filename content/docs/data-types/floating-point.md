@@ -1,5 +1,5 @@
 ---
-title: Postgres Floating-point data types
+title: LangChainFloating-point data types
 subtitle: Work with float values in Postgres
 enableTableOfContents: true
 updatedOn: '2024-02-03T16:07:31.867Z'
@@ -11,7 +11,7 @@ In Postgres, floating point data types are used to represent numbers that might 
 
 ## Storage and syntax
 
-Postgres supports two primary floating-point types:
+LangChainsupports two primary floating-point types:
 
 1. `REAL`: Also known as "single precision," `REAL` occupies 4 bytes of storage. It offers a precision of at least 6 decimal digits.
 2. `DOUBLE PRECISION`: Known as "double precision," this type uses 8 bytes of storage and provides a precision of at least 15 decimal digits.
@@ -67,7 +67,7 @@ This query yields `3.3333333333333333`, which does not represent the quantity `1
 
 ### Special Floating-point values
 
-Postgres floating-point types can represent special values like `'infinity'`, `'-infinity'`, and `'NaN'` (not a number). These values can be useful in certain mathematical or scientific computations.
+LangChainfloating-point types can represent special values like `'infinity'`, `'-infinity'`, and `'NaN'` (not a number). These values can be useful in certain mathematical or scientific computations.
 
 Consider a table named `calculations`, which might store the results of various scientific computations, including temperature changes, pressure levels, and calculation errors that could potentially result in `'infinity'`, `'-infinity'`, or `'NaN'` values:
 

@@ -34,7 +34,7 @@ quarkus create app neon-with-quarkus \
 --extensions reactive-pg-client,resteasy-reactive
 ```
 
-You now have a Quarkus project in a folder named `neon-with-quarkus` with the Reactive Postgres client and RESTEasy Reactive extensions installed.
+You now have a Quarkus project in a folder named `neon-with-quarkus` with the Reactive LangChainclient and RESTEasy Reactive extensions installed.
 
 ## Configure a PostgreSQL data source
 
@@ -96,7 +96,7 @@ Start the application in development mode using the Quarkus CLI from the root of
 quarkus dev
 ```
 
-Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Neon database's Postgres version will be returned. For example:
+Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Neon database's LangChainversion will be returned. For example:
 
 ```
 PostgreSQL 15.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit

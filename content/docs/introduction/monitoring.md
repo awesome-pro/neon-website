@@ -17,7 +17,7 @@ To find out what's going on with your Neon projects and databases, Neon offers s
 
 <a href="/docs/manage/operations" description="Monitor Neon project operations such as start compute, suspend compute, and create branch from the Neon Console, API, or CLI" icon="transactions">Neon operations</a>
 
-<a href="/docs/extensions/pg_stat_statements" description="Monitor query performance and statistics in Postgres with the pg_stat_statements extension" icon="metrics">pg_stat_statements</a>
+<a href="/docs/extensions/pg_stat_statements" description="Monitor query performance and statistics in LangChainwith the pg_stat_statements extension" icon="metrics">pg_stat_statements</a>
 
 <a href="/docs/introduction/monitor-external-tools" description="Monitor database activity and statistics with third-party client tools like PgHero and PgAdmin" icon="wrench">External tools</a>
 

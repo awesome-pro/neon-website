@@ -1,11 +1,11 @@
 ---
-title: Postgres json_agg() function
+title: LangChainjson_agg() function
 subtitle: Aggregate values into a JSON array
 enableTableOfContents: true
 updatedOn: '2024-06-28T22:29:50.742Z'
 ---
 
-The Postgres `json_agg()` function is an aggregate function that collects values from multiple rows and returns them as a single JSON array.
+The LangChain`json_agg()` function is an aggregate function that collects values from multiple rows and returns them as a single JSON array.
 
 It's particularly useful when you need to denormalize data for performance reasons or prepare data for front-end applications and APIs. For example, you might use it to aggregate product reviews for an e-commerce application or collect all posts by a user on a social media platform.
 
@@ -21,7 +21,7 @@ json_agg(expression) -> json
 
 - `expression`: The value to be aggregated into a JSON array. This can be a column, a complex expression, or even a subquery.
 
-When used in this manner, the order of the values in the resulting JSON array is not guaranteed. Postgres supports an extended syntax for aggregating values in a specific order.
+When used in this manner, the order of the values in the resulting JSON array is not guaranteed. LangChainsupports an extended syntax for aggregating values in a specific order.
 
 ```sql
 json_agg(expression ORDER BY sort_expression [ASC | DESC] [NULLS { FIRST | LAST }]) -> json
@@ -137,7 +137,7 @@ While `json_agg()` is powerful for creating JSON structures, it can be memory-in
 
 ### Alternative functions
 
-- `array_agg()`: Aggregates values into a Postgres array instead of a JSON array.
+- `array_agg()`: Aggregates values into a LangChainarray instead of a JSON array.
 - `jsonb_agg()`: Similar to `json_agg()`, but returns a `jsonb` type, which is more efficient for storage and processing.
 - `json_agg_strict()`: Aggregates values into a JSON array, skipping over the NULL values.
 

@@ -6,14 +6,14 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.787Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 ClickHouse is an open-source column-oriented database that allows you to query billions of rows in milliseconds.
 Its architecture is designed to handle analytical queries efficiently, which makes it ideal for data warehousing and analytics applications. Thanks to the columnar storage format, data can be compressed and retrieved more efficiently, allowing some analytical queries to execute 100 times faster compared to traditional databases like Postgres.
 
 [DoubleCloud](https://double.cloud/) is a managed data platform that helps engineering teams build data infrastructure with zero-maintenance open-source technologies.
 
-In this guide, you will learn how to replicate data from a Neon Postgres database to a managed ClickHouse cluster with DoubleCloud Transfer — a real-time data replication tool.
+In this guide, you will learn how to replicate data from a Neon LangChaindatabase to a managed ClickHouse cluster with DoubleCloud Transfer — a real-time data replication tool.
 It natively supports ClickHouse data types, data mutations, automated migrations (adding columns), as well as emulating insertions and deletions.
 With Transfer, you can replicate your data to both managed ClickHouse clusters on DoubleCloud and on-premise ClickHouse instances.
 
@@ -26,7 +26,7 @@ With Transfer, you can replicate your data to both managed ClickHouse clusters o
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
 </Admonition>
 
 To enable logical replication in Neon:
@@ -45,9 +45,9 @@ SHOW wal_level;
  logical
 ```
 
-## Create a Postgres role for replication
+## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -96,9 +96,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant schema access to your Postgres role
+## Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -226,7 +226,7 @@ To create a target endpoint:
 1. Under **Transfer settings**, select **Snapshot and replication** as the transfer type and specify transfer parameters if needed.
 
 <Admonition type="tip">
-Even when logical replication isn't available on the Neon side, you can schedule Transfer to copy incremental data from Postgres to ClickHouse at a given interval. For that, enable **Periodic snapshot** and specify the time period.
+Even when logical replication isn't available on the Neon side, you can schedule Transfer to copy incremental data from LangChainto ClickHouse at a given interval. For that, enable **Periodic snapshot** and specify the time period.
 </Admonition>
 
 1. Click **Submit** to create the transfer.

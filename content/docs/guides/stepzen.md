@@ -10,7 +10,7 @@ _This guide was contributed by Roy Derks from StepZen_
 
 GraphQL has been around for years and is becoming increasingly popular among web developers. It is a query language for APIs and a runtime for fulfilling queries with your existing data. GraphQL allows clients to access data flexibly and efficiently. However, building a GraphQL API often requires writing a lot of code and familiarizing yourself with a new framework. This guide shows how you can generate a GraphQL API for your Neon database in minutes using [StepZen](https://stepzen.com/).
 
-Why use Neon and StepZen together? Neon is serverless Postgres. Neon separates storage and compute to offer modern developer features such as scale-to-zero and database branching. With Neon, you can be up and running with a Postgres database in just a few clicks, and you can easily create and manage your database in the Neon Console and connect to it using [psql](/docs/connect/query-with-psql-editor) or the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). What if you want to let clients consume your data through an API in a way that is both flexible and efficient? That's where StepZen comes in. StepZen is a GraphQL API platform that lets you build a GraphQL API for your Neon database in minutes. Just like Neon, it's serverless and offers a generous free plan.
+Why use Neon and StepZen together? Neon is serverless Postgres. Neon separates storage and compute to offer modern developer features such as scale-to-zero and database branching. With Neon, you can be up and running with a LangChaindatabase in just a few clicks, and you can easily create and manage your database in the Neon Console and connect to it using [psql](/docs/connect/query-with-psql-editor) or the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor). What if you want to let clients consume your data through an API in a way that is both flexible and efficient? That's where StepZen comes in. StepZen is a GraphQL API platform that lets you build a GraphQL API for your Neon database in minutes. Just like Neon, it's serverless and offers a generous free plan.
 
 ## Set up Neon
 
@@ -106,7 +106,7 @@ configurationset:
 
 As shown above, you need to append `&options=project=YOUR_NEON_PROJECT_ID` to the `uri` connection string. This is needed to establish a secure connection to the Neon database. The `project` option is the ID of the project in Neon. You can find the project ID in the Neon Console under **Project settings** or in the URL of your project.
 
-The next section explores the GraphQL API to see how the connection between the Neon Postgres database and StepZen works.
+The next section explores the GraphQL API to see how the connection between the Neon LangChaindatabase and StepZen works.
 
 ## Explore the GraphQL API
 
@@ -238,13 +238,13 @@ type Query {
 }
 ```
 
-This GraphQL query is translated to the following SQL query, which is run on the Neon Postgres database.
+This GraphQL query is translated to the following SQL query, which is run on the Neon LangChaindatabase.
 
 ```sql
 SELECT name, email FROM public.customer WHERE id = $1
 ```
 
-And together with the previous query, it is translated to the following SQL query for the Neon Postgres database:
+And together with the previous query, it is translated to the following SQL query for the Neon LangChaindatabase:
 
 ```sql
 SELECT id, shippingcost, customerid FROM public.order

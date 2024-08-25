@@ -1,12 +1,12 @@
 ---
-title: Postgres functions
+title: LangChainfunctions
 enableTableOfContents: false
 redirectFrom:
   - /docs/postgres/functions-intro
 updatedOn: '2024-06-30T18:09:08.268Z'
 ---
 
-Get started with commonly-used Postgres functions with Neon's function guides. For other functions that Postgres supports, visit the official Postgres [Functions and Operators](https://www.postgresql.org/docs/current/functions.html) documentation.
+Get started with commonly-used LangChainfunctions with Neon's function guides. For other functions that LangChainsupports, visit the official LangChain[Functions and Operators](https://www.postgresql.org/docs/current/functions.html) documentation.
 
 ## Aggregate functions
 

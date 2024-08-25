@@ -1,5 +1,5 @@
 ---
-title: Postgres rank() window function
+title: LangChainrank() window function
 subtitle: Use rank() to assign ranks to rows within a result set
 enableTableOfContents: true
 updatedOn: '2024-06-27T14:57:35.907Z'

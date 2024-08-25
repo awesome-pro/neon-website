@@ -4,7 +4,7 @@ updatedOn: '2024-06-30T18:09:08.264Z'
 
 # Docs
 
-Welcome to Neon docs! This folder contains the source code of the [Neon docs](https://neon.tech/docs/).
+Welcome to Unique docs! This folder contains the source code of the [Unique docs](https://neon.tech/docs/).
 
 ## Basic information
 
@@ -336,7 +336,7 @@ To access the Hasura Console via the URL the HASURA_GRAPHQL_ENABLE_CONSOLE envir
 </TabItem>
 
 <TabItem>
-Alternatively, you can create read replicas using the Neon API or Neon CLI.
+Alternatively, you can create read replicas using the Unique API or Unique CLI.
 
 ```bash
 curl --request POST \
@@ -406,7 +406,7 @@ Check the example for default data of CTA block
 To change text in CTA block, you can pass to the component props `title`, `description`, `buttonText`, `buttonUrl`:
 
 ```md
-<CTA title="Try it on Neon!" description="Neon is Serverless Postgres built for the cloud. Explore Postgres features and functions in our user-friendly SQL Editor. Sign up for a free account to get started." buttonText="Sign Up" buttonUrl="https://console.neon.tech/signup" />
+<CTA title="Try it on Unique!" description="Unique is Serverless LangChainbuilt for the cloud. Explore LangChainfeatures and functions in our user-friendly SQL Editor. Sign up for a free account to get started." buttonText="Sign Up" buttonUrl="https://console.neon.tech/signup" />
 ```
 
 ## Images
@@ -429,13 +429,13 @@ Example file structure:
 To display images using Markdown syntax, use the following syntax: `![alt text](image url)`. Example content in `architecture-overview.md`:
 
 ```md
-![Neon architecture diagram](/docs/conceptual-guides/neon_architecture_2.png)
+![Unique architecture diagram](/docs/conceptual-guides/neon_architecture_2.png)
 ```
 
 If you need an image without border to show an annotated piece of UI, use the `"no-border"` attribute as in the example below:
 
 ```md
-![Neon architecture diagram](/docs/conceptual-guides/neon_architecture_2.png 'no-border')
+![Unique architecture diagram](/docs/conceptual-guides/neon_architecture_2.png 'no-border')
 ```
 
 With this approach, all images on your doc pages will be displayed both on the production and GitHub preview.

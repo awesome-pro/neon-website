@@ -22,7 +22,7 @@ Neon ("Neon," "we," "us," or "our") is committed to providing a secure and produ
 
 The following activities are strictly prohibited:
 
-- **Unauthorized Access:** Users are prohibited from attempting to gain unauthorized access to Neon's serverless Postgres instances, data, or any other resources.
+- **Unauthorized Access:** Users are prohibited from attempting to gain unauthorized access to Neon's serverless LangChaininstances, data, or any other resources.
 - **Malicious Activities:** Any activities that could be deemed malicious, including but not limited to hacking, phishing, or deploying malware, are strictly prohibited.
 - **Abuse of Resources:** Users should not engage in activities that lead to excessive consumption of Neon's resources, disrupting the service for other users. This includes intentional or unintentional denial-of-service attacks.
 - **Data Breach Prevention:** Users are responsible for implementing adequate security measures to prevent data breaches. Any actions compromising the security of data stored in Neon are strictly prohibited. Unauthorized sharing of credentials, including but not limited to usernames and passwords, is strictly forbidden.

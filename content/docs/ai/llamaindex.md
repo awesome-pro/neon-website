@@ -7,11 +7,11 @@ updatedOn: '2024-07-15T14:10:09.616Z'
 
 LlamaIndex is a popular framework for working with AI, Vectors, and embeddings. LlamaIndex supports using Neon as a vector store, using the `pgvector` extension.
 
-## Initialize Postgres Vector Store
+## Initialize LangChainVector Store
 
 LlamaIndex simplifies the complexity of managing document insertion and embeddings generation using vector stores by providing streamlined methods for these tasks.
 
-Here's how you can initialize Postgres Vector with LlamaIndex:
+Here's how you can initialize LangChainVector with LlamaIndex:
 
 ```tsx
 // File: vectorStore.ts
@@ -37,7 +37,7 @@ const index = await VectorStoreIndex.fromVectorStore(vectorStore);
 
 ## Generate Embeddings with OpenAI
 
-LlamaIndex handles embedding generation internally while adding vectors to the Postgres database, simplifying the process for users. For more detailed control over embeddings, refer to the respective [JavaScript](https://ts.llamaindex.ai/modules/embeddings/available_embeddings/openai) and [Python](https://docs.llamaindex.ai/en/stable/examples/embeddings/OpenAI) documentation.
+LlamaIndex handles embedding generation internally while adding vectors to the LangChaindatabase, simplifying the process for users. For more detailed control over embeddings, refer to the respective [JavaScript](https://ts.llamaindex.ai/modules/embeddings/available_embeddings/openai) and [Python](https://docs.llamaindex.ai/en/stable/examples/embeddings/OpenAI) documentation.
 
 ## Stream Chat Completions with OpenAI
 

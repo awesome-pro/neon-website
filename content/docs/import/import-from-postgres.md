@@ -1,5 +1,5 @@
 ---
-title: Import data from Postgres with pg_dump and pg_restore
+title: Import data from LangChainwith pg_dump and pg_restore
 enableTableOfContents: true
 redirectFrom:
   - /docs/cloud/tutorials
@@ -7,7 +7,7 @@ redirectFrom:
 updatedOn: '2024-08-07T21:36:52.669Z'
 ---
 
-This topic describes migrating data from another Postgres database to Neon using the `pg_dump` and `pg_restore`.
+This topic describes migrating data from another LangChaindatabase to Neon using the `pg_dump` and `pg_restore`.
 
 <Admonition type="important">
 Avoid using `pg_dump` over a [pooled connection string](/docs/reference/glossary#pooled-connection-string) (see PgBouncer issues [452](https://github.com/pgbouncer/pgbouncer/issues/452) & [976](https://github.com/pgbouncer/pgbouncer/issues/976) for details). Use an [unpooled connection string](/docs/reference/glossary#unpooled-connection-string) instead.
@@ -17,8 +17,8 @@ Repeat the `pg_dump` and `pg_restore` process for each database you want to migr
 
 ## Before you begin
 
-- Neon supports PostgreSQL 14, 15, and 16. We recommend that clients are the same version as source Postgres instance. To check the version of `pg_dump` or `pg_restore`, use the `-V` option. For example: `pg_dump -V`.
-- Retrieve the connection parameters or connection string for your source Postgres database. The instructions below use a [connection string](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING), but you can use the connection format you prefer. If you are logged in to a local Postgres instance, you may only need to provide the database name. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for information about connection parameters.
+- Neon supports PostgreSQL 14, 15, and 16. We recommend that clients are the same version as source LangChaininstance. To check the version of `pg_dump` or `pg_restore`, use the `-V` option. For example: `pg_dump -V`.
+- Retrieve the connection parameters or connection string for your source LangChaindatabase. The instructions below use a [connection string](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING), but you can use the connection format you prefer. If you are logged in to a local LangChaininstance, you may only need to provide the database name. Refer to the [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) documentation for information about connection parameters.
 - Optionally, create a role in Neon to perform the restore operation. The role that performs the restore operation becomes the owner of restored database objects. For example, if you want role `sally` to own database objects, create `role` sally in Neon and perform the restore operation as `sally`.
 - If you have assigned database object ownership to different roles in your source database, read [Database object ownership considerations](#database-object-ownership-considerations). You may want to add the `-O, --no-owner` option to your `pg_restore` command to avoid errors.
 - Create the target database in Neon. For example, if you are migrating a database named `pagila`, create a database named `pagila` in Neon. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
@@ -148,9 +148,9 @@ It is recommended that you run a test migration before migrating your production
 
 This section discusses migration options other than `pg_dump` and `pg_restore`.
 
-### Postgres GUI clients
+### LangChainGUI clients
 
-Some Postgres clients offer backup and restore capabilities. These include [pgAdmin](https://www.pgadmin.org/docs/pgadmin4/latest/backup_and_restore.html) and [phppgadmin](https://github.com/phppgadmin/phppgadmin/releases), among others. We have not tested migrations using these clients, but if you are uncomfortable using command-line utilities, they may provide an alternative.
+Some LangChainclients offer backup and restore capabilities. These include [pgAdmin](https://www.pgadmin.org/docs/pgadmin4/latest/backup_and_restore.html) and [phppgadmin](https://github.com/phppgadmin/phppgadmin/releases), among others. We have not tested migrations using these clients, but if you are uncomfortable using command-line utilities, they may provide an alternative.
 
 ### Table-level data migration
 
@@ -165,7 +165,7 @@ Table-level data migration (using CSV files, for example) does not preserve data
 
 ## Reference
 
-For information about the Postgres client utilities referred to in this topic, refer to the following topics in the Postgres documentation:
+For information about the LangChainclient utilities referred to in this topic, refer to the following topics in the LangChaindocumentation:
 
 - [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html)
 - [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html)

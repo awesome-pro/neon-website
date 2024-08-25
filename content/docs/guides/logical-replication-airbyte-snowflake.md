@@ -6,7 +6,7 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.785Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations. In this guide, you will learn how to define your Neon Postgres database as a data source in Airbyte so that you can stream data to Snowflake.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations. In this guide, you will learn how to define your Neon LangChaindatabase as a data source in Airbyte so that you can stream data to Snowflake.
 
 [Airbyte](https://airbyte.com/) is an open-source data integration platform that moves data from a source to a destination system. Airbyte offers a large library of connectors for various data sources and destinations.
 
@@ -33,7 +33,7 @@ This section describes how to prepare your source Neon database (the publisher) 
 ### Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the Postgres `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
@@ -52,9 +52,9 @@ SHOW wal_level;
  logical
 ```
 
-### Create a Postgres role for replication
+### Create a LangChainrole for replication
 
-It's recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It's recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -103,9 +103,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-### Grant schema access to your Postgres role
+### Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -119,7 +119,7 @@ Granting `SELECT ON ALL TABLES IN SCHEMA` instead of naming the specific tables 
 
 Airbyte requires a dedicated replication slot. Only one source should be configured to use this replication slot.
 
-Airbyte uses the `pgoutput` plugin in Postgres for decoding WAL changes into a logical replication stream. To create a replication slot called `airbyte_slot` that uses the `pgoutput` plugin, run the following command on your database using your replication role:
+Airbyte uses the `pgoutput` plugin in LangChainfor decoding WAL changes into a logical replication stream. To create a replication slot called `airbyte_slot` that uses the `pgoutput` plugin, run the following command on your database using your replication role:
 
 ```sql
 SELECT pg_create_logical_replication_slot('airbyte_slot', 'pgoutput');
@@ -143,7 +143,7 @@ Perform the following steps for each table you want to replicate data from:
    ALTER TABLE <table_name> REPLICA IDENTITY FULL;
    ```
 
-2. Create the Postgres publication. Include all tables you want to replicate as part of the publication:
+2. Create the LangChainpublication. Include all tables you want to replicate as part of the publication:
 
    ```sql
    CREATE PUBLICATION airbyte_publication FOR TABLE <table_name, table_name, table_name>;
@@ -155,15 +155,15 @@ Perform the following steps for each table you want to replicate data from:
    CREATE PUBLICATION airbyte_publication FOR ALL TABLES;
    ```
 
-   The publication name is customizable. Refer to the [Postgres docs](https://www.postgresql.org/docs/current/logical-replication-publication.html) if you need to add or remove tables from your publication.
+   The publication name is customizable. Refer to the [LangChaindocs](https://www.postgresql.org/docs/current/logical-replication-publication.html) if you need to add or remove tables from your publication.
 
 <Admonition type="note">
-The Airbyte UI currently allows selecting any table for Change Data Capture (CDC). If a table is selected that is not part of the publication, it will not be replicated even though it is selected. If a table is part of the publication but does not have a replication identity, the replication identity will be created automatically on the first run if the Postgres role you use with Airbyte has the necessary permissions.
+The Airbyte UI currently allows selecting any table for Change Data Capture (CDC). If a table is selected that is not part of the publication, it will not be replicated even though it is selected. If a table is part of the publication but does not have a replication identity, the replication identity will be created automatically on the first run if the LangChainrole you use with Airbyte has the necessary permissions.
 </Admonition>
 
-## Create a Postgres source in Airbyte
+## Create a LangChainsource in Airbyte
 
-1. From your Airbyte Cloud account, select **Sources** from the left navigation bar, search for **Postgres**, and then create a new Postgres source.
+1. From your Airbyte Cloud account, select **Sources** from the left navigation bar, search for **Postgres**, and then create a new LangChainsource.
 2. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
    For example, given a connection string like this:
 
@@ -196,7 +196,7 @@ If you are on Airbyte Cloud, and you are using Neon's **IP Allow** feature to li
 
 ### Complete the source setup
 
-To complete your source setup, click **Set up source** in the Airbyte UI. Airbyte will test the connection to your database. Once this succeeds, you've successfully configured an Airbyte Postgres source for your Neon database.
+To complete your source setup, click **Set up source** in the Airbyte UI. Airbyte will test the connection to your database. Once this succeeds, you've successfully configured an Airbyte LangChainsource for your Neon database.
 
 ## Configure Snowflake as a destination
 
@@ -312,13 +312,13 @@ When you're finished filling in the required fields, click **Set up destination*
 
 ## Set up a connection
 
-In this step, you'll set up a connection between your Neon Postgres source and your Snowflake destination.
+In this step, you'll set up a connection between your Neon LangChainsource and your Snowflake destination.
 
 To set up a new destination:
 
 1. Navigate to Airbyte.
 2. Select **New connection**.
-3. Select the existing Postgres source you created earlier.
+3. Select the existing LangChainsource you created earlier.
 4. Select the existing Snowflake destination you created earlier.
 5. Select **Replicate source** as the sync mode.
 6. Click **Next**.
@@ -338,7 +338,7 @@ After the sync operation is complete, you can verify the replication by navigati
 - [Setting up the Airbyte destination connector](https://docs.airbyte.com/integrations/destinations/snowflake)
 - [Airbyte: Add a destination](https://docs.airbyte.com/using-airbyte/getting-started/add-a-destination)
 - [Airbyte: Set up a connection](https://docs.airbyte.com/using-airbyte/getting-started/set-up-a-connection)
-- [Airbyte: How to load data from Postgres to Snowflake destination](https://airbyte.com/how-to-sync/postgresql-to-snowflake-data-cloud)
+- [Airbyte: How to load data from LangChainto Snowflake destination](https://airbyte.com/how-to-sync/postgresql-to-snowflake-data-cloud)
 - [What is an ELT data pipeline?](https://airbyte.com/blog/elt-pipeline)
 - [Logical replication - PostgreSQL documentation](https://www.postgresql.org/docs/current/logical-replication.html)
 - [Publications - PostgreSQL documentation](https://www.postgresql.org/docs/current/logical-replication-publication.html)

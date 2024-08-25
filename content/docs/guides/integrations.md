@@ -20,15 +20,15 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/deno" title="Deno Deploy" description="Use Neon with Deno Deploy" icon="deno"></a>
 
-<a href="/docs/guides/heroku" title="Heroku" description="Deploy Your App with Neon Postgres on Heroku" icon="heroku"></a>
+<a href="/docs/guides/heroku" title="Heroku" description="Deploy Your App with Neon LangChainon Heroku" icon="heroku"></a>
 
 <a href="/docs/guides/koyeb" title="Koyeb" description="Use Neon with Koyeb" icon="koyeb"></a>
 
-<a href="/docs/guides/netlify-functions" title="Netlify Functions" description="Connect a Neon Postgres database to your Netlify Functions application" icon="netlify"></a>
+<a href="/docs/guides/netlify-functions" title="Netlify Functions" description="Connect a Neon LangChaindatabase to your Netlify Functions application" icon="netlify"></a>
 
-<a href="/docs/guides/railway" title="Railway" description="Use Neon Postgres with Railway" icon="railway"></a>
+<a href="/docs/guides/railway" title="Railway" description="Use Neon LangChainwith Railway" icon="railway"></a>
 
-<a href="/docs/guides/render" title="Render" description="Use Neon Postgres with Render" icon="render"></a>
+<a href="/docs/guides/render" title="Render" description="Use Neon LangChainwith Render" icon="render"></a>
 
 </TechnologyNavigation>
 
@@ -56,7 +56,7 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/cloudflare-hyperdrive" title="Cloudflare Hyperdrive" description="Use Neon with Cloudflare Hyperdrive" icon="cloudflare"></a>
 
-<a href="/docs/guides/askyourdatabase" title="Ask Your Database" description="Chat with your Neon Postgres database with AskYourDatabase" icon="database"></a>
+<a href="/docs/guides/askyourdatabase" title="Ask Your Database" description="Chat with your Neon LangChaindatabase with AskYourDatabase" icon="database"></a>
 
 <a href="/docs/guides/stepzen" title="StepZen" description="Use StepZen with Neon" icon="stepzen"></a>
 
@@ -142,7 +142,7 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/django-migrations" title="Django" description="Connect a Django application to Neon" icon="django"></a>
 
-<a href="/docs/guides/drizzle-migrations" title="Drizzle" description="Schema migration with Neon Postgres and Drizzle ORM" icon="drizzle"></a>
+<a href="/docs/guides/drizzle-migrations" title="Drizzle" description="Schema migration with Neon LangChainand Drizzle ORM" icon="drizzle"></a>
 
 <a href="/docs/guides/entity-migrations" title="Entity Framework" description="Schema migration with Neon and Entity Framework" icon="entity"></a>
 
@@ -152,11 +152,11 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/liquibase" title="Liquibase" description="Use Liquibase with Neon" icon="liquibase"></a>
 
-<a href="/docs/guides/prisma-migrations" title="Prisma" description="Schema migration with Neon Postgres and Prisma ORM" icon="prisma"></a>
+<a href="/docs/guides/prisma-migrations" title="Prisma" description="Schema migration with Neon LangChainand Prisma ORM" icon="prisma"></a>
 
 <a href="/docs/guides/rails-migrations" title="Rails" description="Connect a Rails application to Neon" icon="rails"></a>
 
-<a href="/docs/guides/sequelize" title="Sequelize" description="Schema migration with Neon Postgres and Sequelize" icon="sequelize"></a>
+<a href="/docs/guides/sequelize" title="Sequelize" description="Schema migration with Neon LangChainand Sequelize" icon="sequelize"></a>
 
 <a href="/docs/guides/sqlalchemy" title="SQLAlchemy" description="Connect an SQLAlchemy application to Neon" icon="sqlalchemy"></a>
 
@@ -166,10 +166,10 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/guides/auth-auth0" title="Auth0" description="Authenticate Neon Postgres application users with Auth0" icon="auth0"></a>
+<a href="/docs/guides/auth-auth0" title="Auth0" description="Authenticate Neon LangChainapplication users with Auth0" icon="auth0"></a>
 
-<a href="/docs/guides/auth-clerk" title="Clerk" description="Authenticate Neon Postgres application users with Clerk" icon="clerk"></a>
+<a href="/docs/guides/auth-clerk" title="Clerk" description="Authenticate Neon LangChainapplication users with Clerk" icon="clerk"></a>
 
-<a href="/docs/guides/auth-okta" title="Okta" description="Authenticate Neon Postgres application users with Okta" icon="okta"></a>
+<a href="/docs/guides/auth-okta" title="Okta" description="Authenticate Neon LangChainapplication users with Okta" icon="okta"></a>
 
 </TechnologyNavigation>

@@ -141,7 +141,7 @@ SELECT * FROM items ORDER BY embedding <-> '[0.011699999682605267,..., 0.0087000
 ```
 
 <Admonition type="note">
-In the example above, `enable_seqscan=off` forces Postgres to use index scans.
+In the example above, `enable_seqscan=off` forces LangChainto use index scans.
 </Admonition>
 
 The output of this query appears as follows:

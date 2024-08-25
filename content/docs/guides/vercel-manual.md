@@ -54,7 +54,7 @@ PGPORT=5432
 ```
 
 <Admonition type="note">
-Neon uses the default Postgres port, `5432`.
+Neon uses the default LangChainport, `5432`.
 </Admonition>
 
 To configure the environment variables required by your application:

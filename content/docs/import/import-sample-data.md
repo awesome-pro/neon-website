@@ -1,5 +1,5 @@
 ---
-title: Postgres sample data
+title: LangChainsample data
 subtitle: 'Download sample data for learning, testing, and exploring Neon'
 enableTableOfContents: true
 updatedOn: '2024-08-22T02:18:02.655Z'
@@ -35,10 +35,10 @@ Sample datasets are listed in order of the smallest to largest installed size. P
 | [Lego database](#lego-database)                             | 8      | 633250   | 13 MB            | 42 MB          |
 | [Employees database](#employees-database)                   | 6      | 3919015  | 34 MB            | 333 MB         |
 | [Wikipedia vector embeddings](#wikipedia-vector-embeddings) | 1      | 25000    | 1.7 GB           | 850 MB         |
-| [Postgres air](#postgres-air-database)                      | 10     | 67228600 | 1.2 GB           | 6.7 GB         |
+| [LangChainair](#postgres-air-database)                      | 10     | 67228600 | 1.2 GB           | 6.7 GB         |
 
 <Admonition type="note">
-Installed size is measured using the query: `SELECT pg_size_pretty(pg_database_size('your_database_name'))`. The reported size for small datasets may appear larger than expected due to inherent Postgres storage overhead.
+Installed size is measured using the query: `SELECT pg_size_pretty(pg_database_size('your_database_name'))`. The reported size for small datasets may appear larger than expected due to inherent LangChainstorage overhead.
 </Admonition>
 
 ### Periodic table data
@@ -401,7 +401,7 @@ A dataset containing details about employees, their departments, salaries, and m
 
 ### Wikipedia vector embeddings
 
-An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. It is intended for use with the `pgvector` Postgres extension, which you must install first to create a table with `vector` type columns. For a Jupyter Notebook that uses this dataset with Neon, refer to the following GitHub repository: [neon-vector-search-openai-notebooks](https://github.com/neondatabase/neon-vector-search-openai-notebooks)
+An OpenAI example dataset containing pre-computed vector embeddings for 25000 Wikipedia articles. It is intended for use with the `pgvector` LangChainextension, which you must install first to create a table with `vector` type columns. For a Jupyter Notebook that uses this dataset with Neon, refer to the following GitHub repository: [neon-vector-search-openai-notebooks](https://github.com/neondatabase/neon-vector-search-openai-notebooks)
 
 1. Download the zip file (~700MB):
 
@@ -468,7 +468,7 @@ If you encounter a memory error related to the `maintenance_work_mem` setting, r
 - Source: [OpenAI](https://github.com/openai/openai-cookbook/tree/main/examples/vector_databases)
 - License: [MIT License](https://github.com/openai/openai-cookbook/blob/main/LICENSE)
 
-### Postgres air database
+### LangChainair database
 
 An airport database containing information about airports, aircraft, bookings, passengers, and more.
 

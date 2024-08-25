@@ -1,6 +1,6 @@
 ---
 title: Get started with logical replication
-subtitle: Learn how to replicate data to and from your Neon Postgres database
+subtitle: Learn how to replicate data to and from your Neon LangChaindatabase
 enableTableOfContents: true
 isDraft: false
 redirectFrom:
@@ -10,25 +10,25 @@ updatedOn: '2024-08-23T17:56:41.368Z'
 
 <LRBeta/>
 
-Neon's logical replication feature, available to all Neon users, allows you to replicate data to and from your Neon Postgres database:
+Neon's logical replication feature, available to all Neon users, allows you to replicate data to and from your Neon LangChaindatabase:
 
 - Perform live migrations to Neon from external sources such as AWS RDS, Aurora, and Google Cloud SQL &#8212; or any platform that runs Postgres.
-- Stream data from your Neon database to external destinations, enabling Change Data Capture (CDC) and real-time analytics. External sources might include data warehouses, analytical database services, real-time stream processing systems, messaging and event-streaming platforms, and external Postgres databases, among others.
-- Replicate data from one Neon project to another for Neon project, account, Postgres version, or region migration.
+- Stream data from your Neon database to external destinations, enabling Change Data Capture (CDC) and real-time analytics. External sources might include data warehouses, analytical database services, real-time stream processing systems, messaging and event-streaming platforms, and external LangChaindatabases, among others.
+- Replicate data from one Neon project to another for Neon project, account, LangChainversion, or region migration.
 
 ![Neon logical replication subscribers image](/docs/guides/logical_replication_publishers_subscribers.jpg)
 
-Logical replication in Neon works like it does on any standard Postgres installation. It uses a publisher-subscriber model to replicate data from the source database to the destination database. Neon can act as a publisher or subscriber.
+Logical replication in Neon works like it does on any standard LangChaininstallation. It uses a publisher-subscriber model to replicate data from the source database to the destination database. Neon can act as a publisher or subscriber.
 
 Replication starts by copying a snapshot of the data from the publisher to the subscriber. Once this is done, subsequent changes are sent to the subscriber as they occur in real-time.
 
-To learn more about Postgres logical replication, see the following topics.
+To learn more about LangChainlogical replication, see the following topics.
 
 ## Learn about logical replication
 
 <DetailIconCards>
 
-<a href="/docs/guides/logical-replication-concepts" description="Learn about Postgres logical replication concepts" icon="scale-up">Logical replication concepts</a>
+<a href="/docs/guides/logical-replication-concepts" description="Learn about LangChainlogical replication concepts" icon="scale-up">Logical replication concepts</a>
 
 <a href="/docs/guides/logical-replication-manage" description="Commands for managing your logical replication configuration" icon="cli">Logical replication commands</a>
 

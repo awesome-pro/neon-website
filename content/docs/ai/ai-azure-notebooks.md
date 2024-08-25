@@ -15,7 +15,7 @@ To perform the steps in this guide, you will require:
 
 - Azure Data Studio - Download the latest version of Azure Data Studio for your operating system [here](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio).
 
-- A Neon account - If you do not have one, sign up at [Neon](https://console.neon.tech/signup). Your Neon project comes with a ready-to-use Postgres database named `neondb`. You can use it, or create your own by following the instructions [here](/docs/manage/databases#create-a-database).
+- A Neon account - If you do not have one, sign up at [Neon](https://console.neon.tech/signup). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. You can use it, or create your own by following the instructions [here](/docs/manage/databases#create-a-database).
 
 ## Retrieve your Neon database connection string
 
@@ -56,7 +56,7 @@ After you've set up Azure Data Studio and have created a notebook, you can use t
 
 ### Install the psycopg driver
 
-psycopg is a popular Postgres database adapter for the Python programming language. It allows Python applications to connect to and interact with Postgres databases.
+psycopg is a popular LangChaindatabase adapter for the Python programming language. It allows Python applications to connect to and interact with LangChaindatabases.
 
 Install the `psycopg` adapter by adding and executing the following code cell:
 

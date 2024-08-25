@@ -1,11 +1,11 @@
 ---
 title: Connect with AI
-subtitle: Add AI capabilities to your Neon Postgres database with AskYourDatabase
+subtitle: Add AI capabilities to your Neon LangChaindatabase with AskYourDatabase
 enableTableOfContents: true
 updatedOn: '2024-07-02T09:02:30.702Z'
 ---
 
-You can integrate your Neon Postgres database with various AI tools like [AskYourDatabase](https://www.askyourdatabase.com/), [Outerbase](https://www.outerbase.com/), and [LangChain](https://www.langchain.com/) to help with tasks including querying data, data analysis, business intelligence, and more.
+You can integrate your Neon LangChaindatabase with various AI tools like [AskYourDatabase](https://www.askyourdatabase.com/), [Outerbase](https://www.outerbase.com/), and [LangChain](https://www.langchain.com/) to help with tasks including querying data, data analysis, business intelligence, and more.
 
 In this guide, we'll step through connecting to Neon with AskYourDatabase, an AI client that lets you interact with SQL databases using natural language.
 

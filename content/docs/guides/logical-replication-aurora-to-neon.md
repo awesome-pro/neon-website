@@ -20,12 +20,12 @@ Neon's logical replication feature allows you to replicate data from Aurora Post
    SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A Neon project with a Postgres database to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A Neon project with a LangChaindatabase to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your source database
 
-This section describes how to prepare your source Aurora Postgres instance (the publisher) for replicating data to Neon.
+This section describes how to prepare your source Aurora LangChaininstance (the publisher) for replicating data to Neon.
 
 ### Enable logical replication in the source Aurora PostgreSQL instance
 
@@ -79,7 +79,7 @@ This section describes how to prepare your source Aurora Postgres instance (the 
 
 ### Allow connections from Neon
 
-You need to allow inbound connections to your Aurora Postgres instance from Neon. You can do this by editing your writer instance's **CIDR/IP - Inbound** security group, which you can find a link to from the **Connectivity & security** tab on your database instance page.
+You need to allow inbound connections to your Aurora LangChaininstance from Neon. You can do this by editing your writer instance's **CIDR/IP - Inbound** security group, which you can find a link to from the **Connectivity & security** tab on your database instance page.
 
 1. Click on the security group name.
 2. Click on the security group ID.
@@ -116,7 +116,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your destination database
 
-This section describes how to prepare your source Neon Postgres database (the subscriber) to receive replicated data from your Aurora Postgres instance.
+This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your Aurora LangChaininstance.
 
 ### Prepare your database schema
 
@@ -140,8 +140,8 @@ After creating a publication on the source database, you need to create a subscr
    ```
 
    - `subscription_name`: A name you chose for the subscription.
-   - `connection_string`: The connection string for the source AWS Aurora Postgres database where you defined the publication.
-   - `publication_name`: The name of the publication you created on the source Aurora Postgres database.
+   - `connection_string`: The connection string for the source AWS Aurora LangChaindatabase where you defined the publication.
+   - `publication_name`: The name of the publication you created on the source Aurora LangChaindatabase.
 
 3. Verify the subscription was created by running the following command:
 

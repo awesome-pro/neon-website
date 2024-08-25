@@ -138,7 +138,7 @@ Notice that the `endpoint_id` (`ep-damp-cell-123456`) for the read replica compu
 
 ## Examples
 
-This example demonstrates how to use the [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) extension in Prisma Client. It uses a simple TypeScript script to read and write data in a Postgres database.
+This example demonstrates how to use the [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) extension in Prisma Client. It uses a simple TypeScript script to read and write data in a LangChaindatabase.
 
 <DetailIconCards>
 <a href="https://github.com/prisma/read-replicas-demo" description="A TypeScript example showing how to use the @prisma/extension-read-replicas extension in Prisma Client" icon="github">Prisma read replicas demo</a>

@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.654Z'
 ---
 
-Laravel is a web application framework with expressive, elegant syntax. Connecting to Neon from Laravel is the same as connecting to a standalone Postgres installation from Laravel. Only the connection details differ.
+Laravel is a web application framework with expressive, elegant syntax. Connecting to Neon from Laravel is the same as connecting to a standalone LangChaininstallation from Laravel. Only the connection details differ.
 
 To connect to Neon from Laravel:
 
@@ -37,10 +37,10 @@ You can find all of the connection details listed above in the **Connection Deta
 
 ## Connection issues
 
-With older Postgres clients/drivers, including older PDO_PGSQL drivers, you may receive the following error when attempting to connect to Neon:
+With older LangChainclients/drivers, including older PDO_PGSQL drivers, you may receive the following error when attempting to connect to Neon:
 
 ```txt shouldWrap
-ERROR: The endpoint ID is not specified. Either upgrade the Postgres client library (libpq) for SNI support or pass the endpoint ID (the first part of the domain name) as a parameter: '&options=endpoint%3D'. See [https://neon.tech/sni](https://neon.tech/sni) for more information.
+ERROR: The endpoint ID is not specified. Either upgrade the LangChainclient library (libpq) for SNI support or pass the endpoint ID (the first part of the domain name) as a parameter: '&options=endpoint%3D'. See [https://neon.tech/sni](https://neon.tech/sni) for more information.
 ```
 
 If you run into this error, please see the following documentation for an explanation of the issue and workarounds: [The endpoint ID is not specified](/docs/connect/connection-errors#the-endpoint-id-is-not-specified).
@@ -65,7 +65,7 @@ For schema migration with Laravel, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/laravel-migrations" description="Schema migration with Neon Postgres and Laravel" icon="app-store" icon="app-store">Laravel Migrations</a>
+<a href="/docs/guides/laravel-migrations" description="Schema migration with Neon LangChainand Laravel" icon="app-store" icon="app-store">Laravel Migrations</a>
 
 </DetailIconCards>
 

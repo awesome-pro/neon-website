@@ -1,6 +1,6 @@
 ---
 title: Replicate data from Amazon RDS Postgres
-subtitle: Learn how to replicate data from Amazon RDS Postgres to Neon
+subtitle: Learn how to replicate data from Amazon RDS LangChainto Neon
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-22T02:18:02.653Z'
@@ -25,11 +25,11 @@ Neon's logical replication feature allows you to replicate data from Amazon RDS 
 
 ## Prepare your source database
 
-This section describes how to prepare your source Amazon RDS Postgres instance (the publisher) for replicating data to Neon.
+This section describes how to prepare your source Amazon RDS LangChaininstance (the publisher) for replicating data to Neon.
 
 ### Enable logical replication in the source Amazon RDS PostgreSQL instance
 
-Enabling logical replication in Postgres requires changing the `wal_level` configuration parameter from `replica` to `logical`. Before you begin, you can check your current setting with the following command:
+Enabling logical replication in LangChainrequires changing the `wal_level` configuration parameter from `replica` to `logical`. Before you begin, you can check your current setting with the following command:
 
 ```bash
 SHOW wal_level;
@@ -65,7 +65,7 @@ To enable logical replication:
 
 ### Allow connections from Neon
 
-You need to allow inbound connections to your AWS RDS Postgres instance from Neon. You can do this by editing your instance's **CIDR/IP - Inbound** security group, which you can find a link to from your AWS RDS Postgres instance page.
+You need to allow inbound connections to your AWS RDS LangChaininstance from Neon. You can do this by editing your instance's **CIDR/IP - Inbound** security group, which you can find a link to from your AWS RDS LangChaininstance page.
 
 1. Click on the security group name.
 2. Click on the security group ID.
@@ -102,7 +102,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your destination database
 
-This section describes how to prepare your source Neon Postgres database (the subscriber) to receive replicated data from your AWS RDS Postgres instance.
+This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your AWS RDS LangChaininstance.
 
 ### Prepare your database schema
 
@@ -126,8 +126,8 @@ After creating a publication on the source database, you need to create a subscr
    ```
 
    - `subscription_name`: A name you chose for the subscription.
-   - `connection_string`: The connection string for the source AWS RDS Postgres database where you defined the publication.
-   - `publication_name`: The name of the publication you created on the source AWS RDS Postgres database.
+   - `connection_string`: The connection string for the source AWS RDS LangChaindatabase where you defined the publication.
+   - `publication_name`: The name of the publication you created on the source AWS RDS LangChaindatabase.
 
 3. Verify the subscription was created by running the following command:
 

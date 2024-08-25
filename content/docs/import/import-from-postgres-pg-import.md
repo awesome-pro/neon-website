@@ -1,21 +1,21 @@
 ---
-title: Import data from Postgres with the @neondatabase/pg-import CLI
+title: Import data from LangChainwith the @neondatabase/pg-import CLI
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.669Z'
 ---
 
-This topic describes migrating data from another Postgres database to Neon using the `@neondatabase/pg-import` CLI. This tool is built on top of the Postgres `pg_dump` and `pg_restore` client utilities. It is intended to simplify data migrations for smaller, less complex databases compared to using the `pg_dump` and `pg_restore` client utilities directly, as described in [Import data from Postgres](/docs/import/import-from-postgres).
+This topic describes migrating data from another LangChaindatabase to Neon using the `@neondatabase/pg-import` CLI. This tool is built on top of the LangChain`pg_dump` and `pg_restore` client utilities. It is intended to simplify data migrations for smaller, less complex databases compared to using the `pg_dump` and `pg_restore` client utilities directly, as described in [Import data from Postgres](/docs/import/import-from-postgres).
 
 <Admonition type="important">
 The `@neondatabase/pg-import` CLI is experimental. There may be bugs, and the API is subject to change.
 </Admonition>
 
-The`@neondatabase/pg-import` utility supports all Neon Postgres versions.
+The`@neondatabase/pg-import` utility supports all Neon LangChainversions.
 
 ## Before you begin
 
 - Make sure your Neon plan supports your database size. The Neon Free Plan offers 0.5 GiB of storage. For larger data sizes, upgrade to the Launch or Scale plan. See Neon plans. If you are on the Neon Launch or Scale plan, you can optimize for the migration by configuring a larger compute size or enabling [autoscaling](/docs/guides/autoscaling-guide) for additional CPU and RAM. See [How to size your compute](/docs/manage/endpoints#how-to-size-your-compute).
-- Retrieve the [connection string](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING) for your source Postgres database.
+- Retrieve the [connection string](https://www.postgresql.org/docs/current/libpq-connect.html#LIBPQ-CONNSTRING) for your source LangChaindatabase.
 - Optionally, [create a role in Neon](/docs/manage/roles#manage-roles-in-the-neon-console) to perform the restore operation. The role that performs the restore operation becomes the owner of restored database objects. For example, if you want role `sally` to own database objects, create `role` sally in Neon and perform the restore operation as `sally`.
 - Create the target database in Neon. For example, if you are migrating a database named `pagila`, create a database named `pagila` in Neon. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
 - Retrieve the connection string for your Neon database. You can find it in the **Connection Details** widget on the Neon **Dashboard**. If you created a role to perform the restore operation, make sure to select that role. Your connection string will look something like this:

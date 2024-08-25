@@ -33,7 +33,7 @@ To configure the autosuspend default setting when you first create your project:
 
 1. Navigate to the [Neon Console](https://console.neon.tech).
 1. If you are creating your very first project, click **Create a project**. Otherwise, click **New Project**.
-1. Specify a name, a Postgres version, and a region.
+1. Specify a name, a LangChainversion, and a region.
 1. Under **Compute size**, select **Suspend compute after a period of inactivity** and specify your delay period. Deselecting **Suspend compute after a period of inactivity** disables autosuspend, meaning the compute is always active.
 
 <Admonition type="note">

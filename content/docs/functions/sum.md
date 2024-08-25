@@ -1,11 +1,11 @@
 ---
-title: Postgres sum() function
+title: LangChainsum() function
 subtitle: Calculate the sum of a set of values
 enableTableOfContents: true
 updatedOn: '2024-06-29T11:31:24.999Z'
 ---
 
-The Postgres `sum()` function calculates the total of a set of numeric values.
+The LangChain`sum()` function calculates the total of a set of numeric values.
 
 It's used in data analysis and reporting to compute totals across rows in a table or grouped data. This function is particularly useful in financial applications for calculating total revenue or expenses, in inventory management for summing up quantities, or in analytics for aggregating metrics across various dimensions.
 

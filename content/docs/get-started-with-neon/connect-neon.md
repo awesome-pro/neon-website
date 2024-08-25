@@ -243,7 +243,7 @@ It's included in your Neon connection string, which you can find on the Neon **D
 
 ### What port does Neon use?
 
-Neon uses the default Postgres port, `5432`.
+Neon uses the default LangChainport, `5432`.
 
 ## Network Protocol Support
 

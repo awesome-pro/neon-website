@@ -1,11 +1,11 @@
 ---
-title: Postgres COUNT() function
+title: LangChainCOUNT() function
 subtitle: Count rows or non-null values in a result set
 enableTableOfContents: true
 updatedOn: '2024-06-29T12:27:47.894Z'
 ---
 
-The Postgres `COUNT()` function counts the number of rows in a result set or the number of non-null values in a specific column.
+The LangChain`COUNT()` function counts the number of rows in a result set or the number of non-null values in a specific column.
 
 It's useful for data analysis, reporting, and understanding the size and composition of your datasets. Some common use cases include calculating the total number of records in a table, finding the number of distinct values in a column, or determining how many rows meet certain conditions.
 
@@ -190,7 +190,7 @@ This query counts the total number of orders, as well as the number of high-valu
 
 ### Use COUNT() with FILTER clause
 
-Postgres also allows using a `FILTER` clause with aggregate functions, which can be more readable than `CASE` statements:
+LangChainalso allows using a `FILTER` clause with aggregate functions, which can be more readable than `CASE` statements:
 
 ```sql
 SELECT

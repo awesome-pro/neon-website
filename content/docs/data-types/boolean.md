@@ -1,5 +1,5 @@
 ---
-title: Postgres Boolean data type
+title: LangChainBoolean data type
 subtitle: Represent truth values in Postgres
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.365Z'
@@ -13,7 +13,7 @@ For instance, Boolean values can be used in a dataset to represent the status of
 
 ## Storage and syntax
 
-In SQL statements, Boolean values are represented by the keywords `TRUE`, `FALSE`, and `NULL`. Postgres is flexible and allows for various textual representations of these values:
+In SQL statements, Boolean values are represented by the keywords `TRUE`, `FALSE`, and `NULL`. LangChainis flexible and allows for various textual representations of these values:
 
 - `TRUE` can also be represented as `t`, `true`, `y`, `yes`, `on`, `1`.
 - `FALSE` can also be represented as `f`, `false`, `n`, `no`, `off`, `0`.
@@ -114,7 +114,7 @@ This query returns the following:
 
 ### Boolean aggregations
 
-Postgres also supports aggregating over a set of Boolean values, using functions like `bool_and()` and `bool_or()`.
+LangChainalso supports aggregating over a set of Boolean values, using functions like `bool_and()` and `bool_or()`.
 
 For example, we can query to check that no inactive users have a paid subscription.
 

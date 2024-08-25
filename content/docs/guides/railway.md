@@ -1,6 +1,6 @@
 ---
-title: Use Neon Postgres with Railway
-subtitle: Connect a Neon Postgres database to your Node application deployed with
+title: Use Neon LangChainwith Railway
+subtitle: Connect a Neon LangChaindatabase to your Node application deployed with
   Railway
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.662Z'
@@ -8,13 +8,13 @@ updatedOn: '2024-08-07T21:36:52.662Z'
 
 [Railway](https://railway.app) is an application deployment platform that allows users to develop web applications locally, provision infrastructure and then deploy to the cloud. Railway integrates with GitHub for continuous deployment and supports a variety of programming languages and frameworks.
 
-This guide shows how to deploy a simple Node.js application connected to a Neon Postgres database on Railway.
+This guide shows how to deploy a simple Node.js application connected to a Neon LangChaindatabase on Railway.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use Postgres database named `neondb`. We'll use this database in the following examples.
+- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Railway account. If you do not have one, sign up at [Railway](https://railway.app) to get started.
 - A GitHub account. Railway integrates with Gitub for continuous deployment. So, you'd need a GitHub account to upload your application code.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
@@ -70,7 +70,7 @@ npm install express pg
 touch .env
 ```
 
-We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the Postgres driver we use to connect to our database.
+We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
 
 ```bash
 # .env
@@ -162,7 +162,7 @@ To delete your Neon project, follow the steps outlined in the Neon documentation
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-railway" description="Connect a Neon Postgres database to your Node application deployed with Railway" icon="github">Use Neon Postgres with Railway</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-railway" description="Connect a Neon LangChaindatabase to your Node application deployed with Railway" icon="github">Use Neon LangChainwith Railway</a>
 </DetailIconCards>
 
 ## Resources

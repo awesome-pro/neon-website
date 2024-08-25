@@ -1,4 +1,3 @@
-import CalendarIcon from 'icons/calendar.inline.svg';
 import ConsoleIcon from 'icons/console.inline.svg';
 import aboutUsDarkIcon from 'icons/header/about-us-dark.svg';
 import aboutUsIcon from 'icons/header/about-us.svg';
@@ -12,10 +11,6 @@ import branchingDarkIcon from 'icons/header/branching-dark.svg';
 import branchingIcon from 'icons/header/branching.svg';
 import careersDarkIcon from 'icons/header/careers-dark.svg';
 import careersIcon from 'icons/header/careers.svg';
-import caseStudiesDarkIcon from 'icons/header/case-studies-dark.svg';
-import caseStudiesIcon from 'icons/header/case-studies.svg';
-import changelogDarkIcon from 'icons/header/changelog-dark.svg';
-import changelogIcon from 'icons/header/changelog.svg';
 import cliDarkIcon from 'icons/header/cli-dark.svg';
 import cliIcon from 'icons/header/cli.svg';
 import demosDarkIcon from 'icons/header/demos-dark.svg';
@@ -24,10 +19,6 @@ import discordDarkIcon from 'icons/header/discord-dark.svg';
 import discordIcon from 'icons/header/discord.svg';
 import enterpriseDarkIcon from 'icons/header/enterprise-dark.svg';
 import enterpriseIcon from 'icons/header/enterprise.svg';
-import partnersDarkIcon from 'icons/header/partners-dark.svg';
-import partnersIcon from 'icons/header/partners.svg';
-import onDemandStorageDarkIcon from 'icons/header/storage-dark.svg';
-import onDemandStorageIcon from 'icons/header/storage.svg';
 import PostgresDocsIcon from 'icons/postgres.inline.svg';
 import TransactionsIcon from 'icons/transactions.inline.svg';
 
@@ -62,17 +53,8 @@ export default {
             dark: cliDarkIcon,
           },
           text: 'CLI',
-          description: 'Neon in your terminal',
+          description: 'Unique in your terminal',
           to: LINKS.cli,
-        },
-        {
-          icon: {
-            light: onDemandStorageIcon,
-            dark: onDemandStorageDarkIcon,
-          },
-          text: 'On-demand storage',
-          description: 'Custom-built for the cloud',
-          to: LINKS.onDemandStorage,
         },
         {
           icon: {
@@ -80,7 +62,7 @@ export default {
             dark: aiDarkIcon,
           },
           text: 'AI',
-          description: 'Neon as your vector store',
+          description: 'Unique as your vector store',
           to: LINKS.ai,
         },
       ],
@@ -104,15 +86,6 @@ export default {
           text: 'Blog',
           description: 'Learn from the experts',
           to: LINKS.blog,
-        },
-        {
-          icon: {
-            light: changelogIcon,
-            dark: changelogDarkIcon,
-          },
-          text: 'Changelog',
-          description: 'Explore product updates',
-          to: LINKS.changelog,
         },
         {
           icon: {
@@ -152,26 +125,8 @@ export default {
             dark: careersDarkIcon,
           },
           text: 'Careers',
-          description: 'Join Neon',
+          description: 'Be Unique',
           to: LINKS.careers,
-        },
-        {
-          icon: {
-            light: partnersIcon,
-            dark: partnersDarkIcon,
-          },
-          text: 'Neon for platforms',
-          description: 'Postgres for your users',
-          to: LINKS.partners,
-        },
-        {
-          icon: {
-            light: caseStudiesIcon,
-            dark: caseStudiesDarkIcon,
-          },
-          text: 'Case studies',
-          description: 'Explore customer stories',
-          to: LINKS.caseStudies,
         },
         {
           icon: {
@@ -312,24 +267,8 @@ export default {
           to: LINKS.terms,
         },
         {
-          text: 'DPA',
-          to: LINKS.dpa,
-        },
-        {
-          text: 'Subprocessors List',
-          to: LINKS.subprocessors,
-        },
-        {
           text: 'Privacy Guide',
           to: LINKS.privacyGuide,
-        },
-        {
-          text: 'Cookie Policy',
-          to: LINKS.cookiePolicy,
-        },
-        {
-          text: 'Business Information',
-          to: LINKS.businessInformation,
         },
       ],
     },
@@ -345,21 +284,11 @@ export default {
       title: 'CLI Reference',
       slug: LINKS.cliReference,
     },
-    {
-      icon: CalendarIcon,
-      title: 'Changelog',
-      slug: LINKS.changelog,
-    },
-    {
-      icon: PostgresDocsIcon,
-      title: 'PostgreSQL Docs',
-      slug: LINKS.postgres,
-    },
   ],
   postgresSidebar: [
     {
       icon: PostgresDocsIcon,
-      title: 'Neon Docs',
+      title: 'Unique Docs',
       slug: LINKS.docs,
     },
   ],

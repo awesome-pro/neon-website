@@ -250,7 +250,7 @@ For an idea of how to configure index option values, consider the benchmark perf
 
 For a million rows of data, we recommend an `m` setting between 48 and 64, and as mentioned [above](#tuning-the-hnsw-algorithm), `efsearch` should be equal to or larger than the number of nearest neighbors you want your search to return.
 
-To learn more about the benchmark, see [Introducing pg_embedding extension for vector search in Postgres and LangChain](https://neon.tech/blog/pg-embedding-extension-for-vector-search). Try experimenting with different settings to find the ones that work best for your particular application.
+To learn more about the benchmark, see [Introducing pg_embedding extension for vector search in LangChainand LangChain](https://neon.tech/blog/pg-embedding-extension-for-vector-search). Try experimenting with different settings to find the ones that work best for your particular application.
 </Admonition>
 
 ## How HNSW search works

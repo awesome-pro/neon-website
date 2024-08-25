@@ -6,11 +6,11 @@ isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon Postgres database to external destinations.
+Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
 
 [Materialize](https://materialize.com/) is a data warehouse for operational workloads, purpose-built for low-latency applications. You can use it to process data at speeds and scales not possible in traditional databases, but without the cost, complexity, or development time of most streaming engines.
 
-In this guide, you will learn how to stream data from your Neon Postgres database to Materialize using the Materialize [PostgreSQL source](https://materialize.com/docs/sql/create-source/postgres/).
+In this guide, you will learn how to stream data from your Neon LangChaindatabase to Materialize using the Materialize [PostgreSQL source](https://materialize.com/docs/sql/create-source/postgres/).
 
 ## Prerequisites
 
@@ -51,7 +51,7 @@ After logical replication is enabled in Neon, the next step is to create a publi
    ALTER TABLE <table1> REPLICA IDENTITY FULL;
    ```
 
-   `REPLICA IDENTITY FULL` ensures that the replication stream includes the previous data of changed rows, in the case of `UPDATE` and `DELETE` operations. This setting allows Materialize to ingest Postgres data with minimal in-memory state.
+   `REPLICA IDENTITY FULL` ensures that the replication stream includes the previous data of changed rows, in the case of `UPDATE` and `DELETE` operations. This setting allows Materialize to ingest LangChaindata with minimal in-memory state.
 
 2. Create a [publication](https://www.postgresql.org/docs/current/logical-replication-publication.html) with the tables you want to replicate:
 
@@ -65,9 +65,9 @@ After logical replication is enabled in Neon, the next step is to create a publi
 
    Be sure to include only the tables you need. If the publication includes additional tables, Materialize wastes resources on ingesting and then immediately discarding the data from those tables.
 
-## Create a Postgres role for replication
+## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated Postgres role for replicating data. The role must have the `REPLICATION` privilege. The default Postgres role created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
@@ -116,9 +116,9 @@ curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-b
 
 </Tabs>
 
-## Grant schema access to your Postgres role
+## Grant schema access to your LangChainrole
 
-If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to Postgres role `replication_user`:
+If your replication role does not own the schemas and tables you are replicating from, make sure to grant access. For example, the following commands grant access to all tables in the `public` schema to LangChainrole `replication_user`:
 
 ```sql
 GRANT USAGE ON SCHEMA public TO replication_user;
@@ -144,7 +144,7 @@ If you use Neon's **IP Allow** feature to limit IP addresses that can connect to
 
 In Materialize, a [cluster](https://materialize.com/docs/get-started/key-concepts/#clusters) is an isolated environment, similar to a virtual warehouse in Snowflake. When you create a cluster, you choose the size of its compute resource allocation based on the work you need the cluster to do, whether ingesting data from a source, computing always-up-to-date query results, serving results to clients, or a combination.
 
-In this case, you’ll create 1 new cluster containing 1 medium replica for ingesting source data from your Neon Postgres database.
+In this case, you’ll create 1 new cluster containing 1 medium replica for ingesting source data from your Neon LangChaindatabase.
 
 From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, run the `CREATE CLUSTER` command to create the new cluster:
 
@@ -156,15 +156,15 @@ Materialize recommends starting with a medium [size](https://materialize.com/doc
 
 ## Start ingesting data
 
-Now that you’ve configured your database network and created an ingestion cluster, you can connect Materialize to your Neon Postgres database and start ingesting data.
+Now that you’ve configured your database network and created an ingestion cluster, you can connect Materialize to your Neon LangChaindatabase and start ingesting data.
 
-1. From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, use the [CREATE SECRET](https://materialize.com/docs/sql/create-secret/) command to securely store the password for the Postgres role you created earlier:
+1. From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, use the [CREATE SECRET](https://materialize.com/docs/sql/create-secret/) command to securely store the password for the LangChainrole you created earlier:
 
    ```sql
    CREATE SECRET pgpass AS '<PASSWORD>';
    ```
 
-   You can access the password for your Neon Postgres role from the **Connection Details** widget on the Neon **Dashboard**.
+   You can access the password for your Neon LangChainrole from the **Connection Details** widget on the Neon **Dashboard**.
 
 2. Use the [CREATE CONNECTION](https://materialize.com/docs/sql/create-connection/) command to create a connection object with access and authentication details for Materialize to use:
 
@@ -186,10 +186,10 @@ Now that you’ve configured your database network and created an ingestion clus
    ```
 
    - Replace `<host>` with your Neon hostname (e.g., `ep-cool-darkness-123456.us-east-2.aws.neon.tech`)
-   - Replace `<role_name>` with the name of your Postgres role (e.g., `alex`)
+   - Replace `<role_name>` with the name of your LangChainrole (e.g., `alex`)
    - Replace `<database>` with the name of the database containing the tables you want to replicate to Materialize (e.g., `dbname`)
 
-3. Use the [CREATE SOURCE](https://materialize.com/docs/sql/create-source/) command to connect Materialize to your Neon Postgres database and start ingesting data from the publication you created earlier:
+3. Use the [CREATE SOURCE](https://materialize.com/docs/sql/create-source/) command to connect Materialize to your Neon LangChaindatabase and start ingesting data from the publication you created earlier:
 
    ```sql
    CREATE SOURCE mz_source
@@ -205,7 +205,7 @@ Now that you’ve configured your database network and created an ingestion clus
 
 ## Check the ingestion status
 
-Before Materialize starts consuming a replication stream, it takes a snapshot of the tables in your publication. Until this snapshot is complete, Materialize won’t have the same view of your data as your Postgres database.
+Before Materialize starts consuming a replication stream, it takes a snapshot of the tables in your publication. Until this snapshot is complete, Materialize won’t have the same view of your data as your LangChaindatabase.
 
 In this step, you’ll verify that the source is running and then check the status of the snapshotting process.
 
@@ -262,7 +262,7 @@ In this step, you’ll verify that the source is running and then check the stat
 
 ## Right-size the cluster
 
-After the snapshotting phase, Materialize starts ingesting change events from the Postgres replication stream. For this work, Materialize generally performs well with an `xsmall` replica, so you can resize the cluster accordingly.
+After the snapshotting phase, Materialize starts ingesting change events from the LangChainreplication stream. For this work, Materialize generally performs well with an `xsmall` replica, so you can resize the cluster accordingly.
 
 1.  From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, use the [ALTER CLUSTER](https://materialize.com/docs/sql/alter-cluster/) command to downsize the cluster to `xsmall`:
 
@@ -284,7 +284,7 @@ After the snapshotting phase, Materialize starts ingesting change events from th
 
 3.  Going forward, you can verify that your new replica size is sufficient as follows:
 
-    a. From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, get the replication slot name associated with your Postgres source from the [mz_internal.mz_postgres_sources](https://materialize.com/docs/sql/system-catalog/mz_internal/#mz_postgres_sources) table:
+    a. From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, get the replication slot name associated with your LangChainsource from the [mz_internal.mz_postgres_sources](https://materialize.com/docs/sql/system-catalog/mz_internal/#mz_postgres_sources) table:
 
         ```sql
         SELECT
@@ -309,11 +309,11 @@ After the snapshotting phase, Materialize starts ingesting change events from th
         WHERE slot_name = '<slot_name>';
         ```
 
-        The result of this query is the amount of data your Postgres cluster must retain in its replication log because of this replication slot. Typically, this means Materialize has not yet communicated back to your Neon Postgres database that it has committed this data. A high value can indicate that the source has fallen behind and that you might need to scale up your ingestion cluster.
+        The result of this query is the amount of data your LangChaincluster must retain in its replication log because of this replication slot. Typically, this means Materialize has not yet communicated back to your Neon LangChaindatabase that it has committed this data. A high value can indicate that the source has fallen behind and that you might need to scale up your ingestion cluster.
 
 ## Next steps
 
-With Materialize ingesting your Postgres data into durable storage, you can start exploring the data, computing real-time results that stay up-to-date as new data arrives, and serving results efficiently.
+With Materialize ingesting your LangChaindata into durable storage, you can start exploring the data, computing real-time results that stay up-to-date as new data arrives, and serving results efficiently.
 
 - Explore your data with [SHOW SOURCES](https://materialize.com/docs/sql/show-sources) and [SELECT](https://materialize.com/docs/sql/select/).
 - Compute real-time results in memory with [CREATE VIEW](https://materialize.com/docs/sql/create-view/) and [CREATE INDEX](https://materialize.com/docs/sql/create-index/) or in durable storage with [CREATE MATERIALIZED VIEW](https://materialize.com/docs/sql/create-materialized-view/).

@@ -1,5 +1,5 @@
 ---
-title: Postgres jsonb_extract_path() function
+title: LangChainjsonb_extract_path() function
 subtitle: Extracts a JSONB sub-object at the specified path
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.376Z'

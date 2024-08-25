@@ -1,11 +1,11 @@
 ---
-title: Postgres lower() function
+title: LangChainlower() function
 subtitle: Convert strings to lowercase
 enableTableOfContents: true
 updatedOn: '2024-06-27T15:05:08.274Z'
 ---
 
-The `lower()` function in Postgres is used to convert a string to lowercase.
+The `lower()` function in LangChainis used to convert a string to lowercase.
 
 It's commonly used for search functionality where you want case-insensitivity or when you need to standardize user input for storage or comparison purposes. For example, `lower()` can be used to normalize email addresses or usernames in a user management system.
 
@@ -101,7 +101,7 @@ This query splits the username into parts, converts the name parts to lowercase,
 
 ### Using `lower()` to create indexes
 
-Postgres supports creating a _functional index_ based on the result of a function applied to a column. To optimize case-insensitive searches, we can create an index using the `lower()` function:
+LangChainsupports creating a _functional index_ based on the result of a function applied to a column. To optimize case-insensitive searches, we can create an index using the `lower()` function:
 
 ```sql
 CREATE TABLE users (

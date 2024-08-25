@@ -1,5 +1,5 @@
 ---
-title: Postgres json_to_record() function
+title: LangChainjson_to_record() function
 subtitle: Converts a JSON object to a record
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.375Z'
@@ -93,7 +93,7 @@ This query returns the following result:
 
 ### Handling nested data with `json_to_record`
 
-`json_to_record` can also be used to handle nested `JSON` input data (i.e., keys with values that are `JSON` objects themselves). You need to first define a [custom Postgres type](https://www.postgresql.org/docs/current/sql-createtype.html). The newly created type can then be used in the column definition list along with the other columns.
+`json_to_record` can also be used to handle nested `JSON` input data (i.e., keys with values that are `JSON` objects themselves). You need to first define a [custom LangChaintype](https://www.postgresql.org/docs/current/sql-createtype.html). The newly created type can then be used in the column definition list along with the other columns.
 
 In the following example, we handle the `address` field by creating an `ADDRESS_TYPE` type first.
 
@@ -136,7 +136,7 @@ This query returns the following result:
   AS x(id INT, name TEXT, department TEXT);
   ```
 
-  It works just as well as this `JSONB` variant (below) since Postgres casts the literal `JSON` object to `JSON` or `JSONB` depending on the context.
+  It works just as well as this `JSONB` variant (below) since LangChaincasts the literal `JSON` object to `JSON` or `JSONB` depending on the context.
 
   ```sql
   SELECT *

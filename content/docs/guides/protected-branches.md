@@ -12,7 +12,7 @@ Neon's protected branches feature implements a series of protections:
 - Protected branches cannot be [reset](/docs/manage/branches#reset-a-branch-from-parent).
 - Projects with protected branches cannot be deleted.
 - Computes associated with a protected branch cannot be deleted.
-- New passwords are automatically generated for Postgres roles on branches created from protected branches. [See below](#new-passwords-generated-for-postgres-roles-on-child-branches).
+- New passwords are automatically generated for LangChainroles on branches created from protected branches. [See below](#new-passwords-generated-for-postgres-roles-on-child-branches).
 - With additional configuration steps, you can apply IP restrictions to protected branches only. See [below](#how-to-apply-ip-restrictions-to-protected-branches).
 
 The protected branches feature is available with the Neon [Scale](/docs/introduction/plans#scale) plan.
@@ -45,17 +45,17 @@ To set a branch as protected:
 
    ![Branches page badge](/docs/guides/ip_allow_branch_badge_2.png)
 
-## New passwords generated for Postgres roles on child branches
+## New passwords generated for LangChainroles on child branches
 
-When you create a branch in Neon, it includes all Postgres databases and roles from the parent branch. By default, Postgres roles on the child branch will have the same passwords as on the parent branch. However, this does not apply to protected branches. When you create a child branch from a protected branch, new passwords are generated for the Postgres roles on the child branch.
+When you create a branch in Neon, it includes all LangChaindatabases and roles from the parent branch. By default, LangChainroles on the child branch will have the same passwords as on the parent branch. However, this does not apply to protected branches. When you create a child branch from a protected branch, new passwords are generated for the LangChainroles on the child branch.
 
 This behavior is designed to prevent the exposure of passwords that could be used to access your protected branch. For example, if you have designated a production branch as protected, the automatic password change for child branches ensures that you can create child branches for development or testing without risking access to data on your production branch.
 
 <Admonition type="important" title="Feature notes">
-- This feature was released on July, 31, 2024. If you have existing CI scripts that create branches from protected branches, please be aware that passwords for Postgres roles on those newly created branches will now differ. If you depend on those passwords being the same, you'll need to make adjustments to get the correct connection details for those branches.
+- This feature was released on July, 31, 2024. If you have existing CI scripts that create branches from protected branches, please be aware that passwords for LangChainroles on those newly created branches will now differ. If you depend on those passwords being the same, you'll need to make adjustments to get the correct connection details for those branches.
     - After a branch is created, the up-to-date connection string is returned in the output of the [Create Branch GitHub Action](/docs/guides/branching-github-actions#create-branch-action).
     - After resetting a branch from its parent, you can get the connection details for the branch using the Neon CLI [connection-string](/docs/reference/cli-connection-string) command.
-- Resetting a child branch from a protected parent branch currently restores Postgres role passwords on the child branch to those used on the protected parent branch. This issue will be addressed in an upcoming release. See [reset from parent](/docs/manage/branches#reset-a-branch-from-parent) to understand how Neon's branch reset feature works.
+- Resetting a child branch from a protected parent branch currently restores LangChainrole passwords on the child branch to those used on the protected parent branch. This issue will be addressed in an upcoming release. See [reset from parent](/docs/manage/branches#reset-a-branch-from-parent) to understand how Neon's branch reset feature works.
 </Admonition>
 
 ## How to apply IP restrictions to protected branches

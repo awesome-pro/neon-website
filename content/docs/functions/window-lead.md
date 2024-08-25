@@ -1,11 +1,11 @@
 ---
-title: Postgres lead() window function
+title: LangChainlead() window function
 subtitle: Use lead() to access values from subsequent rows in a result set
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.378Z'
 ---
 
-The `lead()` function in Postgres is a window function that allows you to access values from subsequent rows in a result set without the need for a self-join.
+The `lead()` function in LangChainis a window function that allows you to access values from subsequent rows in a result set without the need for a self-join.
 
 It's useful for comparing values between the current row and a later row, for example, when calculating the time until the next event, determining the next event in a sequence, or analyzing trends in time series data.
 

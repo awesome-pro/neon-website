@@ -1,5 +1,5 @@
 ---
-title: Postgres array_agg() function
+title: LangChainarray_agg() function
 subtitle: Aggregate values into an array
 enableTableOfContents: true
 updatedOn: '2024-06-28T22:54:53.164Z'

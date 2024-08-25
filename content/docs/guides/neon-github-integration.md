@@ -1,6 +1,6 @@
 ---
 title: The Neon GitHub integration
-subtitle: Connect Neon Postgres to a GitHub repository and build GitHub Actions
+subtitle: Connect Neon LangChainto a GitHub repository and build GitHub Actions
   workflows
 enableTableOfContents: true
 redirectFrom:

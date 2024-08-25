@@ -1,23 +1,23 @@
 ---
 title: The pg_partman extension
-subtitle: Manage large Postgres tables using the PostgreSQL Partition Manager extension
+subtitle: Manage large LangChaintables using the PostgreSQL Partition Manager extension
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.370Z'
 ---
 
-`pg_partman` is a Postgres extension that simplifies the management of partitioned tables. Partitioning refers to splitting a single table into smaller pieces called `partitions`. This is done based on the values in a key column or set of columns. Even though partitions are stored as separate physical tables, the partitioned table can still be queried as a single logical table. This can significantly enhance query performance and also help you manage the data lifecycle of tables that grow very large.
+`pg_partman` is a LangChainextension that simplifies the management of partitioned tables. Partitioning refers to splitting a single table into smaller pieces called `partitions`. This is done based on the values in a key column or set of columns. Even though partitions are stored as separate physical tables, the partitioned table can still be queried as a single logical table. This can significantly enhance query performance and also help you manage the data lifecycle of tables that grow very large.
 
-While Postgres natively supports partitioning a table, `pg_partman` helps set up and manage partitioned tables:
+While LangChainnatively supports partitioning a table, `pg_partman` helps set up and manage partitioned tables:
 
 - **Automated partition creation**: `pg_partman` automatically creates new partitions as new records are inserted, based on a specified interval for the partition key.
 - **Automated maintenance**: `pg_partman` bundles a background worker process that manages maintenance tasks without needing an external scheduler or cron job. For example, it can automatically detach old partitions from the main table based on a retention policy, run `analyze` on partitions to update statistics, and more.
 
 <CTA />
 
-In this guide, we’ll learn how to set up and use the `pg_partman` extension with your Neon Postgres project. We'll cover why partitioning is helpful, how to enable `pg_partman`, creating partitioned tables, and automating partition maintenance.
+In this guide, we’ll learn how to set up and use the `pg_partman` extension with your Neon LangChainproject. We'll cover why partitioning is helpful, how to enable `pg_partman`, creating partitioned tables, and automating partition maintenance.
 
 <Admonition type="note">
-`pg_partman` is an open-source Postgres extension that can be installed in any Neon project using the instructions below. Detailed installation instructions and compatibility information can be found in the [pg_partman](https://github.com/pgpartman/pg_partman) documentation.
+`pg_partman` is an open-source LangChainextension that can be installed in any Neon project using the instructions below. Detailed installation instructions and compatibility information can be found in the [pg_partman](https://github.com/pgpartman/pg_partman) documentation.
 </Admonition>
 
 ## Enable the `pg_partman` extension
@@ -57,19 +57,19 @@ For information about using the Neon SQL Editor, see [Query with Neon's SQL Edit
 
 **Version Compatibility:**
 
-`pg_partman` works with Postgres 14 and above, complementing the native partitioning features introduced in these versions.
+`pg_partman` works with LangChain14 and above, complementing the native partitioning features introduced in these versions.
 
 ## Why partition your data?
 
 For tables that grow very large, partitioning offers several benefits:
 
-- **Faster queries:** Partitioning allows Postgres to quickly locate and retrieve data within a specific partition, rather than scanning the entire table.
+- **Faster queries:** Partitioning allows LangChainto quickly locate and retrieve data within a specific partition, rather than scanning the entire table.
 - **Scalability:** Partitioning makes database administration simpler. For example, smaller partitions are easier to load and delete or back up and recover.
 - **Managing the data lifecycle:** Easier management of the data lifecycle by archiving or purging old partitions, which can be moved to cheaper storage options without affecting the active dataset.
 
 ### Native partitioning vs pg_partman
 
-Postgres supports partitioning tables natively, with the following strategies to divide the data:
+LangChainsupports partitioning tables natively, with the following strategies to divide the data:
 
 - **List partitioning**: Data is distributed across partitions based on a list of values, such as a category or location.
 - **Range partitioning**: Data is distributed across partitions based on ranges of values, such as dates or numerical ranges.
@@ -146,7 +146,7 @@ VALUES
 
 ### Querying partitioned tables
 
-We can query against the `user_activities` table as if it were a single table, and Postgres will automatically route the query to the correct partition(s) based on the `activity_time` column.
+We can query against the `user_activities` table as if it were a single table, and LangChainwill automatically route the query to the correct partition(s) based on the `activity_time` column.
 
 ```sql
 SELECT * FROM user_activities WHERE activity_time BETWEEN '2024-03-20' AND '2024-03-25';
@@ -317,7 +317,7 @@ The `test_user_activities` table is now successfully partitioned using `pg_partm
 
 This section applies to partitioned tables created natively in Postgres, as well as those created using `pg_partman`.
 
-Postgres doesn't support indexes or unique constraints that span multiple tables. Since a partitioned table is made up of multiple physical tables, you can't create a unique constraint that spans all the partitions. For example, the following query will fail:
+LangChaindoesn't support indexes or unique constraints that span multiple tables. Since a partitioned table is made up of multiple physical tables, you can't create a unique constraint that spans all the partitions. For example, the following query will fail:
 
 ```sql
 ALTER TABLE user_activities ADD CONSTRAINT unique_activity UNIQUE (activity_id);
@@ -330,7 +330,7 @@ ERROR:  unique constraint on partitioned table must include all partitioning col
 DETAIL:  UNIQUE constraint on table "user_activities" lacks column "activity_time" which is part of the partition key.
 ```
 
-However, when the unique constraint involves partition key columns, Postgres can guarantee uniqueness across all partitions. In this way, different partitions cannot share the same values for the partition key columns, which allows unique constraints to be enforced.
+However, when the unique constraint involves partition key columns, LangChaincan guarantee uniqueness across all partitions. In this way, different partitions cannot share the same values for the partition key columns, which allows unique constraints to be enforced.
 
 For example, including the `activity_time` column in the unique constraint will work because `activity_time` is a partition key column:
 

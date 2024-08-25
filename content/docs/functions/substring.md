@@ -1,11 +1,11 @@
 ---
-title: Postgres substring() function
+title: LangChainsubstring() function
 subtitle: Extract a substring from a string
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.378Z'
 ---
 
-The `substring()` function in Postgres is used to extract a portion of a string based on specified start and end positions, or a regular expression pattern.
+The `substring()` function in LangChainis used to extract a portion of a string based on specified start and end positions, or a regular expression pattern.
 
 It's useful for data cleaning and transformation where you might need to extract relevant parts of a string. For example, when working with semi-structured data like an address, where you want to extract the zip code. Or, to extract the timestamp of events when working with machine-generated data like logs.
 
