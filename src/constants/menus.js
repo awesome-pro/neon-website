@@ -149,22 +149,6 @@ export default {
           to: LINKS.aboutUs,
         },
         {
-          text: 'Careers',
-          to: LINKS.careers,
-        },
-        {
-          text: 'Partners',
-          to: LINKS.partners,
-        },
-        {
-          text: 'Case Studies',
-          to: LINKS.caseStudies,
-        },
-        {
-          text: 'Trust',
-          to: LINKS.trust,
-        },
-        {
           text: 'Pricing',
           to: LINKS.pricing,
         },
@@ -198,20 +182,12 @@ export default {
           to: LINKS.guides,
         },
         {
-          text: 'Changelog',
-          to: LINKS.changelog,
-        },
-        {
           text: 'Demos',
           to: LINKS.demos,
         },
         {
           text: 'Support',
           to: LINKS.support,
-        },
-        {
-          text: 'Security',
-          to: LINKS.security,
         },
       ],
     },
@@ -237,21 +213,6 @@ export default {
           text: 'Discord',
           to: LINKS.discord,
           icon: 'discord-icon',
-        },
-        {
-          text: 'Discourse',
-          to: LINKS.discourse,
-          icon: 'discourse-icon',
-        },
-        {
-          text: 'YouTube',
-          to: LINKS.youtube,
-          icon: 'youtube-icon',
-        },
-        {
-          text: 'Creators',
-          to: LINKS.creators,
-          icon: 'creators-icon',
         },
       ],
     },

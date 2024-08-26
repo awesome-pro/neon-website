@@ -8,7 +8,6 @@ import Industry from 'components/pages/home/industry';
 import InstantProvisioning from 'components/pages/home/instant-provisioning';
 import Lightning from 'components/pages/home/lightning';
 import Logos from 'components/pages/home/logos';
-import Multitenancy from 'components/pages/home/multitenancy';
 import Trusted from 'components/pages/home/trusted';
 import Cta from 'components/shared/cta';
 import LINKS from 'constants/links';
@@ -39,7 +38,6 @@ const HomePage = async () => {
       <Lightning />
       <Bento />
       <AiIndex />
-      <Multitenancy />
       <Industry />
       <Trusted />
       <Cta />

@@ -36,23 +36,21 @@ const ITEMS = [
       m3u8: '/videos/pages/home/hero/scaling.m3u8?updated=20240514120633',
       bgImage: '/videos/pages/home/hero/scaling.jpg',
     },
-    title: 'Scaling',
-    description:
-      'Focus on building applications with time and money-saving features like instant provisioning, autoscaling according to load, and scale to zero.',
+    title: 'SuperScaling',
+    description: 'Focus on Building, we will handle AutoScaling',
     linkLabel: 'Discover Autoscaling',
     linkUrl: LINKS.autoscaling,
   },
   {
     video: {
       icon: branchingIcon,
-      title: 'Branching',
+      title: 'ProBranching',
       mp4: '/videos/pages/home/hero/branching.mp4?updated=20240508184252',
       m3u8: '/videos/pages/home/hero/branching.m3u8?updated=20240508184252',
       bgImage: '/videos/pages/home/hero/branching.jpg',
     },
     title: 'Branching',
-    description:
-      'Instantly branch your data and schema to access isolated DB copies for development, CI/CD, and schema migrations with copy-on-write storage.',
+    description: 'Branching like a Pro',
     linkLabel: 'Explore Branching',
     linkUrl: LINKS.branching,
   },
@@ -125,15 +123,26 @@ const Hero = () => {
             The database you love, on a serverless platform designed to help you build reliable and
             scalable applications faster.
           </p>
-          <Button
-            className="pointer-events-auto relative mt-[26px] h-11 w-[144px] text-[15px] !font-semibold tracking-tighter xl:mt-8 lg:mt-6 sm:h-10"
-            theme="primary"
-            to={LINKS.signup}
-            target="_blank"
-            tag_name="Hero"
-          >
-            Get Started
-          </Button>
+          <div className="flex items-center justify-center gap-3">
+            <Button
+              className="pointer-events-auto relative mt-[26px] h-11 w-[144px] text-[15px] !font-semibold tracking-tighter xl:mt-8 lg:mt-6 sm:h-10"
+              theme="primary"
+              to={LINKS.signup}
+              target="_blank"
+              tag_name="Hero"
+            >
+              Get Started
+            </Button>
+            <Button
+              className="pointer-events-auto relative mt-[26px] h-11 w-[144px] border-2 bg-transparent text-[15px] !font-semibold tracking-tighter text-primary-1 hover:border-primary-1 hover:bg-primary-1/10 xl:mt-8 lg:mt-6 sm:h-10"
+              theme="primary"
+              to={LINKS.signup}
+              target="_blank"
+              tag_name="Hero"
+            >
+              Docs
+            </Button>
+          </div>
         </div>
 
         <div className="mt-[74px] flex gap-x-2.5 xl:mt-16 lg:mt-14 sm:mt-9 sm:flex-col sm:gap-y-9">

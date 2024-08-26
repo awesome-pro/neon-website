@@ -218,22 +218,12 @@ const MobileMenu = ({ isDarkTheme, isBlogPage = false, isDocPage = false }) => {
                   )}
                 >
                   <Button
-                    className={clsx(
-                      'h-11 items-center justify-center text-[15px] !font-semibold tracking-tight dark:!border-gray-new-15 dark:!text-white',
-                      !isDarkTheme && '!border-gray-new-90 !text-black-new'
-                    )}
-                    to={LINKS.login}
-                    theme="gray-15-outline"
-                  >
-                    Log In
-                  </Button>
-                  <Button
                     className="h-11 items-center text-[15px] !font-semibold tracking-tight"
                     to={LINKS.signup}
                     theme="primary"
                     tag_name="MobileMenu"
                   >
-                    Sign Up
+                    Get Started
                   </Button>
                 </div>
               </div>

@@ -1,4 +1,5 @@
 import clsx from 'clsx';
+import Image from 'next/image';
 import PropTypes from 'prop-types';
 import { Suspense } from 'react';
 
@@ -97,7 +98,7 @@ const Navigation = async ({ isDarkTheme }) => (
                           )}
                         >
                           {isDarkTheme ? (
-                            <img
+                            <Image
                               className="h-5 w-5"
                               src={icon.dark}
                               width={20}
@@ -108,7 +109,7 @@ const Navigation = async ({ isDarkTheme }) => (
                             />
                           ) : (
                             <>
-                              <img
+                              <Image
                                 className="h-5 w-5 dark:hidden"
                                 src={icon.light}
                                 width={20}
@@ -117,7 +118,7 @@ const Navigation = async ({ isDarkTheme }) => (
                                 alt=""
                                 aria-hidden
                               />
-                              <img
+                              <Image
                                 className="hidden h-5 w-5 dark:block"
                                 src={icon.dark}
                                 width={20}
@@ -172,13 +173,6 @@ const Sidebar = async ({ isDarkTheme }) => {
       <Suspense>
         <GithubStarCounter isDarkTheme={isDarkTheme} starsCount={starsCount} />
       </Suspense>
-      <Link
-        className="text-[13px] leading-none tracking-extra-tight lg:hidden"
-        to={LINKS.login}
-        theme={isDarkTheme ? 'white' : 'black'}
-      >
-        Log In
-      </Link>
 
       <Button
         className="h-8 px-6 text-[13px] font-semibold leading-none tracking-extra-tight transition-colors duration-200 lg:hidden"
@@ -186,7 +180,7 @@ const Sidebar = async ({ isDarkTheme }) => {
         theme="primary"
         tag_name="Header"
       >
-        Sign Up
+        Get Started
       </Button>
     </div>
   );

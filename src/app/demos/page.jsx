@@ -17,7 +17,7 @@ const DemoPage = () => (
       buttonClassName="px-[77px] xl:px-10 lg:px-9 sm:px-14"
       title="Get started<br/> with Neon"
       description="The fully managed multi-cloud Postgres with a generous free tier. We separated storage and compute to offer autoscaling, branching, and bottomless storage."
-      buttonText="Sign Up"
+      buttonText="Get Started"
       buttonUrl={LINKS.signup}
     />
   </Layout>

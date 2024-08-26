@@ -4,10 +4,8 @@ import Container from 'components/shared/container';
 import LINKS from 'constants/links';
 import ArrowRightIcon from 'icons/arrow-right.inline.svg';
 import digitImage from 'images/pages/home/trusted/digit.jpg';
-import elephantImage from 'images/pages/home/trusted/elephant.jpg';
 import githubImage from 'images/pages/home/trusted/github.jpg';
-import socMdImage from 'images/pages/home/trusted/soc-md.jpg';
-import socImage from 'images/pages/home/trusted/soc.jpg';
+import pythonImage from 'images/pages/home/trusted/python.jpg';
 
 import Card from './card';
 
@@ -56,24 +54,10 @@ const Trusted = () => (
             'shadow-[0px_-10px_62px_12px_rgba(0,0,0,0.9),30px_10px_60px_0px_rgba(0,0,0,0.8),-50px_10px_60px_0px_rgba(0,0,0,0.9)]'
           )}
           borderClassName="border-gray-new-10 border"
-          bgClassName="w-[510px] left-[-39%] top-[-18%] xl:w-[382px] lg:w-[104%] lg:left-[-3%] lg:top-[-41%] sm:w-full sm:left-0"
-          bgImage={elephantImage}
+          bgClassName="w-[510px] left-[-39%] top-[-18%] xl:w-[382px] lg:w-[104%] lg:left-[-3%] lg:top-[-41%] sm:w-full sm:left-0 opacity-70 hover:opacity-90"
+          bgImage={pythonImage}
         >
-          <strong className="font-medium text-white">100% Postgres.</strong> Not a fork, not a
-          rewrite.
-        </Card>
-        <Card
-          className="aspect-[192/247] lg:order-4 lg:aspect-[310/220] lg:justify-center sm:aspect-[320/220]"
-          borderClassName="border-linear border-image-home-trusted-soc-card lg:border-image-home-trusted-soc-card-md"
-          bgClassName="top-[-43%] left-[-43%] w-[454px] xl:w-[342px] lg:inset-0 lg:w-full lg:h-full"
-          bgImage={socImage}
-          mobileBgImage={socMdImage}
-          to="/blog/soc2-type2"
-        >
-          <span className="flex items-end font-medium text-white transition-colors duration-200 group-hover:text-green-45">
-            <span>SOC2 Compliance</span>
-            <ArrowRightIcon className="relative -left-5 -top-2 shrink-0 transition-transform duration-200 group-hover:translate-x-[3px] xl:-left-1 xl:-top-1 lg:-top-1.5 lg:left-1.5 sm:-top-1" />
-          </span>
+          <strong className="font-medium text-white">100% Python</strong>
         </Card>
       </div>
     </Container>

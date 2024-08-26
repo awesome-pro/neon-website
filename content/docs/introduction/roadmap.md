@@ -60,7 +60,7 @@ Benefits of joining:
 - **Private community**: Gain access to a dedicated Discord channel to connect with the Neon team and provide feedback to help shape what comes next.
 - **Weekly insights**: Receive updates on Neon's latest developments and future plans.
 
-[Sign Up Now](https://neon.tech/early-access-program) and start influencing the future of Neon!
+[Get Started](https://neon.tech/early-access-program) and start influencing the future of Neon!
 
 ## A note about timing
 
