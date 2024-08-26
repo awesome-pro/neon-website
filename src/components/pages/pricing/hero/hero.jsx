@@ -14,8 +14,6 @@ import LINKS from 'constants/links';
 import CheckIcon from 'icons/check.inline.svg';
 import CrossIcon from 'icons/cross.inline.svg';
 
-import AWSIcon from './images/aws.inline.svg';
-
 const items = [
   {
     type: 'Free Plan',
@@ -38,36 +36,9 @@ const items = [
     },
   },
   {
-    type: 'Launch',
-    price:
-      '<em class="xl:-top-1 block absolute -top-6 text-base not-italic font-light tracking-tight text-gray-new-50 xl:relative xl:-mt-4 md:mt-0">From</em> $19 <span>/month</span>',
-    description: 'All the resources, features and support you need to launch.',
-    features: [
-      {
-        title: '10 GiB storage included',
-        info: 'Additional storage: $3.5 per 2 GiB',
-      },
-      {
-        title: '300 <a href="#compute-hour">compute hours</a> included',
-        info: 'Additional usage: $0.16 per compute hour',
-      },
-      { title: 'Standard support' },
-      { title: 'Autoscaling up to 4 CU', info: '1 CU = 1 vCPU, 4 GB RAM' },
-      { title: 'Point-in-time restore (7 days)' },
-      { title: 'Organization accounts' },
-      { title: 'IP Allow rules', disabled: true },
-    ],
-    button: {
-      url: `${LINKS.console}/?upgrade=launch`,
-      text: 'Get started',
-      theme: 'primary',
-      event: 'Hero Launch Panel',
-    },
-  },
-  {
     type: 'Scale',
     price:
-      '<em class="absolute block xl:-top-1 -top-6 text-base not-italic font-light tracking-tight text-gray-new-50 xl:relative xl:-mt-4 md:mt-0">From</em> $69 <span>/month</span>',
+      '<em class="absolute block xl:-top-1 -top-6 text-base not-italic font-light tracking-tight text-gray-new-50 xl:relative xl:-mt-4 md:mt-0">From</em> $49 <span>/month</span>',
     description: 'Full platform access for scaling production workloads.',
     features: [
       { title: '50 GiB storage included', info: 'Additional storage: $15 per 10 GiB' },
@@ -188,14 +159,14 @@ const Hero = () => {
           tag="h1"
           size="lg"
         >
-          <span>Neon Pricing</span>
+          <span>Unique Pricing is unique</span>
         </Heading>
         <p className="mx-auto mt-5 max-w-[680px] text-center text-xl font-light leading-snug xl:mt-4 xl:max-w-[570px] xl:text-lg md:mt-3 md:text-base">
-          Start free, launch with predictable costs, and scale efficiently.
+          Start free, and pay as you grow. No hidden fees, no surprises.
         </p>
         <div className="relative mx-auto mt-20 xl:mt-12 lg:w-full lg:max-w-[704px] md:mt-9">
-          <h2 className="sr-only">Neon pricing plans</h2>
-          <ul className="grid-gap relative z-10 grid grid-cols-4 gap-x-6 xl:grid-cols-2 lg:gap-y-4 md:grid-cols-1 md:gap-y-6">
+          <h2 className="sr-only">Unique pricing plans</h2>
+          <ul className="grid-gap relative z-10 grid grid-cols-3 gap-x-6 xl:grid-cols-2 lg:gap-4 md:grid-cols-1 md:gap-y-6">
             {items.map(({ type, price, description, features, button }, index) => {
               const isScalePlan = type === 'Scale';
 
@@ -212,19 +183,6 @@ const Hero = () => {
                     }
                   }}
                 >
-                  {(isScalePlan || type === 'Launch') && (
-                    <a
-                      className="group/aws absolute right-[18px] top-5 flex items-center gap-x-2"
-                      href="https://aws.amazon.com/marketplace/pp/prodview-fgeh3a7yeuzh6?sr=0-1&ref_=beagle&applicationId=AWSMPContessa"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <span className="border-b border-gray-new-40 pb-0.5 text-sm font-light leading-none tracking-extra-tight text-gray-new-70 opacity-90 transition-colors duration-200 group-hover/aws:border-transparent group-hover/aws:text-gray-new-80">
-                        Pay via marketplace
-                      </span>
-                      <AWSIcon className="text-gray-new-50 transition-colors duration-200 group-hover/aws:text-gray-new-60" />
-                    </a>
-                  )}
                   <div className="mb-6 flex flex-col border-b border-dashed border-gray-new-20 pb-5 xl:mb-5">
                     <h3
                       className={clsx(
@@ -240,8 +198,8 @@ const Hero = () => {
                     />
                     {isScalePlan ? (
                       <AnimatedButton
-                        className="mt-7 w-full !bg-green-45 !py-4 !text-lg !font-medium tracking-tight group-hover:!bg-[#00ffaa] xl:mt-7 sm:max-w-none"
-                        animationColor="#00e599"
+                        className="bg-sky-100 mt-7 w-full !py-4 !text-lg !font-medium tracking-tight group-hover:!bg-[#07e7fc] xl:mt-7 sm:max-w-none"
+                        animationColor="#00e5ff"
                         theme="primary"
                         size="sm"
                         to={button.url}

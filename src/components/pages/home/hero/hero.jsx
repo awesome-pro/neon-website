@@ -122,7 +122,7 @@ const Hero = () => {
         rangeY={800}
         particleCount={500}
         baseHue={120}
-        className="flex h-full w-full flex-col items-center justify-center"
+        className="mb-6 flex h-full w-full flex-col items-center justify-center"
       >
         <Container className="pt-10 xl:px-8" size="1100">
           <div className="text-center">

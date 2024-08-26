@@ -9,12 +9,12 @@ const InstantProvisioning = () => (
   <section className="instant-provising safe-paddings relative mt-[168px] xl:mt-28 lg:mt-24 sm:mt-20">
     <Container className="flex flex-wrap justify-center gap-x-[58px] xl:gap-x-[29px]" size="1100">
       <ActiveTabContext>
-        <div className="w-[384px] xl:w-[352px] lg:w-[256px] md:w-full md:max-w-[580px]">
+        <div className="w-[384px] xl:w-[352px] lg:w-full md:w-full md:max-w-[580px]">
           <h2 className="font-title text-[68px] font-medium leading-[0.9] tracking-extra-tight text-white xl:text-[56px] lg:text-[44px] sm:text-[32px]">
-            Instant Provisioning
+            Deploy in Seconds
           </h2>
           <p className="mt-[18px] text-xl font-light tracking-extra-tight text-gray-new-70 xl:mt-4 xl:text-lg lg:mt-3 lg:text-base md:mt-2">
-            No waiting. No config.
+            No wait. No config.
           </p>
         </div>
         <div className="relative flex w-[652px] flex-col pb-[171px] pt-[100px] xl:w-[580px] xl:pb-[148px] xl:pt-[84px] lg:w-[417px] lg:pb-[105px] lg:pt-[61px] md:-mt-4 md:w-full md:max-w-[580px] md:pb-36 md:pt-0 sm:-mt-8 sm:overflow-hidden sm:pt-4">
@@ -23,7 +23,7 @@ const InstantProvisioning = () => (
             className="pointer-events-none absolute -right-20 top-8 h-[133px] w-[398px] rounded-[100%] bg-[#16182D] opacity-40 blur-3xl"
             aria-hidden
           />
-          <ConnectionString url="postgresql://example@ep-938132.eu-central-1.aws.neon.tech/primary" />
+          <ConnectionString url="from langchain import unique/unique" />
           <DotsAnimation
             className="absolute -bottom-1.5  aspect-[3.49726] w-full -translate-x-1/2 mix-blend-lighten xl:w-[568px] lg:w-[417px] md:bottom-0 md:h-40 md:w-full md:[mask-image:linear-gradient(to_bottom,black,black_calc(100%-40px),transparent)] sm:overflow-hidden"
             src="/animations/pages/home/dots-stack.riv"
@@ -33,7 +33,7 @@ const InstantProvisioning = () => (
           />
         </div>
 
-        <div className="w-[384px] pt-7 xl:w-[352px] xl:pt-1 lg:w-[256px] lg:pt-0 md:w-full md:max-w-[580px]">
+        <div className="w-[384px] pt-7 xl:w-[352px] xl:pt-1  lg:pt-0 md:w-full md:max-w-[580px]">
           <h2 className="font-title text-[68px] font-medium leading-[0.9] tracking-extra-tight text-white xl:text-[56px] lg:text-[44px] md:mt-2 sm:text-[32px]">
             Works with{` `}
             <br className="md:hidden" />
