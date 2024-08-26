@@ -270,8 +270,8 @@ neon branches schema-diff main dev/jordan --database people
 The result shows a comparison between the `dev/jordan` branch and its parent branch for the database `people`. The output indicates that the `address` table and its related sequences and constraints have been added in the `dev/jordan` branch but are not present in its parent branch `main`.
 
 ```diff
---- Database: people	(Branch: br-falling-dust-a5bakdqt) // [!code --]
-+++ Database: people	(Branch: br-morning-heart-a5ltt10i) // [!code ++]
+--- Database: people (Branch: br-falling-dust-a5bakdqt) // [!code --]
++++ Database: people (Branch: br-morning-heart-a5ltt10i) // [!code ++]
 @@ -20,8 +20,46 @@
 
  SET default_table_access_method = heap;

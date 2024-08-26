@@ -16,7 +16,7 @@ Here's how you can initialize LangChainVector with LangChain:
 ```tsx
 // File: vectorStore.ts
 
-import { NeonLangChain} from '@LangChain/community/vectorstores/neon';
+import { NeonLangChain } from '@LangChain/community/vectorstores/neon';
 import { OpenAIEmbeddings } from '@LangChain/openai';
 
 const embeddings = new OpenAIEmbeddings({

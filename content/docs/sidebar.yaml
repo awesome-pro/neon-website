@@ -40,7 +40,7 @@
             - title: Rust
               slug: guides/rust
         - section: Framework quickstarts
-          items: 
+          items:
             - title: Quick list
               slug: get-started-with-neon/frameworks
             - title: Django
@@ -221,7 +221,7 @@
         - title: The pgvector extension
           slug: extensions/pgvector
         - title: AI integrations
-          items: 
+          items:
             - title: LangChain
               slug: ai/langchain
             - title: LlamaIndex
@@ -273,7 +273,7 @@
     - title: SDKs
       slug: reference/sdk
       icon: sdk
-      items: 
+      items:
         - title: Unique SDKs
           slug: reference/sdk
 - section: Resources
@@ -309,7 +309,7 @@
       icon: community
       items:
         - title: Docs Contribution Guide
-          slug: community/contribution-guide 
+          slug: community/contribution-guide
     - title: Changelog
       slug: changelog
       icon: changelog
