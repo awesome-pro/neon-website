@@ -25,7 +25,7 @@ const themePropTypes = {
 
 const LogoLink = async ({ isDarkTheme }) => (
   <Link to="/">
-    <span className="sr-only">Neon</span>
+    <span className="sr-only">Unique</span>
     <Logo className="h-7" isDarkTheme={isDarkTheme} width={102} height={28} priority />
   </Link>
 );

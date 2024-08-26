@@ -36,7 +36,7 @@ const ITEMS = [
   {
     x: '67.5%',
     y: '25%',
-    label: 'Scalability',
+    label: 'Scalable',
   },
   {
     x: '9%',
@@ -46,17 +46,17 @@ const ITEMS = [
   {
     x: '71.5%',
     y: '41%',
-    label: 'Blazingly fast search',
+    label: 'Mind Blazing Search',
   },
   {
     x: '17%',
     y: '76%',
-    label: 'Works with PGVECTOR',
+    label: 'Integrates like electricity',
   },
   {
     x: '68%',
     y: '81%',
-    label: 'Works with langchain',
+    label: 'Works with LangChain',
   },
 ].map((item) => ({ ...item, defaultAnimation: generateRandomAnimation() }));
 

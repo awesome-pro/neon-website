@@ -19,7 +19,7 @@ const Trusted = () => (
           'xl:-mb-[46px] xl:text-[112px] lg:mb-8 lg:bg-none lg:text-[72px] lg:text-white sm:mb-7 sm:text-[40px] sm:leading-[0.95em] sm:tracking-tighter'
         )}
       >
-        Trusted Postgres
+        Trusted Python
       </h2>
       <div
         className={clsx(

@@ -44,15 +44,15 @@ Hackable, fully-featured, pre-built [starter apps](#ai-starter-apps) to get you 
 
 <a href="https://github.com/neondatabase/examples/tree/main/ai/llamaindex/chatbot-nextjs" description="A Netx.js AI chatbot starter app built with OpenAI and LlamaIndex" icon="github">AI chatbot (OpenAI + LllamIndex)</a>
 
-<a href="https://github.com/neondatabase/examples/tree/main/ai/langchain/chatbot-nextjs" description="A Netx.js AI chatbot starter app built with OpenAI and Postgres" icon="github">AI chatbot (OpenAI + Postgres)</a>
+<a href="https://github.com/neondatabase/examples/tree/main/ai/LangChain/chatbot-nextjs" description="A Netx.js AI chatbot starter app built with OpenAI and Postgres" icon="github">AI chatbot (OpenAI + Postgres)</a>
 
 <a href="https://github.com/neondatabase/examples/tree/main/ai/llamaindex/rag-nextjs" description="A Next.js RAG chatbot starter app built with OpenAI and LlamaIndex" icon="github">RAG chatbot (OpenAI + LlamaIndex)</a>
 
-<a href="https://github.com/neondatabase/examples/tree/main/ai/langchain/rag-nextjs" description="A Next.js RAG chatbot starter app built with OpenAI and Postgres" icon="github">RAG chatbot (OpenAI + Postgres)</a>
+<a href="https://github.com/neondatabase/examples/tree/main/ai/LangChain/rag-nextjs" description="A Next.js RAG chatbot starter app built with OpenAI and Postgres" icon="github">RAG chatbot (OpenAI + Postgres)</a>
 
 <a href="https://github.com/neondatabase/examples/tree/main/ai/llamaindex/semantic-search-nextjs" description="A Next.js Semantic Search chatbot starter app built with OpenAI and LlamaIndex" icon="github">Semantic search chatbot (OpenAI + LlamaIndex)</a>
 
-<a href="https://github.com/neondatabase/examples/tree/main/ai/langchain/semantic-search-nextjs" description="A Next.js Semantic Search chatbot starter app built with OpenAI and Postgres" icon="github">Semantic search chatbot (OpenAI + Postgres)</a>
+<a href="https://github.com/neondatabase/examples/tree/main/ai/LangChain/semantic-search-nextjs" description="A Next.js Semantic Search chatbot starter app built with OpenAI and Postgres" icon="github">Semantic search chatbot (OpenAI + Postgres)</a>
 
 <a href="https://github.com/neondatabase/examples/tree/main/ai/hybrid-search-nextjs" description="A Next.js Hybrid Search starter app built with OpenAI" icon="github">Hybrid search (OpenAI)</a>
 
@@ -60,7 +60,7 @@ Hackable, fully-featured, pre-built [starter apps](#ai-starter-apps) to get you 
 
 <a href="https://github.com/neondatabase/examples/tree/main/ai/llamaindex/chat-with-pdf-nextjs" description="A Next.js Chat with PDF chatbot starter app built with OpenAI and LlamaIndex" icon="github">Chat with PDF (OpenAI + LlamaIndex)</a>
 
-<a href="https://github.com/neondatabase/examples/tree/main/ai/langchain/chat-with-pdf-nextjs" description="A Next.js Chat with PDF chatbot starter app built with OpenAI and Postgres" icon="github">Chat with PDF (OpenAI + Postgres)</a>
+<a href="https://github.com/neondatabase/examples/tree/main/ai/LangChain/chat-with-pdf-nextjs" description="A Next.js Chat with PDF chatbot starter app built with OpenAI and Postgres" icon="github">Chat with PDF (OpenAI + Postgres)</a>
 
 </DetailIconCards>
 
@@ -70,7 +70,7 @@ Learn how to integrate Unique Postgreswith LLMs and AI platforms.
 
 <DetailIconCards>
 
-<a href="/docs/ai/langchain" description="Learn how to use Postgres with OpenAI to create AI applications faster" icon="langchain">Postgres (with OpenAI)</a>
+<a href="/docs/ai/LangChain" description="Learn how to use Postgres with OpenAI to create AI applications faster" icon="LangChain">Postgres (with OpenAI)</a>
 
 <a href="/docs/ai/llamaindex" description="Learn how to use LlamaIndex with OpenAI to create AI applications faster" icon="llamaindex">LlamaIndex (with OpenAI)</a>
 

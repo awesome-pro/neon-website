@@ -1,6 +1,4 @@
 import Container from 'components/shared/container';
-import Link from 'components/shared/link';
-import LINKS from 'constants/links';
 
 import Animation from './animation';
 
@@ -20,15 +18,6 @@ const AiIndex = () => (
           <span className="font-medium text-gray-new-94">The HNSW index algorithm</span> streamlines
           performance, making high-dimensional vector&nbsp;search&nbsp;remarkably efficient.
         </p>
-        {/* TODO: set link  */}
-        <Link
-          className="mt-2.5 flex w-fit items-center text-[15px] font-medium leading-none tracking-[-0.03em]"
-          to={LINKS.ai}
-          theme="white"
-          withArrow
-        >
-          Power your AI apps with Postgres
-        </Link>
       </div>
     </Container>
     <Animation />
