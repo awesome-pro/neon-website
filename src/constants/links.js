@@ -46,7 +46,7 @@ export default {
   privacyPolicy: '/privacy-policy',
   scaleTrial: '/scale-trial',
   security: '/docs/security/security-overview',
-  signup: 'https://console.neon.tech/signup',
+  signup: '/signup',
   subprocessors: '/subprocessors',
   support: '/docs/introduction/support',
   terms: '/terms-of-service',
@@ -54,6 +54,6 @@ export default {
   thankYou: '/thank-you',
   trust: 'https://trust.neon.tech',
   variable: '/variable',
-  twitter: 'https://twitter.com/neondatabase/',
-  youtube: 'https://www.youtube.com/channel/UCoMzQTJSIr7-RU1QbomQI2w',
+  twitter: 'https://twitter.com/abhinandan_v0/',
+  youtube: 'https://www.youtube.com/@typescriptmastery001',
 };

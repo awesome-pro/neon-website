@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+
 'use client';
 
 import clsx from 'clsx';
@@ -56,7 +58,7 @@ const ITEMS = [
   },
 ];
 
-const words2 = ['Ship faster', 'Build better', 'Develop stronger', 'Create value'];
+const words2 = ['Ship faster', 'Build better', 'Create value'];
 
 const Hero = () => {
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
@@ -122,12 +124,12 @@ const Hero = () => {
         baseHue={120}
         className="flex h-full w-full flex-col items-center justify-center"
       >
-        <Container className="xl:px-8" size="1100">
+        <Container className="pt-10 xl:px-8" size="1100">
           <div className="text-center">
             <div className=" flex items-center justify-center">
               <FlipWords
                 words={words2}
-                className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[30px]"
+                className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[34px]"
               />{' '}
               <br />
               <h1 className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[32px]">
@@ -137,7 +139,7 @@ const Hero = () => {
             <p className="mx-auto mt-3.5 max-w-xl text-[19px] font-light leading-snug -tracking-[0.04em] text-gray-new-80 lg:mt-2.5 lg:max-w-lg lg:text-balance lg:text-base sm:max-w-xs">
               The AI you will always love to integrate with your app
             </p>
-            <div className="my-5 flex items-center justify-center gap-3">
+            <div className="my-5 mt-10 flex items-center justify-center gap-3 lg:gap-7">
               <Button
                 className="pointer-events-auto relative mt-[26px] h-11 w-[144px] text-[15px] !font-semibold tracking-tighter xl:mt-8 lg:mt-6 sm:h-10"
                 theme="primary"
@@ -159,7 +161,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="mt-[74px] flex gap-x-2.5 xl:mt-16 lg:mt-14 sm:mt-9 sm:flex-col sm:gap-y-9">
+          {/* <div className="mt-[74px]  flex gap-x-2.5 xl:mt-16 lg:mt-32 sm:mt-9 sm:flex-col sm:gap-y-9">
             {ITEMS.map((item, index) => (
               <Video
                 className={clsx(
@@ -181,7 +183,7 @@ const Hero = () => {
                 key={index}
               />
             ))}
-          </div>
+          </div> */}
         </Container>
       </Vortex>
     </section>

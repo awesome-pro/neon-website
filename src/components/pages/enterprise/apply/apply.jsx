@@ -49,11 +49,6 @@ const Apply = () => {
             <h2 className="mt-3 font-title text-5xl font-medium leading-none tracking-[-0.02em] xl:text-[44px] lg:text-4xl md:text-[32px]">
               Request an Enterprise Trial
             </h2>
-            <p className="md:flat-breaks sm:flat-none mt-3 text-lg font-light leading-snug xl:text-base">
-              Apply here for a time-limited full access trial of Neon for your business, including
-              custom resource limits and technical support.
-            </p>
-            <Testimonial className="lg:hidden" />
           </div>
           <div className="hubspot-form-wrapper col-span-5 xl:col-span-7 lg:col-span-full lg:mt-10 md:mt-6">
             <div
@@ -61,7 +56,6 @@ const Apply = () => {
               data-form-id={hubspotFormID}
             />
           </div>
-          <Testimonial className="col-span-full hidden lg:mt-10 lg:block md:mt-8" ariaHidden />
         </div>
       </Container>
     </section>

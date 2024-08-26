@@ -3,12 +3,8 @@ import aboutUsDarkIcon from 'icons/header/about-us-dark.svg';
 import aboutUsIcon from 'icons/header/about-us.svg';
 import aiDarkIcon from 'icons/header/ai-dark.svg';
 import aiIcon from 'icons/header/ai.svg';
-import autoscalingDarkIcon from 'icons/header/autoscaling-dark.svg';
-import autoscalingIcon from 'icons/header/autoscaling.svg';
 import blogDarkIcon from 'icons/header/blog-dark.svg';
 import blogIcon from 'icons/header/blog.svg';
-import branchingDarkIcon from 'icons/header/branching-dark.svg';
-import branchingIcon from 'icons/header/branching.svg';
 import careersDarkIcon from 'icons/header/careers-dark.svg';
 import careersIcon from 'icons/header/careers.svg';
 import cliDarkIcon from 'icons/header/cli-dark.svg';
@@ -29,24 +25,6 @@ export default {
     {
       text: 'Features',
       items: [
-        {
-          icon: {
-            light: branchingIcon,
-            dark: branchingDarkIcon,
-          },
-          text: 'Branching',
-          description: 'Work with data like code',
-          to: LINKS.branching,
-        },
-        {
-          icon: {
-            light: autoscalingIcon,
-            dark: autoscalingDarkIcon,
-          },
-          text: 'Autoscaling',
-          description: 'Scale compute on demand',
-          to: LINKS.autoscaling,
-        },
         {
           icon: {
             light: cliIcon,

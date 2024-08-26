@@ -2,7 +2,6 @@ import clsx from 'clsx';
 import PropTypes from 'prop-types';
 
 import Container from 'components/shared/container';
-import StatusBadge from 'components/shared/footer/status-badge';
 import ThemeSelect from 'components/shared/footer/theme-select';
 import Link from 'components/shared/link';
 import Logo from 'components/shared/logo';
@@ -40,7 +39,6 @@ const Footer = ({ isDocPage = false, theme = null }) => {
                   height={32}
                 />
               </Link>
-              <StatusBadge isDocPage={isDocPage} isDarkTheme={isDarkTheme} />
               {isDocPage && <ThemeSelect className="mt-7 xl:mt-6 md:mt-3" />}
             </div>
           </div>
@@ -63,7 +61,7 @@ const Footer = ({ isDocPage = false, theme = null }) => {
                 {heading}
               </span>
               <ul className="mt-7 flex grow flex-col gap-y-5">
-                {links.map(({ to, text, icon }, index) => {
+                {links.map(({ to, text }, index) => {
                   const isExternalUrl = to.startsWith('http');
                   return (
                     <li className="flex" key={index}>
@@ -74,15 +72,6 @@ const Footer = ({ isDocPage = false, theme = null }) => {
                         rel={isExternalUrl ? 'noopener noreferrer' : null}
                         target={isExternalUrl ? '_blank' : null}
                       >
-                        {icon && (
-                          <span
-                            className={clsx(
-                              icon,
-                              'inline-block h-4 w-4 transition-colors duration-200 group-hover:bg-primary-2 dark:bg-gray-new-70 dark:group-hover:bg-green-45',
-                              isDarkTheme ? 'bg-gray-new-70' : 'bg-gray-new-30'
-                            )}
-                          />
-                        )}
                         {text}
                       </Link>
                     </li>

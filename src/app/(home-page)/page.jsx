@@ -4,17 +4,28 @@ import { checkCookie, getReferer } from 'app/actions';
 import AiIndex from 'components/pages/home/ai-index';
 import Bento from 'components/pages/home/bento';
 import Hero from 'components/pages/home/hero/hero';
-import Industry from 'components/pages/home/industry';
 import InstantProvisioning from 'components/pages/home/instant-provisioning';
 import Lightning from 'components/pages/home/lightning';
-import Logos from 'components/pages/home/logos';
 import Trusted from 'components/pages/home/trusted';
 import Cta from 'components/shared/cta';
+import Logos from 'components/shared/logos';
 import LINKS from 'constants/links';
 import SEO_DATA from 'constants/seo-data';
 import getMetadata from 'utils/get-metadata';
 
 export const metadata = getMetadata(SEO_DATA.index);
+const logos = [
+  'zimmer',
+  'outfront',
+  'genomics',
+  'supergood',
+  'code-institute',
+  'branch',
+  'eqt',
+  'retool',
+  'master-school',
+  'encore',
+];
 
 const HomePage = async () => {
   const is_logged_in = await checkCookie('neon_login_indicator');
@@ -33,12 +44,11 @@ const HomePage = async () => {
   return (
     <>
       <Hero />
-      <Logos />
+      <Logos className="mt-36 pt-2.5 lg:mt-28 lg:pt-0 md:mt-20" logos={logos} />
       <InstantProvisioning />
       <Lightning />
       <Bento />
       <AiIndex />
-      <Industry />
       <Trusted />
       <Cta />
     </>
