@@ -8,7 +8,7 @@ Neon's Community, Standard, Priority, and Enterprise support plans are outlined 
 
 | Support channels                | Community | Standard | Priority | Enterprise |
 | :------------------------------ | :-------: | :------: | :------: | :--------: |
-| Unique Discord Server             |  &check;  | &check;  | &check;  |  &check;   |
+| Unique Discord Server           |  &check;  | &check;  | &check;  |  &check;   |
 | Support tickets                 |     -     | &check;  | &check;  |  &check;   |
 | Prioritized supported tickets   |     -     |    -     | &check;  |  &check;   |
 | Video chat                      |     -     |    -     | &check;  |  &check;   |

@@ -126,7 +126,7 @@ For example:
 
 ### How to add a single page to doc sidebar
 
-To add a single page <https://example.com/changelog> to the docs sidebar, add the boolean `isStandalone` to the first level of the list
+To add a single page [example](https://example.com/changelog) to the docs sidebar, add the boolean `isStandalone` to the first level of the list
 
 - `title` in the sidebar may differ from `title` in Markdown file.
 - `slug` should always match page's slug.

@@ -212,32 +212,6 @@
               slug: guides/sequelize
             - title: SQLAlchemy
               slug: guides/sqlalchemy-migrations
-    - title: AI & Embeddings
-      icon: ai
-      slug: ai/ai-intro
-      items:
-        - title: AI concepts
-          slug: ai/ai-concepts
-        - title: The pgvector extension
-          slug: extensions/pgvector
-        - title: AI integrations
-          items:
-            - title: LangChain
-              slug: ai/langchain
-            - title: LlamaIndex
-              slug: ai/llamaindex
-        - title: Prepare your AI app for production
-          items:
-            - title: Optimize pgvector search
-              slug: ai/ai-vector-search-optimization
-            - title: Scale with Unique
-              slug: ai/ai-scale-with-neon
-        - title: AI tools
-          items:
-            - title: Google Colab
-              slug: ai/ai-google-colab
-            - title: Azure Data Studio Notebooks
-              slug: ai/ai-azure-notebooks
     - title: CLI Reference
       icon: cli
       slug: reference/neon-cli
