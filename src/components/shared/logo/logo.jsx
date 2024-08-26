@@ -2,14 +2,13 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
 
-import logoBlack from 'images/logo-black.svg';
-import logoWhite from 'images/logo-white.svg';
+import logo from 'images/logo-tr.png';
 
 const Logo = ({ className = null, isDarkTheme, width, height, priority = undefined }) =>
   isDarkTheme ? (
     <Image
       className={clsx(className)}
-      src={logoWhite}
+      src={logo}
       alt=""
       width={width}
       height={height}
@@ -20,7 +19,7 @@ const Logo = ({ className = null, isDarkTheme, width, height, priority = undefin
     <>
       <Image
         className={clsx('dark:hidden', className)}
-        src={logoBlack}
+        src={logo}
         alt=""
         width={width}
         height={height}
@@ -29,7 +28,7 @@ const Logo = ({ className = null, isDarkTheme, width, height, priority = undefin
       />
       <Image
         className={clsx('hidden dark:block', className)}
-        src={logoWhite}
+        src={logo}
         alt=""
         width={width}
         height={height}

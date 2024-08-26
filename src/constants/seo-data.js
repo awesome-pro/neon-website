@@ -16,26 +16,6 @@ export default {
     imagePath: '/images/social-previews/ai.jpg',
     pathname: LINKS.ai,
   },
-  awsIsrael: {
-    title: 'AWS Launches in Israel — Unique',
-    description: 'Unique is delighted to support the 2023 launch of AWS in Israel.',
-    imagePath: '/images/social-previews/aws-israel.jpg',
-    pathname: LINKS.awsIsrael,
-  },
-  blog: {
-    title: 'Our Blog — Unique',
-    description:
-      'Learn about Unique and how it can help you build better with Serverless Postgres by reading our blog posts.',
-    imagePath: '/images/social-previews/blog.jpg',
-    pathname: LINKS.blog,
-  },
-  branching: {
-    title: 'Instant branching for Postgres — Unique',
-    description:
-      'Unique allows you to instantly branch your data the same way that you branch your code.',
-    imagePath: '/images/social-previews/branching.jpg',
-    pathname: LINKS.branching,
-  },
   careers: {
     title: 'Careers — Unique',
     description:
@@ -48,11 +28,6 @@ export default {
     description: 'The Unique CLI brings serverless Postgres to your terminal.',
     pathname: LINKS.cli,
     imagePath: '/images/social-previews/cli.jpg',
-  },
-  contactSales: {
-    title: 'Contact Sales — Unique',
-    description: 'Interested in learning more about our plans and pricing? Contact our sales team.',
-    pathname: LINKS.contactSales,
   },
   demos: {
     title: 'Serverless showcase: unleashing the power of Unique',
@@ -74,47 +49,12 @@ export default {
     pathname: LINKS.enterprise,
     imagePath: '/images/social-previews/enterprise.jpg',
   },
-  flow: {
-    title: 'Database Branching Workflows - Unique',
-    description: 'Boost development velocity by adding data to your existing GitHub workflows',
-    imagePath: '/images/social-previews/flow.jpg',
-    type: 'article',
-    pathname: LINKS.flow,
-  },
-  partners: {
-    title: 'Accelerate your business with Unique partnership — Unique',
-    description: 'Bring familiar, reliable and scalable Postgres experience to your customers.',
-    imagePath: '/images/social-previews/partners.jpg',
-    pathname: LINKS.partners,
-  },
-  pingThing: {
-    robotsNoindex: 'noindex',
-  },
   pricing: {
     title: 'Pricing — Unique',
     description:
       'Unique brings serverless architecture to Postgres, which allows us to offer you flexible usage and volume-based plans.',
     imagePath: '/images/social-previews/pricing.jpg',
     pathname: LINKS.pricing,
-  },
-  thankYou: {
-    title: 'Thank you for subscribing — Unique',
-    description: 'Thank you for subscribing to the Unique newsletter',
-    pathname: LINKS.thankYou,
-  },
-  variable: {
-    title: 'Dynamically scale your Postgres database — Unique',
-    description:
-      'Discover how Unique dynamically scales Postgres compute resources for optimal performance during peak traffic without overpaying.',
-    imagePath: '/images/social-previews/variable.jpg',
-    pathname: LINKS.variable,
-  },
-  costFleets: {
-    title: 'Unique for platforms: Cost estimator',
-    description:
-      'Run thousands of Postgres databases for a fraction of the cost with Unique. Great for building your free tier.',
-    imagePath: '/images/social-previews/cost-fleets.jpg',
-    pathname: LINKS.costFleets,
   },
   404: {
     title: 'Page Not Found — Unique',
@@ -124,7 +64,7 @@ export default {
 export const getBlogCategoryDescription = (category) => {
   switch (category) {
     case 'company':
-      return 'Stay updated on the latest Unique company new and partnership announcements. Explore our blog posts for valuable insights and stay ahead in the world of serverless Postgres.';
+      return 'Stay updated on the latest Unique company new and partnership announcements. Explore our blog posts for valuable insights and stay ahead in the world of AI.';
     case 'engineering':
       return 'Dive into the technical depths of Unique serverless Postgres. Optimize performance, scalability, and reliability. Explore our cutting-edge approach.';
     case 'community':
