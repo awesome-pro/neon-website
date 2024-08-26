@@ -5,6 +5,9 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable react/prop-types */
+
+'use client';
+
 import { motion } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
 import { createNoise3D } from 'simplex-noise';
