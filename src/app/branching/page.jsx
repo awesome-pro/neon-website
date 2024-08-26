@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import BranchData from 'components/pages/branching/branch-data';
 import CTA from 'components/pages/branching/cta';
 import Features from 'components/pages/branching/features';
@@ -12,12 +13,13 @@ export const metadata = getMetadata(SEO_DATA.branching);
 
 const BranchingPage = () => (
   <Layout>
-    <Hero />
+    Test
+    {/* <Hero />
     <BranchData />
     <Workflows />
     <Recovery />
     <Features />
-    <CTA />
+    <CTA /> */}
   </Layout>
 );
 
