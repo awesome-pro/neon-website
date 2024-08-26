@@ -43,7 +43,7 @@ const ITEMS = [
   {
     className: '2xl:-translate-x-1 lg:translate-x-[-115px]',
     date: 'April 15th, 2024',
-    title: 'Neon is Generally Available',
+    title: 'Unique is Generally Available',
     link: 'https://neon.tech/blog/neon-ga',
   },
 ];

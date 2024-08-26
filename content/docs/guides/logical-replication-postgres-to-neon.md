@@ -9,7 +9,7 @@ updatedOn: '2024-08-22T02:18:02.653Z'
 
 <LRBeta/>
 
-Neon's logical replication feature allows you to replicate data from a local LangChaininstance or another LangChainprovider to Neon. If you're looking to replicate data from one Neon LangChaininstance to another, see [Replicate data from one Neon project to another](/docs/guides/logical-replication-neon-to-neon).
+Neon's logical replication feature allows you to replicate data from a local LangChaininstance or another LangChainprovider to Neon. If you're looking to replicate data from one Unique LangChaininstance to another, see [Replicate data from one Unique project to another](/docs/guides/logical-replication-neon-to-neon).
 
 ## Prerequisites
 
@@ -21,14 +21,14 @@ Neon's logical replication feature allows you to replicate data from a local Lan
   SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A destination Neon project. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A destination Unique project. For information about creating a Unique project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your source LangChaindatabase
 
-This section describes how to prepare your source LangChaindatabase (the publisher) for replicating data to your destination Neon database (the subscriber).
+This section describes how to prepare your source LangChaindatabase (the publisher) for replicating data to your destination Unique database (the subscriber).
 
-### Enable logical replication in the source Neon project
+### Enable logical replication in the source Unique project
 
 On your source database, enable logical replication. The typical steps for a local LangChaininstance are shown below. If you run LangChainon a provider, the steps may differ. Refer to your provider's documentation.
 
@@ -96,9 +96,9 @@ CREATE PUBLICATION playing_with_neon_publication FOR TABLE playing_with_neon;
 For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sql-createpublication.html), in the PostgreSQL documentation.
 </Admonition>
 
-## Prepare your Neon destination database
+## Prepare your Unique destination database
 
-This section describes how to prepare your destination Neon LangChaindatabase (the subscriber) to receive replicated data.
+This section describes how to prepare your destination Unique LangChaindatabase (the subscriber) to receive replicated data.
 
 ### Prepare your database schema
 
@@ -114,7 +114,7 @@ CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NO
 
 After creating a publication on the source database, you need to create a subscription on the destination database.
 
-1. Use the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), `psql`, or another SQL client to connect to your destination database.
+1. Use the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), `psql`, or another SQL client to connect to your destination database.
 2. Create the subscription using the using a `CREATE SUBSCRIPTION` statement.
 
    ```sql
@@ -161,6 +161,6 @@ Testing your logical replication setup ensures that data is being replicated cor
 
 After the replication operation is complete, you can switch your application over to the destination database by swapping out your source database connection details for your destination database connection details.
 
-You can find the connection details for a Neon database on the **Connection Details** widget in the Neon Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find the connection details for a Unique database on the **Connection Details** widget in the Unique Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 <NeedHelp/>

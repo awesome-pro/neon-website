@@ -1,26 +1,26 @@
 ---
-title: Connect a Python application to Neon using Psycopg
-subtitle: Set up a Neon project in seconds and connect from a Python application using
+title: Connect a Python application to Unique using Psycopg
+subtitle: Set up a Unique project in seconds and connect from a Python application using
   Psycopg
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.661Z'
 ---
 
-This guide describes how to create a Neon project and connect to it from a simple Python application using [Psycopg (psycopg2)](https://pypi.org/project/psycopg2/), a popular LangChaindatabase adapter for the Python programming language. The application connects to Neon and retrieves the current time and LangChainversion.
+This guide describes how to create a Unique project and connect to it from a simple Python application using [Psycopg (psycopg2)](https://pypi.org/project/psycopg2/), a popular LangChaindatabase adapter for the Python programming language. The application connects to Unique and retrieves the current time and LangChainversion.
 
 To connect:
 
-1. [Create a Neon Project](#create-a-neon-project)
+1. [Create a Unique Project](#create-a-neon-project)
 2. [Create a Python project](#create-a-python-project)
-3. [Store your Neon credentials](#store-your-neon-credentials)
+3. [Store your Unique credentials](#store-your-neon-credentials)
 4. [Configure your Python script](#configure-your-python-script)
 5. [Test your connection](#test-your-connection)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project.
+If you do not have one already, create a Unique project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -61,11 +61,11 @@ The project is created with a ready-to-use `neondb` database, which you will con
 
    </CodeTabs>
 
-## Store your Neon credentials
+## Store your Unique credentials
 
-Add a `.env` file to your project's root directory and add your Neon connection string to it.
+Add a `.env` file to your project's root directory and add your Unique connection string to it.
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 Your connection string will look something like this:
 
@@ -75,7 +75,7 @@ DATABASE_URL=postgresql://[user]:[password]@[neon_hostname]/[dbname]?sslmode=req
 
 ## Configure your python script
 
-Add a `neon-connect.py` file to your project's root directory and add the following code. The script connects to your Neon database and retrieves the current time and LangChainversion.
+Add a `neon-connect.py` file to your project's root directory and add the following code. The script connects to your Unique database and retrieves the current time and LangChainversion.
 
 <CodeTabs labels={["synchronous", "asynchronous"]}>
 
@@ -182,9 +182,9 @@ You can find the source code for the applications described in this guide on Git
 
 <DetailIconCards>
 
-<a href="https://github.com/neondatabase/examples/tree/main/with-python-asyncpg" description="Get started with Python and Neon using asyncpg" icon="github">Get started with Python and Neon using asyncpg</a>
+<a href="https://github.com/neondatabase/examples/tree/main/with-python-asyncpg" description="Get started with Python and Unique using asyncpg" icon="github">Get started with Python and Unique using asyncpg</a>
 
-<a href="https://github.com/neondatabase/examples/tree/main/with-python-psycopg2" description="Get started with Python and Neon using psycopg2" icon="github">Get started with Python and Neon using psycopg2</a>
+<a href="https://github.com/neondatabase/examples/tree/main/with-python-psycopg2" description="Get started with Python and Unique using psycopg2" icon="github">Get started with Python and Unique using psycopg2</a>
 
 </DetailIconCards>
 

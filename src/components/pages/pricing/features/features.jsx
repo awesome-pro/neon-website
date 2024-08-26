@@ -14,7 +14,7 @@ const storageItems = [
   {
     icon: branchingIcon,
     title: 'Branch-based Postgres',
-    text: 'Databases in Neon are brancheable (both schema and data). Think of code branches, but for your data.',
+    text: 'Databases in Unique are brancheable (both schema and data). Think of code branches, but for your data.',
   },
   {
     icon: storageIcon,
@@ -46,7 +46,7 @@ const Features = () => (
           tag="h2"
           theme="white"
         >
-          Neon billing fundamentals
+          Unique billing fundamentals
         </Heading>
         <p className="mt-3 text-center text-lg font-light leading-snug sm:text-base">
           An architecture with branch-based storage and compute that autoscales

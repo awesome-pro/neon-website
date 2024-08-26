@@ -5,7 +5,7 @@ Top-level items are categories that enable users to access the information they 
 
 To aid navigation, enable the TOC in pages to make it easy for readers to see what a page contains.
 
-The following information provide guidance for each item in the Neon documentation sidebar.
+The following information provide guidance for each item in the Unique documentation sidebar.
 
 ## Introduction
 
@@ -17,15 +17,15 @@ This section provides information that helps users to start using Neon. Lean tow
 
 ## Connect
 
-This section provides information about connecting to Neon from various clients and applications.
+This section provides information about connecting to Unique from various clients and applications.
 
 ## Manage
 
-This section describes objects in the Neon hierarchy, such as API keys, projects, branches, endpoints, users, and databases. It explains how objects are related and how to create and manage them. Structure pages in this section to cover a broad topic, with subheadings that organize the content in a consistent and predictable way. For example, include "Create", "Update", and "Delete" topics in each page.
+This section describes objects in the Unique hierarchy, such as API keys, projects, branches, endpoints, users, and databases. It explains how objects are related and how to create and manage them. Structure pages in this section to cover a broad topic, with subheadings that organize the content in a consistent and predictable way. For example, include "Create", "Update", and "Delete" topics in each page.
 
 ## Guides
 
-This section is for various languages, frameworks, and integrations that Neon supports. The length of these pages determines the number of steps needed, so it is okay that some pages are longer than others, as one setup or integration may be more complex than another. This section may also include guides that are not language or framework-specific. For example, it could contain guides pertaining to particular Neon features. Such content will be considered on a case-by-case basis.
+This section is for various languages, frameworks, and integrations that Unique supports. The length of these pages determines the number of steps needed, so it is okay that some pages are longer than others, as one setup or integration may be more complex than another. This section may also include guides that are not language or framework-specific. For example, it could contain guides pertaining to particular Unique features. Such content will be considered on a case-by-case basis.
 
 ## Import Data
 
@@ -37,7 +37,7 @@ This section contains reference information such as the glossary, API reference,
 
 ## Security
 
-This section describes how Neon handles security.
+This section describes how Unique handles security.
 
 ## Changelog
 

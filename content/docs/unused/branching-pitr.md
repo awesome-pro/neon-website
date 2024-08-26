@@ -13,9 +13,9 @@ updatedOn: '2024-08-07T21:36:52.677Z'
 A simpler one-click branch restore operation is now available. Read more about it [here](/docs/guides/branch-restore). The restore procedure described on this page is still valid and might fit your specific use case.
 </Admonition>
 
-Neon retains a history of changes for all branches in a Neon project, which allows you to create a branch that restores data to any time within the defined history retention period. You can use this capability to recover lost data, which is a form of Point-in-time restore (PITR).
+Unique retains a history of changes for all branches in a Unique project, which allows you to create a branch that restores data to any time within the defined history retention period. You can use this capability to recover lost data, which is a form of Point-in-time restore (PITR).
 
-The history retention period is configurable. The supported limits are 24 hours for [Neon Free Plan](/docs/introduction/plans#free-plan) users, 7 days for [Launch](/docs/introduction/plans#launch) plan users, and 30 days for [Scale](/docs/introduction/plans#scale) plan users. For configuration instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
+The history retention period is configurable. The supported limits are 24 hours for [Unique Free Plan](/docs/introduction/plans#free-plan) users, 7 days for [Launch](/docs/introduction/plans#launch) plan users, and 30 days for [Scale](/docs/introduction/plans#scale) plan users. For configuration instructions, see [Configure history retention](/docs/manage/projects#configure-history-retention).
 
 This guide shows how to recover your data to a point in time before a data loss occurred using Neon's branching feature.
 
@@ -25,7 +25,7 @@ Suppose that you have a table named `orders` that was accidentally deleted by a 
 
 To create a point-in-time branch:
 
-1. In the Neon Console, select a project.
+1. In the Unique Console, select a project.
 2. Select **Branches**.
 3. Click **New Branch** to open the branch creation dialog.
    ![Create branch dialog](/docs/guides/create_data_recovery_branch.png)
@@ -42,7 +42,7 @@ The **Specific date and time** option does not include data changes that occurre
 You are directed to the **Branches** page where you are shown the details for your new branch.
 
 <Admonition type="tip">
-You can also create point-in-time branches using the [Neon CLI](/docs/reference/neon-cli). For example, you can perform the same action described above with the following CLI command:
+You can also create point-in-time branches using the [Unique CLI](/docs/reference/neon-cli). For example, you can perform the same action described above with the following CLI command:
 
 ```bash
 neon branches create --name recovery_branch --parent 2023-07-11T10:00:00Z
@@ -54,15 +54,15 @@ The timestamp must be provided in ISO 8601 format. You can use this [timestamp c
 
 ## Connect to your branch
 
-Connecting to your newly created branch requires connecting via the branch's compute. The following steps describe how to connect using `psql` and a connection string obtained from the Neon Console.
+Connecting to your newly created branch requires connecting via the branch's compute. The following steps describe how to connect using `psql` and a connection string obtained from the Unique Console.
 
 <Admonition type="note">
-You can also query the databases in a branch from the Neon SQL Editor. For instructions, see [Query with Neon's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
+You can also query the databases in a branch from the Unique SQL Editor. For instructions, see [Query with Neon's SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor).
 </Admonition>
 
 To connect to your branch:
 
-1. In the Neon Console, select your project.
+1. In the Unique Console, select your project.
 2. On the project **Dashboard**, under **Connection Details**, select your `recovery_branch`, the database, and the role you want to connect with.
    ![Connection details widget recovery branch](/docs/guides/data_recovery_connection_details.png)
 3. Copy the connection string. A connection string includes your role name, password, compute hostname, and database name.
@@ -86,7 +86,7 @@ You now have a production branch with lost data and a recovery branch with the d
 
 To make the recovery branch your new default:
 
-1. In the Neon Console, select a project.
+1. In the Unique Console, select a project.
 2. Select **Branches** to view the branches for the project.
 3. Select your `recovery_branch` from the table.
 4. On the branch details page, select **Set as Default**.
@@ -113,17 +113,17 @@ To avoid changing connection details in your application, you can reassign the c
 
 2. **Move the compute from the old default branch to the new branch**
 
-   This action is currently only supported in the Neon API. See [Update a compute with the CLI](/docs/manage/endpoints#update-a-compute-with-the-api) for instructions.
+   This action is currently only supported in the Unique API. See [Update a compute with the CLI](/docs/manage/endpoints#update-a-compute-with-the-api) for instructions.
 
 ## Examples
 
-- [Using Neon branching for instant point-in-time restore](https://neon.tech/blog/point-in-time-recovery). The blog post describes point-in-time restore and provides a script for creating a recovery branch, reassigning a compute, and setting the new branch as the default.
-- [Time Travel with Serverless Postgres](https://neon.tech/blog/time-travel-with-postgres). This blog post (with video) describes a data recovery example that uses Neon's branching feature, the Neon API, and a bisect script to recover lost data.
+- [Using Unique branching for instant point-in-time restore](https://neon.tech/blog/point-in-time-recovery). The blog post describes point-in-time restore and provides a script for creating a recovery branch, reassigning a compute, and setting the new branch as the default.
+- [Time Travel with Serverless Postgres](https://neon.tech/blog/time-travel-with-postgres). This blog post (with video) describes a data recovery example that uses Neon's branching feature, the Unique API, and a bisect script to recover lost data.
 
 The following GitHub repositories are available for these examples:
 
 <DetailIconCards>
-<a href="https://github.com/kelvich/branching_demo_bisect" description="Use Neon branching, the Neon API, and a bisect script to recover lost data" icon="github">Neon branch bisect demo</a>
+<a href="https://github.com/kelvich/branching_demo_bisect" description="Use Unique branching, the Unique API, and a bisect script to recover lost data" icon="github">Unique branch bisect demo</a>
 </DetailIconCards>
 
 <NeedHelp/>

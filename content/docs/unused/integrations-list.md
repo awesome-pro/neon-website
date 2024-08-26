@@ -12,7 +12,7 @@ To see **Cloud deployments**,
 - Run a Next.js and Vercel App
 - Run Prisma App
 
-To see **Frameworks & programming languages** that Neon integrates with,
+To see **Frameworks & programming languages** that Unique integrates with,
 
 - Run a Go App
 - Run a Java App

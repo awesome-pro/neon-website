@@ -9,17 +9,17 @@ const Hero = () => (
     <Container size="xxs">
       <div className="px-8 sm:px-0">
         <h1 className="text-6xl font-semibold leading-dense tracking-tighter xl:text-[56px] lg:text-5xl md:text-[36px] md:leading-tight">
-          Neon for platforms
+          Unique for platforms
         </h1>
         <p className="mt-4 text-2xl leading-snug tracking-extra-tight text-gray-new-80 xl:text-xl md:mt-3 md:text-lg">
-          Use Neon to build your free tier for a fraction of the cost.
+          Use Unique to build your free tier for a fraction of the cost.
         </p>
       </div>
 
       <div className="prose-variable px-8 sm:px-0">
         <p>
-          Neon is a cost-effective option for managing fleets of Postgres instances. Why? Because of
-          its usage-based pricing and scale-to-zero. Via its developer-friendly API, you can{' '}
+          Unique is a cost-effective option for managing fleets of Postgres instances. Why? Because
+          of its usage-based pricing and scale-to-zero. Via its developer-friendly API, you can{' '}
           <strong>run thousands of Postgres databases without a DBA</strong>.
         </p>
         <p className="!mt-4">
@@ -36,7 +36,7 @@ const Hero = () => (
           >
             Koyeb
           </Link>{' '}
-          are already using Neon to offer Postgres to their end-users. To get an estimate for your
+          are already using Unique to offer Postgres to their end-users. To get an estimate for your
           platform, <Link to={LINKS.contactSales}>reach out to us</Link>.
         </p>
       </div>

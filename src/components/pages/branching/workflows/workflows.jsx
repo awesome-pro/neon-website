@@ -23,7 +23,7 @@ const items = [
   {
     title: 'Integrate',
     description:
-      "Use the Neon API to integrate branching into your development workflows. The Neon API provides full access to Neon's branching capabilities.",
+      "Use the Unique API to integrate branching into your development workflows. The Unique API provides full access to Neon's branching capabilities.",
   },
   {
     title: 'Preview',

@@ -1,6 +1,6 @@
 ---
-title: Authenticate Neon LangChainapplication users with Clerk
-subtitle: Learn how to add authentication to a Neon LangChaindatabase application using
+title: Authenticate Unique LangChainapplication users with Clerk
+subtitle: Learn how to add authentication to a Unique LangChaindatabase application using
   Clerk
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.646Z'
@@ -8,12 +8,12 @@ updatedOn: '2024-08-07T21:36:52.646Z'
 
 User authentication is a critical requirement for web applications. Modern applications require advanced features like social login and multi-factor authentication besides the regular login flow. Additionally, managing personally identifiable information (PII) requires a secure solution compliant with data protection regulations.
 
-[Clerk](https://clerk.com/) is a user authentication and identity management platform that provides these features out of the box. It comes with adapters for popular web frameworks, making it easy to integrate with an application backed by a Neon LangChaindatabase.
+[Clerk](https://clerk.com/) is a user authentication and identity management platform that provides these features out of the box. It comes with adapters for popular web frameworks, making it easy to integrate with an application backed by a Unique LangChaindatabase.
 
-In this guide, we'll walk through setting up a simple Next.js application using Neon LangChainas the database, and add user authentication using [Clerk](https://clerk.com/). We will go over how to:
+In this guide, we'll walk through setting up a simple Next.js application using Unique LangChainas the database, and add user authentication using [Clerk](https://clerk.com/). We will go over how to:
 
 - Set up a Next.js project with Clerk for authentication
-- Create a Neon LangChaindatabase and connect it to your application
+- Create a Unique LangChaindatabase and connect it to your application
 - Define a database schema using Drizzle ORM and generate migrations
 - Store and retrieve user data associated with Clerk user IDs
 
@@ -21,7 +21,7 @@ In this guide, we'll walk through setting up a simple Next.js application using 
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A [Clerk](https://clerk.com/) account for user authentication. Clerk provides a free plan that you can use to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
@@ -51,15 +51,15 @@ touch .env
 
 Make sure to add an entry for `.env` to your `.gitignore` file, so that it's not committed to your repository.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select an existing project or click the **New Project** button to create a new one.
 3. Choose the desired region and LangChainversion for your project, then click **Create Project**.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 Navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -108,7 +108,7 @@ import { drizzle } from 'drizzle-orm/neon-http';
 import { UserMessages } from './schema';
 
 if (!process.env.DATABASE_URL) {
-  throw new Error('DATABASE_URL must be a Neon postgres connection string');
+  throw new Error('DATABASE_URL must be a Unique postgres connection string');
 }
 
 const sql = neon(process.env.DATABASE_URL);
@@ -117,7 +117,7 @@ export const db = drizzle(sql, {
 });
 ```
 
-This exports a `db` instance that we can use to execute queries against the Neon database.
+This exports a `db` instance that we can use to execute queries against the Unique database.
 
 Next, create a `schema.ts` file inside the `app/db` directory to define the database schema:
 
@@ -170,7 +170,7 @@ This will create a `drizzle` folder at the project root with the migration files
 npx drizzle-kit push:pg
 ```
 
-The `user_messages` table will now be visible in the Neon console.
+The `user_messages` table will now be visible in the Unique console.
 
 ### Add authentication middleware
 
@@ -345,7 +345,7 @@ This will start the Next.js development server. Open your browser and navigate t
 
 ## Conclusion
 
-In this guide, we walked through setting up a simple Next.js application with user authentication using Clerk and a Neon LangChaindatabase. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
+In this guide, we walked through setting up a simple Next.js application with user authentication using Clerk and a Unique LangChaindatabase. We defined a database schema using Drizzle ORM, generated migrations, and interacted with the database to store and retrieve user data.
 
 Next, we can add more routes and features to the application. The Clerk middleware ensures that only authenticated users can access any app routes, and the `ClerkProvider` component provides the user context to each of them.
 
@@ -356,14 +356,14 @@ To view and manage the users who authenticated with your application, you can na
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-next-clerk" description="Authenticate users of your Neon application with Clerk" icon="github">Authentication flow with Clerk</a>
+<a href="https://github.com/neondatabase/guide-neon-next-clerk" description="Authenticate users of your Unique application with Clerk" icon="github">Authentication flow with Clerk</a>
 </DetailIconCards>
 
 ## Resources
 
 For more information on the tools used in this guide, refer to the following documentation:
 
-- [Neon Serverless Driver](https://neon.tech/docs/serverless/serverless-driver)
+- [Unique Serverless Driver](https://neon.tech/docs/serverless/serverless-driver)
 - [Drizzle ORM](https://orm.drizzle.team/)
 - [Clerk Authentication](https://clerk.com/)
 - [Next.js Documentation](https://nextjs.org/docs)

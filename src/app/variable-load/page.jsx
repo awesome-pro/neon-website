@@ -21,7 +21,7 @@ const titles = [
   'Variable traffic, fixed costs?',
   'Pay only for what you use with Neon',
   'How much money are you wasting on&nbsp;unused compute?',
-  'Why Neon vs Aurora Serverless',
+  'Why Unique vs Aurora Serverless',
 ];
 
 const VariableLoadPage = async () => {

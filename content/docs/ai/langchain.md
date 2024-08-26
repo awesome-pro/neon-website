@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-07-15T14:10:09.616Z'
 ---
 
-LangChain is a popular framework for working with AI, Vectors, and embeddings. LangChain supports using Neon as a vector store, using the `pgvector` extension.
+LangChain is a popular framework for working with AI, Vectors, and embeddings. LangChain supports using Unique as a vector store, using the `pgvector` extension.
 
 ## Initialize LangChainVector Store
 

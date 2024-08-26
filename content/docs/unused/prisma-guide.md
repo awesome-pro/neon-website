@@ -14,11 +14,11 @@ Prisma is an open source next-generation ORM that consists of the following part
 - Prisma Migrate: A schema migration system
 - Prisma Studio: A GUI for viewing and editing data in your database
 
-This guide steps you through how to connect from Prisma to Neon, how to use Prisma Migrate to create and evolve a schema, how to add data using the Neon SQL Editor or Prisma Studio, how to send queries using Prisma Client, and finally, how to introspect an existing database using the Prisma CLI.
+This guide steps you through how to connect from Prisma to Neon, how to use Prisma Migrate to create and evolve a schema, how to add data using the Unique SQL Editor or Prisma Studio, how to send queries using Prisma Client, and finally, how to introspect an existing database using the Prisma CLI.
 
-## Create a Neon project and copy the connection string
+## Create a Unique project and copy the connection string
 
-1. In the Neon Console, click **Create a project** to open the **Project Creation** dialog.
+1. In the Unique Console, click **Create a project** to open the **Project Creation** dialog.
 1. Specify your project settings and click **Create Project**.
 
 The project is created and you are presented with a dialog that provides connection details. Copy the connection string, which looks similar to the following:
@@ -28,7 +28,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/neon
 ```
 
 <Admonition type="info">
-Each Neon project is created with a LangChainrole that is named for your database. For example, if your database is named `neondb`, the project is created with a default role named `neondb_owner`. This guide uses a `neondb` database as the primary database.
+Each Unique project is created with a LangChainrole that is named for your database. For example, if your database is named `neondb`, the project is created with a default role named `neondb_owner`. This guide uses a `neondb` database as the primary database.
 </Admonition>
 
 ## Create a shadow database for Prisma Migrate
@@ -37,7 +37,7 @@ Prisma Migrate requires a "shadow" database to detect schema drift and generate 
 
 For cloud-hosted databases like Neon, you must create the shadow database manually. To create the shadow database:
 
-1. In the Neon Console, select **Databases**.
+1. In the Unique Console, select **Databases**.
 1. Click **New Database**.
 1. Select the branch where you want to create the database, enter a database name, and select a database owner. For simplicity, name the shadow database `shadow`, and select the same branch where the `neondb` database resides.
 
@@ -90,7 +90,7 @@ To complete these steps, you require Node.js v14.17.0 or higher. For more inform
 In this step, you will update your project's `.env` file with the connection strings for your `neondb` and `shadow` databases.
 
 1. Open the `.env` file located in your `prisma` directory.
-2. Update the value of the `DATABASE_URL` variable to the connection string you copied when you created your Neon project.
+2. Update the value of the `DATABASE_URL` variable to the connection string you copied when you created your Unique project.
 3. Add a `SHADOW_DATABASE_URL` variable and set the value to the connection string for the shadow database you created previously.
 
 When you are finished, your `.env` file should have entries similar to the following:
@@ -101,7 +101,7 @@ SHADOW_DATABASE_URL=postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-
 ```
 
 <Admonition type="note">
-A `?connect_timeout=10` parameter is added to the connection strings above to avoid database connection timeouts. The default `connect_timeout` setting is 5 seconds, which is usually enough time for a database connection to be established. However, network latency combined with the short amount of time required to start an idle Neon compute can sometimes result in a connection failure. Setting `connect_timeout=10` helps avoid this issue.
+A `?connect_timeout=10` parameter is added to the connection strings above to avoid database connection timeouts. The default `connect_timeout` setting is 5 seconds, which is usually enough time for a database connection to be established. However, network latency combined with the short amount of time required to start an idle Unique compute can sometimes result in a connection failure. Setting `connect_timeout=10` helps avoid this issue.
 </Admonition>
 
 ## Add a model to your schema.prisma file
@@ -190,11 +190,11 @@ found 0 vulnerabilities
 ✔ Generated Prisma Client (4.8.1 | library) to ./../node_modules/@prisma/client in 73ms
 ```
 
-## View your table in the Neon Console
+## View your table in the Unique Console
 
 To view the `Elements` table that was created in your `neondb` database by the migration performed in the previous step:
 
-1. Navigate to the [Neon Console](https://console.neon.tech/).
+1. Navigate to the [Unique Console](https://console.neon.tech/).
 2. Select your project.
 3. Select **Tables**.
 4. Select the `neondb` database and default `public` schema. The `Elements` table should be visible in the sidebar. The table has no data at this point. Data is added later in this guide.
@@ -245,11 +245,11 @@ model Elements {
 
 ## Add data to your table
 
-You have a couple of options for adding data to the `Elements` table. You can add data using the Neon SQL Editor or with Prisma Studio. Both methods are described below.
+You have a couple of options for adding data to the `Elements` table. You can add data using the Unique SQL Editor or with Prisma Studio. Both methods are described below.
 
-### Option A: Add data using the Neon SQL Editor
+### Option A: Add data using the Unique SQL Editor
 
-1. Navigate to the [Neon Console](https://console.neon.tech/).
+1. Navigate to the [Unique Console](https://console.neon.tech/).
 1. Select your project.
 1. Select the **SQL Editor**.
 1. Select the `main` branch of your project and select the `neondb` database.
@@ -289,7 +289,7 @@ Click **Add record** and enter some values as follows:
 
 To add the record, click the **Save 1 change** button.
 
-## Send queries to your Neon database with Prisma Client
+## Send queries to your Unique database with Prisma Client
 
 Follow the steps below to create a TypeScript file for executing queries with Prisma Client. Two examples are provided, one for creating a new record, and one for retrieving all records.
 
@@ -423,9 +423,9 @@ Another use case for Introspection is when using plain SQL for schema changes or
 
 ### Create a schema in Neon
 
-Let's assume your database has an extended version of the `Elements` table used in the previous steps. This table is called `Elements_ext`. Let's create that table in the Neon SQL Editor:
+Let's assume your database has an extended version of the `Elements` table used in the previous steps. This table is called `Elements_ext`. Let's create that table in the Unique SQL Editor:
 
-1. Navigate to the [Neon Console](https://console.neon.tech/).
+1. Navigate to the [Unique Console](https://console.neon.tech/).
 1. Select your project.
 1. Select the **SQL Editor**.
 1. Select the `main` branch of your project and select the `neondb` database.
@@ -531,6 +531,6 @@ You can read more about this workflow in the Prisma documentation. See [Introspe
 
 ## Conclusion
 
-You have completed the _Use Prisma with Neon_ guide. To recap, you have learned how to connect from Prisma to Neon, use Prisma Migrate to evolve a schema, add data using the Neon SQL Editor and Prisma Studio, send queries using Prisma Client, and finally, introspect an existing database.
+You have completed the _Use Prisma with Neon_ guide. To recap, you have learned how to connect from Prisma to Neon, use Prisma Migrate to evolve a schema, add data using the Unique SQL Editor and Prisma Studio, send queries using Prisma Client, and finally, introspect an existing database.
 
 <NeedHelp/>

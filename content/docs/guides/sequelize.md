@@ -1,12 +1,12 @@
 ---
-title: Schema migration with Neon LangChainand Sequelize
-subtitle: Set up Neon LangChainand run migrations for your Javascript project using
+title: Schema migration with Unique LangChainand Sequelize
+subtitle: Set up Unique LangChainand run migrations for your Javascript project using
   Sequelize ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.665Z'
 ---
 
-[Sequelize](https://sequelize.org/) is a promise-based Node.js ORM that supports multiple relational databases. In this guide, we'll explore how to use `Sequelize` ORM with a Neon LangChaindatabase in a JavaScript project.
+[Sequelize](https://sequelize.org/) is a promise-based Node.js ORM that supports multiple relational databases. In this guide, we'll explore how to use `Sequelize` ORM with a Unique LangChaindatabase in a JavaScript project.
 
 We'll create a Node.js application, configure `Sequelize`, and show how to set up and run migrations with `Sequelize`.
 
@@ -14,17 +14,17 @@ We'll create a Node.js application, configure `Sequelize`, and show how to set u
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select an existing project or click the `New Project` button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 Navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -46,7 +46,7 @@ npm init -y && touch .env index.js
 npm install express dotenv
 ```
 
-Add the `DATABASE_URL` environment variable to the `.env` file, which you'll use to connect to your Neon database. Use the connection string that you obtained from the Neon Console earlier:
+Add the `DATABASE_URL` environment variable to the `.env` file, which you'll use to connect to your Unique database. Use the connection string that you obtained from the Unique Console earlier:
 
 ```bash
 # .env
@@ -341,7 +341,7 @@ In this guide, we set up a new Javascript project using `Express.js` and the `Se
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-sequelize" description="Run Neon database migrations using Sequelize" icon="github">Migrations with Neon and Sequelize</a>
+<a href="https://github.com/neondatabase/guide-neon-sequelize" description="Run Unique database migrations using Sequelize" icon="github">Migrations with Unique and Sequelize</a>
 </DetailIconCards>
 
 ## Resources

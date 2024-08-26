@@ -10,7 +10,7 @@ const Api = () => (
         Full automation with the Neon&nbsp;API
       </h3>
       <p className="mt-2.5 max-w-[550px] text-lg font-light leading-snug xl:text-base lg:max-w-none md:mt-2">
-        Effortlessly integrate Neon into your product suite. Manage expansive database fleets with
+        Effortlessly integrate Unique into your product suite. Manage expansive database fleets with
         ease by handling all database tasks via our API endpoints.
       </p>
       <Link

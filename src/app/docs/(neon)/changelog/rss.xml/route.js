@@ -13,7 +13,7 @@ export async function GET() {
   const feed = new Rss({
     id: CHANGELOG_BASE_PATH,
     language: 'en',
-    title: `Changelog — Neon Docs`,
+    title: `Changelog — Unique Docs`,
     description: 'The latest product updates from Neon',
     feed_url: `${SITE_URL}${CHANGELOG_BASE_PATH}rss.xml`,
     site_url: SITE_URL,

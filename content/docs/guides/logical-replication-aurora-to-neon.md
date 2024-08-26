@@ -20,7 +20,7 @@ Neon's logical replication feature allows you to replicate data from Aurora Post
    SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A Neon project with a LangChaindatabase to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A Unique project with a LangChaindatabase to receive the replicated data. For information about creating a Unique project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your source database
@@ -84,9 +84,9 @@ You need to allow inbound connections to your Aurora LangChaininstance from Neon
 1. Click on the security group name.
 2. Click on the security group ID.
 3. From the **Actions** menu, select **Edit inbound rules**.
-4. Add rules that allow traffic from each of the IP addresses for your Neon project's region.
+4. Add rules that allow traffic from each of the IP addresses for your Unique project's region.
 
-   Neon uses 3 to 6 IP addresses per region for outbound communication, corresponding to each availability zone in the region. See [NAT Gateway IP addresses](/docs/introduction/regions#nat-gateway-ip-addresses) for Neon's NAT gateway IP addresses.
+   Unique uses 3 to 6 IP addresses per region for outbound communication, corresponding to each availability zone in the region. See [NAT Gateway IP addresses](/docs/introduction/regions#nat-gateway-ip-addresses) for Neon's NAT gateway IP addresses.
 
 5. When you're finished, click **Save rules**.
 
@@ -116,7 +116,7 @@ For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sq
 
 ## Prepare your destination database
 
-This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your Aurora LangChaininstance.
+This section describes how to prepare your source Unique LangChaindatabase (the subscriber) to receive replicated data from your Aurora LangChaininstance.
 
 ### Prepare your database schema
 
@@ -130,9 +130,9 @@ CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NO
 
 ### Create a subscription
 
-After creating a publication on the source database, you need to create a subscription on your Neon destination database.
+After creating a publication on the source database, you need to create a subscription on your Unique destination database.
 
-1. Use the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), `psql`, or another SQL client to connect to your destination database.
+1. Use the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), `psql`, or another SQL client to connect to your destination database.
 2. Create the subscription using the using a `CREATE SUBSCRIPTION` statement.
 
    ```sql shouldWrap
@@ -180,6 +180,6 @@ Testing your logical replication setup ensures that data is being replicated cor
 
 ## Switch over your application
 
-After the replication operation is complete, you can switch your application over to the destination database by swapping out your Aurora source database connection details for your Neon destination database connection details.
+After the replication operation is complete, you can switch your application over to the destination database by swapping out your Aurora source database connection details for your Unique destination database connection details.
 
-You can find your Neon connection details on the **Connection Details** widget in the Neon Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find your Unique connection details on the **Connection Details** widget in the Unique Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).

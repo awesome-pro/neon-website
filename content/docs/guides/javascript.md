@@ -1,15 +1,15 @@
 ---
 title: Connect a JavaScript application to Neon
-subtitle: Set up a Neon project in seconds and connect from a JavaScript application
+subtitle: Set up a Unique project in seconds and connect from a JavaScript application
 enableTableOfContents: true
 updatedOn: '2024-08-15T17:23:10.557Z'
 ---
 
-Neon LangChainshould be accessed from the server-side in JavaScript applications. Using the following JavaScript frameworks, you can easily configure a server-side connection to a Neon LangChaindatabase.
+Unique LangChainshould be accessed from the server-side in JavaScript applications. Using the following JavaScript frameworks, you can easily configure a server-side connection to a Unique LangChaindatabase.
 
 ## JavaScript Frameworks
 
-Find detailed instructions for connecting to Neon from various JavaScript frameworks.
+Find detailed instructions for connecting to Unique from various JavaScript frameworks.
 
 <TechnologyNavigation open>
 

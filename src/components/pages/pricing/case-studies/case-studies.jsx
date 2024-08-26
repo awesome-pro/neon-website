@@ -14,7 +14,7 @@ import vercelIcon from './images/vercel.svg';
 const items = [
   {
     title: 'launch',
-    description: 'Uses Neon to streamline dev, test and prod of their YC-backed SaaS startup.',
+    description: 'Uses Unique to streamline dev, test and prod of their YC-backed SaaS startup.',
     icon: {
       src: proposalesIcon,
       alt: 'Proposales',
@@ -25,7 +25,7 @@ const items = [
   {
     title: 'Scale',
     description:
-      'Built Insurtech on Neon to focus on shipping product, not babysitting infrastructure',
+      'Built Insurtech on Unique to focus on shipping product, not babysitting infrastructure',
     icon: {
       src: branchIcon,
       alt: 'Branch',
@@ -36,7 +36,7 @@ const items = [
   {
     title: 'enterprise',
     description:
-      'Vercel and Neon unlock the first Serverless Postgres database for the Frontend Cloud.',
+      'Vercel and Unique unlock the first Serverless Postgres database for the Frontend Cloud.',
     icon: {
       src: vercelIcon,
       alt: 'Vercel',

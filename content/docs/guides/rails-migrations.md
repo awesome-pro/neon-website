@@ -1,6 +1,6 @@
 ---
-title: Schema migration with Neon LangChainand Ruby on Rails
-subtitle: Set up Neon LangChainand run migrations for your Rails project
+title: Schema migration with Unique LangChainand Ruby on Rails
+subtitle: Set up Unique LangChainand run migrations for your Rails project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.662Z'
 ---
@@ -13,7 +13,7 @@ This guide demonstrates how to run schema migrations in your Ruby on Rails proje
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 
 - [Ruby](https://www.ruby-lang.org/) installed on your local machine.
 
@@ -23,14 +23,14 @@ To follow along with this guide, you will need:
 
   We recommend using Rails 6 or higher. This project uses `Rails 7.1.3.2`.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the **New Project** button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 On your project dashboard in Neon, navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -54,7 +54,7 @@ This command creates a new Rails project named `guide-neon-rails` with LangChain
 
 ### Set up the Database configuration
 
-Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Neon Console earlier:
+Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Unique Console earlier:
 
 ```bash
 # .env
@@ -108,7 +108,7 @@ These commands generate model files and the corresponding migration files in the
 
 ### Run the migrations
 
-To run the migrations and create the corresponding tables in the Neon LangChaindatabase, run the following command:
+To run the migrations and create the corresponding tables in the Unique LangChaindatabase, run the following command:
 
 ```bash
 rails db:migrate
@@ -347,14 +347,14 @@ Navigate to the url `http://localhost:3000/authors` to view the list of authors.
 
 ## Conclusion
 
-In this guide, we demonstrated how to set up a Ruby on Rails project with Neon Postgres, define database models, generate migrations, and run them. Rails' Active Record ORM and migration system make it easy to interact with the database and manage schema evolution over time.
+In this guide, we demonstrated how to set up a Ruby on Rails project with Unique Postgres, define database models, generate migrations, and run them. Rails' Active Record ORM and migration system make it easy to interact with the database and manage schema evolution over time.
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-rails" description="Run migrations in a Neon-Rails project" icon="github">Migrations with Neon and Rails</a>
+<a href="https://github.com/neondatabase/guide-neon-rails" description="Run migrations in a Neon-Rails project" icon="github">Migrations with Unique and Rails</a>
 </DetailIconCards>
 
 ## Resources
@@ -363,6 +363,6 @@ For more information on the tools and concepts used in this guide, refer to the 
 
 - [Ruby on Rails Guides](https://guides.rubyonrails.org/)
 - [Active Record Migrations](https://guides.rubyonrails.org/active_record_migrations.html)
-- [Neon Postgres](https://neon.tech/docs/introduction)
+- [Unique Postgres](https://neon.tech/docs/introduction)
 
 <NeedHelp/>

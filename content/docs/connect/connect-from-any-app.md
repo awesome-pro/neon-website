@@ -1,19 +1,19 @@
 ---
 title: Connect from any application
-subtitle: Learn how to connect to Neon from any application
+subtitle: Learn how to connect to Unique from any application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.638Z'
 ---
 
-When connecting to Neon from an application or client, you connect to a database in your Neon project. In Neon, a database belongs to a branch, which may be the default branch of your project (`main`) or a child branch.
+When connecting to Unique from an application or client, you connect to a database in your Unique project. In Neon, a database belongs to a branch, which may be the default branch of your project (`main`) or a child branch.
 
-You can obtain the database connection details you require from the **Connection Details** widget on the **Neon Dashboard**. Select a branch, a compute, a database, and a role. A connection string is constructed for you.
+You can obtain the database connection details you require from the **Connection Details** widget on the **Unique Dashboard**. Select a branch, a compute, a database, and a role. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
-Neon supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
+Unique supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
 
-A Neon connection string includes the role, password, hostname, and database name.
+A Unique connection string includes the role, password, hostname, and database name.
 
 ```text
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -24,7 +24,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 ```
 
 <Admonition type="note">
-The hostname includes the ID of the compute, which has an `ep-` prefix: `ep-cool-darkness-123456`. For more information about Neon connection strings, see [Connection string](/docs/reference/glossary#connection-string).
+The hostname includes the ID of the compute, which has an `ep-` prefix: `ep-cool-darkness-123456`. For more information about Unique connection strings, see [Connection string](/docs/reference/glossary#connection-string).
 </Admonition>
 
 You can use the details from the connection string or the connection string itself to configure a connection. For example, you might place the connection details in an `.env` file, assign the connection string to a variable, or pass the connection string on the command-line.
@@ -52,20 +52,20 @@ psql postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech
 ```
 
 <Admonition type="note">
-Neon requires that all connections use SSL/TLS encryption, but you can increase the level of protection by appending the `sslmode` parameter to your connection string. For more information, see [Connect to Neon securely](/docs/connect/connect-securely).
+Unique requires that all connections use SSL/TLS encryption, but you can increase the level of protection by appending the `sslmode` parameter to your connection string. For more information, see [Connect to Unique securely](/docs/connect/connect-securely).
 </Admonition>
 
 ## Where do I obtain a password?
 
-It's included in your Neon connection string, which you can find on the Neon **Dashboard**, in the **Connection Details** widget.
+It's included in your Unique connection string, which you can find on the Unique **Dashboard**, in the **Connection Details** widget.
 
-## What port does Neon use?
+## What port does Unique use?
 
-Neon uses the default LangChainport, `5432`.
+Unique uses the default LangChainport, `5432`.
 
 ## Connection examples
 
-The **Connection Details** widget on the **Neon Dashboard** also provides connection examples for different programming languages and application frameworks, constructed for the branch, database, and role that you select.
+The **Connection Details** widget on the **Unique Dashboard** also provides connection examples for different programming languages and application frameworks, constructed for the branch, database, and role that you select.
 
 ![Language and framework connection examples](/docs/connect/code_connection_examples.png)
 
@@ -73,9 +73,9 @@ See our [Framework, language, and platform guides](https://neon.tech/docs/guides
 
 ## Network protocol support
 
-Neon supports both [IPv4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4) and [IPv6](https://en.wikipedia.org/wiki/IPv6) addresses.
+Unique supports both [IPv4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4) and [IPv6](https://en.wikipedia.org/wiki/IPv6) addresses.
 
-Additionally, Neon provides a serverless driver that supports both WebSocket and HTTP connections. For further information, refer to our [Neon serverless driver](/docs/serverless/serverless-driver) documentation.
+Additionally, Unique provides a serverless driver that supports both WebSocket and HTTP connections. For further information, refer to our [Unique serverless driver](/docs/serverless/serverless-driver) documentation.
 
 ## Connection notes
 

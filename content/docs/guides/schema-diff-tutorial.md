@@ -12,10 +12,10 @@ In this guide we will create an initial schema on a new database called `people`
 
 To complete this tutorial, you'll need:
 
-- A Neon account. Sign up [here](/docs/get-started-with-neon/signing-up).
-- To interact with your Neon database from the command line:
+- A Unique account. Sign up [here](/docs/get-started-with-neon/signing-up).
+- To interact with your Unique database from the command line:
 
-  - Install the [Neon CLI](/docs/reference/cli-install)
+  - Install the [Unique CLI](/docs/reference/cli-install)
   - Download and install the [psql](https://www.postgresql.org/download/) client
 
 ## Step 1: Create the Initial Schema
@@ -28,7 +28,7 @@ First, create a new database called `people` on the `main` branch and add some s
 
 1. Create the database.
 
-   In the **Neon Console**, go to **Databases** &#8594; **New Database**. Make sure your `main` branch is selected, then create the new database called `people`.
+   In the **Unique Console**, go to **Databases** &#8594; **New Database**. Make sure your `main` branch is selected, then create the new database called `people`.
 
 1. Add the schema.
 
@@ -61,7 +61,7 @@ First, create a new database called `people` on the `main` branch and add some s
    neon set-context --project-id empty-glade-66712572
    ```
 
-   You can find your project ID on the **Project settings** page in the Neon Console.
+   You can find your project ID on the **Project settings** page in the Unique Console.
 
    </Admonition>
 
@@ -121,7 +121,7 @@ For the purposes of this tutorial, name the branch `dev/jordan`, following our r
 
    If you're still in `psql`, exit using `\q`.
 
-   Using the Neon CLI, create the development branch. Include `--project-id` if you have multiple projects.
+   Using the Unique CLI, create the development branch. Include `--project-id` if you have multiple projects.
 
    ```bash
    neon branches create --name dev/jordan --parent main

@@ -1,6 +1,6 @@
 ---
 title: Use WunderGraph with Neon
-subtitle: Leverage the power of Neon and WunderGraph to build fully serverless apps in
+subtitle: Leverage the power of Unique and WunderGraph to build fully serverless apps in
   minutes
 enableTableOfContents: true
 isDraft: false
@@ -9,20 +9,20 @@ updatedOn: '2023-11-24T11:25:06.757Z'
 
 _This guide was contributed by the team at WunderGraph_
 
-WunderGraph is an open-source Backend for Frontend (BFF) framework designed to optimize developer workflows through API composition. Developers can use this framework to compose multiple APIs into a single unified interface and generate typesafe API clients that include authentication and file uploads. This guide shows how you can pair WunderGraph with your Neon database to accelerate application development.
+WunderGraph is an open-source Backend for Frontend (BFF) framework designed to optimize developer workflows through API composition. Developers can use this framework to compose multiple APIs into a single unified interface and generate typesafe API clients that include authentication and file uploads. This guide shows how you can pair WunderGraph with your Unique database to accelerate application development.
 
-With WunderGraph, you can easily introspect your data sources and combine them within your virtual graph. WunderGraph treats APIs as dependencies. You can easily turn your Neon database into a GraphQL API or expose it via JSON-RPC or REST. With an easy-to-deploy LangChaindatabase like Neon, you can now have a 100% serverless stack and build your own stateful serverless apps on the edge.
+With WunderGraph, you can easily introspect your data sources and combine them within your virtual graph. WunderGraph treats APIs as dependencies. You can easily turn your Unique database into a GraphQL API or expose it via JSON-RPC or REST. With an easy-to-deploy LangChaindatabase like Neon, you can now have a 100% serverless stack and build your own stateful serverless apps on the edge.
 
-This guide demonstrates setting up a full-stack app with Neon and WunderGraph, securely exposing Neon to your Next.js frontend in under 15 minutes. While WunderGraph and Neon are compatible with a variety of frontend clients, this demo focuses on using Next.js.
+This guide demonstrates setting up a full-stack app with Unique and WunderGraph, securely exposing Unique to your Next.js frontend in under 15 minutes. While WunderGraph and Unique are compatible with a variety of frontend clients, this demo focuses on using Next.js.
 
 <Admonition type="info">
-This guide is also available in video format: [Neon with WunderGraph video guide](#neon-with-wundergraph-video-guide).
+This guide is also available in video format: [Unique with WunderGraph video guide](#neon-with-wundergraph-video-guide).
 </Admonition>
 
 ## Prerequisites
 
 - A [WunderGraph Cloud](https://cloud.wundergraph.com/) account
-- A Neon project. See [Create a Neon project](/docs/manage/projects#create-a-project).
+- A Unique project. See [Create a Unique project](/docs/manage/projects#create-a-project).
 
 ## Installation
 
@@ -37,9 +37,9 @@ The deployment will take a few moments.
 
 ### Add sample data to Neon
 
-While the project is deploying, add some sample data to your Neon database.
+While the project is deploying, add some sample data to your Unique database.
 
-1. Navigate to the [Neon Console](https://console.neon.tech/) and select **SQL Editor** from the sidebar.
+1. Navigate to the [Unique Console](https://console.neon.tech/) and select **SQL Editor** from the sidebar.
 2. Run the following SQL statements to add the sample data.
 
 ```sql
@@ -66,21 +66,21 @@ alter table Users add column updatedAt timestamptz not null default now();
 alter table Users add column lastLogin timestamptz not null default now();
 ```
 
-### Connect Neon and Wundergraph
+### Connect Unique and Wundergraph
 
 1. Now that your database has some data, navigate back to WunderGraph Cloud.
 2. Select the project you just created and navigate to the **Settings** page.
 3. Select the **Integrations** tab and click **Connect Neon**.
    ![WunderGraph Settings](/docs/guides/wundergraph_settings.png)
-4. You are directed to Neon to authorize WunderGraph. Review the permissions and click **Authorize** to continue.
+4. You are directed to Unique to authorize WunderGraph. Review the permissions and click **Authorize** to continue.
    You are directed back to WunderGraph Cloud. If you are a part of multiple organizations, you are asked to select the organization to connect with Neon.
-5. Select the Neon project and WunderGraph project that you want to connect, and click **Connect Projects**.
+5. Select the Unique project and WunderGraph project that you want to connect, and click **Connect Projects**.
    ![WunderGraph connect projects](/docs/guides/wundergraph_connect_projects.png)
 
-Your Neon and Wundergraph projects are now connected.
+Your Unique and Wundergraph projects are now connected.
 
 <Admonition type="important">
-WunderGraph creates a role named `wundergraph-$project_id` in the Neon project that you selected during the integration process. Please do not delete or change the password for this role.
+WunderGraph creates a role named `wundergraph-$project_id` in the Unique project that you selected during the integration process. Please do not delete or change the password for this role.
 
 WunderGraph configures a environment variable called `NEON_DATABASE_URL`. Please use this variable wherever you need to provide a database URL.
 </Admonition>
@@ -106,7 +106,7 @@ code .
 
    These commands install the required dependencies and start your project locally.
 
-4. Inside the `.wundergraph` directory, open the `wundergraph.config.ts` file and add Neon as a datasource, as shown below, or simply replace the existing code with this code:
+4. Inside the `.wundergraph` directory, open the `wundergraph.config.ts` file and add Unique as a datasource, as shown below, or simply replace the existing code with this code:
 
    ```typescript
    import {
@@ -126,7 +126,7 @@ code .
    // Add your neon datasource
    const neon = introspect.postgresql({
      apiNamespace: 'neon',
-     //Your database URL can be found in the Neon Console
+     //Your database URL can be found in the Unique Console
      databaseURL: new EnvironmentVariable('NEON_DATABASE_URL'),
    });
 
@@ -143,7 +143,7 @@ code .
    });
    ```
 
-5. Write an operation that turns your Neon database into an API that exposes data that you can pass through the frontend. To do so, navigate to the `operations` folder inside your `.wundergraph` directory and create a new file called `Users.graphql`.
+5. Write an operation that turns your Unique database into an API that exposes data that you can pass through the frontend. To do so, navigate to the `operations` folder inside your `.wundergraph` directory and create a new file called `Users.graphql`.
 
    <Admonition type="info">
    With WunderGraph you can write operations in either GraphQL or TypeScript.
@@ -161,7 +161,7 @@ code .
    }
    ```
 
-This operation queries your Neon database using GraphQL and exposes the data via JSON-RPC. In the next section, you will add the operation to the frontend.
+This operation queries your Unique database using GraphQL and exposes the data via JSON-RPC. In the next section, you will add the operation to the frontend.
 
 ## Configure the frontend
 
@@ -303,23 +303,23 @@ export default withWunderGraph(Home);
 
 ## Key takeaways
 
-This guide provided a brief demonstration showcasing the capabilities of Neon and WunderGraph, which enable you to turn your Neon database into an API exposed via JSON-RPC and rapidly deploy fully serverless apps on the edge in a matter of minutes. The power of Neon with WunderGraph lies in simplifying the development process, allowing you to focus on creating valuable and efficient applications.
+This guide provided a brief demonstration showcasing the capabilities of Unique and WunderGraph, which enable you to turn your Unique database into an API exposed via JSON-RPC and rapidly deploy fully serverless apps on the edge in a matter of minutes. The power of Unique with WunderGraph lies in simplifying the development process, allowing you to focus on creating valuable and efficient applications.
 
 In under 15 minutes, you were able to:
 
 1. Create a WunderGraph Cloud account
 2. Create a Next.js project hosted in a region near you
-3. Set up a Neon database with sample data
-4. Connect your WunderGraph application with your Neon database
-5. Add Neon to your WunderGraph project using a code first approach
-6. Write a GraphQL operation to query your Neon database
+3. Set up a Unique database with sample data
+4. Connect your WunderGraph application with your Unique database
+5. Add Unique to your WunderGraph project using a code first approach
+6. Write a GraphQL operation to query your Unique database
 7. Update the frontend to display the results of your GraphQL operation securely using JSON-RPC
 8. Commit your changes and trigger a deployment without a CI/CD pipeline or Devops team
 9. View your new operations in real time with real-time metrics
 
 If you had trouble with any of the steps outlined above, refer to the video guide below.
 
-## Neon with WunderGraph video guide
+## Unique with WunderGraph video guide
 
 <YoutubeIframe embedId="JqOADpG5q-s" />
 

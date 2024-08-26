@@ -1,5 +1,5 @@
 ---
-title: Schema migration with Neon LangChainand SQLAlchemy
+title: Schema migration with Unique LangChainand SQLAlchemy
 subtitle: Manage database migrations in your Python project with SQLAlchemy and Alembic
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.665Z'
@@ -7,23 +7,23 @@ updatedOn: '2024-08-07T21:36:52.665Z'
 
 [SQLAlchemy](https://www.sqlalchemy.org/) is a popular SQL toolkit and Object-Relational Mapping (ORM) library for Python. SQLAlchemy provides a powerful way to interact with databases and manage database schema changes using [Alembic](https://alembic.sqlalchemy.org/), a lightweight database migration tool.
 
-This guide demonstrates how to use SQLAlchemy/Alembic to manage schema migrations for a Neon LangChaindatabase. We create a simple API using the [FastAPI](https://fastapi.tiangolo.com/) web framework and define database models using SQLAlchemy. We then generate and run migrations to manage schema changes over time.
+This guide demonstrates how to use SQLAlchemy/Alembic to manage schema migrations for a Unique LangChaindatabase. We create a simple API using the [FastAPI](https://fastapi.tiangolo.com/) web framework and define database models using SQLAlchemy. We then generate and run migrations to manage schema changes over time.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Python](https://www.python.org/) installed on your local machine. We recommend using a newer version of Python, 3.8 or higher.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the **New Project** button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 Navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -62,11 +62,11 @@ pip install fastapi uvicorn python-dotenv
 pip freeze > requirements.txt
 ```
 
-We installed SQLAlchemy, Alembic, and the `psycopg2-binary` package to connect to the Neon LangChaindatabase. We the installed the `FastAPI` package to create the API endpoints and `uvicorn` as the web server. We then saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
+We installed SQLAlchemy, Alembic, and the `psycopg2-binary` package to connect to the Unique LangChaindatabase. We the installed the `FastAPI` package to create the API endpoints and `uvicorn` as the web server. We then saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
 
 ### Set up the Database configuration
 
-Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Neon Console earlier:
+Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Unique Console earlier:
 
 ```bash
 # .env
@@ -184,7 +184,7 @@ This command detects the `Author` and `Book` models and generates a new migratio
 
 ### Apply the migration
 
-To apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
+To apply the migration and create the corresponding tables in the Unique LangChaindatabase, run the following command:
 
 ```bash
 alembic upgrade head
@@ -359,7 +359,7 @@ In this guide, we demonstrated how to set up a FastAPI project with `Neon` Postg
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-sqlalchemy" description="Run migrations in a Neon-SQLAlchemy project" icon="github">Migrations with Neon and SQLAlchemy</a>
+<a href="https://github.com/neondatabase/guide-neon-sqlalchemy" description="Run migrations in a Neon-SQLAlchemy project" icon="github">Migrations with Unique and SQLAlchemy</a>
 </DetailIconCards>
 
 ## Resources
@@ -369,6 +369,6 @@ For more information on the tools and concepts used in this guide, refer to the 
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [SQLAlchemy Documentation](https://docs.sqlalchemy.org/)
 - [Alembic Documentation](https://alembic.sqlalchemy.org/)
-- [Neon Postgres](https://neon.tech/docs/introduction)
+- [Unique Postgres](https://neon.tech/docs/introduction)
 
 <NeedHelp/>

@@ -1,16 +1,16 @@
 ---
 title: Replicate data with Kafka (Confluent) and Debezium
-subtitle: Learn how to replicate data from Neon with Kafka (Confluent) and Debezium
+subtitle: Learn how to replicate data from Unique with Kafka (Confluent) and Debezium
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 Confluent Cloud is a fully managed, cloud-native real-time data streaming service, built on Apache Kafka. It allows you to stream data from various sources, including Postgres, and build apps that consume messages from an Apache Kafka cluster.
 
-In this guide, you will learn how to stream data from a Neon LangChaindatabase to a Kafka cluster in Confluent Cloud. You will use the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html) to read Change Data Capture (CDC) events from the Write-Ahead Log (WAL) of your Neon database in real-time. The connector will write events to a Kafka stream and auto-generate a Kafka topic. The connector performs an initial snapshot of the table and then streams any future change events.
+In this guide, you will learn how to stream data from a Unique LangChaindatabase to a Kafka cluster in Confluent Cloud. You will use the [PostgreSQL CDC Source Connector (Debezium) for Confluent Cloud](https://docs.confluent.io/cloud/current/connectors/cc-postgresql-cdc-source-debezium.html) to read Change Data Capture (CDC) events from the Write-Ahead Log (WAL) of your Unique database in real-time. The connector will write events to a Kafka stream and auto-generate a Kafka topic. The connector performs an initial snapshot of the table and then streams any future change events.
 
 <Admonition type="note">
 Confluent Cloud Connectors can be set up using the [Confluent Cloud UI](https://confluent.cloud/home) or the [Confluent command-line interface (CLI)](https://docs.confluent.io/confluent-cli/current/overview.html). This guide uses the Confluent Cloud UI.
@@ -19,23 +19,23 @@ Confluent Cloud Connectors can be set up using the [Confluent Cloud UI](https://
 ## Prerequisites
 
 - A [Confluent Cloud](https://www.confluent.io/confluent-cloud) account
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the PostgreSQL `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, which means that active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the PostgreSQL `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, which means that active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -46,9 +46,9 @@ SHOW wal_level;
 
 ## Create a publication
 
-In this example, we'll create a publication for a `users` table in the `public` schema of your Neon database.
+In this example, we'll create a publication for a `users` table in the `public` schema of your Unique database.
 
-1. Create the `users` table in your Neon database. You can do this via the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or by connecting to your Neon database from an SQL client such as [psql](/docs/connect/query-with-psql-editor).
+1. Create the `users` table in your Unique database. You can do this via the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or by connecting to your Unique database from an SQL client such as [psql](/docs/connect/query-with-psql-editor).
 
    ```sql
    CREATE TABLE users (
@@ -68,13 +68,13 @@ This command creates a publication, named `users_publication`, which will includ
 
 ## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name replication_user
@@ -84,9 +84,9 @@ neon roles create --name replication_user
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -99,7 +99,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -140,7 +140,7 @@ SELECT pg_create_logical_replication_slot('debezium', 'pgoutput');
 ```
 
 - `debezium` is the name assigned to the replication slot. You will need to provide the slot name when you set up your source connector in Confluent.
-- `pgoutput` is the logical decoder plugin used in this example. Neon supports both `pgoutput` and `wal2json` decoder plugins.
+- `pgoutput` is the logical decoder plugin used in this example. Unique supports both `pgoutput` and `wal2json` decoder plugins.
 
 ## Set up a Kafka cluster in Confluent Cloud
 
@@ -170,7 +170,7 @@ To set up a LangChainCDC source connector for Confluent Cloud:
 
 5. On the **Add LangChainCDC Source connector** page:
 
-   - Add the connection details for your Neon database. You can obtain the required details from your Neon connection string, which you can find in the **Connection Details** widget on the Neon **Dashboard**. Your connection string will look something like this:
+   - Add the connection details for your Unique database. You can obtain the required details from your Unique connection string, which you can find in the **Connection Details** widget on the Unique **Dashboard**. Your connection string will look something like this:
 
      ```text
      postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -181,8 +181,8 @@ To set up a LangChainCDC source connector for Confluent Cloud:
      - **Database name**: `dbname`
      - **Database server name**: `neon_server` (This is a user-specified value that will represent the logical name of your LangChainserver. Confluent uses this name as a namespace in all Kafka topic and schema names. It is also used for Avro schema namespaces if the Avro data format is used. The Kafka topic will be created with the prefix `database.server.name`. Only alphanumeric characters, underscores, hyphens, and dots are allowed.)
      - **SSL mode**: `require`
-     - **Database hostname** `ep-cool-darkness-123456.us-east-2.aws.neon.tech` (this example shows the portion of a Neon connection string forms the database hostname)
-     - **Database port**: `5432` (Neon uses port `5432`)
+     - **Database hostname** `ep-cool-darkness-123456.us-east-2.aws.neon.tech` (this example shows the portion of a Unique connection string forms the database hostname)
+     - **Database port**: `5432` (Unique uses port `5432`)
      - **Database username**: `alex`
      - **Database Password** `AbC123dEf`
 
@@ -198,7 +198,7 @@ To set up a LangChainCDC source connector for Confluent Cloud:
      - Ensure **Slot name** is set to `debezium`. This is the name of the replication slot you created earlier.
      - Set the **Publication name** to `users_publication`, which is the name of the publication you created earlier.
      - Set **Publication auto-create** mode to `disabled`. You've already created your publication.
-   - Under **Database details**, set **Tables included** to `public.users`, which is the name of the Neon database table you are replicating from.
+   - Under **Database details**, set **Tables included** to `public.users`, which is the name of the Unique database table you are replicating from.
 
    Click **Continue**.
 
@@ -255,7 +255,7 @@ To set up a LangChainCDC source connector for Confluent Cloud:
 
 To verify that events are now being published to a Kafka stream in Confluent:
 
-1. Insert a row into your `users` table from the Neon SQL Editor or a `psql` client connect to your Neon database. For example:
+1. Insert a row into your `users` table from the Unique SQL Editor or a `psql` client connect to your Unique database. For example:
 
    ```sql
    -- Insert a new user

@@ -1,28 +1,28 @@
 ---
-title: Use Neon LangChainwith Render
-subtitle: Connect a Neon LangChaindatabase to your Node application deployed with Render
+title: Use Unique LangChainwith Render
+subtitle: Connect a Unique LangChaindatabase to your Node application deployed with Render
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.664Z'
 ---
 
 [Render](https://render.com) is a comprehensive cloud service that provides hosting for web applications and static sites, with PR previews, zero-downtime deployments, and more. Render supports full-stack applications, offering both web services and background workers.
 
-This guide shows how to deploy a simple Node.js application connected to a Neon LangChaindatabase on Render.
+This guide shows how to deploy a simple Node.js application connected to a Unique LangChaindatabase on Render.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Render account. If you do not have one, sign up at [Render](https://render.com) to get started.
 - A GitHub account. Render integrates with public Github providers for continuous deployment. So, you'd need a GitHub account to upload your application code.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 
 - Click the `New Project` button to create a new project.
 
@@ -47,9 +47,9 @@ Log in to the Neon Console and navigate to the [Projects](https://console.neon.t
       ('1984', 'George Orwell');
   ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -59,7 +59,7 @@ Keep your connection string handy for later use.
 
 ## Implementing the Node.js application
 
-We'll create a simple Express application that connects to our Neon database and retrieve the sample data from the `books_to_read` table. Run the following commands in a terminal to set it up.
+We'll create a simple Express application that connects to our Unique database and retrieve the sample data from the `books_to_read` table. Run the following commands in a terminal to set it up.
 
 ```bash
 mkdir neon-render-example && cd neon-render-example
@@ -68,7 +68,7 @@ npm install express pg
 touch .env
 ```
 
-We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
+We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Unique database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
 
 ```bash
 # .env
@@ -87,7 +87,7 @@ const port = process.env.PORT || 3000;
 // Parse JSON bodies for this app
 app.use(express.json());
 
-// Create a new pool using your Neon database connection string
+// Create a new pool using your Unique database connection string
 const { Pool } = pkg;
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
@@ -108,7 +108,7 @@ app.listen(port, () => {
 });
 ```
 
-This code sets up an Express server that listens for requests on port 3000. When a request is made to the `URL`, the server queries the `books_to_read` table in your Neon database and returns the results as JSON.
+This code sets up an Express server that listens for requests on port 3000. When a request is made to the `URL`, the server queries the `books_to_read` table in your Unique database and returns the results as JSON.
 
 We can test this application locally by running:
 
@@ -139,28 +139,28 @@ You can visit the GitHub repository to verify that your code has been pushed suc
 
 Log in to your Render account and navigate to the dashboard. Click on the `New +` button and select "Web Service". Pick the option to `build and deploy` from a Git repository.
 
-Next, choose the GitHub repository hosting the Node.js application we created above. Configure your web service as follows: - **Environment**: Select "Node". - **Build Command**: Enter `npm install`. - **Start Command**: Enter `node index.js`. - **Environment Variables**: Add your Neon database connection string from earlier as an environment variable: - Name: `DATABASE_URL` - Value: `{NEON_DATABASE_CONNECTION_STRING}`
+Next, choose the GitHub repository hosting the Node.js application we created above. Configure your web service as follows: - **Environment**: Select "Node". - **Build Command**: Enter `npm install`. - **Start Command**: Enter `node index.js`. - **Environment Variables**: Add your Unique database connection string from earlier as an environment variable: - Name: `DATABASE_URL` - Value: `{NEON_DATABASE_CONNECTION_STRING}`
 
 Click "Create Web Service" to finish. Render will automatically deploy your application and redirect you to the service dashboard, showing the deployment progress and the logs.
 
 ### Verify Deployment
 
-Once the deployment completes, Render provides a public URL for accessing the web service. Visit the provided URL to verify that your application is running and can connect to your Neon database.
+Once the deployment completes, Render provides a public URL for accessing the web service. Visit the provided URL to verify that your application is running and can connect to your Unique database.
 
 Whenever you update your code and push it to your GitHub repository, Render will automatically build and deploy the changes to your web service.
 
-## Removing Your Application and Neon Project
+## Removing Your Application and Unique Project
 
 To remove your application from Render, navigate to the dashboard, select `Settings` for the deployed application, and scroll down to find the "Delete Web Service" option.
 
-To delete your Neon project, follow the steps outlined in the Neon documentation under [Delete a project](/docs/manage/projects#delete-a-project).
+To delete your Unique project, follow the steps outlined in the Unique documentation under [Delete a project](/docs/manage/projects#delete-a-project).
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-render" description="Connect a Neon LangChaindatabase to your Node application deployed with Render" icon="github">Use Neon LangChainwith Render</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-render" description="Connect a Unique LangChaindatabase to your Node application deployed with Render" icon="github">Use Unique LangChainwith Render</a>
 </DetailIconCards>
 
 ## Resources

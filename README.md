@@ -1,4 +1,4 @@
-# Neon Next.js
+# Unique Next.js
 
 ## Table of Contents
 

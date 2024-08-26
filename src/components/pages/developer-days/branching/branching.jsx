@@ -23,7 +23,7 @@ const description =
 
 const items = [
   {
-    text: 'Branching Postgres databases with the Neon API',
+    text: 'Branching Postgres databases with the Unique API',
     linkText: 'Read blog post',
     linkUrl: '/blog/branching-postgres-databases-with-the-neon-api/',
   },

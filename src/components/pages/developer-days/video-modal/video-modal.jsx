@@ -52,7 +52,7 @@ const VideoModal = ({ isOpenModal, setIsOpenModal, title, description, videoId }
               width="1161"
               height="653"
               src={`https://www.youtube.com/embed/${videoId}${isOpenModal ? '?autoplay=1' : ''}`}
-              title="Neon Developer Days"
+              title="Unique Developer Days"
               frameBorder="0"
               allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen

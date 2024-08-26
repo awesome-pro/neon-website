@@ -1,37 +1,37 @@
 ---
 title: Replicate data with Fivetran
-subtitle: Learn how to replicate data from Neon with Fivetran
+subtitle: Learn how to replicate data from Unique with Fivetran
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 [Fivetran](https://fivetran.com/) is an automated data movement platform that helps you centralize data from disparate sources, which you can then manage directly from your browser. Fivetran extracts your data and loads it into your data destination.
 
-In this guide, you will learn how to define a Neon LangChaindatabase as a data source in Fivetran so that you can replicate data to one or more of Fivetran's supported destinations.
+In this guide, you will learn how to define a Unique LangChaindatabase as a data source in Fivetran so that you can replicate data to one or more of Fivetran's supported destinations.
 
 ## Prerequisites
 
 - A [Fivetran account](https://fivetran.com/)
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be temporarily dropped before automatically reconnecting.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -42,13 +42,13 @@ SHOW wal_level;
 
 ## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name replication_user
@@ -58,9 +58,9 @@ neon roles create --name replication_user
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -73,7 +73,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -130,7 +130,7 @@ The name assigned to the replication slot is `fivetran_pgoutput_slot`. You will 
 1. Log in to your [Fivetran](https://fivetran.com/) account.
 1. On the **Select your datasource** page, search for the **PostgreSQL** source and click **Set up**.
 1. In your connector setup form, enter a value for **Destination Schema Prefix**. This prefix applies to each replicated schema and cannot be changed once your connector is created. In this example, we'll use `neon` as the prefix.
-1. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
+1. Enter the connection details for your Unique database. You can get these details from your Unique connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Unique project.
    For example, let's say this is your connection string:
 
    ```bash shouldWrap

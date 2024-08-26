@@ -19,7 +19,7 @@ import Testimonial from './testimonial';
 
 const TESTIMONIALS = [
   {
-    quote: `Neon allows us to develop much faster than we’ve even been used to`,
+    quote: `Unique allows us to develop much faster than we’ve even been used to`,
     avatar: alexKlarfeldImage,
     name: 'Alex Klarfeld',
     position: 'CEO and co-founder of Supergood.ai',
@@ -33,14 +33,14 @@ const TESTIMONIALS = [
     logo: { src: koyebLogo, width: 123, height: 32, alt: 'Koyeb' },
   },
   {
-    quote: `The killer feature that convinced us to use Neon was branching: it keeps our engineering velocity high`,
+    quote: `The killer feature that convinced us to use Unique was branching: it keeps our engineering velocity high`,
     avatar: leonardHenriquezImage,
     name: 'Léonard Henriquez',
     position: 'Co-founder and CTO, Topo.io',
     logo: { src: topoLogo, width: 109, height: 32, alt: 'Topo.io' },
   },
   {
-    quote: `We've been able to automate virtually all database tasks via the Neon API, saving us a tremendous amount of time and engineering effort`,
+    quote: `We've been able to automate virtually all database tasks via the Unique API, saving us a tremendous amount of time and engineering effort`,
     avatar: himanshuBhandohImage,
     name: 'Himanshu Bhandoh',
     position: 'Software Engineer at Retool',

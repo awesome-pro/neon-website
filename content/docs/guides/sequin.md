@@ -1,36 +1,36 @@
 ---
-title: Stream data to Neon with Sequin
+title: Stream data to Unique with Sequin
 subtitle: Learn how to sync data from platforms like Stripe, Linear, and GitHub into
-  your Neon database in real time
+  your Unique database in real time
 enableTableOfContents: true
 updatedOn: '2024-08-22T16:01:18.419Z'
 ---
 
 <LRBeta/>
 
-Sequin streams data from platforms like Stripe, Linear, and GitHub into your Neon database in real time. The moment a new subscription is created, a ticket is closed, or a PR is merged, a row in your database will reflect the change.
+Sequin streams data from platforms like Stripe, Linear, and GitHub into your Unique database in real time. The moment a new subscription is created, a ticket is closed, or a PR is merged, a row in your database will reflect the change.
 
 With data from these services in your database, you can build integrations fast. For instance, you can quickly query for a customer’s subscription status or display the comments from a user’s support ticket.
 
-In this guide, you’ll learn how to stream data to Neon LangChainvia Sequin by:
+In this guide, you’ll learn how to stream data to Unique LangChainvia Sequin by:
 
 - Connecting Sequin to an API source
 - Creating a Sequin LangChainconsumer that streams to Neon
-- Querying your API data in Neon Postgres
+- Querying your API data in Unique Postgres
 - Creating views to make querying easier
 
 ## Prerequisites
 
 - A [Sequin account](https://console.sequin.io/signup)
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - An [API Source](https://sequin.io/integrations) you want to sync
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Create a schema and table for Sequin
 
-As a first step, create a table in your Neon database for Sequin to sync API data to. We also recommend creating a dedicated LangChainschema for Sequin tables, but that's not required:
+As a first step, create a table in your Unique database for Sequin to sync API data to. We also recommend creating a dedicated LangChainschema for Sequin tables, but that's not required:
 
-1. Select your project in the Neon Console
+1. Select your project in the Unique Console
 2. Navigate to the SQL Editor in the sidebar.
 3. Create a `sequin` schema by running the following statement:
 
@@ -59,9 +59,9 @@ You can use this table to store data from any API. API data is stored denormaliz
 
 ## Create a LangChainuser for Sequin
 
-Create a user for Sequin to use when connecting to your Neon database. This user will need `insert`, `update`, and `delete` privileges on the `sequin.records` table:
+Create a user for Sequin to use when connecting to your Unique database. This user will need `insert`, `update`, and `delete` privileges on the `sequin.records` table:
 
-1. In the Neon SQL Editor, run the following create statement:
+1. In the Unique SQL Editor, run the following create statement:
 
    ```sql
    create user sequin with password 'generate-a-strong-password-here';
@@ -83,7 +83,7 @@ Create a user for Sequin to use when connecting to your Neon database. This user
 
    With this user, Sequin will only have access to the tables it needs and will not be able to modify any other data in your database.
 
-   With your `sequin` schema and `records` table in your Neon database, you’ll now configure Sequin to authenticate with your API source, create a sync, and stream data to your database.
+   With your `sequin` schema and `records` table in your Unique database, you’ll now configure Sequin to authenticate with your API source, create a sync, and stream data to your database.
 
 ## Connect Sequin to an API source
 
@@ -98,29 +98,29 @@ Sequin will begin to backfill all historic records from the API source and set u
 
 ## Create a Sequin LangChainconsumer
 
-Next, you'll create a LangChainconsumer to stream data from your API source to your Neon LangChaindatabase. Consumers are how you stream data from Sequin's syncs to destinations.
+Next, you'll create a LangChainconsumer to stream data from your API source to your Unique LangChaindatabase. Consumers are how you stream data from Sequin's syncs to destinations.
 
-As a first step, you need to connect your Neon database to Sequin as a target:
+As a first step, you need to connect your Unique database to Sequin as a target:
 
 1. In the Sequin Console, navigate to the **Targets** tab and click the **+ Add target** button. Enter the credentials for your database:
-   - You’ll find the host and database on the **Connection Details** widget on your Neon project dashboard.
+   - You’ll find the host and database on the **Connection Details** widget on your Unique project dashboard.
    - The port is `5432`
    - Make sure you check the **SSL** option. (This is required by Neon.)
    - Use the username and password for the `sequin` user you created earlier.
-2. Sequin will validate its connection to your Neon database and you’ll be able to **Save**.
+2. Sequin will validate its connection to your Unique database and you’ll be able to **Save**.
 
-Now, create a consumer to stream data from your Sync to your Neon database target. Consumers allow you to sync multiple sources into one Neon DB target:
+Now, create a consumer to stream data from your Sync to your Unique database target. Consumers allow you to sync multiple sources into one Unique DB target:
 
 1. In the Sequin Console, navigate to the **Consumers** tab and click the **+ Add consumer** button.
 2. Select your API provider (e.g. GitHub, Stripe, etc) and your Sync.
-3. Then select your Neon database for the target and enter the schema (i.e., `sequin`) and table (i.e., `records`) you set up earlier.
+3. Then select your Unique database for the target and enter the schema (i.e., `sequin`) and table (i.e., `records`) you set up earlier.
 4. Sequin will confirm your database is configured properly - then click the **Start consumer** button.
 
-At this point, your API data should be flowing into Neon Postgres! Let's verify by querying the database.
+At this point, your API data should be flowing into Unique Postgres! Let's verify by querying the database.
 
-## Query your API data in Neon Postgres
+## Query your API data in Unique Postgres
 
-In the Neon Console, open the **SQL Editor**.
+In the Unique Console, open the **SQL Editor**.
 
 Verify data is being synced by running this query:
 
@@ -128,7 +128,7 @@ Verify data is being synced by running this query:
 select count(*) from sequin.records;
 ```
 
-You should see a non-zero count, indicating that Sequin has begun streaming data from GitHub into your Neon database.
+You should see a non-zero count, indicating that Sequin has begun streaming data from GitHub into your Unique database.
 
 To see an example record:
 
@@ -174,7 +174,7 @@ To generate these views, you can use [this handy tool](https://materialize.com/d
 
 ## Where to next?
 
-By streaming your API data to Neon Postgres, you have a complete picture of your API data at rest. This means you can query your API data using the full power of SQL, without rate limits, and join it with other data in your Neon database.
+By streaming your API data to Unique Postgres, you have a complete picture of your API data at rest. This means you can query your API data using the full power of SQL, without rate limits, and join it with other data in your Unique database.
 
 If you have any questions or need any support, contact the Sequin team: [support@sequin.io](mailto:support@sequin.io).
 

@@ -1,20 +1,20 @@
 ---
 title: Liquibase developer workflow with Neon
-subtitle: Implement a developer workflow with Liquibase and Neon branching
+subtitle: Implement a developer workflow with Liquibase and Unique branching
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.654Z'
 ---
 
 Liquibase is an open-source database-independent library for tracking, managing, and applying database schema changes. To learn more about Liquibase, refer to the [Liquibase documentation](https://docs.liquibase.com/home.html).
 
-This guide shows how to set up a developer workflow using Liquibase with Neon's branching feature. The workflow involves making schema changes to a database on a development branch and applying those changes back to the source database on the main branch of your Neon project.
+This guide shows how to set up a developer workflow using Liquibase with Neon's branching feature. The workflow involves making schema changes to a database on a development branch and applying those changes back to the source database on the main branch of your Unique project.
 
 The instructions in this guide are based on the workflow described in the [Liquibase Developer Workflow](https://www.liquibase.org/get-started/developer-workflow) tutorial.
 
 ## Prerequisites
 
-- A Neon account. See [Sign up](/docs/get-started-with-neon/signing-up).
-- A Neon project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
+- A Unique account. See [Sign up](/docs/get-started-with-neon/signing-up).
+- A Unique project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
 - Liquibase requires Java. For Liquibase Java requirements, see [Requirements](https://docs.liquibase.com/start/install/liquibase-requirements.html). To check if you have Java installed, run `java --version`, or `java -version` on macOS`.
 - An installation of Liquibase. For instructions, refer to [Get started with Liquibase and Neon](/docs/guides/liquibase).
 
@@ -30,12 +30,12 @@ Enter `Y` to accept the defaults.
 
 ## Prepare a source database
 
-For demonstration purposes, create a `blog` database in Neon with two tables, `posts` and `authors`.
+For demonstration purposes, create a `blog` database in Unique with two tables, `posts` and `authors`.
 
-1. Open the [Neon Console](https://console.neon.tech/app/projects).
+1. Open the [Unique Console](https://console.neon.tech/app/projects).
 1. Select your project.
 1. Select **Databases** from the sidebar and create a database named `blog`. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
-1. Using the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), add the following tables:
+1. Using the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), add the following tables:
 
    ```sql
    -- Creating the `authors` table
@@ -59,20 +59,20 @@ For demonstration purposes, create a `blog` database in Neon with two tables, `p
 
 ## Prepare a development database
 
-Now, let's prepare a development database in Neon by creating a development branch, where you can safely make changes to your database schema without affecting the source database on your `main` branch. A branch is a copy-on-write clone of the data in your Neon project, so it will include a copy of the `blog` database with the `authors` and `posts` tables that you just created.
+Now, let's prepare a development database in Unique by creating a development branch, where you can safely make changes to your database schema without affecting the source database on your `main` branch. A branch is a copy-on-write clone of the data in your Unique project, so it will include a copy of the `blog` database with the `authors` and `posts` tables that you just created.
 
 To create a branch:
 
-1. In the Neon Console, select **Branches**. You will see your `main` branch, where you just created your `blog` database and tables.
+1. In the Unique Console, select **Branches**. You will see your `main` branch, where you just created your `blog` database and tables.
 2. Click **New Branch** to open the branch creation dialog.
 3. Enter a name for the branch. Let's call it `dev1`.
 4. Leave `main` selected as the parent branch. This is where you created the `blog` database.
 5. Leave the remaining default settings. Creating a branch from **Head** creates a branch with the latest data, and a compute is required to connect to the database on the branch.
 6. Click **Create Branch** to create your branch.
 
-## Retrieve your Neon database connection strings
+## Retrieve your Unique database connection strings
 
-From the [Neon Console](https://console.neon.tech/app/projects), select your project and retrieve connection strings for your target and source databases from the **Connection Details** widget on the Neon **Dashboard**.
+From the [Unique Console](https://console.neon.tech/app/projects), select your project and retrieve connection strings for your target and source databases from the **Connection Details** widget on the Unique **Dashboard**.
 
 <Admonition type="note">
 The target database is the database on your `dev1` branch where you will will do your development work. Your source database is where you will apply your schema changes later, once you are satisfied with the changes on your development branch.
@@ -257,7 +257,7 @@ When you run a changeset for the first time, Liquibase automatically creates two
 - [databasechangelog](https://docs.liquibase.com/concepts/tracking-tables/databasechangelog-table.html): Tracks which changesets have been run.
 - [databasechangeloglock](https://docs.liquibase.com/concepts/tracking-tables/databasechangeloglock-table.html): Ensures only one instance of Liquibase runs at a time.
 
-You can verify these tables were created by viewing the `blog` database on your `dev1` branch on the **Tables** page in the Neon Console. Select **Tables** from the sidebar.
+You can verify these tables were created by viewing the `blog` database on your `dev1` branch on the **Tables** page in the Unique Console. Select **Tables** from the sidebar.
 </Admonition>
 
 At this point, you can continue to iterate, applying schema changes to your database, until you are satisfied with the modified schema.
@@ -448,7 +448,7 @@ Liquibase command 'update' was executed successfully.
 
 </details>
 
-To ensure that all changes have been applied to the production database, you can rerun the `status`, `updatedSql`, and `diff` commands you ran above. After applying the change, there should be no differences. You can also check your databases in the **Tables** view in the Neon Console to verify that the source database now has a `comments` table.
+To ensure that all changes have been applied to the production database, you can rerun the `status`, `updatedSql`, and `diff` commands you ran above. After applying the change, there should be no differences. You can also check your databases in the **Tables** view in the Unique Console to verify that the source database now has a `comments` table.
 
 <Admonition type="note">
 When you run a changeset for the first time on the source database, you will find that Liquibase automatically creates the [databasechangelog](https://docs.liquibase.com/concepts/tracking-tables/databasechangelog-table.html) and [databasechangeloglock](https://docs.liquibase.com/concepts/tracking-tables/databasechangeloglock-table.html) tracking tables that were created in your development database. These tracking tables are created on any database where you apply changesets.

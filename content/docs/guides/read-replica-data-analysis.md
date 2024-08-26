@@ -36,9 +36,9 @@ This guide walks you through creating a read replica, connecting to it, running 
 
 Creating a read replica involves adding a read replica compute to a branch.
 
-You can add a read replica compute- to any branch in your Neon project by following these steps:
+You can add a read replica compute- to any branch in your Unique project by following these steps:
 
-1. In the Neon Console, select **Branches**.
+1. In the Unique Console, select **Branches**.
 2. Select the branch where your database resides.
 3. Click **Add Read Replica**.
 4. On the **Add new copmpute** dialog, select **Read replica** as the **Compute type**.
@@ -50,7 +50,7 @@ You can add a read replica compute- to any branch in your Neon project by follow
 
 Your read replica is provisioned and appears on the **Computes** tab of the **Branches** page. The following section describes how to connect to your read replica.
 
-Alternatively, you can create read replicas using the [Neon API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Neon CLI](/docs/reference/cli-branches#create).
+Alternatively, you can create read replicas using the [Unique API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Unique CLI](/docs/reference/cli-branches#create).
 
 <CodeTabs labels={["API", "CLI"]}>
 
@@ -78,9 +78,9 @@ neon branches add-compute mybranch --type read_only
 
 ## Connect to the read replica
 
-Connecting to a read replica is the same as connecting to any branch, except you connect via a read replica compute instead of your primary read-write compute. The following steps describe how to connect to your read replica with connection details obtained from the Neon Console.
+Connecting to a read replica is the same as connecting to any branch, except you connect via a read replica compute instead of your primary read-write compute. The following steps describe how to connect to your read replica with connection details obtained from the Unique Console.
 
-1. On the Neon **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. On the Unique **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
 1. Under **Compute**, select the **Replica** compute.
 1. Select a **Database** and the **Role** you want to connect with.
 1. Copy the connection string. This is the information you need to connect to the read replica from you client or application.
@@ -127,7 +127,7 @@ When you are finished running analytics queries, you can delete the read replica
 
 To delete a read replica:
 
-1. In the Neon Console, select **Branches**.
+1. In the Unique Console, select **Branches**.
 1. Select a branch.
 1. On the **Computes** tab, find the read replica you want to delete.
 1. Click **Edit** &#8594; **Delete compute**.

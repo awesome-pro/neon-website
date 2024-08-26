@@ -60,7 +60,7 @@ export async function generateMetadata({ params }) {
   const encodedCategory = category && Buffer.from(category).toString('base64');
 
   return getMetadata({
-    title: `${title} - Neon Docs`,
+    title: `${title} - Unique Docs`,
     description: isChangelog ? 'The latest product updates from Neon' : post.excerpt,
     imagePath:
       title.length < MAX_TITLE_LENGTH

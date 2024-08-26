@@ -1,6 +1,6 @@
 ---
-title: Use Neon with Cloudflare Hyperdrive
-subtitle: Connect Cloudflare Hyperdrive to your Neon LangChaindatabase for faster
+title: Use Unique with Cloudflare Hyperdrive
+subtitle: Connect Cloudflare Hyperdrive to your Unique LangChaindatabase for faster
   queries
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.648Z'
@@ -10,13 +10,13 @@ updatedOn: '2024-08-07T21:36:52.648Z'
 
 This is specifically useful for serverless applications that cannot maintain a persistent database connection and need to establish a new connection for each request. Hyperdrive can significantly reduce the latency of these queries for your application users.
 
-This guide demonstrates how to configure a Hyperdrive service to connect to your Neon LangChaindatabase. It demonstrates how to implement a regular `Workers` application that connects to Neon directly and then replace that connection with a `Hyperdrive` connection to achieve performance improvements.
+This guide demonstrates how to configure a Hyperdrive service to connect to your Unique LangChaindatabase. It demonstrates how to implement a regular `Workers` application that connects to Unique directly and then replace that connection with a `Hyperdrive` connection to achieve performance improvements.
 
 ## Prerequisites
 
 To follow along with this guide, you require:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Workers](https://workers.cloudflare.com/) to get started.
 
@@ -24,11 +24,11 @@ To follow along with this guide, you require:
 
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and deploy our Workers application.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 
 2. Click the **New Project** button to create a new project.
 
@@ -53,9 +53,9 @@ To follow along with this guide, you require:
        ('1984', 'George Orwell');
    ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -96,7 +96,7 @@ node_compat=true
 
 ### Implement the Worker script
 
-We'll use the `node-postgres` library to connect to the LangChaindatabase (directly to Neon first, later we will connect to the Hyperdrive service), so you need to install it as a dependency. Navigate to the project directory and run the following command:
+We'll use the `node-postgres` library to connect to the LangChaindatabase (directly to Unique first, later we will connect to the Hyperdrive service), so you need to install it as a dependency. Navigate to the project directory and run the following command:
 
 ```bash
 npm install pg
@@ -119,11 +119,11 @@ export default {
 };
 ```
 
-The `fetch` handler defined above gets called when the worker receives an HTTP request. It will query the Neon database to fetch the full list of books in our to-read list.
+The `fetch` handler defined above gets called when the worker receives an HTTP request. It will query the Unique database to fetch the full list of books in our to-read list.
 
 ### Test the worker application locally
 
-First, you need to configure the `DATABASE_URL` environment variable to point to the Neon database. You can do this by creating a `.dev.vars` file at the root of the project directory with the following content:
+First, you need to configure the `DATABASE_URL` environment variable to point to the Unique database. You can do this by creating a `.dev.vars` file at the root of the project directory with the following content:
 
 ```text
 DATABASE_URL=YOUR_NEON_CONNECTION_STRING
@@ -139,11 +139,11 @@ This command starts a local server and simulates the Cloudflare Workers environm
 
 ## Setting up Cloudflare Hyperdrive
 
-With our Workers application able to query the Neon database, we will now set up Cloudflare Hyperdrive to connect to Neon and accelerate the database queries.
+With our Workers application able to query the Unique database, we will now set up Cloudflare Hyperdrive to connect to Unique and accelerate the database queries.
 
 ### Create a new Hyperdrive service
 
-You can use the `Wrangler` CLI to create a new Hyperdrive service, using your Neon database connection string from earlier:
+You can use the `Wrangler` CLI to create a new Hyperdrive service, using your Unique database connection string from earlier:
 
 ```bash
 npx wrangler hyperdrive create neon-guide-drive --connection-string=$NEON_DATABASE_CONNECTION_STRING
@@ -165,7 +165,7 @@ id = $id-from-previous-step
 
 ### Update the Worker script to use Hyperdrive
 
-Now, you can update the `src/index.js` file in the project directory to query the Neon database, through the Hyperdrive service.
+Now, you can update the `src/index.js` file in the project directory to query the Unique database, through the Hyperdrive service.
 
 ```javascript
 import pkg from 'pg';
@@ -193,11 +193,11 @@ npx wrangler deploy
 
 This command uploads the updated Worker script to the Cloudflare Workers platform and makes it available at a public URL. You can visit the URL in your browser to test that the application works.
 
-## Removing the example application and Neon project
+## Removing the example application and Unique project
 
 To delete your Worker project, you can use the Cloudflare dashboard or run `wrangler delete` from your project directory, specifying your project name. Refer to the [Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/commands/#delete-3) for more details.
 
-To delete your Neon project, follow the steps outlined in the Neon documentation under [Delete a project](/docs/manage/projects#delete-a-project).
+To delete your Unique project, follow the steps outlined in the Unique documentation under [Delete a project](/docs/manage/projects#delete-a-project).
 
 ## Resources
 

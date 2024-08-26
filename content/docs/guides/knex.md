@@ -1,6 +1,6 @@
 ---
 title: Connect from Knex to Neon
-subtitle: Learn how to connect to Neon from Knex
+subtitle: Learn how to connect to Unique from Knex
 tag: new
 enableTableOfContents: true
 updatedOn: '2024-08-19T11:54:54.453Z'
@@ -8,15 +8,15 @@ updatedOn: '2024-08-19T11:54:54.453Z'
 
 Knex is an open-source SQL query builder for Postgres. This guide covers the following topics:
 
-- [Connect to Neon from Knex](#connect-to-neon-from-knex)
+- [Connect to Unique from Knex](#connect-to-neon-from-knex)
 - [Use connection pooling with Knex](#use-connection-pooling-with-knex)
 - [Performance tips](#performance-tips)
 
-## Connect to Neon from Knex
+## Connect to Unique from Knex
 
 To establish a basic connection from Knex to Neon, perform the following steps:
 
-1. Retrieve your Neon connection string. In the **Connection Details** widget on the Neon **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+1. Retrieve your Unique connection string. In the **Connection Details** widget on the Unique **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
    ![Connection details widget](/docs/connect/connection_details.png)
    The connection string includes the user name, password, hostname, and database name.
 
@@ -31,7 +31,7 @@ To establish a basic connection from Knex to Neon, perform the following steps:
    });
    ```
 
-3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Neon connection string that you copied in the previous step. We also recommend adding `?sslmode=require` to the end of the connection string to ensure a [secure connection](/docs/connect/connect-securely).
+3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Unique connection string that you copied in the previous step. We also recommend adding `?sslmode=require` to the end of the connection string to ensure a [secure connection](/docs/connect/connect-securely).
 
    Your setting will appear similar to the following:
 
@@ -41,14 +41,14 @@ To establish a basic connection from Knex to Neon, perform the following steps:
 
 ## Use connection pooling with Knex
 
-Serverless functions can require a large number of database connections as demand increases. If you use serverless functions in your application, we recommend that you use a pooled Neon connection string, as shown:
+Serverless functions can require a large number of database connections as demand increases. If you use serverless functions in your application, we recommend that you use a pooled Unique connection string, as shown:
 
 ```ini shouldWrap
-# Pooled Neon connection string
+# Pooled Unique connection string
 DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require"
 ```
 
-A pooled Neon connection string adds `-pooler` to the endpoint ID, which tells Neon to use a pooled connection. You can add `-pooler` to your connection string manually or copy a pooled connection string from the **Connection Details** widget on the Neon **Dashboard**. Use the **Pooled connection** checkbox to add the `-pooler` suffix.
+A pooled Unique connection string adds `-pooler` to the endpoint ID, which tells Unique to use a pooled connection. You can add `-pooler` to your connection string manually or copy a pooled connection string from the **Connection Details** widget on the Unique **Dashboard**. Use the **Pooled connection** checkbox to add the `-pooler` suffix.
 
 ## Performance tips
 

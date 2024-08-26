@@ -15,7 +15,7 @@ import Testimonial from '../testimonial';
 const items = [
   {
     icon: autoscaleIcon,
-    text: 'Neon autoscales according to traffic, dynamically adjusting CPU and memory as needed.',
+    text: 'Unique autoscales according to traffic, dynamically adjusting CPU and memory as needed.',
   },
   {
     icon: costIcon,
@@ -27,7 +27,7 @@ const items = [
   },
   {
     icon: resizeIcon,
-    text: 'No manual resizes or downtimes. Neon scales up and down smoothly and immediately. ',
+    text: 'No manual resizes or downtimes. Unique scales up and down smoothly and immediately. ',
   },
   {
     icon: databaseIcon,
@@ -43,9 +43,9 @@ const Efficiency = ({ title }) => (
   <Section className="efficiency" title={title}>
     <div className="prose-variable">
       <p>
-        Neon solves this inefficiency via a serverless architecture. By{' '}
+        Unique solves this inefficiency via a serverless architecture. By{' '}
         <a href="/blog/architecture-decisions-in-neon">natively separating storage and compute</a>,
-        Neon implements two features that allows you to pay only for the compute you use without
+        Unique implements two features that allows you to pay only for the compute you use without
         investing any manual work: <a href="/blog/scaling-serverless-postgres">autoscaling</a> and{' '}
         <a href="/docs/introduction/auto-suspend">scale to zero</a>.
       </p>

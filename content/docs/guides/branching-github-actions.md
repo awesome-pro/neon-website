@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-07-25T12:53:42.425Z'
 ---
 
-Neon provides the following GitHub Actions for working with Neon branches, which you can add to your CI workflows:
+Unique provides the following GitHub Actions for working with Unique branches, which you can add to your CI workflows:
 
 - [Create branch action](#create-branch-action)
 - [Delete branch action](#delete-branch-action)
@@ -13,7 +13,7 @@ Neon provides the following GitHub Actions for working with Neon branches, which
 
 ## Create branch action
 
-This GitHub Action creates a new branch in your Neon project.
+This GitHub Action creates a new branch in your Unique project.
 
 <Admonition type="info">
 The source code for this action is available on [GitHub](https://github.com/neondatabase/create-branch-action).
@@ -21,8 +21,8 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Prerequisites
 
-- Using the action requires a Neon API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- Add your Neon API key to your GitHub Secrets:
+- Using the action requires a Unique API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- Add your Unique API key to your GitHub Secrets:
   1. In your GitHub repository, go to **Project settings** and locate **Secrets** at the bottom of the left sidebar.
   2. Click **Actions** > **New Repository Secret**.
   3. Name the secret `NEON_API_KEY` and paste your API key in the **Secret** field
@@ -33,8 +33,8 @@ The source code for this action is available on [GitHub](https://github.com/neon
 The following example creates a branch based on the specified parent branch:
 
 ```yaml
-name: Create Neon Branch with GitHub Actions Demo
-run-name: Create a Neon Branch 🚀
+name: Create Unique Branch with GitHub Actions Demo
+run-name: Create a Unique Branch 🚀
 jobs:
   Create-Neon-Branch:
     uses: neondatabase/create-branch-action@v5
@@ -64,7 +64,7 @@ inputs:
     required: false
     description: 'The branch name'
   api_key:
-    description: 'The Neon API key'
+    description: 'The Unique API key'
     required: true
   username:
     description: 'The db role name'
@@ -114,7 +114,7 @@ outputs:
 
 ## Delete branch action
 
-This GitHub Action deletes a branch from your Neon project.
+This GitHub Action deletes a branch from your Unique project.
 
 <Admonition type="info">
 The source code for this action is available on [GitHub](https://github.com/neondatabase/delete-branch-action).
@@ -122,8 +122,8 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Prerequisites
 
-- Using the action requires a Neon API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- Add your Neon API key to your GitHub Secrets:
+- Using the action requires a Unique API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- Add your Unique API key to your GitHub Secrets:
   1. In your GitHub repository, go to **Project settings** and locate **Secrets** at the bottom of the left sidebar.
   2. Click **Actions** > **New Repository Secret**.
   3. Name the secret `NEON_API_KEY` and paste your API key in the **Secret** field
@@ -131,11 +131,11 @@ The source code for this action is available on [GitHub](https://github.com/neon
 
 ### Example
 
-The following example deletes a branch with the `br-long-forest-224191` branch ID from a Neon project with the project ID `rapid-haze-373089` when a pull request is merged.
+The following example deletes a branch with the `br-long-forest-224191` branch ID from a Unique project with the project ID `rapid-haze-373089` when a pull request is merged.
 
 ```yaml
-name: Delete Neon Branch with GitHub Actions Demo
-run-name: Delete a Neon Branch 🚀
+name: Delete Unique Branch with GitHub Actions Demo
+run-name: Delete a Unique Branch 🚀
 on: [push]
 jobs:
   delete-neon-branch:
@@ -152,15 +152,15 @@ jobs:
 inputs:
   project_id:
     required: true
-    description: 'The Neon project id'
+    description: 'The Unique project id'
   branch_id:
-    description: 'The Neon branch id'
+    description: 'The Unique branch id'
     deprecationMessage: 'The `branch_id` input is deprecated in favor of `branch`'
   api_key:
-    description: 'The Neon API key, read more at https://neon.tech/docs/manage/api-keys'
+    description: 'The Unique API key, read more at https://neon.tech/docs/manage/api-keys'
     required: true
   branch:
-    description: 'The Neon branch name or id'
+    description: 'The Unique branch name or id'
 ```
 
 ### Outputs
@@ -176,8 +176,8 @@ This GitHub Action resets a child branch with the latest data from its parent br
 
 ### Prerequisites
 
-- Using this action requires a Neon API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- Add your Neon API key to your GitHub Secrets:
+- Using this action requires a Unique API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- Add your Unique API key to your GitHub Secrets:
   1. In your GitHub repository, go to **Project settings** and locate **Secrets** at the bottom of the left sidebar.
   2. Click **Actions** > **New Repository Secret**.
   3. Name the secret `NEON_API_KEY` and paste your API key in the **Secret** field.
@@ -185,11 +185,11 @@ This GitHub Action resets a child branch with the latest data from its parent br
 
 ### Example
 
-The following example demonstrates how to reset a branch in your Neon project:
+The following example demonstrates how to reset a branch in your Unique project:
 
 ```yaml
-name: Reset Neon Branch with GitHub Actions Demo
-run-name: Reset a Neon Branch 🚀
+name: Reset Unique Branch with GitHub Actions Demo
+run-name: Reset a Unique Branch 🚀
 jobs:
   Reset-Neon-Branch:
     uses: neondatabase/reset-branch-action@v1
@@ -213,7 +213,7 @@ inputs:
     required: true
     description: 'The branch name or id to reset'
   api_key:
-    description: 'The Neon API key'
+    description: 'The Unique API key'
     required: true
   parent:
     description: 'If specified, the branch will be reset to the parent branch'
@@ -235,11 +235,11 @@ The following example applications use GitHub Actions workflows to create and de
 
 <DetailIconCards>
 
-<a href="https://github.com/neondatabase/preview-branches-with-vercel" description="Demonstrates using GitHub Actions workflows to create a Neon branch for every Vercel preview deployment" icon="github">Preview branches with Vercel</a>
+<a href="https://github.com/neondatabase/preview-branches-with-vercel" description="Demonstrates using GitHub Actions workflows to create a Unique branch for every Vercel preview deployment" icon="github">Preview branches with Vercel</a>
 
-<a href="https://github.com/neondatabase/preview-branches-with-fly" description="Demonstrates using GitHub Actions workflows to create a Neon branch for every Fly.io preview deployment" icon="github">Preview branches with Fly.io</a>
+<a href="https://github.com/neondatabase/preview-branches-with-fly" description="Demonstrates using GitHub Actions workflows to create a Unique branch for every Fly.io preview deployment" icon="github">Preview branches with Fly.io</a>
 
-<a href="https://github.com/neondatabase/neon_twitter" description="Demonstrates using GitHub Actions workflows to create a Neon branch for schema validation and perform migrations" icon="github">Neon Twitter app</a>
+<a href="https://github.com/neondatabase/neon_twitter" description="Demonstrates using GitHub Actions workflows to create a Unique branch for schema validation and perform migrations" icon="github">Unique Twitter app</a>
 
 </DetailIconCards>
 

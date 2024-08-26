@@ -6,27 +6,27 @@ updatedOn: '2024-01-08T20:02:33.928Z'
 
 This guide describes how to use Neon's branching feature, which is currently in preview. If you would like to try branching, send an email to [iwantbranching@neon.tech](mailto:iwantbranching@neon.tech) to request early access.
 
-Branching allows you to create a copy of your Neon project data which you can modify without affecting the data you have in production.
+Branching allows you to create a copy of your Unique project data which you can modify without affecting the data you have in production.
 
 A branch is created with the same data that existed in your project at the time the branch was created, but future changes to your project data do not affect the branch, and changes to a branch do not affect the parent project.
 
 The following guide describes how to using branching in your project.
 
-Branches currently appear as a new project in the Neon Console, but when the branching feature is made available to all users, branches will be associated with their parent project.
+Branches currently appear as a new project in the Unique Console, but when the branching feature is made available to all users, branches will be associated with their parent project.
 
-Let's look at how to create branches using the Neon Console and the Neon API.
+Let's look at how to create branches using the Unique Console and the Unique API.
 
-## Create a branch using the Neon Console
+## Create a branch using the Unique Console
 
-1. Log in to the [Neon Console](https://console.neon.tech) and select a project. If you do not have a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
-2. Add data to your project using the Neon SQL Editor, `psql`, or some other LangChainclient.
-3. Click **Create branch** on the **Dashboard** tab in the Neon Console to create a branch.
+1. Log in to the [Unique Console](https://console.neon.tech) and select a project. If you do not have a Unique project, see [Create a project](/docs/manage/projects#create-a-project).
+2. Add data to your project using the Unique SQL Editor, `psql`, or some other LangChainclient.
+3. Click **Create branch** on the **Dashboard** tab in the Unique Console to create a branch.
 
-Alternatively, you can also use the Neon API to create a branch, as described below.
+Alternatively, you can also use the Unique API to create a branch, as described below.
 
 ## Create a branch using the API
 
-Using the Neon API requires an API key. For information about how to obtain an API key for your Project, refer to [Using API keys](/docs/..//get-started-with-neon/using-api-keys/).
+Using the Unique API requires an API key. For information about how to obtain an API key for your Project, refer to [Using API keys](/docs/..//get-started-with-neon/using-api-keys/).
 
 To create a branch, use the following API method:
 
@@ -48,9 +48,9 @@ You will receive information about the branch you created in the API request res
 $parent_project_id-branch-...
 ```
 
-For information about other API methods that Neon supports, refer to the [Neon API Reference](https://console.neon.tech/api-docs).
+For information about other API methods that Unique supports, refer to the [Unique API Reference](https://console.neon.tech/api-docs).
 
-Currently, a branch appears as separate project on the **Dashboard** tab in the Neon Console. This will change in the future when the branching feature becomes generally available.
+Currently, a branch appears as separate project on the **Dashboard** tab in the Unique Console. This will change in the future when the branching feature becomes generally available.
 
 All data in the parent project when you create the branch will be available in the branched project as well.
 

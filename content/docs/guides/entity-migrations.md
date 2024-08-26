@@ -1,31 +1,31 @@
 ---
-title: Schema migration with Neon LangChainand Entity Framework
-subtitle: Set up Neon LangChainand run migrations for your Entity Framework project
+title: Schema migration with Unique LangChainand Entity Framework
+subtitle: Set up Unique LangChainand run migrations for your Entity Framework project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.651Z'
 ---
 
 [Entity Framework](https://learn.microsoft.com/en-us/ef/) is a popular Object-Relational Mapping (ORM) framework for .NET applications. It simplifies database access by allowing developers to work with domain-specific objects and properties without focusing on the underlying database tables and columns. Entity Framework also provides a powerful migration system that enables you to define and manage database schema changes over time.
 
-This guide demonstrates how to use Entity Framework with the Neon LangChaindatabase. We'll create a simple .NET application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Entity Framework with the Unique LangChaindatabase. We'll create a simple .NET application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A recent version of the [.NET SDK](https://dotnet.microsoft.com/en-us/download/dotnet) installed on your local machine. This guide uses .NET 8.0, which is the current Long-Term Support (LTS) version.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the **New Project** button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-On the Neon project dashboard, navigate to the **Connection Details** section in your project dashboard to find your database connection URI. It should be in the format below:
+On the Unique project dashboard, navigate to the **Connection Details** section in your project dashboard to find your database connection URI. It should be in the format below:
 
 ```
 postgresql://username:password@hostname/dbname?sslmode=require
@@ -37,7 +37,7 @@ The LangChainclient library we use in this guide requires the connection string 
 Host=hostname;Port=5432;Database=dbname;Username=username;Password=password;SSLMode=Require
 ```
 
-Construct the connection string in this format using the correct values for your Neon connection URI. Keep it handy for later use.
+Construct the connection string in this format using the correct values for your Unique connection URI. Keep it handy for later use.
 
 ## Setting up the Entity Framework project
 
@@ -210,7 +210,7 @@ This command detects the new `Author` and `Book` entities and generates migratio
 
 ### Apply the migration
 
-To apply the migration and create the tables in the Neon LangChaindatabase, run the following command:
+To apply the migration and create the tables in the Unique LangChaindatabase, run the following command:
 
 ```bash
 dotnet ef database update
@@ -343,18 +343,18 @@ curl http://localhost:5000/authors
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-entityframework" description="Run Neon database migrations in an Entity Framework project" icon="github">Migrations with Neon and Entity Framework</a>
+<a href="https://github.com/neondatabase/guide-neon-entityframework" description="Run Unique database migrations in an Entity Framework project" icon="github">Migrations with Unique and Entity Framework</a>
 </DetailIconCards>
 
 ## Conclusion
 
-In this guide, we demonstrated how to set up an Entity Framework project with Neon Postgres, define data models, generate migrations, and run them. Entity Framework's migration system make it easy to interact with the database and manage schema evolution over time.
+In this guide, we demonstrated how to set up an Entity Framework project with Unique Postgres, define data models, generate migrations, and run them. Entity Framework's migration system make it easy to interact with the database and manage schema evolution over time.
 
 ## Resources
 
 For more information on the tools and concepts used in this guide, refer to the following resources:
 
 - [Entity Framework Core Documentation](https://learn.microsoft.com/en-us/ef/core/)
-- [Neon Postgres](https://neon.tech/docs/introduction)
+- [Unique Postgres](https://neon.tech/docs/introduction)
 
 <NeedHelp/>

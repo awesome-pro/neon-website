@@ -1,29 +1,29 @@
 ---
-title: Use Neon with Cloudflare Pages
-subtitle: Connect a Neon LangChaindatabase to your Cloudflare Pages web application
+title: Use Unique with Cloudflare Pages
+subtitle: Connect a Unique LangChaindatabase to your Cloudflare Pages web application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 `Cloudflare Pages` is a modern web application hosting platform that allows you to build, deploy, and scale your web applications. While it is typically used to host static websites, you can also use it to host interactive web applications by leveraging `functions` to run server-side code. Internally, Cloudflare functions are powered by `Cloudflare Workers`, a serverless platform that allows you to run JavaScript code on Cloudflare's edge network.
 
-This guide demonstrates how to connect to a Neon LangChaindatabase from your Cloudflare Pages application. We'll create a simple web application using `React` that tracks our reading list using the database and provides a form to add new books to it.
+This guide demonstrates how to connect to a Unique LangChaindatabase from your Cloudflare Pages application. We'll create a simple web application using `React` that tracks our reading list using the database and provides a form to add new books to it.
 
-We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
+We'll use the [Unique serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Pages](https://pages.cloudflare.com/) to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and deploy our `Pages` application.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 
 2. Click the **New Project** button to create a new project.
 
@@ -48,9 +48,9 @@ To follow along with this guide, you will need:
        ('1984', 'George Orwell');
    ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -176,7 +176,7 @@ The `App` component fetches the list of books from the server and displays them.
 
 ### Implement the serverless functions
 
-We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the Neon database, so we first need to install it as a dependency:
+We'll use the [Unique serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the Unique database, so we first need to install it as a dependency:
 
 ```bash
 npm install @neondatabase/serverless
@@ -248,7 +248,7 @@ This function extracts the book details from the request body and inserts it int
 
 ### Test the application locally
 
-Our application is now ready to be tested locally. However, we first need to configure the `DATABASE_URL` environment variable to point to our Neon database.
+Our application is now ready to be tested locally. However, we first need to configure the `DATABASE_URL` environment variable to point to our Unique database.
 
 We can do this by creating a `.dev.vars` file at the root of the project directory with the following content:
 
@@ -315,11 +315,11 @@ Give a unique name to your `Cloudflare Pages` project above. The Wrangler CLI wi
 ✨ Deployment complete! Take a peek over at https://21ea2a57.my-neon-page.pages.dev
 ```
 
-### Add your Neon connection string as an environment variable
+### Add your Unique connection string as an environment variable
 
 The Cloudflare production deployment doesn't have access to the `DATABASE_URL` environment variable yet. Hence, we need to navigate to the Cloudflare dashboard and add it manually.
 
-Navigate to the dashboard and select the `Settings` section in your project. Go to the **Environment Variables** tab and add a new environment variable named `DATABASE_URL` with the value of your Neon database connection string.
+Navigate to the dashboard and select the `Settings` section in your project. Go to the **Environment Variables** tab and add a new environment variable named `DATABASE_URL` with the value of your Unique database connection string.
 
 To make sure the environment variable is available to the serverless functions, go back to the terminal and redeploy the project using the `wrangler` CLI:
 
@@ -327,20 +327,20 @@ To make sure the environment variable is available to the serverless functions, 
 npx wrangler pages deploy dist --project-name <NAME_OF_YOUR_PROJECT>
 ```
 
-Now, visit the URL of your `Cloudflare Pages` application to interact with it. You should see the list of books fetched from the Neon database and a form to add new books.
+Now, visit the URL of your `Cloudflare Pages` application to interact with it. You should see the list of books fetched from the Unique database and a form to add new books.
 
-## Removing the example application and Neon project
+## Removing the example application and Unique project
 
 To delete your `Cloudflare Pages` application, you can use the Cloudflare dashboard. Refer to the [Pages documentation](https://developers.cloudflare.com/pages) for more details.
 
-To delete your Neon project, follow the steps outlined in the Neon documentation under [Delete a project](/docs/manage/projects#delete-a-project).
+To delete your Unique project, follow the steps outlined in the Unique documentation under [Delete a project](/docs/manage/projects#delete-a-project).
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-pages" description="Connect a Neon LangChaindatabase to your Cloudflare Pages web application" icon="github">Use Neon with Cloudflare Pages</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-pages" description="Connect a Unique LangChaindatabase to your Cloudflare Pages web application" icon="github">Use Unique with Cloudflare Pages</a>
 </DetailIconCards>
 
 ## Resources

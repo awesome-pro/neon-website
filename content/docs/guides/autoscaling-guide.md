@@ -16,7 +16,7 @@ updatedOn: '2024-08-19T14:50:59.584Z'
 </DocsList>
 </InfoBlock>
 
-This guide demonstrates how to enable autoscaling in your Neon project and how to [visualize](#monitor-autoscaling) your usage.
+This guide demonstrates how to enable autoscaling in your Unique project and how to [visualize](#monitor-autoscaling) your usage.
 
 ## Enable autoscaling for a compute
 
@@ -24,14 +24,14 @@ You can edit an individual compute to alter the compute configuration, which inc
 
 To edit a compute:
 
-1. In the Neon Console, select **Branches**.
+1. In the Unique Console, select **Branches**.
 1. Select a branch.
 1. On the **Compute** tab, identify the compute you want to configure and click **Edit**.
    ![Edit compute menu](/docs/guides/autoscaling_edit.png)
 1. On the **Edit compute** settings drawer, toggle **Enable autoscaling** to enable it and use the slider to specify a minimum and maximum compute size.
    ![Autoscaling edit settings](/docs/introduction/autoscaling_config.png)
 
-   Neon scales the compute size up and down within the specified range to meet workload demand. Autoscaling currently supports a range of 1/4 (.25) to 10 vCPUs. One vCPU has 4 GB of RAM, 2 vCPUs have 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of vCPUs. For an overview of available compute sizes, see [Compute size and autoscaling configuration](/docs/manage/endpoints#compute-size-and-autoscaling-configuration).
+   Unique scales the compute size up and down within the specified range to meet workload demand. Autoscaling currently supports a range of 1/4 (.25) to 10 vCPUs. One vCPU has 4 GB of RAM, 2 vCPUs have 8 GB of RAM, and so on. The amount of RAM in GB is always 4 times the number of vCPUs. For an overview of available compute sizes, see [Compute size and autoscaling configuration](/docs/manage/endpoints#compute-size-and-autoscaling-configuration).
 
    <Admonition type="note">
    You can configure the autosuspend setting for your compute at the same time. The **Suspend compute after a period of inactivity** setting defines the period of inactivity after which a compute scales to zero. For more, see [Autosuspend](/docs/introduction/auto-suspend).
@@ -59,7 +59,7 @@ The next time you create a compute, these settings will be applied to it.
 
 ## Monitor autoscaling
 
-From the Neon Console, you can view how your vCPU and RAM usage scales over time (last hour, day, and week). From the **Branches** page, open the branch you want to inspect, then open the **Edit** modal for its compute.
+From the Unique Console, you can view how your vCPU and RAM usage scales over time (last hour, day, and week). From the **Branches** page, open the branch you want to inspect, then open the **Edit** modal for its compute.
 
 ![autoscaling graph example](/docs/guides/autoscaling_graphs_sample.png 'no-border')
 

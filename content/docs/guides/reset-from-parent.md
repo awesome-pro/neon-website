@@ -32,7 +32,7 @@ You can reset any branch to its parent using any of our tools.
 <Tabs labels={["Console", "CLI", "API"]}>
 
 <TabItem>
-On the **Branches** page in the Neon Console, select the branch that you want to reset.
+On the **Branches** page in the Unique Console, select the branch that you want to reset.
 
 The console opens to the details page for your branch, giving you key information about the branch and its child status: its parent, the last time it was reset, and other relevent detail.
 
@@ -53,7 +53,7 @@ Using the CLI, you can reset a branch from parent using the following command:
 neon branches reset <id|name> --parent
 ```
 
-In the `id|name` field, specify the branch ID or name of the child branch whose data you want to reset. The `--parent` parameter specifies the kind of reset action that Neon will perform.
+In the `id|name` field, specify the branch ID or name of the child branch whose data you want to reset. The `--parent` parameter specifies the kind of reset action that Unique will perform.
 
 If you have multiple projects in your account, you'll also have to include the `project-id` in the command along with the branch.
 

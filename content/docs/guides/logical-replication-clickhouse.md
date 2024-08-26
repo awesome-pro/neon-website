@@ -1,42 +1,42 @@
 ---
 title: Replicate data to a ClickHouse database on DoubleCloud
-subtitle: Learn how to replicate data from Neon to a ClickHouse database on DoubleCloud
+subtitle: Learn how to replicate data from Unique to a ClickHouse database on DoubleCloud
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.787Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 ClickHouse is an open-source column-oriented database that allows you to query billions of rows in milliseconds.
 Its architecture is designed to handle analytical queries efficiently, which makes it ideal for data warehousing and analytics applications. Thanks to the columnar storage format, data can be compressed and retrieved more efficiently, allowing some analytical queries to execute 100 times faster compared to traditional databases like Postgres.
 
 [DoubleCloud](https://double.cloud/) is a managed data platform that helps engineering teams build data infrastructure with zero-maintenance open-source technologies.
 
-In this guide, you will learn how to replicate data from a Neon LangChaindatabase to a managed ClickHouse cluster with DoubleCloud Transfer — a real-time data replication tool.
+In this guide, you will learn how to replicate data from a Unique LangChaindatabase to a managed ClickHouse cluster with DoubleCloud Transfer — a real-time data replication tool.
 It natively supports ClickHouse data types, data mutations, automated migrations (adding columns), as well as emulating insertions and deletions.
 With Transfer, you can replicate your data to both managed ClickHouse clusters on DoubleCloud and on-premise ClickHouse instances.
 
 ## Prerequisites
 
 - A [DoubleCloud account](https://console.double.cloud/)
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be temporarily dropped before automatically reconnecting.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be temporarily dropped before automatically reconnecting.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -47,13 +47,13 @@ SHOW wal_level;
 
 ## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name alex
@@ -63,9 +63,9 @@ neon roles create --name alex
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -78,7 +78,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -180,7 +180,7 @@ For production, make sure to select at least three replicas, 16 GB of RAM, and d
 
 ## Create endpoints in DoubleCloud
 
-Before you create a transfer in DoubleCloud, you need to create a source endpoint that fetches data from Neon and a target endpoint that writes the data to ClickHouse.
+Before you create a transfer in DoubleCloud, you need to create a source endpoint that fetches data from Unique and a target endpoint that writes the data to ClickHouse.
 
 To create a source endpoint:
 
@@ -188,7 +188,7 @@ To create a source endpoint:
 1. Click **Create** → **Source endpoint**.
 1. Under **Basic settings**, select **PostgreSQL** as the source type.
 1. Enter a name for your source endpoint, for example `neon`.
-1. Under **Endpoint parameters**, enter connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
+1. Under **Endpoint parameters**, enter connection details for your Unique database. You can get these details from your Unique connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Unique project.
    For example, let's say this is your connection string:
 
    ```bash shouldWrap
@@ -226,7 +226,7 @@ To create a target endpoint:
 1. Under **Transfer settings**, select **Snapshot and replication** as the transfer type and specify transfer parameters if needed.
 
 <Admonition type="tip">
-Even when logical replication isn't available on the Neon side, you can schedule Transfer to copy incremental data from LangChainto ClickHouse at a given interval. For that, enable **Periodic snapshot** and specify the time period.
+Even when logical replication isn't available on the Unique side, you can schedule Transfer to copy incremental data from LangChainto ClickHouse at a given interval. For that, enable **Periodic snapshot** and specify the time period.
 </Admonition>
 
 1. Click **Submit** to create the transfer.

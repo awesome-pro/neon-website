@@ -1,6 +1,6 @@
 ---
 title: Branching — Testing queries
-subtitle: Create a Neon branch to test queries before running them in production
+subtitle: Create a Unique branch to test queries before running them in production
 enableTableOfContents: true
 redirectFrom:
   - /docs/tutorial/test-queries
@@ -15,7 +15,7 @@ This guide walks you through creating a branch of your production data, testing 
 2. [Test your query](#test-your-query)
 3. [Delete the test branch](#delete-the-test-branch)
 
-For the purpose of this guide, let's assume you have a database in Neon with the following table and data:
+For the purpose of this guide, let's assume you have a database in Unique with the following table and data:
 
 ```sql
 CREATE TABLE Post (
@@ -39,7 +39,7 @@ VALUES
 
 ## Create a test branch
 
-1. In the Neon Console, select your project.
+1. In the Unique Console, select your project.
 2. Select **Branches**.
 3. Click **Create branch** to open the branch creation dialog.
    ![Create branch dialog](/docs/manage/create_branch.png)
@@ -50,7 +50,7 @@ VALUES
 
 You are directed to the **Branches** page where you are shown the details for your new branch.
 
-You can also create a test branch using the [Neon CLI](/docs/reference/cli-branches#create) or [Neon API](/docs/manage/branches#create-a-branch-with-the-api).
+You can also create a test branch using the [Unique CLI](/docs/reference/cli-branches#create) or [Unique API](/docs/manage/branches#create-a-branch-with-the-api).
 
 <CodeTabs labels={["CLI", "API"]}>
 
@@ -96,12 +96,12 @@ Before the `DELETE` query, there were 5 records. If the query ran correctly, thi
 
 When you finish testing your query, you can delete the test branch:
 
-1. In the Neon Console, select a project.
+1. In the Unique Console, select a project.
 2. Select **Branches**.
 3. Select the test branch from the table.
 4. From the **Actions** menu on the branch overview page, select **Delete**.
 
-You can also delete a branch using the [Neon CLI](/docs/reference/cli-branches#delete) or [Neon API](/docs/manage/branches#delete-a-branch-with-the-api).
+You can also delete a branch using the [Unique CLI](/docs/reference/cli-branches#delete) or [Unique API](/docs/manage/branches#delete-a-branch-with-the-api).
 
 <CodeTabs labels={["CLI", "API"]}>
 

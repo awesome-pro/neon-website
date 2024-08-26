@@ -13,10 +13,10 @@ const Try = () => (
             className="max-w-sm text-[52px] font-medium leading-none tracking-extra-tight tracking-tighter xl:max-w-[640px] xl:text-[44px] lg:max-w-xl lg:text-4xl md:max-w-md md:text-center md:text-[32px]"
             tag="h2"
           >
-            Try Neon on the command&nbsp;line
+            Try Unique on the command&nbsp;line
           </Heading>
           <p className="mt-4 text-lg font-light leading-snug tracking-extra-tight xl:text-lg lg:mt-4 md:mt-2.5 md:text-center md:text-base">
-            The Neon CLI brings serverless Postgres to&nbsp;your&nbsp;terminal.
+            The Unique CLI brings serverless Postgres to&nbsp;your&nbsp;terminal.
           </p>
           <AnimatedButton
             className="relative mt-12 px-6 py-[17px] text-lg font-semibold tracking-[-0.02em] lg:mt-7 md:mt-6"

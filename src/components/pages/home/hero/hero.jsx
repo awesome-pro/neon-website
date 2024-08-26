@@ -127,7 +127,7 @@ const Hero = () => {
               className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[34px]"
             />{' '}
             <br />
-            <h1 className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[32px]">
+            <h1 className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] text-primary-1 xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[32px]">
               with Unique
             </h1>
           </div>

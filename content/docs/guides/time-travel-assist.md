@@ -7,11 +7,11 @@ updatedOn: '2024-08-07T21:36:52.666Z'
 
 To help review your data's history, Time Travel lets you connect to any selected point in time within your history retention window and then run queries against that connection.
 
-You can use Time Travel from two places in the Neon Console, and from the Neon CLI:
+You can use Time Travel from two places in the Unique Console, and from the Unique CLI:
 
 - **SQL Editor** &#8212; Time Travel is built into the SQL editor letting you switch between queries of your current data and previous iterations of your data in the same view.
 - **Restore** &#8212; Time Travel Assist is also built into the Branch Restore flow where it can help you make sure you've targeted the correct restore point before you restore a branch.
-- **Neon CLI** &#8212; Use the Neon CLI to quickly establish point-in-time connections for automated scripts or command-line-based data analysis.
+- **Unique CLI** &#8212; Use the Unique CLI to quickly establish point-in-time connections for automated scripts or command-line-based data analysis.
 
 ## How Time Travel works
 
@@ -75,7 +75,7 @@ Here is how to use Time Travel from both the **SQL Editor** and from the **Resto
 
 <TabItem>
 
-1. In the Neon Console, open the **SQL Editor**.
+1. In the Unique Console, open the **SQL Editor**.
 1. Use the **Time Travel** toggle to enable querying against an earlier point in time.
 
    ![Time Travel toggle](/docs/guides/time_travel_toggle.png)
@@ -87,7 +87,7 @@ Here is how to use Time Travel from both the **SQL Editor** and from the **Resto
 
 <TabItem>
 
-1. In the Neon Console, go to **Restore**.
+1. In the Unique Console, go to **Restore**.
 1. Select the branch you want to query against, then select a timestamp, the same as you would to [Restore a branch](#restore-a-branch-to-an-earlier-state).
 
    ![time travel selection](/docs/guides/time_travel_restore_select.png 'no-border')
@@ -110,7 +110,7 @@ Here is how to use Time Travel from both the **SQL Editor** and from the **Resto
 
 <TabItem>
 
-Using the Neon CLI, you can establish a connection to a specific point in your branch's history. To get the connection string, use the following command:
+Using the Unique CLI, you can establish a connection to a specific point in your branch's history. To get the connection string, use the following command:
 
 ```bash
 neon connection-string <branch>@<timestamp|LSN>
@@ -153,7 +153,7 @@ This retrieves the connection string for querying the 'main' branch at a specifi
 
 ### Include project ID for multiple projects
 
-If you are working with multiple Neon projects, specify the project ID to target the correct project:
+If you are working with multiple Unique projects, specify the project ID to target the correct project:
 
 ```bash
 neon connection-string <branch>@<timestamp|LSN> --project-id <project id>
@@ -171,7 +171,7 @@ Alternatively, you can set a durable project context that remains active until y
 neon set-context --project-id <project id>
 ```
 
-Read more about getting connection strings from the CLI in [Neon CLI commands — connection-string](/docs/reference/cli-connection-string), and more about setting contexts in [CLI - set-context](/docs/reference/cli-set-context).
+Read more about getting connection strings from the CLI in [Unique CLI commands — connection-string](/docs/reference/cli-connection-string), and more about setting contexts in [CLI - set-context](/docs/reference/cli-set-context).
 
 </TabItem>
 

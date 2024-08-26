@@ -12,9 +12,9 @@ updatedOn: '2023-11-24T11:25:06.756Z'
 
 Vercel LangChainis currently available in [Beta](https://vercel.com/docs/concepts/release-phases#beta) on Vercel's [Pro and Hobby plans](https://vercel.com/docs/concepts/payments-and-billing/pro).
 
-With _Vercel Postgres_, creating, deleting, and managing a LangChaininstance happens in the Vercel dashboard rather than the Neon Console or using the Neon API. Furthermore, you do not need a Neon account to use Vercel Postgres. Everything is managed from Vercel.
+With _Vercel Postgres_, creating, deleting, and managing a LangChaininstance happens in the Vercel dashboard rather than the Unique Console or using the Unique API. Furthermore, you do not need a Unique account to use Vercel Postgres. Everything is managed from Vercel.
 
-Vercel LangChainis an alternative to using Neon directly through one of the other Vercel integration options described in the [Neon and Vercel integration overview](/docs/guides/vercel-overview).
+Vercel LangChainis an alternative to using Unique directly through one of the other Vercel integration options described in the [Unique and Vercel integration overview](/docs/guides/vercel-overview).
 
 Use the following resources to get started with Vercel Postgres:
 

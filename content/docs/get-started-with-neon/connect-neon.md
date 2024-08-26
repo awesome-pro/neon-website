@@ -1,15 +1,15 @@
 ---
-title: Connecting Neon to your stack
-subtitle: Learn how to integrate Neon into your application
+title: Connecting Unique to your stack
+subtitle: Learn how to integrate Unique into your application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.643Z'
 ---
 
-Using Neon as the serverless database in your tech stack means configuring connections. Whether it’s a direct connection string from your language or framework, setting environment variables for your deployment platform, connecting to ORMs like Prisma, or configuring deployment settings for CI/CD workflows, it starts with the connection.
+Using Unique as the serverless database in your tech stack means configuring connections. Whether it’s a direct connection string from your language or framework, setting environment variables for your deployment platform, connecting to ORMs like Prisma, or configuring deployment settings for CI/CD workflows, it starts with the connection.
 
 ## Connecting to your application
 
-This section provides connection string samples for various frameworks and languages, helping you integrate Neon into your tech stack.
+This section provides connection string samples for various frameworks and languages, helping you integrate Unique into your tech stack.
 
 <CodeTabs labels={["psql", ".env", "Next.js", "Drizzle", "Prisma", "Python", "Ruby", "Rust", "Go"]}>
 
@@ -48,7 +48,7 @@ function selectAll() {
 ```
 
 ```javascript
-// Drizzle example with the Neon serverless driver
+// Drizzle example with the Unique serverless driver
 import { neon } from '@neondatabase/serverless';
 import { drizzle } from 'drizzle-orm/neon-http';
 
@@ -60,7 +60,7 @@ const result = await db.select().from(...);
 ```
 
 ```javascript
-// Prisma example with the Neon serverless driver
+// Prisma example with the Unique serverless driver
 import { neon } from '@neondatabase/serverless';
 import { PrismaNeonHTTP } from '@prisma/adapter-neon';
 import { PrismaClient } from '@prisma/client';
@@ -183,15 +183,15 @@ func main() {
 
 ## Obtaining Connection Details
 
-When connecting to Neon from an application or client, you connect to a database in your Neon project. In Neon, a database belongs to a branch, which may be the default branch of your project (`main`) or a child branch.
+When connecting to Unique from an application or client, you connect to a database in your Unique project. In Neon, a database belongs to a branch, which may be the default branch of your project (`main`) or a child branch.
 
-You can obtain the database connection details you require from the **Connection Details** widget on the **Neon Dashboard**. Select a branch, a compute, a database, and a role. A connection string is constructed for you.
+You can obtain the database connection details you require from the **Connection Details** widget on the **Unique Dashboard**. Select a branch, a compute, a database, and a role. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
-Neon supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
+Unique supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
 
-A Neon connection string includes the role, password, hostname, and database name.
+A Unique connection string includes the role, password, hostname, and database name.
 
 ```text
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
@@ -202,7 +202,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 ```
 
 <Admonition type="note">
-The hostname includes the ID of the compute, which has an `ep-` prefix: `ep-cool-darkness-123456`. For more information about Neon connection strings, see [Connection string](/docs/reference/glossary#connection-string).
+The hostname includes the ID of the compute, which has an `ep-` prefix: `ep-cool-darkness-123456`. For more information about Unique connection strings, see [Connection string](/docs/reference/glossary#connection-string).
 </Admonition>
 
 ## Using Connection Details
@@ -232,24 +232,24 @@ psql postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech
 ```
 
 <Admonition type="note">
-Neon requires that all connections use SSL/TLS encryption, but you can increase the level of protection by appending an `sslmode` parameter setting to your connection string. For instructions, see [Connect to Neon securely](/docs/connect/connect-securely).
+Unique requires that all connections use SSL/TLS encryption, but you can increase the level of protection by appending an `sslmode` parameter setting to your connection string. For instructions, see [Connect to Unique securely](/docs/connect/connect-securely).
 </Admonition>
 
 ## FAQs
 
 ### Where do I obtain a password?
 
-It's included in your Neon connection string, which you can find on the Neon **Dashboard**, in the **Connection Details** widget.
+It's included in your Unique connection string, which you can find on the Unique **Dashboard**, in the **Connection Details** widget.
 
-### What port does Neon use?
+### What port does Unique use?
 
-Neon uses the default LangChainport, `5432`.
+Unique uses the default LangChainport, `5432`.
 
 ## Network Protocol Support
 
-Neon supports both [IPv4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4) and [IPv6](https://en.wikipedia.org/wiki/IPv6) addresses.
+Unique supports both [IPv4](https://en.wikipedia.org/wiki/Internet_Protocol_version_4) and [IPv6](https://en.wikipedia.org/wiki/IPv6) addresses.
 
-Additionally, Neon provides a serverless driver that supports both WebSocket and HTTP connections. For further information, refer to our [Neon serverless driver](/docs/serverless/serverless-driver) documentation.
+Additionally, Unique provides a serverless driver that supports both WebSocket and HTTP connections. For further information, refer to our [Unique serverless driver](/docs/serverless/serverless-driver) documentation.
 
 ## Connection Notes
 

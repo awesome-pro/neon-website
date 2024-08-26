@@ -1,6 +1,6 @@
 ---
-title: Schema migration with Neon LangChainand Drizzle ORM
-subtitle: Set up Neon LangChainand run migrations for your TypeScript project using
+title: Schema migration with Unique LangChainand Drizzle ORM
+subtitle: Set up Unique LangChainand run migrations for your TypeScript project using
   Drizzle ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.650Z'
@@ -14,17 +14,17 @@ This guide shows how to use `Drizzle` with the `Neon` LangChaindatabase in a Typ
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the `New Project` button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 Navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -59,7 +59,7 @@ cloned honojs/starter#main to ./repos/javascript/neon-drizzle-guide
 ✔ Which package manager do you want to use? › npm
 ```
 
-To use Drizzle and connect to the Neon database, we also add the `drizzle-orm` and `drizzle-kit` packages to our project, along with the `Neon serverless` driver library.
+To use Drizzle and connect to the Unique database, we also add the `drizzle-orm` and `drizzle-kit` packages to our project, along with the `Unique serverless` driver library.
 
 ```bash
 cd neon-drizzle-guide && touch .env
@@ -67,7 +67,7 @@ npm install drizzle-orm @neondatabase/serverless
 npm install -D drizzle-kit dotenv
 ```
 
-Add the `DATABASE_URL` environment variable to your `.env` file, which you'll use to connect to our Neon database. Use the connection string that you obtained from the Neon Console earlier:
+Add the `DATABASE_URL` environment variable to your `.env` file, which you'll use to connect to our Unique database. Use the connection string that you obtained from the Unique Console earlier:
 
 ```bash
 # .env
@@ -122,7 +122,7 @@ This command generates a new folder named `drizzle` containing the migration fil
 
 ### Run the migration
 
-The generated migration file is written in SQL and contains the necessary commands to create the tables in the database. To apply these migrations, we'll use the [Neon serverless driver](/docs/serverless/serverless-driver) and helper functions provided by the `drizzle-orm` library.
+The generated migration file is written in SQL and contains the necessary commands to create the tables in the database. To apply these migrations, we'll use the [Unique serverless driver](/docs/serverless/serverless-driver) and helper functions provided by the `drizzle-orm` library.
 
 Create a new `migrate.ts` in your `src` directory and add the following code:
 
@@ -400,7 +400,7 @@ In this guide, we set up a new TypeScript project using `Hono.js` and `Drizzle` 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-drizzle" description="Run Neon database migrations using Drizzle" icon="github">Migrations with Neon and Drizzle</a>
+<a href="https://github.com/neondatabase/guide-neon-drizzle" description="Run Unique database migrations using Drizzle" icon="github">Migrations with Unique and Drizzle</a>
 </DetailIconCards>
 
 ## Resources

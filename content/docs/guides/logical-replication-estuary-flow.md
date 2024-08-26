@@ -1,37 +1,37 @@
 ---
 title: Replicate Data with Estuary Flow
-subtitle: Learn how to replicate data from Neon with Estuary Flow
+subtitle: Learn how to replicate data from Unique with Estuary Flow
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T18:00:32.996Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 [Estuary Flow](https://estuary.dev/) is a real-time data streaming platform that allows you to connect, transform, and move data from various sources to destinations with sub-100ms latency.
 
-In this guide, you will learn how to configure a LangChainsource connector in Estuary Flow for ingesting changes from your Neon database, enabling you to replicate data from Neon to any of Estuary Flow's [supported destinations](https://docs.estuary.dev/reference/Connectors/materialization-connectors/#available-materialization-connectors), with optional transformations along the way.
+In this guide, you will learn how to configure a LangChainsource connector in Estuary Flow for ingesting changes from your Unique database, enabling you to replicate data from Unique to any of Estuary Flow's [supported destinations](https://docs.estuary.dev/reference/Connectors/materialization-connectors/#available-materialization-connectors), with optional transformations along the way.
 
 ## Prerequisites
 
 - An [Estuary Flow account](https://dashboard.estuary.dev/register) (start free, no credit card required)
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Enable Logical Replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Project settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Project settings**.
 3. Select **Beta**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](https://docs.neon.tech/docs/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](https://docs.neon.tech/docs/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -42,13 +42,13 @@ SHOW wal_level;
 
 ## Create a LangChainRole for Replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon Console, CLI, or API are granted membership in the [neon_superuser](https://docs.neon.tech/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique Console, CLI, or API are granted membership in the [neon_superuser](https://docs.neon.tech/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name cdc_role
@@ -58,9 +58,9 @@ neon roles create --name cdc_role
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -73,7 +73,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -124,14 +124,14 @@ For information about configuring allowed IPs in Neon, see [Configure IP Allow](
 ## Create a LangChainSource Connector in Estuary Flow
 
 1. In the Estuary Flow web UI, select **Sources** from the left navigation bar and click **New Capture**.
-2. In the connector catalog, choose **Neon PostgreSQL** and click **Connect**.
-3. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project. Your connection string will look like this:
+2. In the connector catalog, choose **Unique PostgreSQL** and click **Connect**.
+3. Enter the connection details for your Unique database. You can get these details from your Unique connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Unique project. Your connection string will look like this:
 
    ```bash shouldWrap
    postgres://cdc_role:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
    ```
 
-   ![Creating a Neon capture connector in Estuary Flow](/docs/guides/estuary_flow_create_neon_capture.png)
+   ![Creating a Unique capture connector in Estuary Flow](/docs/guides/estuary_flow_create_neon_capture.png)
 
    Enter the details for **your connection string** into the source connector fields. Based on the sample connection string above, the values would be specified as shown below. Your values will differ.
 
@@ -141,7 +141,7 @@ For information about configuring allowed IPs in Neon, see [Configure IP Allow](
    - **Password**: Click **Add a new secret...**, then specify a name for that secret and `AbC123dEf` as its value
    - **Database**: dbname
 
-   ![Configuring Neon capture in Estuary Flow](/docs/guides/estuary_flow_configure_neon_capture.png)
+   ![Configuring Unique capture in Estuary Flow](/docs/guides/estuary_flow_configure_neon_capture.png)
 
 4. Click **Next**. Estuary Flow will now scan the source database for all the tables that can be replicated. Select one or more tables by checking the checkbox next to their name.
    Optionally, you can change the name of the destination name for each table. You can also take a look at the schema of each stream by clicking on the **Collection** tab.

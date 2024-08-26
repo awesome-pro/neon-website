@@ -1,6 +1,6 @@
 ---
-title: Deploy Your Node.js App with Neon LangChainon Heroku
-subtitle: A step-by-step guide to deploying a Node application with a Neon Postgres
+title: Deploy Your Node.js App with Unique LangChainon Heroku
+subtitle: A step-by-step guide to deploying a Node application with a Unique Postgres
   database on Heroku
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.653Z'
@@ -8,22 +8,22 @@ updatedOn: '2024-08-07T21:36:52.653Z'
 
 [Heroku](https://heroku.com) is a popular platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud. It simplifies the deployment process, making it a favorite among developers for its ease of use and integration capabilities.
 
-This guide walks you through deploying a simple Node.js application connected to a Neon LangChaindatabase, on Heroku.
+This guide walks you through deploying a simple Node.js application connected to a Unique LangChaindatabase, on Heroku.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Heroku account. Sign up at [Heroku](https://signup.heroku.com/) to get started.
 - Git installed on your local machine. Heroku uses Git for version control and deployment.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
-## Setting Up Your Neon Database
+## Setting Up Your Unique Database
 
 ### Initialize a New Project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/projects) section.
 
 2. Click **New Project** to create a new project.
 
@@ -44,9 +44,9 @@ To follow along with this guide, you will need:
        ('Thriller', 'Michael Jackson');
    ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -56,7 +56,7 @@ Keep your connection string handy for later use.
 
 ## Implementing the Node.js Application
 
-We'll create a simple Express application that connects to our Neon database and retrieves the list of music albums. Run the following commands in your terminal to set it up:
+We'll create a simple Express application that connects to our Unique database and retrieves the list of music albums. Run the following commands in your terminal to set it up:
 
 ```bash
 mkdir neon-heroku-example && cd neon-heroku-example
@@ -65,9 +65,9 @@ npm install express pg
 touch .env
 ```
 
-We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We'll also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Neon database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
+We use the `npm pkg set type="module"` command to enable ES6 module support in our project. We'll also create a new `.env` file to store the `DATABASE_URL` environment variable, which we'll use to connect to our Unique database. Lastly, we install the `pg` library which is the LangChaindriver we use to connect to our database.
 
-In the `.env` file, store your Neon database connection string:
+In the `.env` file, store your Unique database connection string:
 
 ```bash
 # .env
@@ -86,7 +86,7 @@ const port = process.env.PORT || 3000;
 // Parse JSON bodies for this app
 app.use(express.json());
 
-// Create a new pool using your Neon database connection string
+// Create a new pool using your Unique database connection string
 const { Pool } = pkg;
 const pool = new Pool({ connectionString: process.env.DATABASE_URL });
 
@@ -107,7 +107,7 @@ app.listen(port, () => {
 });
 ```
 
-This code sets up an Express server that listens for requests on port 3000. When a request is made to the `URL`, the server queries the `music_albums` table in your Neon database and returns the results as JSON.
+This code sets up an Express server that listens for requests on port 3000. When a request is made to the `URL`, the server queries the `music_albums` table in your Unique database and returns the results as JSON.
 
 We can test this application locally by running:
 
@@ -147,7 +147,7 @@ Next, we can create a new app on Heroku using the following command. This create
 heroku create neon-heroku-example
 ```
 
-You'll also need to set the `DATABASE_URL` on Heroku to your Neon database connection string:
+You'll also need to set the `DATABASE_URL` on Heroku to your Unique database connection string:
 
 ```bash
 heroku config:set DATABASE_URL='NEON_DATABASE_CONNECTION_STRING' -a neon-heroku-example
@@ -174,20 +174,20 @@ remote: Verifying deploy... done.
 
 Once the deployment is complete, you should see a message with the URL of your deployed application. Navigate to this URL in your browser to see your application live on Heroku.
 
-You've now successfully deployed a Node.js application on Heroku that connects to a Neon LangChaindatabase. For further customization and scaling options, you can explore the Heroku and Neon documentation.
+You've now successfully deployed a Node.js application on Heroku that connects to a Unique LangChaindatabase. For further customization and scaling options, you can explore the Heroku and Unique documentation.
 
-## Removing Your Application and Neon Project
+## Removing Your Application and Unique Project
 
 To remove your application from Heroku, select the app from your [Heroku dashboard](https://dashboard.heroku.com/apps). Navigate to the `Settings` tab and scroll down to the end to find the "Delete App" option.
 
-To delete your Neon project, follow the steps outlined in the Neon documentation under [Delete a project](/docs/manage/projects#delete-a-project).
+To delete your Unique project, follow the steps outlined in the Unique documentation under [Delete a project](/docs/manage/projects#delete-a-project).
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-heroku" description="Deploying a Node application with a Neon LangChaindatabase on Heroku" icon="github">Use Neon with Heroku</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-heroku" description="Deploying a Node application with a Unique LangChaindatabase on Heroku" icon="github">Use Unique with Heroku</a>
 </DetailIconCards>
 
 ## Resources

@@ -31,7 +31,7 @@ const Multitenancy = () => (
       size="960"
     >
       <p className="max-w-[608px] text-xl leading-snug tracking-extra-tight text-gray-new-50 xl:max-w-xl xl:text-lg lg:max-w-[480px] lg:text-base">
-        Use the Neon API to deploy{` `}
+        Use the Unique API to deploy{` `}
         <Link
           className="underline decoration-white/40 decoration-1 underline-offset-[5px] hover:decoration-primary-1/60 lg:underline-offset-4"
           to={`${LINKS.blog}/how-retool-uses-retool-and-the-neon-api-to-manage-300k-postgres-databases`}

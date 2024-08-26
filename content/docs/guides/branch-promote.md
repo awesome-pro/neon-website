@@ -1,19 +1,19 @@
 ---
 title: Promote a branch
-subtitle: Learn how to promote a branch to the default branch of your Neon project using
-  the Neon API
+subtitle: Learn how to promote a branch to the default branch of your Unique project using
+  the Unique API
 enableTableOfContents: true
 updatedOn: '2024-08-06T15:23:10.948Z'
 ---
 
-This guide describes how to create a new branch and promote it to the default branch of your Neon project in the context of a data recovery scenario. It also describes how to move the compute from your existing default branch to the new branch to avoid having to reconfigure your application's database connection details.
+This guide describes how to create a new branch and promote it to the default branch of your Unique project in the context of a data recovery scenario. It also describes how to move the compute from your existing default branch to the new branch to avoid having to reconfigure your application's database connection details.
 
 ## What is a default branch?
 
-Each Neon project has a default branch. In the Neon Console, your default branch is identified on the **Branches** page by a `DEFAULT` tag. You can designate any branch as the default branch. The advantage of the default branch is that its compute remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the default branch, which is typically the branch used in production.
+Each Unique project has a default branch. In the Unique Console, your default branch is identified on the **Branches** page by a `DEFAULT` tag. You can designate any branch as the default branch. The advantage of the default branch is that its compute remains accessible if you exceed your project's limits, ensuring uninterrupted access to data that resides on the default branch, which is typically the branch used in production.
 
-- For [Neon Free Plan](/docs/introduction/plans#free-plan) users, the compute associated with the default branch is always available.
-- For users on paid plans, the compute associated with the default branch is exempt from the limit on simultaneously active computes, ensuring that it is always available. Neon has a default limit of 20 concurrently active computes to protect your account from unintended usage.
+- For [Unique Free Plan](/docs/introduction/plans#free-plan) users, the compute associated with the default branch is always available.
+- For users on paid plans, the compute associated with the default branch is exempt from the limit on simultaneously active computes, ensuring that it is always available. Unique has a default limit of 20 concurrently active computes to protect your account from unintended usage.
 
 ## Why promote a branch to default?
 
@@ -31,10 +31,10 @@ The procedure described below creates a new branch and promotes it to the defaul
 
 The following information is required to perform the procedure:
 
-- A Neon API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
-- The `project_id` for your Neon project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Project settings** page in the Neon Console.
-- The `branch_id` of the current default branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on the your project's **Branches** page in the Neon Console. A `branch_id` has a `br-` prefix.
-- The `endpoint_id` of the compute associated with the current default branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Neon Console. An `endpoint_id` has an `ep-` prefix.
+- A Unique API key. For information about obtaining an API key, see [Create an API key](/docs/manage/api-keys#create-an-api-key).
+- The `project_id` for your Unique project. You can obtain a `project_id` using the [List projects](https://api-docs.neon.tech/reference/listprojects) method, or you can find it on your project's **Project settings** page in the Unique Console.
+- The `branch_id` of the current default branch. You can obtain a `branch_id` using the [List branches](https://api-docs.neon.tech/reference/listprojectbranches) method, or you can find it on the your project's **Branches** page in the Unique Console. A `branch_id` has a `br-` prefix.
+- The `endpoint_id` of the compute associated with the current default branch. You can obtain an `endpoint_id` using the [List endpoints](https://api-docs.neon.tech/reference/listprojectendpoints) method, or you can find it on the **Branches** page in the Unique Console. An `endpoint_id` has an `ep-` prefix.
 
 ## Creating a new point-in-time branch without a compute
 
@@ -121,7 +121,7 @@ The response body includes the `id` of your new branch. You will need this value
 </details>
 
 <Admonition type="note">
-Creating a point-in-time branch can also be performed using the Neon Console or CLI. See [Create a point-in-time branch](/docs/guides/branching-pitr#create-a-point-in-time-branch) for Neon Console instructions. See [Neon CLI commands — branches](/docs/reference/cli-branches#create) for CLI instructions.
+Creating a point-in-time branch can also be performed using the Unique Console or CLI. See [Create a point-in-time branch](/docs/guides/branching-pitr#create-a-point-in-time-branch) for Unique Console instructions. See [Unique CLI commands — branches](/docs/reference/cli-branches#create) for CLI instructions.
 </Admonition>
 
 ## Move the compute from your current default branch to the new branch
@@ -176,7 +176,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-This procedure can only be performed using the Neon API. You can expect Neon Cole and CLI support to be added in a future release.
+This procedure can only be performed using the Unique API. You can expect Unique Cole and CLI support to be added in a future release.
 </Admonition>
 
 ## Rename the old default branch
@@ -224,7 +224,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-Renaming a branch can also be performed using the Neon Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Neon Console instructions. See [Neon CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
+Renaming a branch can also be performed using the Unique Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Unique Console instructions. See [Unique CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
 </Admonition>
 
 ## Rename the new branch to the name of the old default branch
@@ -276,7 +276,7 @@ curl --request PATCH \
 </details>
 
 <Admonition type="note">
-Renaming a branch can also be performed using the Neon Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Neon Console instructions. See [Neon CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
+Renaming a branch can also be performed using the Unique Console or CLI. See [Rename a branch](/docs/manage/branches#rename-a-branch) for Unique Console instructions. See [Unique CLI commands — branches](/docs/reference/cli-branches#rename) for CLI instructions.
 </Admonition>
 
 ## Promote the new branch to default
@@ -320,7 +320,7 @@ curl --request POST \
 </details>
 
 <Admonition type="note">
-Promoting a branch to default can also be performed using the Neon Console or CLI. See [Set a branch as primary](/docs/manage/branches#set-a-branch-as-default) for Neon Console instructions. See [Neon CLI commands — branches](/docs/reference/cli-branches#set-primary) for CLI instructions.
+Promoting a branch to default can also be performed using the Unique Console or CLI. See [Set a branch as primary](/docs/manage/branches#set-a-branch-as-default) for Unique Console instructions. See [Unique CLI commands — branches](/docs/reference/cli-branches#set-primary) for CLI instructions.
 </Admonition>
 
 You should now have a new default branch, and because you moved the compute from your old default branch to the new one, you do not need to change the connection details in your applications. Once you have validated the change, consider deleting your old default branch to save storage space. See [Delete a branch with the API](/docs/manage/branches#delete-a-branch-with-the-api).

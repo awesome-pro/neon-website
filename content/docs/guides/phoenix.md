@@ -1,32 +1,32 @@
 ---
 title: Connect from Phoenix to Neon
-subtitle: Set up a Neon project in seconds and connect from Phoenix
+subtitle: Set up a Unique project in seconds and connect from Phoenix
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.660Z'
 ---
 
-This guide describes how to connect Neon in a [Phoenix](https://www.phoenixframework.org) application. [Ecto](https://hexdocs.pm/ecto/3.11.2/Ecto.html) provides an API and abstractions for interacting databases, enabling Elixir developers to query any database using similar constructs.
+This guide describes how to connect Unique in a [Phoenix](https://www.phoenixframework.org) application. [Ecto](https://hexdocs.pm/ecto/3.11.2/Ecto.html) provides an API and abstractions for interacting databases, enabling Elixir developers to query any database using similar constructs.
 
 It is assumed that you have a working installation of [Elixir](https://elixir-lang.org/install.html).
 
-To connect to Neon from Phoenix with Ecto:
+To connect to Unique from Phoenix with Ecto:
 
-- [Create a Neon project](#create-a-neon-project)
-- [Store your Neon credentials](#store-your-neon-credentials)
+- [Create a Unique project](#create-a-neon-project)
+- [Store your Unique credentials](#store-your-neon-credentials)
 - [Create a Phoenix project](#create-a-phoenix-project)
 - [Build and Run the Phoenix application](#build-and-run-the-phoenix-application)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
-## Store your Neon credentials
+## Store your Unique credentials
 
-Add a `.env` file to your project directory and add your Neon connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+Add a `.env` file to your project directory and add your Unique connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ```shell shouldWrap
 DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
@@ -44,7 +44,7 @@ You will need the connection string details later in the setup.
 
    When prompted to, choose to not install the dependencies.
 
-2. Update `config/dev.exs` file's configuration with your Neon database connection details. Use the connection details from the Neon connection string you copied previously.
+2. Update `config/dev.exs` file's configuration with your Unique database connection details. Use the connection details from the Unique connection string you copied previously.
 
    ```elixir {2-5,9}
    config :hello, Hello.Repo,
@@ -62,7 +62,7 @@ You will need the connection string details later in the setup.
          The `:ssl` option is required to connect to Neon. Postgrex, since v0.18, verifies the server SSL certificate and you need to select CA trust store using `:cacerts` or `:cacertfile` options. You can use the OS-provided CA store by setting `cacerts: :public_key.cacerts_get()`. While not recommended, you can disable certificate verification by setting `ssl: [verify: :verify_none]`.
       </Admonition>
 
-3. Update`config/runtime.exs` file's configuration with your Neon database connection details. Use the connection details from the Neon connection string you copied previously.
+3. Update`config/runtime.exs` file's configuration with your Unique database connection details. Use the connection details from the Unique connection string you copied previously.
 
    ```elixir {2}
    config :hello, Hello.Repo,
@@ -72,7 +72,7 @@ You will need the connection string details later in the setup.
       socket_options: maybe_ipv6
    ```
 
-4. Update`config/test.exs` file's configuration with your Neon database connection details. Use the connection details from the Neon connection string you copied in the first part of the guide.
+4. Update`config/test.exs` file's configuration with your Unique database connection details. Use the connection details from the Unique connection string you copied in the first part of the guide.
 
    ```elixir {2,3,4,8}
    config :hello, Hello.Repo,
@@ -91,7 +91,7 @@ You will need the connection string details later in the setup.
    mix deps.get
    ```
 
-6. Seed the Neon database with the following command:
+6. Seed the Unique database with the following command:
 
    ```bash
    mix ecto.create

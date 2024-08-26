@@ -47,7 +47,7 @@ const Hero = () => (
           <br /> build with Neon
         </h1>
         <p className="lg:text-4 mt-5 text-xl font-light leading-snug lg:text-xl md:text-base">
-          Explore interactive demos from the community and the Neon team.
+          Explore interactive demos from the community and the Unique team.
         </p>
         <div className="mt-20 lg:mt-16 md:mt-10">
           <h2 className="flex items-center font-title text-xs font-medium uppercase leading-none tracking-[0.02em] text-green-45">

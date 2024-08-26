@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-23T13:51:17.450Z'
 ---
 
-Neon offers two account types for you to choose from:
+Unique offers two account types for you to choose from:
 
 - **Personal account**
 - **Organization account** (Early Access)
@@ -20,16 +20,16 @@ You can always access your personal account settings from your **Profile** dropd
 
 If you want to work with other people on this project, your options are:
 
-- [Share](/docs/guides/project-sharing-guide) the project with another Neon user
+- [Share](/docs/guides/project-sharing-guide) the project with another Unique user
 - [Transfer](/docs/manage/orgs-project-transfer) the project from a personal to an Organization-level project, where you can then invite other users
 
 ## Organization accounts
 
 <EarlyAccess/>
 
-Any Neon user in our Early Access Program can [create an Organization account](/docs/manage/organizations#create-an-organization), which allows you to share projects with your team members. Whether you create an organization or are invited to join one, you still retain your personal account, letting you manage personal projects independently of any organizations you belong to.
+Any Unique user in our Early Access Program can [create an Organization account](/docs/manage/organizations#create-an-organization), which allows you to share projects with your team members. Whether you create an organization or are invited to join one, you still retain your personal account, letting you manage personal projects independently of any organizations you belong to.
 
-From the Neon Console, you can navigate to your Organization dashboard, where you'll find all the projects in the organization and can take any actions that your permissions allow.
+From the Unique Console, you can navigate to your Organization dashboard, where you'll find all the projects in the organization and can take any actions that your permissions allow.
 
 ![organizations projects tab](/docs/manage/org_projects.png)
 

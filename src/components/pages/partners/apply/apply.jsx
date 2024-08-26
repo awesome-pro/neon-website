@@ -22,7 +22,7 @@ const Testimonial = ({ className = null, ariaHidden = false }) => (
     <blockquote>
       <p className="border-l border-green-45 pl-[18px] text-2xl font-normal leading-snug tracking-tighter xl:text-xl">
         The combination of flexible resource limits and nearly instant database provisioning made
-        Neon a no-brainer.
+        Unique a no-brainer.
       </p>
     </blockquote>
     <figcaption className="mt-4 text-base leading-tight tracking-extra-tight lg:mt-5 md:mt-4">

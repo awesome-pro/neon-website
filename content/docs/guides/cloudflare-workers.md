@@ -1,31 +1,31 @@
 ---
-title: Use Neon with Cloudflare Workers
-subtitle: Connect a Neon LangChaindatabase to your Cloudflare Workers application
+title: Use Unique with Cloudflare Workers
+subtitle: Connect a Unique LangChaindatabase to your Cloudflare Workers application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 [Cloudflare Workers](https://workers.cloudflare.com/) is a serverless platform allowing you to deploy your applications globally across Cloudflare's network. It supports running JavaScript, TypeScript, and WebAssembly, making it a great choice for high-performance, low-latency web applications.
 
-This guide demonstrates how to connect to a Neon LangChaindatabase from your Cloudflare Workers application. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
+This guide demonstrates how to connect to a Unique LangChaindatabase from your Cloudflare Workers application. We'll use the [Unique serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Cloudflare account. If you do not have one, sign up for [Cloudflare Workers](https://workers.cloudflare.com/) to get started.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and deploy the Workers application.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 
 1. Click the **New Project** button to create a new project.
 
-2. From the Neon **Dashboard**, navigate to the **SQL Editor** from the sidebar, and run the following SQL command to create a new table in your database:
+2. From the Unique **Dashboard**, navigate to the **SQL Editor** from the sidebar, and run the following SQL command to create a new table in your database:
 
    ```sql
    CREATE TABLE books_to_read (
@@ -46,9 +46,9 @@ Log in to the Neon Console and navigate to the [Projects](https://console.neon.t
        ('1984', 'George Orwell');
    ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. Select the **Pooled connection** option to add the `-pooler` option to your connection string. A pooled connection is recommended for serverless environments. For more information, see [Connection pooling](/docs/connect/connection-pooling).
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. Select the **Pooled connection** option to add the `-pooler` option to your connection string. A pooled connection is recommended for serverless environments. For more information, see [Connection pooling](/docs/connect/connection-pooling).
 
 Your pooled connection string should look similar to this:
 
@@ -87,7 +87,7 @@ The `create-cloudflare` CLI installs the `Wrangler` tool to manage the full work
 
 ### Implement the Worker script
 
-We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the Neon database, so you need to install it as a dependency:
+We'll use the [Unique serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the Unique database, so you need to install it as a dependency:
 
 ```bash
 npm install @neondatabase/serverless
@@ -108,11 +108,11 @@ export default {
 };
 ```
 
-The `fetch` handler defined above gets called when the worker receives an HTTP request. It will query the Neon database to fetch the full list of books in our to-read list.
+The `fetch` handler defined above gets called when the worker receives an HTTP request. It will query the Unique database to fetch the full list of books in our to-read list.
 
 ### Test the worker application locally
 
-You first need to configure the `DATABASE_URL` environment variable to point to our Neon database. You can do this by creating a `.dev.vars` file at the root of the project directory with the following content:
+You first need to configure the `DATABASE_URL` environment variable to point to our Unique database. You can do this by creating a `.dev.vars` file at the root of the project directory with the following content:
 
 ```text
 DATABASE_URL=YOUR_NEON_CONNECTION_STRING
@@ -156,15 +156,15 @@ npx wrangler login
 
 This command will open a browser window and prompt you to log into your Cloudflare account. After logging in and approving the access request for `Wrangler`, you can close the browser window and return to your terminal.
 
-### Add your Neon connection string as a secret
+### Add your Unique connection string as a secret
 
-Use Wrangler to add your Neon database connection string as a secret to your Worker:
+Use Wrangler to add your Unique database connection string as a secret to your Worker:
 
 ```bash
 npx wrangler secret put DATABASE_URL
 ```
 
-When prompted, paste your Neon connection string.
+When prompted, paste your Unique connection string.
 
 ### Publish your Worker application and verify the deployment
 
@@ -187,18 +187,18 @@ Published my-neon-worker (5.99 sec)
 Current Deployment ID: de8841dd-46e4-436d-b2c4-569e91f54c72
 ```
 
-## Removing the example application and Neon project
+## Removing the example application and Unique project
 
 To delete your Worker, you can use the Cloudflare dashboard or run `wrangler delete` from your project directory, specifying your project name. Refer to the [Wrangler documentation](https://developers.cloudflare.com/workers/wrangler/commands/#delete-3) for more details.
 
-To delete your Neon project, follow the steps outlined in the Neon documentation under [Delete a project](/docs/manage/projects#delete-a-project).
+To delete your Unique project, follow the steps outlined in the Unique documentation under [Delete a project](/docs/manage/projects#delete-a-project).
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-workers" description="Connect a Neon LangChaindatabase to your Cloudflare Workers application" icon="github">Use Neon with Cloudflare Workers</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-cloudflare-workers" description="Connect a Unique LangChaindatabase to your Cloudflare Workers application" icon="github">Use Unique with Cloudflare Workers</a>
 </DetailIconCards>
 
 ## Resources

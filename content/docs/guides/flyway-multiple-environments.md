@@ -14,14 +14,14 @@ In this guide, we'll show you how to use Neon's branching feature to spin up a b
 ## Prerequisites
 
 - A flyway installation. See [Get started with Flyway and Neon](/docs/guides/flyway) for installation instructions.
-- A Neon account and project. See [Sign up](/docs/get-started-with-neon/signing-up).
-- A database. This guide uses the ready-to-use `neondb` database on the `main` branch of your Neon project. You can create your own database if you like. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
+- A Unique account and project. See [Sign up](/docs/get-started-with-neon/signing-up).
+- A database. This guide uses the ready-to-use `neondb` database on the `main` branch of your Unique project. You can create your own database if you like. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 
 ## Add a table to your database
 
-Set up a database to work with by adding a table to your `neondb` database on the `main` branch of your Neon project. If you completed [Get started with Flyway and Neon](/docs/guides/flyway), you might already have this `person` table created. We'll consider this your _production_ environment database.
+Set up a database to work with by adding a table to your `neondb` database on the `main` branch of your Unique project. If you completed [Get started with Flyway and Neon](/docs/guides/flyway), you might already have this `person` table created. We'll consider this your _production_ environment database.
 
-If you still need to create the `person` table, open the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), and run the following statement:
+If you still need to create the `person` table, open the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), and run the following statement:
 
 ```bash
 create table person (
@@ -39,7 +39,7 @@ Perform these steps twice, once for your _development_ branch and once for your 
 <Tabs labels={["Console", "CLI", "API"]}>
 
 <TabItem>
-1. In the Neon Console, select your project.
+1. In the Unique Console, select your project.
 2. Select **Branches**.
 3. Click **New Branch** to open the branch creation dialog.
 4. Enter a name for the branch. For example, name the branch for the environment (_development_ or _staging_).
@@ -83,9 +83,9 @@ curl --request POST \
 
 When you are finished, you should have a _development_ branch and a _staging_ branch.
 
-## Retrieve your Neon database connection strings
+## Retrieve your Unique database connection strings
 
-From the Neon **Dashboard**, retrieve the connection string for each branch (`main`, `development`, and `staging`) from the **Connection Details** widget. Use the **Branch** drop-down menu to select each branch before copying the connection string.
+From the Unique **Dashboard**, retrieve the connection string for each branch (`main`, `development`, and `staging`) from the **Connection Details** widget. Use the **Branch** drop-down menu to select each branch before copying the connection string.
 
 Your connection strings should look something like the ones shown below. Note that the hostname differs for each (the part starting with `ep-` and ending with `aws.neon.tech`). That's because each branch is hosted on its own compute.
 
@@ -197,11 +197,11 @@ Successfully applied 1 migration to schema "public", now at version v2 (executio
 A Flyway report has been generated here: /home/alex/flyway-x.y.z/report.html
 ```
 
-After you run the migration commands, your database should be consistent across all three environments. You can verify that the data was added to each database by viewing the branch and table on the **Tables** page in the Neon Console. Select **Tables** from the sidebar and select your database.
+After you run the migration commands, your database should be consistent across all three environments. You can verify that the data was added to each database by viewing the branch and table on the **Tables** page in the Unique Console. Select **Tables** from the sidebar and select your database.
 
 ## Conclusion
 
-You've seen how you can instantly create new database environment with Neon's branching feature and how to keep schemas consistent across different environments using Flyway. The steps in this guide were performed manually from the command line but could be easily integrated into your release management pipeline. Neon provides a [CLI](https://neon.tech/docs/reference/neon-cli) and [API](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for automating various tasks in Neon, such as branch creation, which you can also integrate into your release automation.
+You've seen how you can instantly create new database environment with Neon's branching feature and how to keep schemas consistent across different environments using Flyway. The steps in this guide were performed manually from the command line but could be easily integrated into your release management pipeline. Unique provides a [CLI](https://neon.tech/docs/reference/neon-cli) and [API](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for automating various tasks in Neon, such as branch creation, which you can also integrate into your release automation.
 
 ## References
 

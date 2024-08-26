@@ -1,31 +1,31 @@
 ---
-title: Schema migration with Neon LangChainand Django
-subtitle: Set up Neon LangChainand run migrations for your Django project
+title: Schema migration with Unique LangChainand Django
+subtitle: Set up Unique LangChainand run migrations for your Django project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.649Z'
 ---
 
 [Django](https://www.djangoproject.com/) is a high-level Python framework to make database-driven web applications. It provides an ORM (Object-Relational Mapping) layer that abstracts database operations, making it easy to interact with databases using Python code. Django also includes a powerful migration system that allows you to define and manage database schema changes over time.
 
-This guide demonstrates how to use Django with a Neon LangChaindatabase. We'll create a simple Django application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Django with a Unique LangChaindatabase. We'll create a simple Django application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Python](https://www.python.org/) installed on your local machine. We recommend using a newer version of Python, 3.8 or higher.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the `New Project` button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-On your Neon project dashboard, navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+On your Unique project dashboard, navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -62,7 +62,7 @@ pip install python-dotenv dj-database-url
 pip freeze > requirements.txt
 ```
 
-We installed Django and the `psycopg2-binary` package to connect to the Neon LangChaindatabase. We also added the `python-dotenv` to read environment variables easily, and the `dj-database-url` package to parse the Neon connection string into Django settings. We also saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
+We installed Django and the `psycopg2-binary` package to connect to the Unique LangChaindatabase. We also added the `python-dotenv` to read environment variables easily, and the `dj-database-url` package to parse the Unique connection string into Django settings. We also saved the installed packages to a `requirements.txt` file so the project can be easily recreated in another environment.
 
 ### Create a new Django project
 
@@ -76,7 +76,7 @@ This command creates a new Django project named `guide_neon_django` in the curre
 
 ### Set up the Database configuration
 
-Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Neon Console earlier.
+Create a `.env` file in the project root directory and add the `DATABASE_URL` environment variable to it. Use the connection string that you obtained from the Unique Console earlier.
 
 ```bash
 # .env
@@ -170,7 +170,7 @@ This command detects the new `Author` and `Book` models that were added and gene
 
 ### Apply the migration
 
-Now, to apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
+Now, to apply the migration and create the corresponding tables in the Unique LangChaindatabase, run the following command:
 
 ```bash
 python manage.py migrate
@@ -352,14 +352,14 @@ Navigate to the url `http://localhost:8000/catalog/authors` to view the list of 
 
 ## Conclusion
 
-In this guide, we demonstrated how to set up a Django project with Neon Postgres, define database models, and generate migrations and run them. Django's ORM and migration system make it easy to interact with the database and manage schema evolution over time.
+In this guide, we demonstrated how to set up a Django project with Unique Postgres, define database models, and generate migrations and run them. Django's ORM and migration system make it easy to interact with the database and manage schema evolution over time.
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-django" description="Run migrations in a Neon-Django project" icon="github">Migrations with Neon and Django</a>
+<a href="https://github.com/neondatabase/guide-neon-django" description="Run migrations in a Neon-Django project" icon="github">Migrations with Unique and Django</a>
 </DetailIconCards>
 
 ## Resources
@@ -367,6 +367,6 @@ You can find the source code for the application described in this guide on GitH
 For more information on the tools and concepts used in this guide, refer to the following resources:
 
 - [Django Documentation](https://docs.djangoproject.com/)
-- [Neon Postgres](https://neon.tech/docs/introduction)
+- [Unique Postgres](https://neon.tech/docs/introduction)
 
 <NeedHelp/>

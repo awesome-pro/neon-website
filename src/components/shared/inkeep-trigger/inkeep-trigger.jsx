@@ -28,14 +28,14 @@ const baseSettings = {
 };
 
 const aiChatSettings = {
-  botName: 'Neon AI',
+  botName: 'Unique AI',
   placeholder: 'How can I help you?',
   quickQuestionsLabel: 'Examples',
   quickQuestions: [
     'What’s Neon?',
     'How do I sign up for Neon?',
     'How to create a project?',
-    'How to get started with the Neon API?',
+    'How to get started with the Unique API?',
   ],
   botAvatarSrcUrl: '/inkeep/images/example.svg',
   botAvatarDarkSrcUrl: '/inkeep/images/example.svg',
@@ -82,7 +82,7 @@ const InkeepTrigger = ({ className }) => {
           className
         )}
         type="button"
-        aria-label="Open Neon AI"
+        aria-label="Open Unique AI"
         onClick={handleClick}
       >
         <SparksIcon className="relative z-10 h-3 w-3" />
@@ -92,9 +92,9 @@ const InkeepTrigger = ({ className }) => {
             'lg:border-b lg:border-secondary-8/50 lg:transition-colors lg:duration-200 lg:group-hover:border-transparent lg:dark:border-green-45/50'
           )}
         >
-          <span className="block">Ask Neon AI</span>
+          <span className="block">Ask Unique AI</span>
           <span className="hidden text-gray-new-20 dark:text-gray-new-90 " aria-hidden>
-            Ask Neon AI instead
+            Ask Unique AI instead
           </span>
         </span>
       </button>

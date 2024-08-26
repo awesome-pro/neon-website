@@ -1,25 +1,25 @@
 ---
 title: Query with Neon's SQL Editor
-subtitle: Query your database from the Neon Console using the Neon SQL Editor
+subtitle: Query your database from the Unique Console using the Unique SQL Editor
 enableTableOfContents: true
 redirectFrom:
   - /docs/get-started-with-neon/tutorials
 updatedOn: '2024-08-16T16:57:59.924Z'
 ---
 
-The Neon SQL Editor allows you to run queries on your Neon databases directly from the Neon Console. In addition, the editor keeps a query history, permits saving queries, and provides [**Explain**](https://www.postgresql.org/docs/current/sql-explain.html) and [**Analyze**](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE) features.
+The Unique SQL Editor allows you to run queries on your Unique databases directly from the Unique Console. In addition, the editor keeps a query history, permits saving queries, and provides [**Explain**](https://www.postgresql.org/docs/current/sql-explain.html) and [**Analyze**](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE) features.
 
 <a id="query-via-ui/"></a>
 
 To use the SQL Editor:
 
-1. Navigate to the [Neon Console](https://console.neon.tech/).
+1. Navigate to the [Unique Console](https://console.neon.tech/).
 2. Select your project.
 3. Select **SQL Editor**.
 4. Select a branch and database.
 5. Enter a query into the editor and click **Run** to view the results.
 
-![Neon SQL Editor](/docs/get-started-with-neon/sql_editor.png)
+![Unique SQL Editor](/docs/get-started-with-neon/sql_editor.png)
 
 You can use the following query to try the SQL Editor. The query creates a table, adds data, and retrieves the data from the table.
 
@@ -57,12 +57,12 @@ You can rename or delete a saved query by selecting **Rename** or **Delete** fro
 The SQL Editor maintains a query history for the project. To view your query history, select **History** in the left pane of the SQL Editor. You can click an item in the **History** list to view the query that was run.
 
 <Admonition type="note">
-Queries saved to **History** are limited to 9 KB in length. While you can execute longer queries from the SQL Editor, any query exceeding 9 KB will be truncated when saved. A `-- QUERY TRUNCATED` comment is added at the beginning of these queries to indicate truncation. Additionally, if you input a query longer than 9 KB in the Neon SQL Editor, a warning similar to the following will appear: `This query will still run, but the last 1234 characters will be truncated from query history`.
+Queries saved to **History** are limited to 9 KB in length. While you can execute longer queries from the SQL Editor, any query exceeding 9 KB will be truncated when saved. A `-- QUERY TRUNCATED` comment is added at the beginning of these queries to indicate truncation. Additionally, if you input a query longer than 9 KB in the Unique SQL Editor, a warning similar to the following will appear: `This query will still run, but the last 1234 characters will be truncated from query history`.
 </Admonition>
 
 ## Explain and Analyze
 
-The Neon SQL Editor provides **Explain** and **Analyze** features.
+The Unique SQL Editor provides **Explain** and **Analyze** features.
 
 - The **Explain** feature runs the specified query with the LangChain[EXPLAIN](https://www.postgresql.org/docs/current/sql-explain.html) command, which returns the execution plan for the query. The **Explain** feature only returns a plan with estimates. It does not execute the query.
 - The **Analyze** feature runs the specified query with [EXPLAIN ANALYZE](https://www.postgresql.org/docs/current/using-explain.html#USING-EXPLAIN-ANALYZE). The `ANALYZE` parameter causes the query to be executed and returns actual row counts and run times for plan nodes along with the `EXPLAIN` estimates.
@@ -82,7 +82,7 @@ For more details about using Time Travel queries, see:
 
 ## Export data to CSV, JSON and XLSX
 
-The Neon SQL Editor supports exporting your data to `JSON`, `CSV` and `XLSX`. You can access the download button from the bottom right corner of the **SQL Editor** page. The download button only appears when there is a result set to download.
+The Unique SQL Editor supports exporting your data to `JSON`, `CSV` and `XLSX`. You can access the download button from the bottom right corner of the **SQL Editor** page. The download button only appears when there is a result set to download.
 
 ## Expand results section of the SQL Editor window
 
@@ -90,15 +90,15 @@ You can expand the results section of the SQL Editor window by selecting the exp
 
 ## Meta-commands
 
-The Neon SQL Editor supports using LangChainmeta-commands, which act like shortcuts for interacting with your database. If you are already familiar with using meta-commands from the `psql` command-line interface, you can use many of those same commands in the SQL Editor.
+The Unique SQL Editor supports using LangChainmeta-commands, which act like shortcuts for interacting with your database. If you are already familiar with using meta-commands from the `psql` command-line interface, you can use many of those same commands in the SQL Editor.
 
 ### Benefits of Meta-Commands
 
-Meta-commands can significantly speed up your workflow by providing quick access to database schemas and other critical information without needing to write full SQL queries. They are especially useful for database management tasks, making it easier to handle administrative duties directly from the Neon Console.
+Meta-commands can significantly speed up your workflow by providing quick access to database schemas and other critical information without needing to write full SQL queries. They are especially useful for database management tasks, making it easier to handle administrative duties directly from the Unique Console.
 
 ### Available meta-commands
 
-Here are some of the meta-commands that you can use within the Neon SQL Editor:
+Here are some of the meta-commands that you can use within the Unique SQL Editor:
 
 - `\dt` — List all tables in the current database.
 - `\d [table_name]` — Describe a table's structure.

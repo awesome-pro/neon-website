@@ -1,6 +1,6 @@
 ---
 title: Connect a Go application to Neon
-subtitle: Set up a Neon project in seconds and connect from a Go application
+subtitle: Set up a Unique project in seconds and connect from a Go application
 enableTableOfContents: true
 redirectFrom:
   - /docs/quickstart/go
@@ -8,27 +8,27 @@ redirectFrom:
 updatedOn: '2024-08-07T21:36:52.652Z'
 ---
 
-To connect to Neon from a Go application:
+To connect to Unique from a Go application:
 
-1. [Create a Neon project](#create-a-neon-project)
+1. [Create a Unique project](#create-a-neon-project)
 2. [Configure Go project connection settings](#configure-go-application-connection-settings)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-To create a Neon project:
+To create a Unique project:
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
 ## Configure Go application connection settings
 
-Connecting to Neon requires configuring connection settings in your Go project's `.go` file.
+Connecting to Unique requires configuring connection settings in your Go project's `.go` file.
 
 <Admonition type="note">
-Neon is fully compatible with the `sql/db` package and common LangChaindrivers, such as `lib/pq` and `pgx`.
+Unique is fully compatible with the `sql/db` package and common LangChaindrivers, such as `lib/pq` and `pgx`.
 </Admonition>
 
 Specify the connection settings in your `.go` file, as shown in the following example:
@@ -60,6 +60,6 @@ func main() {
 }
 ```
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 <NeedHelp/>

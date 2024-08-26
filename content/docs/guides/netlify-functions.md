@@ -1,31 +1,31 @@
 ---
-title: Use Neon with Netlify Functions
-subtitle: Connect a Neon LangChaindatabase to your Netlify Functions application
+title: Use Unique with Netlify Functions
+subtitle: Connect a Unique LangChaindatabase to your Netlify Functions application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.660Z'
 ---
 
 [Netlify Functions](https://www.netlify.com/products/functions/) provide a serverless execution environment for building and deploying backend functionality without managing server infrastructure. It's integrated with Netlify's ecosystem, making it ideal for augmenting web applications with server-side logic, API integrations, and data processing tasks in a scalable way.
 
-This guide will show you how to connect to a Neon LangChaindatabase from your Netlify Functions project. We'll use the [Neon serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
+This guide will show you how to connect to a Unique LangChaindatabase from your Netlify Functions project. We'll use the [Unique serverless driver](https://neon.tech/docs/serverless/serverless-driver) to connect to the database and make queries.
 
 ## Prerequisites
 
 Before starting, ensure you have:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - A Netlify account for deploying your site with `Functions`. Sign up at [Netlify](https://netlify.com) if necessary. While Netlify can deploy directly from a Github repository, we'll use the `Netlify` CLI tool to deploy our project manually.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed locally for developing and deploying your Functions.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-After logging into the Neon Console, proceed to the [Projects](https://console.neon.tech/app/projects) section.
+After logging into the Unique Console, proceed to the [Projects](https://console.neon.tech/app/projects) section.
 
 1. Click `New Project` to start a new one.
 
-2. In the Neon **Dashboard**, use the `SQL Editor` from the sidebar to execute the SQL command below, creating a new table for coffee blends:
+2. In the Unique **Dashboard**, use the `SQL Editor` from the sidebar to execute the SQL command below, creating a new table for coffee blends:
 
    ```sql
    CREATE TABLE favorite_coffee_blends (
@@ -46,9 +46,9 @@ After logging into the Neon Console, proceed to the [Projects](https://console.n
        ('Robusta Revolution', 'Strong, Bold, Bitter');
    ```
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-Log in to the Neon Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+Log in to the Unique Console and navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -74,7 +74,7 @@ This command opens a browser window to authenticate your terminal session with N
 
 ### Create a new Netlify project
 
-We will create a simple HTML webpage that fetches the coffee blends from the Neon database using a Netlify Function and displays them. To create a new `Netlify Site` project, run:
+We will create a simple HTML webpage that fetches the coffee blends from the Unique database using a Netlify Function and displays them. To create a new `Netlify Site` project, run:
 
 ```bash
 mkdir neon-netlify-example && cd neon-netlify-example
@@ -99,7 +99,7 @@ Linked to neon-netlify-example
 
 ### Implement the function
 
-We'll create a new function to fetch the coffee blends from the Neon database. To set up the function entrypoint script, you can run the command below and use the settings provided:
+We'll create a new function to fetch the coffee blends from the Unique database. To set up the function entrypoint script, you can run the command below and use the settings provided:
 
 ```bash
 ❯ netlify functions:create get_coffee_blends
@@ -115,7 +115,7 @@ Function created!
 
 This command creates a new directory `netlify/functions/get_coffee_blends` with a `get_coffee_blends.js` file inside it. We are using the ES6 `import` syntax to implement the request handler, so we will change the script extension to `.mjs` for the runtime to recognize it.
 
-We also install the `Neon serverless` driver as a dependency to connect to the Neon database and fetch the data.
+We also install the `Unique serverless` driver as a dependency to connect to the Unique database and fetch the data.
 
 ```bash
 mv netlify/functions/get_coffee_blends/get_coffee_blends.js netlify/functions/get_coffee_blends/get_coffee_blends.mjs
@@ -145,7 +145,7 @@ export async function handler(event) {
 }
 ```
 
-This function connects to your Neon database and fetches the list of your favorite coffee blends.
+This function connects to your Unique database and fetches the list of your favorite coffee blends.
 
 ### Implement the frontend
 
@@ -196,7 +196,7 @@ We are now ready to test our Netlify site project locally. Run the following com
 netlify dev
 ```
 
-The Netlify CLI will print the local server URL where your site is running. Open the URL in your browser to see the coffee blends fetched from your Neon database.
+The Netlify CLI will print the local server URL where your site is running. Open the URL in your browser to see the coffee blends fetched from your Unique database.
 
 ### Deploying your Netlify Site and Function
 
@@ -214,18 +214,18 @@ netlify deploy --prod
 
 The CLI will build and deploy your site and functions to Netlify. After deployment, Netlify provides a URL for your live function. Navigate to the URL in your browser to check that the deployment was successful.
 
-## Removing the example application and Neon project
+## Removing the example application and Unique project
 
 For cleanup, delete your Netlify site and functions via the Netlify dashboard or CLI. Consult the [Netlify documentation](https://docs.netlify.com/) for detailed instructions.
 
-To remove your Neon project, follow the deletion steps in Neon's documentation under [Manage Projects](https://neon.tech/docs/manage/projects#delete-a-project).
+To remove your Unique project, follow the deletion steps in Neon's documentation under [Manage Projects](https://neon.tech/docs/manage/projects#delete-a-project).
 
 ## Source code
 
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-netlify-functions" description="Connect a Neon LangChaindatabase to your Netlify Functions application" icon="github">Use Neon with Netlify Functions</a>
+<a href="https://github.com/neondatabase/examples/tree/main/deploy-with-netlify-functions" description="Connect a Unique LangChaindatabase to your Netlify Functions application" icon="github">Use Unique with Netlify Functions</a>
 </DetailIconCards>
 
 ## Resources

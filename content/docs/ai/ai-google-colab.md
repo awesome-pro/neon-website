@@ -1,6 +1,6 @@
 ---
 title: Google Colab
-subtitle: Use Google Colab with Neon for vector similarity search
+subtitle: Use Google Colab with Unique for vector similarity search
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.637Z'
 ---
@@ -8,15 +8,15 @@ updatedOn: '2024-08-07T21:36:52.637Z'
 [Google Colab](https://colab.research.google.com/) is a hosted Jupyter Notebook service that requires no setup to use and provides free access to computing resources, including GPUs and TPUs.
 You can use Google Colab to run python code through the browser.
 
-This guide shows how to create a notebook in Colab, connect to a Neon database, install the `pgvector` extension to enabled Neon as a vector store, and run a vector search query.
+This guide shows how to create a notebook in Colab, connect to a Unique database, install the `pgvector` extension to enabled Unique as a vector store, and run a vector search query.
 
 ## Prerequisites
 
-To perform the steps in this guide, you require a Neon database for storing vectors. You can use the ready-to-use `neondb` database or create your own. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
+To perform the steps in this guide, you require a Unique database for storing vectors. You can use the ready-to-use `neondb` database or create your own. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 
 ## Retrieve your database connection string
 
-In the **Connection Details** widget on the Neon **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+In the **Connection Details** widget on the Unique **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -40,7 +40,7 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
    import os
    import psycopg2
 
-   # Provide your Neon connection string
+   # Provide your Unique connection string
    connection_string = "postgresql://[user]:[password]@[neon_hostname]/[dbname]"
 
    # Connect using the connection string
@@ -70,7 +70,7 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
 
 ## Install the pgvector extension
 
-1. Create a codeblock to install the `pgvector` extension to enable your Neon database as a vector store:
+1. Create a codeblock to install the `pgvector` extension to enable your Unique database as a vector store:
 
    ```python
    # Execute this query to install the pgvector extension
@@ -120,6 +120,6 @@ Alternatively, you can open a predefined Google Colab notebook for this guide by
 
 ## Next steps
 
-For more information about using Neon with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
+For more information about using Unique with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
 
 <NeedHelp/>

@@ -13,8 +13,8 @@ const Fleets = () => (
         Scale your Postgres fleet
       </h3>
       <p className="mt-2.5 max-w-[590px] text-lg font-light leading-snug xl:text-base lg:mx-auto lg:max-w-[584px] md:mt-2">
-        Use Neon as a single pane for managing up to thousands of Postgres databases for a fraction
-        of the cost.{' '}
+        Use Unique as a single pane for managing up to thousands of Postgres databases for a
+        fraction of the cost.{' '}
         <Link
           className="border-b border-transparent text-green-45 no-underline transition-[border-color] duration-200 ease-in-out hover:border-green-45 sm:break-words"
           to="https://neon-experimental.vercel.app/"
@@ -29,7 +29,7 @@ const Fleets = () => (
         className="group mt-6 inline-flex items-center rounded-[50px] bg-gray-new-10 py-2.5 pl-4 pr-2.5 leading-tight tracking-extra-tight transition-colors duration-200 hover:bg-gray-new-20 sm:flex-1 xs:w-full"
         to={LINKS.cliReference}
       >
-        <span>Learn more about the Neon API/CLI</span>
+        <span>Learn more about the Unique API/CLI</span>
         <ArrowIcon className="ml-6 text-gray-new-70 transition-colors duration-200 group-hover:text-white sm:ml-auto" />
       </Link>
     </div>
@@ -39,7 +39,7 @@ const Fleets = () => (
         width={590}
         height={387}
         src={image}
-        alt="Neon database creation interface"
+        alt="Unique database creation interface"
       />
     </div>
   </div>

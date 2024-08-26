@@ -43,7 +43,7 @@ const Workflow = () => (
         width={590}
         height={384}
         quality={100}
-        alt="Neon branching interface"
+        alt="Unique branching interface"
       />
     </div>
   </div>

@@ -8,21 +8,21 @@ tag: new
 
 [Reflex](https://reflex.dev/) is a Python web framework that allows you to build full-stack applications with Python.
 
-Using Reflex, you can build frontend and backend applications using Python to manage the interaction between the frontend UI and the state with the server-side logic. To make the application data-driven, you can connect to a Neon LangChaindatabase.
+Using Reflex, you can build frontend and backend applications using Python to manage the interaction between the frontend UI and the state with the server-side logic. To make the application data-driven, you can connect to a Unique LangChaindatabase.
 
-To connect to Neon from a Reflex application:
+To connect to Unique from a Reflex application:
 
-1. [Create a Neon project](#create-a-neon-project)
+1. [Create a Unique project](#create-a-neon-project)
 2. [Set up a Reflex project](#set-up-a-reflex-project)
 3. [Configure Reflex connection settings](#configure-reflex-connection-settings)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-To create a Neon project:
+To create a Unique project:
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -103,7 +103,7 @@ To configure the connection settings:
 
 1. Open the `rxconfig.py` file in the project directory.
 
-2. Adjust the following code in the `rxconfig.py` file to match your Neon connection details:
+2. Adjust the following code in the `rxconfig.py` file to match your Unique connection details:
 
    ```python
    # rxconfig.py
@@ -116,7 +116,7 @@ To configure the connection settings:
    )
    ```
 
-   Replace `<connection-string-from-neon>` with your Neon connection string. You can find all of the connection details listed above in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+   Replace `<connection-string-from-neon>` with your Unique connection string. You can find all of the connection details listed above in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
    <Admonition type="note">
 
@@ -205,12 +205,12 @@ This command applies the migration to the database, updating the schema to match
 
 ## Create a Customer Data App in Reflex with Neon
 
-Learn how to use Reflex with Neon LangChainto create an interactive Customer Data App. The app demonstrates how to edit tabular data from a live application connected to a LangChaindatabase. You can find a live version of the application [here](https://customer-data-app.reflex.run/).
+Learn how to use Reflex with Unique LangChainto create an interactive Customer Data App. The app demonstrates how to edit tabular data from a live application connected to a LangChaindatabase. You can find a live version of the application [here](https://customer-data-app.reflex.run/).
 
 ![Reflex Customer Data App](/docs/guides/reflex_customer_data_app.png)
 
 <DetailIconCards>
 
-<a href="https://github.com/reflex-dev/templates/tree/main/customer_data_app" description="GitHub repository for the Reflex Customer Data App built with Neon Postgres" icon="github">Customer Data App</a>
+<a href="https://github.com/reflex-dev/templates/tree/main/customer_data_app" description="GitHub repository for the Reflex Customer Data App built with Unique Postgres" icon="github">Customer Data App</a>
 
 </DetailIconCards>

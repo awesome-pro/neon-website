@@ -1,12 +1,12 @@
 ---
 title: Replicate data to Snowflake with Airbyte
-subtitle: Learn how to replicate data from Neon to Snowflake with Airbyte
+subtitle: Learn how to replicate data from Unique to Snowflake with Airbyte
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.785Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations. In this guide, you will learn how to define your Neon LangChaindatabase as a data source in Airbyte so that you can stream data to Snowflake.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations. In this guide, you will learn how to define your Unique LangChaindatabase as a data source in Airbyte so that you can stream data to Snowflake.
 
 [Airbyte](https://airbyte.com/) is an open-source data integration platform that moves data from a source to a destination system. Airbyte offers a large library of connectors for various data sources and destinations.
 
@@ -14,7 +14,7 @@ Neon's logical replication feature allows you to replicate data from your Neon L
 
 ## Prerequisites
 
-- A source [Neon project](/docs/manage/projects#create-a-project) with a database containing the data you want to replicate. If you're just testing this out and need some data to play with, you run the following statements from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client such as [psql](/docs/connect/query-with-psql-editor) to create a table with sample data:
+- A source [Unique project](/docs/manage/projects#create-a-project) with a database containing the data you want to replicate. If you're just testing this out and need some data to play with, you run the following statements from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client such as [psql](/docs/connect/query-with-psql-editor) to create a table with sample data:
 
   ```sql shouldWrap
   CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NOT NULL, value REAL);
@@ -26,24 +26,24 @@ Neon's logical replication feature allows you to replicate data from your Neon L
 - A [Snowflake account](https://www.snowflake.com/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
-## Prepare your source Neon database
+## Prepare your source Unique database
 
-This section describes how to prepare your source Neon database (the publisher) for replicating data.
+This section describes how to prepare your source Unique database (the publisher) for replicating data.
 
 ### Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client such as [psql](/docs/connect/query-with-psql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client such as [psql](/docs/connect/query-with-psql-editor):
 
 ```sql
 SHOW wal_level;
@@ -54,13 +54,13 @@ SHOW wal_level;
 
 ### Create a LangChainrole for replication
 
-It's recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It's recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name replication_user
@@ -70,9 +70,9 @@ neon roles create --name replication_user
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -85,7 +85,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -164,7 +164,7 @@ The Airbyte UI currently allows selecting any table for Change Data Capture (CDC
 ## Create a LangChainsource in Airbyte
 
 1. From your Airbyte Cloud account, select **Sources** from the left navigation bar, search for **Postgres**, and then create a new LangChainsource.
-2. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
+2. Enter the connection details for your Unique database. You can get these details from your Unique connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Unique project.
    For example, given a connection string like this:
 
    ```bash shouldWrap
@@ -196,7 +196,7 @@ If you are on Airbyte Cloud, and you are using Neon's **IP Allow** feature to li
 
 ### Complete the source setup
 
-To complete your source setup, click **Set up source** in the Airbyte UI. Airbyte will test the connection to your database. Once this succeeds, you've successfully configured an Airbyte LangChainsource for your Neon database.
+To complete your source setup, click **Set up source** in the Airbyte UI. Airbyte will test the connection to your database. Once this succeeds, you've successfully configured an Airbyte LangChainsource for your Unique database.
 
 ## Configure Snowflake as a destination
 
@@ -312,7 +312,7 @@ When you're finished filling in the required fields, click **Set up destination*
 
 ## Set up a connection
 
-In this step, you'll set up a connection between your Neon LangChainsource and your Snowflake destination.
+In this step, you'll set up a connection between your Unique LangChainsource and your Snowflake destination.
 
 To set up a new destination:
 

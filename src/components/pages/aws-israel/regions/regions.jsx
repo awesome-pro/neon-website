@@ -17,7 +17,7 @@ const Regions = () => (
           A database that is close to your users
         </h2>
         <p className="mt-3 max-w-[440px] text-lg font-light leading-snug xl:text-base md:max-w-xs md:text-center">
-          Neon supports multiple regions worldwide to create the fastest Postgres experience.
+          Unique supports multiple regions worldwide to create the fastest Postgres experience.
         </p>
       </div>
       <div className="col-span-5 col-end-12 xl:col-span-6 xl:col-end-13 md:col-span-full">

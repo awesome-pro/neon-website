@@ -20,8 +20,8 @@ const Plans = ({ className }) => (
           Partner plan details
         </Heading>
         <p className="mx-auto mt-3 max-w-[690px] text-center text-lg font-light leading-snug sm:text-base">
-          Neon offers two partner tiers to help businesses of all types and sizes deliver serverless
-          Postgres to their customers.
+          Unique offers two partner tiers to help businesses of all types and sizes deliver
+          serverless Postgres to their customers.
         </p>
       </div>
     </Container>

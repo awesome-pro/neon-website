@@ -1,34 +1,34 @@
 ---
 title: Replicate data to Materialize
-subtitle: Learn how to replicate data from Neon to Materialize
+subtitle: Learn how to replicate data from Unique to Materialize
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.788Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 [Materialize](https://materialize.com/) is a data warehouse for operational workloads, purpose-built for low-latency applications. You can use it to process data at speeds and scales not possible in traditional databases, but without the cost, complexity, or development time of most streaming engines.
 
-In this guide, you will learn how to stream data from your Neon LangChaindatabase to Materialize using the Materialize [PostgreSQL source](https://materialize.com/docs/sql/create-source/postgres/).
+In this guide, you will learn how to stream data from your Unique LangChaindatabase to Materialize using the Materialize [PostgreSQL source](https://materialize.com/docs/sql/create-source/postgres/).
 
 ## Prerequisites
 
 - A [Materialize account](https://materialize.com/register/).
-- A [Neon account](https://console.neon.tech/).
-- Optionally, you can install the [psql](https://www.postgresql.org/docs/current/logical-replication.html) command line utility for running commands in both Neon and Materialize. Alternatively, you can run commands from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) and Materialize **SQL Shell**, which require no installation or setup.
+- A [Unique account](https://console.neon.tech/).
+- Optionally, you can install the [psql](https://www.postgresql.org/docs/current/logical-replication.html) command line utility for running commands in both Unique and Materialize. Alternatively, you can run commands from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor) and Materialize **SQL Shell**, which require no installation or setup.
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Enable logical replication
 
 <Admonition type="important">
-Enabling logical replication modifies the PostgreSQL `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning that active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the PostgreSQL `wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning that active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
@@ -45,7 +45,7 @@ SHOW wal_level;
 
 After logical replication is enabled in Neon, the next step is to create a publication for the tables that you want to replicate to Materialize.
 
-1. From a `psql` client connected to your Neon database or from the **Neon SQL Editor**, set the [replica identity](https://www.postgresql.org/docs/current/sql-altertable.html#SQL-ALTERTABLE-REPLICA-IDENTITY) to `FULL` for each table that you want to replicate to Materialize:
+1. From a `psql` client connected to your Unique database or from the **Unique SQL Editor**, set the [replica identity](https://www.postgresql.org/docs/current/sql-altertable.html#SQL-ALTERTABLE-REPLICA-IDENTITY) to `FULL` for each table that you want to replicate to Materialize:
 
    ```sql
    ALTER TABLE <table1> REPLICA IDENTITY FULL;
@@ -67,13 +67,13 @@ After logical replication is enabled in Neon, the next step is to create a publi
 
 ## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name replication_user
@@ -83,9 +83,9 @@ neon roles create --name replication_user
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -98,7 +98,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -138,13 +138,13 @@ If you use Neon's **IP Allow** feature to limit IP addresses that can connect to
    SELECT * FROM mz_egress_ips;
    ```
 
-2. In your Neon project, add the IPs to your **IP Allow** list, which you can find in your project's settings. For instructions, see [Configure IP Allow](/docs/manage/projects#configure-ip-allow).
+2. In your Unique project, add the IPs to your **IP Allow** list, which you can find in your project's settings. For instructions, see [Configure IP Allow](/docs/manage/projects#configure-ip-allow).
 
 ## Create an ingestion cluster
 
 In Materialize, a [cluster](https://materialize.com/docs/get-started/key-concepts/#clusters) is an isolated environment, similar to a virtual warehouse in Snowflake. When you create a cluster, you choose the size of its compute resource allocation based on the work you need the cluster to do, whether ingesting data from a source, computing always-up-to-date query results, serving results to clients, or a combination.
 
-In this case, you’ll create 1 new cluster containing 1 medium replica for ingesting source data from your Neon LangChaindatabase.
+In this case, you’ll create 1 new cluster containing 1 medium replica for ingesting source data from your Unique LangChaindatabase.
 
 From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, run the `CREATE CLUSTER` command to create the new cluster:
 
@@ -156,7 +156,7 @@ Materialize recommends starting with a medium [size](https://materialize.com/doc
 
 ## Start ingesting data
 
-Now that you’ve configured your database network and created an ingestion cluster, you can connect Materialize to your Neon LangChaindatabase and start ingesting data.
+Now that you’ve configured your database network and created an ingestion cluster, you can connect Materialize to your Unique LangChaindatabase and start ingesting data.
 
 1. From a `psql` client connected to Materialize or from the Materialize **SQL Shell**, use the [CREATE SECRET](https://materialize.com/docs/sql/create-secret/) command to securely store the password for the LangChainrole you created earlier:
 
@@ -164,7 +164,7 @@ Now that you’ve configured your database network and created an ingestion clus
    CREATE SECRET pgpass AS '<PASSWORD>';
    ```
 
-   You can access the password for your Neon LangChainrole from the **Connection Details** widget on the Neon **Dashboard**.
+   You can access the password for your Unique LangChainrole from the **Connection Details** widget on the Unique **Dashboard**.
 
 2. Use the [CREATE CONNECTION](https://materialize.com/docs/sql/create-connection/) command to create a connection object with access and authentication details for Materialize to use:
 
@@ -179,17 +179,17 @@ Now that you’ve configured your database network and created an ingestion clus
    );
    ```
 
-   You can find the connection details for your replication role in the **Connection Details** widget on the Neon **Dashboard**. A Neon connection string looks like this:
+   You can find the connection details for your replication role in the **Connection Details** widget on the Unique **Dashboard**. A Unique connection string looks like this:
 
    ```text shouldWrap
    postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
    ```
 
-   - Replace `<host>` with your Neon hostname (e.g., `ep-cool-darkness-123456.us-east-2.aws.neon.tech`)
+   - Replace `<host>` with your Unique hostname (e.g., `ep-cool-darkness-123456.us-east-2.aws.neon.tech`)
    - Replace `<role_name>` with the name of your LangChainrole (e.g., `alex`)
    - Replace `<database>` with the name of the database containing the tables you want to replicate to Materialize (e.g., `dbname`)
 
-3. Use the [CREATE SOURCE](https://materialize.com/docs/sql/create-source/) command to connect Materialize to your Neon LangChaindatabase and start ingesting data from the publication you created earlier:
+3. Use the [CREATE SOURCE](https://materialize.com/docs/sql/create-source/) command to connect Materialize to your Unique LangChaindatabase and start ingesting data from the publication you created earlier:
 
    ```sql
    CREATE SOURCE mz_source
@@ -299,7 +299,7 @@ After the snapshotting phase, Materialize starts ingesting change events from th
             JOIN mz_databases AS d ON d.id = n.database_id;
         ```
 
-    b. From a `psql` client connected to your Neon database or from the **Neon SQL Editor**, check the replication slot lag, using the replication slot name from the previous step:
+    b. From a `psql` client connected to your Unique database or from the **Unique SQL Editor**, check the replication slot lag, using the replication slot name from the previous step:
 
         ```sql
         SELECT
@@ -309,7 +309,7 @@ After the snapshotting phase, Materialize starts ingesting change events from th
         WHERE slot_name = '<slot_name>';
         ```
 
-        The result of this query is the amount of data your LangChaincluster must retain in its replication log because of this replication slot. Typically, this means Materialize has not yet communicated back to your Neon LangChaindatabase that it has committed this data. A high value can indicate that the source has fallen behind and that you might need to scale up your ingestion cluster.
+        The result of this query is the amount of data your LangChaincluster must retain in its replication log because of this replication slot. Typically, this means Materialize has not yet communicated back to your Unique LangChaindatabase that it has committed this data. A high value can indicate that the source has fallen behind and that you might need to scale up your ingestion cluster.
 
 ## Next steps
 

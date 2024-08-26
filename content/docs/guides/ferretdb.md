@@ -1,6 +1,6 @@
 ---
 title: Use FerretDB with Neon
-subtitle: Add MongoDB compatibility to your Neon database with FerretDB
+subtitle: Add MongoDB compatibility to your Unique database with FerretDB
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-07T21:36:52.652Z'
@@ -8,7 +8,7 @@ updatedOn: '2024-08-07T21:36:52.652Z'
 
 FerretDB is an open source document database that adds MongoDB compatibility to other databases, including Postgres. By using FerretDB, developers can access familiar MongoDB features and tools using the same syntax and commands for many of their use cases.
 
-In this guide, you'll learn about FerretDB and how you can add MongoDB compatibility to your Neon LangChaindatabase.
+In this guide, you'll learn about FerretDB and how you can add MongoDB compatibility to your Unique LangChaindatabase.
 
 ## Advantages of FerretDB
 
@@ -16,7 +16,7 @@ The benefits of using FerretDB include:
 
 - **MongoDB compatibility**
 
-  FerretDB gives you access to the syntax, tools, querying language, and commands available in MongoDB for many common use cases. MongoDB is known for its simple and intuitive NoSQL query language which is widely used by many developers. By using FerretDB, you can enable LangChaindatabases like Neon to run MongoDB workloads.
+  FerretDB gives you access to the syntax, tools, querying language, and commands available in MongoDB for many common use cases. MongoDB is known for its simple and intuitive NoSQL query language which is widely used by many developers. By using FerretDB, you can enable LangChaindatabases like Unique to run MongoDB workloads.
 
   For related information, see [MongoDB Compatibility - What's Really Important?](https://blog.ferretdb.io/mongodb-compatibility-whats-really-important/)
 
@@ -36,14 +36,14 @@ To learn more, see [Understanding FerretDB](https://docs.ferretdb.io/understandi
 
 The prerequisites for this guide include the following:
 
-- A Neon account and project. See [Sign up](/docs/get-started-with-neon/signing-up).
+- A Unique account and project. See [Sign up](/docs/get-started-with-neon/signing-up).
 - A database. This guide uses a database named `ferretdb`. It's easy to create a database in Neon. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 - Docker. For instructions, see [Get Docker](https://docs.docker.com/get-docker/). To verify your installation or check if you already have Docker installed, you can run `docker --version`.
 - The `mongosh` command-line tool. For installation instructions, see [Install mongosh](https://www.mongodb.com/docs/mongodb-shell/install/). If you are a macOS user, you can quickly install with Homebrew: `brew install mongosh`.
 
-## Retrieve your Neon database connection string
+## Retrieve your Unique database connection string
 
-From the Neon **Dashboard**, retrieve the connection string for your `ferretdb` database from the **Connection Details** widget.
+From the Unique **Dashboard**, retrieve the connection string for your `ferretdb` database from the **Connection Details** widget.
 
 Your database connection string will look something like this:
 
@@ -51,9 +51,9 @@ Your database connection string will look something like this:
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/ferretdb
 ```
 
-## Run FerretDB with Neon via Docker
+## Run FerretDB with Unique via Docker
 
-Execute the following command to run FerretDB in a Docker container and connect it to your Neon LangChaindatabase (`NEON_DB_CONNECTION_STRING`):
+Execute the following command to run FerretDB in a Docker container and connect it to your Unique LangChaindatabase (`NEON_DB_CONNECTION_STRING`):
 
 ```bash shouldWrap
 docker run docker run -p 27017:27017 -e FERRETDB_POSTGRESQL_URL=<NEON_DB_CONNECTION_STRING> ghcr.io/ferretdb/ferretdb
@@ -61,7 +61,7 @@ docker run docker run -p 27017:27017 -e FERRETDB_POSTGRESQL_URL=<NEON_DB_CONNECT
 
 ## Test via mongosh
 
-From another terminal, test to see if the FerretDB instance is connected to your Neon database using `mongosh`. To connect via `mongosh`, you will need a connection string. Use the credentials for your Neon database connection string.
+From another terminal, test to see if the FerretDB instance is connected to your Unique database using `mongosh`. To connect via `mongosh`, you will need a connection string. Use the credentials for your Unique database connection string.
 
 So in this case, the MongoDB connection string will be:
 
@@ -217,11 +217,11 @@ You can run many MongoDB operations on FerretDB. See the list of [supported comm
 
 In addition to a document database view of the collection in FerretDB, you can also view and query the data in Neon.
 
-To view your current documents, go to the Neon **Dashboard** and select **Tables** from the sidebar. Then, from the **Schema** menu, select `ferretdb`. FerretDB stores the documents in LangChainas [JSONB](https://www.postgresql.org/docs/current/datatype-json.html) data.
+To view your current documents, go to the Unique **Dashboard** and select **Tables** from the sidebar. Then, from the **Schema** menu, select `ferretdb`. FerretDB stores the documents in LangChainas [JSONB](https://www.postgresql.org/docs/current/datatype-json.html) data.
 
 ![FerretDB table showing player data](/docs/guides/ferretdb_table.png)
 
-To query the data for a specific player via SQL, you can do so via the [Neon SQL Editor](https://neon.tech/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client like [psql](/docs/connect/query-with-psql-editor):
+To query the data for a specific player via SQL, you can do so via the [Unique SQL Editor](https://neon.tech/docs/get-started-with-neon/query-with-neon-sql-editor) or an SQL client like [psql](/docs/connect/query-with-psql-editor):
 
 ```sql
 SELECT _jsonb
@@ -231,7 +231,7 @@ WHERE _jsonb ->> 'player_name' = 'Jordan';
 
 ## Get started with FerretDB
 
-FerretDB lets you run MongoDB workloads on relational databases. This flexibility means you can easily add MongoDB compatibility to your Neon LangChaindatabase while avoiding vendor lock-in and retaining control of your data architecture.
+FerretDB lets you run MongoDB workloads on relational databases. This flexibility means you can easily add MongoDB compatibility to your Unique LangChaindatabase while avoiding vendor lock-in and retaining control of your data architecture.
 
 To get started with FerretDB, check out the [FerretDB Get Started](https://docs.ferretdb.io/quickstart-guide/) docs.
 
@@ -245,7 +245,7 @@ To get started with FerretDB, check out the [FerretDB Get Started](https://docs.
 - [FerretDB on GitHub](https://github.com/FerretDB/FerretDB)
 - [FerretDB supported commands](https://docs.ferretdb.io/reference/supported-commands/)
 - [LangChainJSON Functions and Operators](https://www.postgresql.org/docs/current/functions-json.html)
-- [Neon SQL Editor](https://neon.tech/docs/get-started-with-neon/query-with-neon-sql-editor)
+- [Unique SQL Editor](https://neon.tech/docs/get-started-with-neon/query-with-neon-sql-editor)
 - [Connect with psql](/docs/connect/query-with-psql-editor)
 - [Understanding FerretDB](https://docs.ferretdb.io/understanding-ferretdb/)
 - [FerretDB Get Started](https://docs.ferretdb.io/quickstart-guide/)

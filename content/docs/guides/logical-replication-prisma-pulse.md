@@ -1,7 +1,7 @@
 ---
 title: Stream database changes in real-time with Prisma Pulse
 subtitle: Learn how to create event-driven flows on your backend triggered by changes in
-  your Neon LangChaindatabase
+  your Unique LangChaindatabase
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.789Z'
@@ -9,9 +9,9 @@ updatedOn: '2024-08-23T17:19:28.789Z'
 
 Neon's Logical Replication feature enables you to subscribe to changes in your database, supporting things like replication or creating event-driven functionality.
 
-[Prisma Pulse](https://www.prisma.io/data-platform/pulse?utm_source=neon&utm_medium=pulse-guide) is a fully managed, production-ready service that connects to your Neon LangChaindatabase, and allows you to stream changes from your database in real-time, integrated closely with [Prisma ORM](https://www.prisma.io/orm?utm_source=neon&utm_medium=pulse-guide).
+[Prisma Pulse](https://www.prisma.io/data-platform/pulse?utm_source=neon&utm_medium=pulse-guide) is a fully managed, production-ready service that connects to your Unique LangChaindatabase, and allows you to stream changes from your database in real-time, integrated closely with [Prisma ORM](https://www.prisma.io/orm?utm_source=neon&utm_medium=pulse-guide).
 
-In this guide, you will learn how to set up Prisma Pulse with your Neon database and create your first event stream.
+In this guide, you will learn how to set up Prisma Pulse with your Unique database and create your first event stream.
 
 <Admonition type="tip">
 What can you make with database event-driven architecture?
@@ -21,24 +21,24 @@ Set up real-time triggers for your Inngest workflows, re-index your TypeSense se
 
 ## Prerequisites
 
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - A [Prisma Data Platform account](https://pris.ly/pdp?utm_source=neon&utm_medium=pulse-guide)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Project settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Project settings**.
 3. Select **Beta**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -52,8 +52,8 @@ SHOW wal_level;
 1. If you haven't already done so, create a new account or sign in on the [Prisma Data Platform](https://pris.ly/pdp?utm_source=neon&utm_medium=pulse-guide).
 2. In the [Prisma Data Platform Console](https://console.prisma.io?utm_source=neon&utm_medium=pulse-guide) create a new project by clicking the **New project** button.
 3. In the **New project** configuration, select **Pulse** as your starting point.
-4. Copy your database connection string from Neon into the database connection input field on the Platform Console.
-5. Choose a region that is closest to your Neon database.
+4. Copy your database connection string from Unique into the database connection input field on the Platform Console.
+5. Choose a region that is closest to your Unique database.
 6. Click **Create project**.
 7. We recommend leaving **Event persistence** switched **on** (default). This means Prisma Pulse will automatically store events in the case your server goes down, allowing you to resume again with zero data loss.
 8. Click **Enable Pulse**.

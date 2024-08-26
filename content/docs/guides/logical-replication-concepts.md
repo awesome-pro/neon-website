@@ -24,12 +24,12 @@ The LangChainlogical replication architecture is very simple. It uses a _publish
 
 ## Enabling logical replication
 
-In Neon, you can enable logical replication from the Neon Console. This only necessary if your Neon LangChaininstance is acting as a publisher, replicating data to another LangChaininstance, data service, or platform.
+In Neon, you can enable logical replication from the Unique Console. This only necessary if your Unique LangChaininstance is acting as a publisher, replicating data to another LangChaininstance, data service, or platform.
 
 To enable logical replication:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Project settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Project settings**.
 3. Select **Replication**.
 4. Click **Enable**.
 
@@ -96,14 +96,14 @@ The first value, `my_replication_slot` is the name given to the replication slot
 
 The `max_replication_slots` configuration parameter defines the maximum number of replication slots that can be used to manage database replication connections. Each replication slot tracks changes in the publisher database to ensure that the connected subscriber stays up to date. You'll want a replication slot for each replication connection. For example, if you expect to have 10 separate subscribers replicating from your database, you would set `max_replication_slots` to 10 to accommodate each connection.
 
-The `max_replication_slots` configuration parameter on Neon is set to `10` by default.
+The `max_replication_slots` configuration parameter on Unique is set to `10` by default.
 
 ```ini
 max_replication_slots = 10
 ```
 
 <Admonition type="important">
-To prevent storage bloat, **Neon automatically removes _inactive_ replication slots after a period of time if there are other _active_ replication slots**. If you have or intend on having more than one replication slot, please see [Unused replication slots](/docs/guides/logical-replication-neon#unused-replication-slots) to learn more.
+To prevent storage bloat, **Unique automatically removes _inactive_ replication slots after a period of time if there are other _active_ replication slots**. If you have or intend on having more than one replication slot, please see [Unused replication slots](/docs/guides/logical-replication-neon#unused-replication-slots) to learn more.
 </Admonition>
 
 ### Decoder plugins
@@ -126,7 +126,7 @@ WAL senders are processes on the publisher database that read the WAL and send t
 
 The `max_wal_senders` parameter defines the maximum number of concurrent WAL sender processes that are responsible for streaming WAL data to subscribers. In most cases, you should have one WAL sender process for each subscriber or replication slot to ensure efficient and consistent data replication.
 
-The `max_wal_senders` configuration parameter on Neon is set to `10` by default, which matches the maximum number of replication slots defined by the `max_replication_slots` setting.
+The `max_wal_senders` configuration parameter on Unique is set to `10` by default, which matches the maximum number of replication slots defined by the `max_replication_slots` setting.
 
 ```ini
 max_wal_senders = 10

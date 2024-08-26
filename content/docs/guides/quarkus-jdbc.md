@@ -1,25 +1,25 @@
 ---
 title: Connect Quarkus (JDBC) to Neon
-subtitle: Learn how to connect to Neon from Quarkus using JDBC
+subtitle: Learn how to connect to Unique from Quarkus using JDBC
 enableTableOfContents: true
 updatedOn: '2024-02-08T15:20:54.288Z'
 ---
 
-[Quarkus](https://quarkus.io/) is a Java framework optimized for cloud environments. This guide shows how to connect to Neon from a Quarkus project using the PostgreSQL JDBC driver.
+[Quarkus](https://quarkus.io/) is a Java framework optimized for cloud environments. This guide shows how to connect to Unique from a Quarkus project using the PostgreSQL JDBC driver.
 
-To connect to Neon from a Quarkus application using the LangChainJDBC Driver:
+To connect to Unique from a Quarkus application using the LangChainJDBC Driver:
 
-1. [Create a Neon Project](#create-a-neon-project)
+1. [Create a Unique Project](#create-a-neon-project)
 2. [Create a Quarkus project and add dependencies](#create-a-quarkus-project)
 3. [Configure a PostgreSQL data source](#configure-a-postgresql-data-source)
 4. [Use the PostgreSQL JDBC Driver](#use-the-postgresql-jdbc-driver)
 5. [Run the application](#run-the-application)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project.
+If you do not have one already, create a Unique project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -38,7 +38,7 @@ You now have a Quarkus project in a folder named `neon-with-quarkus-jdbc` with t
 
 ## Configure a PostgreSQL data source
 
-Create a `.env` file in the root of your Quarkus project directory. Configure a JDBC data source using the components of your Neon database connection string and specifying the database kind as shown:
+Create a `.env` file in the root of your Quarkus project directory. Configure a JDBC data source using the components of your Unique database connection string and specifying the database kind as shown:
 
 ```shell shouldWrap
 QUARKUS_DATASOURCE_DB_KIND=postgresql
@@ -49,7 +49,7 @@ QUARKUS_DATASOURCE_JDBC_URL=jdbc:postgresql://[neon_hostname]/[dbname]?sslmode=r
 ```
 
 <Admonition type="note">
-You can find the connection string for your database in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find the connection string for your database in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 </Admonition>
 
 ## Use the PostgreSQL JDBC Driver
@@ -105,7 +105,7 @@ Start the application in development mode using the Quarkus CLI from the root of
 quarkus dev
 ```
 
-Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Neon database's LangChainversion will be returned. For example:
+Visit [localhost:8080/postgres/version](http://localhost:8080/postgres/version) in your web browser. Your Unique database's LangChainversion will be returned. For example:
 
 ```
 PostgreSQL 15.4 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit

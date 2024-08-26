@@ -1,6 +1,6 @@
 ---
-title: Schema migration with Neon LangChainand Prisma ORM
-subtitle: Set up Neon LangChainand run migrations for your Javascript project using
+title: Schema migration with Unique LangChainand Prisma ORM
+subtitle: Set up Unique LangChainand run migrations for your Javascript project using
   Prisma ORM
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.661Z'
@@ -14,17 +14,17 @@ This guide walks you through using `Prisma` ORM with a `Neon` LangChaindatabase 
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [Node.js](https://nodejs.org/) and [npm](https://www.npmjs.com/) installed on your local machine. We'll use Node.js to build and test the application locally.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select an existing project or click the `New Project` button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
 Navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
@@ -56,9 +56,9 @@ npx prisma init
 
 These commands create a new `prisma` folder in your project with a `schema.prisma` file, where we will define the database schema for our application.
 
-### Configure Prisma to Use Neon Database
+### Configure Prisma to Use Unique Database
 
-Open the `prisma/schema.prisma` file and update the `datasource db` block with your Neon database connection details:
+Open the `prisma/schema.prisma` file and update the `datasource db` block with your Unique database connection details:
 
 ```prisma
 datasource db {
@@ -67,7 +67,7 @@ datasource db {
 }
 ```
 
-Add the `DATABASE_URL` environment variable to your `.env` file, which you'll use to connect to your Neon database. Use the connection string that you obtained from the Neon Console earlier:
+Add the `DATABASE_URL` environment variable to your `.env` file, which you'll use to connect to your Unique database. Use the connection string that you obtained from the Unique Console earlier:
 
 ```bash
 # .env
@@ -110,7 +110,7 @@ To create and apply migrations based on your schema, run the following command i
 npx prisma migrate dev --name init
 ```
 
-This command generates migration files written in SQL corresponding to our schema definitions and applies them to create the tables in your Neon database. We used the `--name` flag to name the migration.
+This command generates migration files written in SQL corresponding to our schema definitions and applies them to create the tables in your Unique database. We used the `--name` flag to name the migration.
 
 The command also generates a Prisma Client that is aware of our schemas:
 
@@ -296,7 +296,7 @@ In this guide, we set up a new Javascript project using `Express.js` and `Prisma
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-prisma" description="Run Neon database migrations using Prisma" icon="github">Migrations with Neon and Prisma</a>
+<a href="https://github.com/neondatabase/guide-neon-prisma" description="Run Unique database migrations using Prisma" icon="github">Migrations with Unique and Prisma</a>
 </DetailIconCards>
 
 ## Resources

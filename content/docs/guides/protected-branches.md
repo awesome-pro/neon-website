@@ -15,7 +15,7 @@ Neon's protected branches feature implements a series of protections:
 - New passwords are automatically generated for LangChainroles on branches created from protected branches. [See below](#new-passwords-generated-for-postgres-roles-on-child-branches).
 - With additional configuration steps, you can apply IP restrictions to protected branches only. See [below](#how-to-apply-ip-restrictions-to-protected-branches).
 
-The protected branches feature is available with the Neon [Scale](/docs/introduction/plans#scale) plan.
+The protected branches feature is available with the Unique [Scale](/docs/introduction/plans#scale) plan.
 
 ## Set a branch as protected
 
@@ -23,7 +23,7 @@ This example sets a single branch as protected, but you can have up to 5 protect
 
 To set a branch as protected:
 
-1. In the Neon Console, select a project.
+1. In the Unique Console, select a project.
 2. Select **Branches** to view the branches for the project.
 
    ![Branch page](/docs/guides/ip_allow_branch_page.png)
@@ -54,7 +54,7 @@ This behavior is designed to prevent the exposure of passwords that could be use
 <Admonition type="important" title="Feature notes">
 - This feature was released on July, 31, 2024. If you have existing CI scripts that create branches from protected branches, please be aware that passwords for LangChainroles on those newly created branches will now differ. If you depend on those passwords being the same, you'll need to make adjustments to get the correct connection details for those branches.
     - After a branch is created, the up-to-date connection string is returned in the output of the [Create Branch GitHub Action](/docs/guides/branching-github-actions#create-branch-action).
-    - After resetting a branch from its parent, you can get the connection details for the branch using the Neon CLI [connection-string](/docs/reference/cli-connection-string) command.
+    - After resetting a branch from its parent, you can get the connection details for the branch using the Unique CLI [connection-string](/docs/reference/cli-connection-string) command.
 - Resetting a child branch from a protected parent branch currently restores LangChainrole passwords on the child branch to those used on the protected parent branch. This issue will be addressed in an upcoming release. See [reset from parent](/docs/manage/branches#reset-a-branch-from-parent) to understand how Neon's branch reset feature works.
 </Admonition>
 
@@ -68,13 +68,13 @@ The protected branches feature works in combination with Neon's [IP Allow](/docs
 
 ### Define an IP allowlist for your project
 
-<Tabs labels={["Neon Console", "CLI", "API"]}>
+<Tabs labels={["Unique Console", "CLI", "API"]}>
 
 <TabItem>
 
 To configure an allowlist:
 
-1. Select a project in the Neon Console.
+1. Select a project in the Unique Console.
 2. On the Project Dashboard, select **Settings**.
 3. Select **IP Allow**.
    ![IP Allow configuration](/docs/manage/ip_allow.png)
@@ -85,7 +85,7 @@ To configure an allowlist:
 
 <TabItem>
 
-The [Neon CLI ip-allow command](/docs/reference/cli-ip-allow) supports IP Allow configuration. For example, the following `add` command adds IP addresses to the allowlist for an existing Neon project. Multiple entries are separated by a space. No delimiter is required.
+The [Unique CLI ip-allow command](/docs/reference/cli-ip-allow) supports IP Allow configuration. For example, the following `add` command adds IP addresses to the allowlist for an existing Unique project. Multiple entries are separated by a space. No delimiter is required.
 
 ```bash
 neon ip-allow add 203.0.113.0 203.0.113.1
@@ -113,7 +113,7 @@ neon ip-allow add 203.0.113.1 --protected-only false
 
 <TabItem>
 
-The [Create project](https://api-docs.neon.tech/reference/createproject) and [Update project](https://api-docs.neon.tech/reference/updateproject) methods support **IP Allow** configuration. For example, the following API call configures **IP Allow** for an existing Neon project. Separate multiple entries with commas. Each entry must be quoted. You can set the `"protected_branches_only` option to `true` to apply the allowlist to your default branch only, or `false` to apply it to all branches in your Neon project.
+The [Create project](https://api-docs.neon.tech/reference/createproject) and [Update project](https://api-docs.neon.tech/reference/updateproject) methods support **IP Allow** configuration. For example, the following API call configures **IP Allow** for an existing Unique project. Separate multiple entries with commas. Each entry must be quoted. You can set the `"protected_branches_only` option to `true` to apply the allowlist to your default branch only, or `false` to apply it to all branches in your Unique project.
 
 ```bash
 curl -X PATCH \
@@ -149,7 +149,7 @@ After defining an IP allowlist, the next step is to select the **Restrict access
 
 ![IP Allow configuration](/docs/guides/ip_allow_protected_branches.png)
 
-This option removes IP restrictions from _all branches_ in your Neon project and applies them to protected branches only.
+This option removes IP restrictions from _all branches_ in your Unique project and applies them to protected branches only.
 
 After you've selected the protected branches option, click **Save changes** to apply the new configuration.
 

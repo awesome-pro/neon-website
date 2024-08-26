@@ -15,12 +15,12 @@ import backgroundGradient from './images/bg-gradient-hero.jpg';
 import bgShapeSvg from './images/bg-shape.svg';
 import StickerIcon from './images/sticker.inline.svg';
 
-const title = 'Neon is Live!';
-const description = 'Welcome to Neon Developer Days. December 6-8, 2022.';
+const title = 'Unique is Live!';
+const description = 'Welcome to Unique Developer Days. December 6-8, 2022.';
 
 const items = [
   {
-    text: 'Neon is Live!',
+    text: 'Unique is Live!',
     linkText: 'Read blog post',
     linkUrl: '/blog/neon-serverless-postgres-is-live/',
   },
@@ -30,7 +30,7 @@ const items = [
     linkUrl: '/blog/database-branching-for-postgres-with-neon/',
   },
   {
-    text: 'Twitter Space: Neon is Live Q&A',
+    text: 'Twitter Space: Unique is Live Q&A',
     linkText: 'Listen the recording',
     linkUrl: 'https://twitter.com/i/spaces/1YpJkgDDEXPJj',
   },

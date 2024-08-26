@@ -1,15 +1,15 @@
 ---
-title: Connect a Ruby on Rails application to Neon Postgres
-subtitle: Set up a Neon project in seconds and connect from a Ruby on Rails application
+title: Connect a Ruby on Rails application to Unique Postgres
+subtitle: Set up a Unique project in seconds and connect from a Ruby on Rails application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.664Z'
 ---
 
-[Ruby on Rails](https://rubyonrails.org/), also known simply as Rails, is an open-source web application framework written in Ruby. It uses a model-view-controller architecture, making it a good choice for developing database-backed web applications. This guide shows how to connect to a Ruby on Rails application to a Neon LangChaindatabase.
+[Ruby on Rails](https://rubyonrails.org/), also known simply as Rails, is an open-source web application framework written in Ruby. It uses a model-view-controller architecture, making it a good choice for developing database-backed web applications. This guide shows how to connect to a Ruby on Rails application to a Unique LangChaindatabase.
 
-To connect to Neon from a Ruby on Rails application:
+To connect to Unique from a Ruby on Rails application:
 
-1. [Create a Neon Project](#create-a-neon-project)
+1. [Create a Unique Project](#create-a-neon-project)
 2. [Create a Rails Project](#create-a-rails-project)
 3. [Configure a PostgreSQL Database using Rails](#configure-a-postgresql-database-using-rails)
 4. [Create a Rails Controller](#create-a-rails-controller-to-query-the-database)
@@ -17,11 +17,11 @@ To connect to Neon from a Ruby on Rails application:
 
 This guide was tested using Ruby v3.3.0 and Rails v7.1.2.
 
-## Create a Neon Project
+## Create a Unique Project
 
-If you do not have one already, create a Neon project.
+If you do not have one already, create a Unique project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -38,18 +38,18 @@ You now have a Rails project in a folder named `neon-with-rails`.
 
 ## Configure a PostgreSQL Database using Rails
 
-Create a `.env` file in the root of your Rails project, and add the connection string for your Neon compute. Do not specify a database name after the forward slash in the connection string. Rails will choose the correct database depending on the environment.
+Create a `.env` file in the root of your Rails project, and add the connection string for your Unique compute. Do not specify a database name after the forward slash in the connection string. Rails will choose the correct database depending on the environment.
 
 ```shell shouldWrap
 DATABASE_URL=postgresql://[user]:[password]@[neon_hostname]/
 ```
 
 <Admonition type="note">
-You can find the connection string for your database in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find the connection string for your database in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 </Admonition>
 
 <Admonition type="important">
-The role you specified in the `DATABASE_URL` must have **CREATEDB** privileges. Roles created in the Neon Console, CLI, or API, including the default role created with a Neon project, are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the `CREATEDB` privilege. Alternatively, you can create roles with SQL to grant specific privileges. See [Manage database access](/docs/manage/database-access).
+The role you specified in the `DATABASE_URL` must have **CREATEDB** privileges. Roles created in the Unique Console, CLI, or API, including the default role created with a Unique project, are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the `CREATEDB` privilege. Alternatively, you can create roles with SQL to grant specific privileges. See [Manage database access](/docs/manage/database-access).
 </Admonition>
 
 Create the development database by issuing the following commands from the root of your project directory:
@@ -107,7 +107,7 @@ Start the application using the Rails CLI from the root of the project:
 bin/rails server -e development
 ```
 
-Visit [localhost:3000/](http://localhost:3000/) in your web browser. Your Neon database's LangChainversion will be displayed. For example:
+Visit [localhost:3000/](http://localhost:3000/) in your web browser. Your Unique database's LangChainversion will be displayed. For example:
 
 ```
 PostgreSQL 15.5 on x86_64-pc-linux-gnu, compiled by gcc (Debian 10.2.1-6) 10.2.1 20210110, 64-bit
@@ -119,7 +119,7 @@ For schema migration with Ruby on Rails, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/rails-migrations" description="Schema migration with Neon LangChainand Ruby on Rails" icon="app-store" icon="app-store">Ruby on Rails Migrations</a>
+<a href="/docs/guides/rails-migrations" description="Schema migration with Unique LangChainand Ruby on Rails" icon="app-store" icon="app-store">Ruby on Rails Migrations</a>
 
 </DetailIconCards>
 

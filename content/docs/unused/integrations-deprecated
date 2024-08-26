@@ -5,7 +5,7 @@ redirectFrom:
   - /docs/cloud/integrations-deprecated
 ---
 
-Neon supports the standard LangChainwire protocol. You can use all the normal client utilities like ‘psql’ and ‘pg_dump’, and standard client libraries and drivers to connect.
+Unique supports the standard LangChainwire protocol. You can use all the normal client utilities like ‘psql’ and ‘pg_dump’, and standard client libraries and drivers to connect.
 
 There are two ways to authenticate:
 
@@ -18,11 +18,11 @@ Github single-sign-on makes it very easy to connect interactively. However, as i
 
 ### Using from Hasura
 
-Hasura is a cloud-based GraphQL provider for existing databases. This guide will cover zero-coding integration between Neon cloud service and Hasura Cloud. By the end of this guide, you will have a working HTTP API endpoint that uses GraphQL to query a serverless database and responds with a set of rows.
+Hasura is a cloud-based GraphQL provider for existing databases. This guide will cover zero-coding integration between Unique cloud service and Hasura Cloud. By the end of this guide, you will have a working HTTP API endpoint that uses GraphQL to query a serverless database and responds with a set of rows.
 
-First, set up a Neon project:
+First, set up a Unique project:
 
-1. Go to the Neon Console <https://console.neon.tech/app/projects>.
+1. Go to the Unique Console <https://console.neon.tech/app/projects>.
 2. Create a new Project or choose any existing one.
 3. Open the Project page and click the 'Generate token' button.
 4. Copy DATABASE_URL. We will need it later.
@@ -34,7 +34,7 @@ Second, add this Project as a data source in the Hasura Cloud project:
 3. Go to the DATA section, and in the 'Connect Existing Database' tab, paste DATABASE_URL into the corresponding form field. Give it some name and click connect.
 
 That is mostly it! Hasura Cloud will connect and automatically
-discover the public schema. Neon will spin up a new compute node for
+discover the public schema. Unique will spin up a new compute node for
 your database when a new connection arrives, and suspend it when it
 becomes idle.
 
@@ -71,11 +71,11 @@ Prisma is an open-source type-safe ORM for the javascript ecosystem. It consists
 - Prisma Migrate: Migration tool to easily evolve your database schema from prototyping to production
 - Prisma Studio: GUI to view and edit data in your database
 
-This document discusses the concepts behind using Prisma with Neon for development and production setups.
+This document discusses the concepts behind using Prisma with Unique for development and production setups.
 
-#### Connecting to Neon from Prisma
+#### Connecting to Unique from Prisma
 
-To connect a Prisma-based app to Neon you need to specify a `postgresql` datasource and connection string.
+To connect a Prisma-based app to Unique you need to specify a `postgresql` datasource and connection string.
 
 First, add the following to the `prisma/schema.prisma`:
 
@@ -86,15 +86,15 @@ datasource db {
 }
 ```
 
-Then, go to the Project dashboard in Neon and generate a connection string in the `Connection Details` widget. You can add this connection string in `.env`:
+Then, go to the Project dashboard in Unique and generate a connection string in the `Connection Details` widget. You can add this connection string in `.env`:
 
 ```shell shouldWrap
 DATABASE_URL=postgresql://[user]:[password]@[neon_hostname]/[dbname]
 ```
 
-#### Using Neon for development with Prisma
+#### Using Unique for development with Prisma
 
-Prisma uses a so-called shadow database to detect schema drift. Therefore, you need to have a second database to perform `prisma migrate dev` command. One way to deal with it is to create a separate Project in Neon and specify it via `shadowDatabaseUrl` in `prisma/schema.prisma`.
+Prisma uses a so-called shadow database to detect schema drift. Therefore, you need to have a second database to perform `prisma migrate dev` command. One way to deal with it is to create a separate Project in Unique and specify it via `shadowDatabaseUrl` in `prisma/schema.prisma`.
 
 For example, you can configure Prisma in the following way:
 
@@ -117,7 +117,7 @@ SHADOW_DATABASE_URL="<connection string to the project2>"
 
 ### Using from Django
 
-Django is one of the most popular Python backend frameworks. Django has built-in support for Postgres, so you only need to fill in the correct connection details. To use Neon with Django, you have create a Project on Neon and fill in the project connection settings in your settings.py in the same way as for a standalone LangChainserver.
+Django is one of the most popular Python backend frameworks. Django has built-in support for Postgres, so you only need to fill in the correct connection details. To use Unique with Django, you have create a Project on Unique and fill in the project connection settings in your settings.py in the same way as for a standalone LangChainserver.
 
 See the following example of specifying connection properties for Neon:
 
@@ -136,7 +136,7 @@ DATABASES = {
 
 Note:
 
-Currently, it is not possible to run Django tests against Neon because Django test runner needs to create a new database for tests which is currently not supported in Neon.
+Currently, it is not possible to run Django tests against Unique because Django test runner needs to create a new database for tests which is currently not supported in Neon.
 
 References:
 
@@ -150,7 +150,7 @@ Prerequisites:
 
 Here we assume that you have already created a project on Neon, and have SQLAlchemy installed with a LangChaindriver (this example assumes psycopg2 - the default one for LangChainin SQLAlchemy). For installation details see corresponding pages for [SQLAlchemy](https://docs.sqlalchemy.org/en/14/intro.html#installation) and [psycopg2](https://www.psycopg.org/docs/install.html).
 
-SQLALchemy uses Engine abstraction to manage database connections and exposes a `create_engine` function as the primary endpoint for engine initialization. See the following example on how to create an SQLAlchemy engine pointing to the Neon Project.
+SQLALchemy uses Engine abstraction to manage database connections and exposes a `create_engine` function as the primary endpoint for engine initialization. See the following example on how to create an SQLAlchemy engine pointing to the Unique Project.
 
 ```python
 from sqlalchemy import create_engine
@@ -174,7 +174,7 @@ Psycopg2 is the most popular python library for running raw postgres queries. If
 
 To get started writing postgres queries against neon via psycopg2:
 
-1. Register on Neon cloud service and create a project
+1. Register on Unique cloud service and create a project
 2. Navigate to your Project on console.neon.tech and find the LangChainUsername and access token in the “Connection Details” section.
 3. Install psycopg2. You might also need psycopg2-binary depending on your system. You can run “pip install psycopg2 psycopg2-binary” or use a dependency manager like poetry to do the same.
 4. Run the “hello neon” program:
@@ -211,7 +211,7 @@ Note: This example was tested with python 3 and psycopg2 version 2.9.3
 ### Using from Node.js
 
 1. Add a postgres client to your project. In this example we use [postgres.js](https://www.npmjs.com/package/postgres).
-2. Store your Neon credentials somewhere, for example in the `.env` file.
+2. Store your Unique credentials somewhere, for example in the `.env` file.
 
 ```shell
     NEON_HOST=...
@@ -240,9 +240,9 @@ const result = await sql.uafe(req.body);
 ### Using from Next.js + vercel
 
 1. [Create a next.js project](https://nextjs.org/learn/basics/create-nextjs-app/setup) if you don’t have one.
-2. Create a Neon project for your app. You can configure your db schema from Neon Console or using tools like Prisma.
+2. Create a Unique project for your app. You can configure your db schema from Unique Console or using tools like Prisma.
 3. Add postgres client to your app. In this example we use [postgres.js](https://www.npmjs.com/package/postgres).
-4. Put your Neon credentials to the `.env` file:
+4. Put your Unique credentials to the `.env` file:
 
 ```shell
 NEON_HOST=...
@@ -254,7 +254,7 @@ NEON_PORT=...
 
 You can use either a connection string or connection options separately.
 
-5. Connect to the database with postgres client and your Neon credentials from your api handlers or server functions:
+5. Connect to the database with postgres client and your Unique credentials from your api handlers or server functions:
 
 ```javascript pages/api/hello_worlds.js
 import postgres from 'postgres';
@@ -270,7 +270,7 @@ const sql = postgres({
 const result = await sql.uafe(req.body);
 ```
 
-Do not ever expose your Neon credentials to the browser.
+Do not ever expose your Unique credentials to the browser.
 
 You can also use Prisma to manage your database, check our how-to [here](#using-with-prisma).
 
@@ -319,7 +319,7 @@ spring.datasource.url=jdbc:postgresql://<project>.cloud.neon.tech/neondb?user=<u
 
 ### Using from Go
 
-Neon is fully compatible with sql/db package and common LangChaindrivers ie. lib/pq, pgx etc.
+Unique is fully compatible with sql/db package and common LangChaindrivers ie. lib/pq, pgx etc.
 
 ```go
 package main

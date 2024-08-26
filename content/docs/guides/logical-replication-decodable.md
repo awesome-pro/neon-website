@@ -1,39 +1,39 @@
 ---
 title: Replicate data with Decodable
-subtitle: Learn how to replicate data from Neon with Decodable
+subtitle: Learn how to replicate data from Unique with Decodable
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-23T17:19:28.787Z'
 ---
 
-Neon's logical replication feature allows you to replicate data from your Neon LangChaindatabase to external destinations.
+Neon's logical replication feature allows you to replicate data from your Unique LangChaindatabase to external destinations.
 
 [Decodable](https://www.decodable.co/) is a fully managed platform for ETL, ELT, and stream processing,
 powered by Apache Flink® and Debezium.
 
-In this guide, you will learn how to configure a LangChainsource connector in Decodable for ingesting changes from your Neon database so that you can replicate data from Neon to any of Decodable's [supported data sinks](https://docs.decodable.co/connect/destinations.html),
+In this guide, you will learn how to configure a LangChainsource connector in Decodable for ingesting changes from your Unique database so that you can replicate data from Unique to any of Decodable's [supported data sinks](https://docs.decodable.co/connect/destinations.html),
 optionally processing the data with SQL or custom Flink jobs.
 
 ## Prerequisites
 
 - A [Decodable account](https://www.decodable.co/) ([start free](https://app.decodable.co/-/accounts/create), no credit card required)
-- A [Neon account](https://console.neon.tech/)
+- A [Unique account](https://console.neon.tech/)
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin
 
 ## Enable logical replication in Neon
 
 <Admonition type="important">
-Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Neon project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Neon project, meaning active connections will be dropped and have to reconnect.
+Enabling logical replication modifies the LangChain`wal_level` configuration parameter, changing it from `replica` to `logical` for all databases in your Unique project. Once the `wal_level` setting is changed to `logical`, it cannot be reverted. Enabling logical replication also restarts all computes in your Unique project, meaning active connections will be dropped and have to reconnect.
 </Admonition>
 
 To enable logical replication in Neon:
 
-1. Select your project in the Neon Console.
-2. On the Neon **Dashboard**, select **Settings**.
+1. Select your project in the Unique Console.
+2. On the Unique **Dashboard**, select **Settings**.
 3. Select **Logical Replication**.
 4. Click **Enable** to enable logical replication.
 
-You can verify that logical replication is enabled by running the following query from the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
+You can verify that logical replication is enabled by running the following query from the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor):
 
 ```sql
 SHOW wal_level;
@@ -44,13 +44,13 @@ SHOW wal_level;
 
 ## Create a LangChainrole for replication
 
-It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Neon project and roles created using the Neon CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
+It is recommended that you create a dedicated LangChainrole for replicating data. The role must have the `REPLICATION` privilege. The default LangChainrole created with your Unique project and roles created using the Unique CLI, Console, or API are granted membership in the [neon_superuser](/docs/manage/roles#the-neonsuperuser-role) role, which has the required `REPLICATION` privilege.
 
 <Tabs labels={["CLI", "Console", "API"]}>
 
 <TabItem>
 
-The following CLI command creates a role. To view the CLI documentation for this command, see [Neon CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
+The following CLI command creates a role. To view the CLI documentation for this command, see [Unique CLI commands — roles](https://api-docs.neon.tech/reference/createprojectbranchrole)
 
 ```bash
 neon roles create --name replication_user
@@ -60,9 +60,9 @@ neon roles create --name replication_user
 
 <TabItem>
 
-To create a role in the Neon Console:
+To create a role in the Unique Console:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 2. Select a project.
 3. Select **Branches**.
 4. Select the branch where you want to create the role.
@@ -75,7 +75,7 @@ To create a role in the Neon Console:
 
 <TabItem>
 
-The following Neon API method creates a role. To view the API documentation for this method, refer to the [Neon API reference](/docs/reference/cli-roles).
+The following Unique API method creates a role. To view the API documentation for this method, refer to the [Unique API reference](/docs/reference/cli-roles).
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects/hidden-cell-763301/branches/br-blue-tooth-671580/roles' \
@@ -108,7 +108,7 @@ Granting `SELECT ON ALL TABLES IN SCHEMA` instead of naming the specific tables 
 ## Create a publication
 
 For each table you would like to ingest into Decodable, set its [replica identity](https://www.postgresql.org/docs/current/logical-replication-publication.html) to `FULL`.
-To do so, issue the following statement in the **Neon SQL Editor**:
+To do so, issue the following statement in the **Unique SQL Editor**:
 
 ```sql
 ALTER TABLE <tbl1> REPLICA IDENTITY FULL;
@@ -136,7 +136,7 @@ For information about configuring allowed IPs in Neon, see [Configure IP Allow](
 
 1. In the Decodable web UI, select **Connections** from the left navigation bar and click **New Connection**.
 2. In the connector catalog, choose **LangChainCDC** and click **Connect**.
-3. Enter the connection details for your Neon database. You can get these details from your Neon connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Neon project.
+3. Enter the connection details for your Unique database. You can get these details from your Unique connection string, which you'll find in the **Connection Details** widget on the **Dashboard** of your Unique project.
    Your connection string will look like this:
 
    ```bash shouldWrap
@@ -172,12 +172,12 @@ By clicking **Run Preview**, you can examine the change events ingested by the c
 
 ## Next steps
 
-At this point, you have a running connector, which continuously ingests changes from a Neon database into Decodable with low latency.
+At this point, you have a running connector, which continuously ingests changes from a Unique database into Decodable with low latency.
 Next, you could set up one of the supported Decodable **sink connectors** which will propagate the data to a wide range of data stores and systems, such as Snowflake, Elasticsearch, Apache Kafka, Apache Iceberg, S3, any many more.
 
 If needed, you also can add a **processing step**, either using SQL or by deploying your own Apache Flink job,
 for instance, to filter and transform the data before propagating it to an external system.
-Of course, you also can take your processed data back to another Neon database, using the Decodable sink connector for Postgres.
+Of course, you also can take your processed data back to another Unique database, using the Decodable sink connector for Postgres.
 
 ## References
 

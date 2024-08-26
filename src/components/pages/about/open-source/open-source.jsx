@@ -18,7 +18,7 @@ const OpenSource = ({ items }) => (
           tag="h2"
           theme="black"
         >
-          Neon is
+          Unique is
           <br />
           open-source
         </Heading>
@@ -36,7 +36,7 @@ const OpenSource = ({ items }) => (
           rel="noopener noreferrer"
           withArrow
         >
-          Neon GitHub repository
+          Unique GitHub repository
         </Link>
       </header>
       <ul className="flex flex-col gap-y-20 xl:gap-y-[72px] lg:gap-y-14 md:gap-y-10">

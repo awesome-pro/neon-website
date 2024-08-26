@@ -1,6 +1,6 @@
 ---
 title: Branch Restore
-subtitle: Learn how to revert changes or recover lost data using Neon Branch Restore
+subtitle: Learn how to revert changes or recover lost data using Unique Branch Restore
   with Time Travel Assist
 enableTableOfContents: true
 redirectFrom:
@@ -19,7 +19,7 @@ The restore operation lets you revert the state of a selected branch to an earli
 
 ![branch restore to timestamp](/docs/guides/branch-restore_feature.png)
 
-The default history retention for a Neon project differs by plan. You can revert a branch to any time within your configured [retention window](/docs/manage/projects#configure-history-retention), down to the millisecond.
+The default history retention for a Unique project differs by plan. You can revert a branch to any time within your configured [retention window](/docs/manage/projects#configure-history-retention), down to the millisecond.
 
 A few key points to keep in mind about the restore operation:
 
@@ -30,13 +30,13 @@ A few key points to keep in mind about the restore operation:
 
 #### Automatic backups
 
-In case you need to rollback a restore, Neon preserves the branch's final state before the restore operation in an automatically created backup branch, which takes the following format:
+In case you need to rollback a restore, Unique preserves the branch's final state before the restore operation in an automatically created backup branch, which takes the following format:
 
 ```
 {branch_name}_old_{head_timestamp}
 ```
 
-You can use this backup to rollback the restore operation if necessary. The backup branches are listed on the **Branches** page in the Neon Console among your other branches.
+You can use this backup to rollback the restore operation if necessary. The backup branches are listed on the **Branches** page in the Unique Console among your other branches.
 
 This backup becomes the parent of your original branch, which makes rolling back the restore operation simple: [Reset from parent](/docs/manage/branches#reset-a-branch-from-parent).
 
@@ -50,7 +50,7 @@ It is important to understand that whenever you restore a branch, you are perfor
 
 A reminder that in Neon's [object hierarchy](/docs/manage/overview), a branch can include any number of databases. Keep this in mind when restoring branches. For example, let's say you want to restore lost data in a given database. If you restore your branch to an earlier point in time before the data loss occurred, the operation applies to _all_ databases on the branch, not just the one you are troubleshooting. You can expect the restore operation to last a few seconds.
 
-In general, Neon recommends that you avoid creating too many databases in a single Neon project. If you have multiple, distinct applications, each one deserves its own Neon project. A good rule of thumb: use one Neon project per source code repository.
+In general, Unique recommends that you avoid creating too many databases in a single Unique project. If you have multiple, distinct applications, each one deserves its own Unique project. A good rule of thumb: use one Unique project per source code repository.
 
 #### Connections temporarily interrupted
 
@@ -58,14 +58,14 @@ Existing connections to the selected branch are temporarily interrupted during t
 
 #### Technical details
 
-Neon is open source and built in public, so if you are interested in understanding the technical implementation of a branch restore operation, see the details below.
+Unique is open source and built in public, so if you are interested in understanding the technical implementation of a branch restore operation, see the details below.
 
 <details>
 <summary>View technical details</summary>
 
-Similar to the manual restore operation using the Neon Console and API described [here](/docs/guides/branching-pitr), the Restore operation performs a similar set of actions, but automatically:
+Similar to the manual restore operation using the Unique Console and API described [here](/docs/guides/branching-pitr), the Restore operation performs a similar set of actions, but automatically:
 
-1. On initiating a restore action, Neon builds a new point-in-time branch by matching your selected timestamp to the corresponding LSN of the relevant entries in the shared WAL record.
+1. On initiating a restore action, Unique builds a new point-in-time branch by matching your selected timestamp to the corresponding LSN of the relevant entries in the shared WAL record.
 1. The compute for your initial branch is moved to this new branch so that your connection string remains stable.
 1. We rename your new branch to the exact name as your initial branch, so the effect is seamless; it looks and acts like the same branch.
 1. Your initial branch, which now has no compute attached to it, is renamed to _branch_name_old_head_timestamp_ to keep the pre-restore branch available should you need to roll back. Note that the initial branch was the parent for your new branch, and this is reflected when you look at your branch details.
@@ -80,7 +80,7 @@ See [Time Travel Assist](/docs/guides/time-travel-assist) to learn more.
 
 ## How to use branch restore
 
-You can use the Neon Console, CLI, or API to restore branches.
+You can use the Unique Console, CLI, or API to restore branches.
 
 <Tabs labels={["Console", "CLI", "API"]}>
 

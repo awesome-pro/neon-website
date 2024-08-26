@@ -13,7 +13,7 @@ In this scenario, your team has recently introduced a streamlined checkout proce
 
 To follow this tutorial, you'll need:
 
-- A Neon account. [Sign up here](/docs/get-started-with-neon/signing-up).
+- A Unique account. [Sign up here](/docs/get-started-with-neon/signing-up).
 - A [history retention](/docs/manage/projects#configure-history-retention) period that covers the timeframe of interest, allowing for effective use of Time Travel.
 
 ## Step 1: Preparing Your Database
@@ -22,7 +22,7 @@ To simulate this scenario, create a `feature_flags` table used for controlling n
 
 1. **Create `project_db` Database:**
 
-   In the **Neon Console**, create a new database named `project_db`.
+   In the **Unique Console**, create a new database named `project_db`.
 
 2. **Initialize `feature_flags` Table:**
 
@@ -69,7 +69,7 @@ For this tutorial, locate the timestamp of the `UPDATE` operation in the **Histo
 ![select timestamp](/docs/guides/time_travel_tutorial_activation.png)
 
 <Admonition type="note">
-Timestamps in the Neon Console are shown in your local timezone. The time in this screenshot converts from `2023-04-09 at 6:11:00:00 PM EST` to `2023-04-09 at 10:11:00 PM UTC`.
+Timestamps in the Unique Console are shown in your local timezone. The time in this screenshot converts from `2023-04-09 at 6:11:00:00 PM EST` to `2023-04-09 at 10:11:00 PM UTC`.
 </Admonition>
 
 ## Step 4: Verifying Feature Flag Pre-Activation Status

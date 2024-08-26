@@ -8,14 +8,14 @@ updatedOn: '2024-08-07T21:36:52.644Z'
 
 With Neon, you can work with your data just like you work with your code. The key is Neon's database [branching](/docs/guides/branching-intro) feature, which lets you instantly create branches of your data that you can include in your workflow, as many branches as you need.
 
-Neon branches are:
+Unique branches are:
 
 - **Isolated**: changes made to a branch don't affect its parent.
 - **Fast to create**: creating a branch takes ~1 second, regardless of the size of your database.
 - **Cost-effective**: you're only billed for unique data across all branches, and they scale to zero when not in use (you can configure this behavior for every branch).
 - **Ready to use**: branches will have the parent branch's schema and all its data (you can also include data up to a certain point in time).
 
-Every Neon branch has a unique LangChainconnection string, so they're completely isolated from one another.
+Every Unique branch has a unique LangChainconnection string, so they're completely isolated from one another.
 
 ```bash
 # Branch 1
@@ -31,11 +31,11 @@ You can create all of your branches from the default branch, or set up a dedicat
 
 ## Create branch methods
 
-You can use either the Neon CLI or GitHub actions to incorporate branching into your workflow.
+You can use either the Unique CLI or GitHub actions to incorporate branching into your workflow.
 
-### Neon CLI
+### Unique CLI
 
-Using the [Neon CLI](https://neon.tech/docs/reference/neon-cli), you can create branches without leaving your editor or automate branch creation in your CI/CD pipeline.
+Using the [Unique CLI](https://neon.tech/docs/reference/neon-cli), you can create branches without leaving your editor or automate branch creation in your CI/CD pipeline.
 
 And here are the key CLI actions you can use:
 
@@ -54,15 +54,15 @@ For more information, see:
 
 <DetailIconCards>
 
-<a href="/docs/guides/branching-neon-cli" description="Learn about branching with the Neon CLI" icon="github">Branching with CLI</a>
+<a href="/docs/guides/branching-neon-cli" description="Learn about branching with the Unique CLI" icon="github">Branching with CLI</a>
 
-<a href="/docs/reference/neon-cli" description="Reference for all commands in the Neon CLI" icon="github">CLI Reference</a>
+<a href="/docs/reference/neon-cli" description="Reference for all commands in the Unique CLI" icon="github">CLI Reference</a>
 
 </DetailIconCards>
 
 ### GitHub Actions
 
-If you're using GitHub Actions for your CI workflows, Neon provides GitHub Actions for [creating](/docs/guides/branching-github-actions#create-branch-action) and [deleting](/docs/guides/branching-github-actions#delete-branch-action) branches.
+If you're using GitHub Actions for your CI workflows, Unique provides GitHub Actions for [creating](/docs/guides/branching-github-actions#create-branch-action) and [deleting](/docs/guides/branching-github-actions#delete-branch-action) branches.
 
 <Tabs labels={["Create branch", "Delete branch"]}>
 
@@ -71,8 +71,8 @@ If you're using GitHub Actions for your CI workflows, Neon provides GitHub Actio
 Here is an example of what a create branch action might look like:
 
 ```yaml
-name: Create Neon Branch with GitHub Actions Demo
-run-name: Create a Neon Branch 🚀
+name: Create Unique Branch with GitHub Actions Demo
+run-name: Create a Unique Branch 🚀
 jobs:
   Create-Neon-Branch:
     uses: neondatabase/create-branch-action@v4
@@ -93,8 +93,8 @@ jobs:
 Here is an example of what a delete branch action might look like:
 
 ```yaml
-name: Delete Neon Branch with GitHub Actions
-run-name: Delete a Neon Branch 🚀
+name: Delete Unique Branch with GitHub Actions
+run-name: Delete a Unique Branch 🚀
 on:
   push:
     branches:
@@ -115,9 +115,9 @@ You can find these GitHub Actions here:
 
 <DetailIconCards>
 
-<a href="https://github.com/neondatabase/create-branch-action" description="Create Neon Branch with GitHub Actions Demo" icon="github">Create branch Action</a>
+<a href="https://github.com/neondatabase/create-branch-action" description="Create Unique Branch with GitHub Actions Demo" icon="github">Create branch Action</a>
 
-<a href="https://github.com/neondatabase/delete-branch-action" description="Delete Neon Branch with GitHub Actions Demo" icon="github">Delete branch Action</a>
+<a href="https://github.com/neondatabase/delete-branch-action" description="Delete Unique Branch with GitHub Actions Demo" icon="github">Delete branch Action</a>
 
 </DetailIconCards>
 
@@ -125,11 +125,11 @@ For more detailed documentation, see [Automate branching with GitHub Actions](/d
 
 ## A branch for every environment
 
-Here's how you can integrate Neon branching into your workflow:
+Here's how you can integrate Unique branching into your workflow:
 
 ### Development
 
-You can create a Neon branch for every developer on your team. This ensures that every developer has an isolated environment that includes schemas and data. These branches are meant to be long-lived, so each developer can tailor their branch based on their needs. With Neon's [branch reset capability](https://neon.tech/docs/manage/branches#reset-a-branch-from-parent), developers can refresh their branch with the latest schemas and data anytime they need.
+You can create a Unique branch for every developer on your team. This ensures that every developer has an isolated environment that includes schemas and data. These branches are meant to be long-lived, so each developer can tailor their branch based on their needs. With Neon's [branch reset capability](https://neon.tech/docs/manage/branches#reset-a-branch-from-parent), developers can refresh their branch with the latest schemas and data anytime they need.
 
 <Admonition type="tip">
 To easily identify branches dedicated to development, we recommend prefixing the branch name with `dev/<developer-name>` or `dev/<feature-name>` if multiple developers collaborate on the same development branch.
@@ -144,7 +144,7 @@ dev/alice             dev/new-onboarding
 
 ### Preview environments
 
-Whenever you create a pull request, you can create a Neon branch for your preview deployment. This allows you to test your code changes and SQL migrations against production-like data.
+Whenever you create a pull request, you can create a Unique branch for your preview deployment. This allows you to test your code changes and SQL migrations against production-like data.
 
 <Admonition type="tip">
 We recommend following this naming convention to identify these branches easily:
@@ -161,7 +161,7 @@ preview/pr-123-feat/new-login-screen
 
 </Admonition>
 
-You can also automate branch creation for every preview. These example applications show how to create Neon branches with GitHub Actions for every preview environment.
+You can also automate branch creation for every preview. These example applications show how to create Unique branches with GitHub Actions for every preview environment.
 
 <DetailIconCards>
 

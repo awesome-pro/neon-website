@@ -1,30 +1,30 @@
 ---
-title: Use Neon read replicas with Prisma
-subtitle: Learn how to scale Prisma applications with Neon read replicas
+title: Use Unique read replicas with Prisma
+subtitle: Learn how to scale Prisma applications with Unique read replicas
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.663Z'
 ---
 
-A Neon read replica is an independent read-only compute that performs read operations on the same data as your primary read-write compute, which means adding a read replica to a Neon project requires no additional storage.
+A Unique read replica is an independent read-only compute that performs read operations on the same data as your primary read-write compute, which means adding a read replica to a Unique project requires no additional storage.
 
 A key benefit of read replicas is that you can distribute read requests to one or more read replicas, enabling you to easily scale your applications and achieve higher throughput for both read-write and read-only workloads.
 
 For more information about Neon's read replica feature, see [Read replicas](/docs/introduction/read-replicas).
 
-In this guide, we'll show you how you can leverage Neon read replicas to efficiently scale Prisma applications using Prisma Client's read replica extension: [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas).
+In this guide, we'll show you how you can leverage Unique read replicas to efficiently scale Prisma applications using Prisma Client's read replica extension: [@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas).
 
 ## Prerequisites
 
-- An application that uses Prisma with a Neon database.
+- An application that uses Prisma with a Unique database.
 - A paid plan account. Read replicas are a paid plan feature.
 
 ## Create a read replica
 
-You can create one or more read replicas for any branch in your Neon project.
+You can create one or more read replicas for any branch in your Unique project.
 
 You can add a read replica by following these steps:
 
-1. In the Neon Console, select **Branches**.
+1. In the Unique Console, select **Branches**.
 2. Select the branch where your database resides.
 3. Click **Add Read Replica**.
 4. On the **Add new compute** dialog, select **Read replica** as the **Compute type**.
@@ -36,7 +36,7 @@ You can add a read replica by following these steps:
 
    Your read replica compute is provisioned and appears on the **Computes** tab of the **Branches** page.
 
-Alternatively, you can create read replicas using the [Neon API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Neon CLI](/docs/reference/cli-branches#create).
+Alternatively, you can create read replicas using the [Unique API](https://api-docs.neon.tech/reference/createprojectendpoint) or [Unique CLI](/docs/reference/cli-branches#create).
 
 <CodeTabs labels={["API", "CLI"]}>
 
@@ -64,9 +64,9 @@ neon branches add-compute mybranch --type read_only
 
 ## Retrieve the connection string for your read replica
 
-Connecting to a read replica is the same as connecting to any branch in a Neon project, except you connect via a read replica compute instead of your primary read-write compute. The following steps describe how to retrieve the connection string (the URL) for a read replica from the Neon Console.
+Connecting to a read replica is the same as connecting to any branch in a Unique project, except you connect via a read replica compute instead of your primary read-write compute. The following steps describe how to retrieve the connection string (the URL) for a read replica from the Unique Console.
 
-1. On the Neon **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
+1. On the Unique **Dashboard**, under **Connection Details**, select the branch, the database, and the role you want to connect with.
 1. Under **Compute**, select a **Replica** compute.
 1. Select the connection string and copy it. This is the information you need to connect to the read replica from your Prisma Client. The connection string appears similar to the following:
 
@@ -89,7 +89,7 @@ Notice that the `endpoint_id` (`ep-damp-cell-123456`) for the read replica compu
 
 ## Configure Prisma Client to use a read replica
 
-[@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) adds support to Prisma Client for read replicas. The following steps show you how to install the extension and configure it to use a Neon read replica.
+[@prisma/extension-read-replicas](https://github.com/prisma/extension-read-replicas) adds support to Prisma Client for read replicas. The following steps show you how to install the extension and configure it to use a Unique read replica.
 
 1. Install the extension in your Prisma project:
 
@@ -111,7 +111,7 @@ Notice that the `endpoint_id` (`ep-damp-cell-123456`) for the read replica compu
    ```
 
    <Admonition type="note">
-   You can also pass an array of read replica connection strings if you want to use multiple read replicas. Neon supports adding multiple read replicas to a database branch.
+   You can also pass an array of read replica connection strings if you want to use multiple read replicas. Unique supports adding multiple read replicas to a database branch.
 
    ```javascript
    // lib/prisma.ts

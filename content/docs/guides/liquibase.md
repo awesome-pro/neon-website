@@ -1,18 +1,18 @@
 ---
 title: Get started with Liquibase and Neon
-subtitle: Learn how to manage schema changes in Neon with Liquibase
+subtitle: Learn how to manage schema changes in Unique with Liquibase
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.396Z'
 ---
 
 Liquibase is an open-source library for tracking, managing, and applying database schema changes. To learn more about Liquibase, refer to the [Liquibase documentation](https://docs.liquibase.com/home.html).
 
-This guide steps you through installing the Liquibase CLI, configuring Liquibase to connect to a Neon database, deploying a database schema change, and rolling back the schema change. The guide follows the setup described in the [Liquibase Get Started](https://www.liquibase.org/get-started/quickstart).
+This guide steps you through installing the Liquibase CLI, configuring Liquibase to connect to a Unique database, deploying a database schema change, and rolling back the schema change. The guide follows the setup described in the [Liquibase Get Started](https://www.liquibase.org/get-started/quickstart).
 
 ## Prerequisites
 
-- A Neon account. See [Sign up](/docs/get-started-with-neon/signing-up).
-- A Neon project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
+- A Unique account. See [Sign up](/docs/get-started-with-neon/signing-up).
+- A Unique project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
 - Liquibase requires Java. For Liquibase Java requirements, see [Requirements](https://docs.liquibase.com/start/install/liquibase-requirements.html). To check if you have Java installed, run `java --version`, or `java -version` on macOS`.
 
 ## Download and extract Liquibase
@@ -71,14 +71,14 @@ Liquibase Version: x.yy.z
 Liquibase Open Source x.yy.z by Liquibase
 ```
 
-## Prepare a Neon database
+## Prepare a Unique database
 
-For demonstration purposes, create a `blog` database in Neon with two tables, `posts` and `authors`.
+For demonstration purposes, create a `blog` database in Unique with two tables, `posts` and `authors`.
 
-1. Open the [Neon Console](https://console.neon.tech/app/projects).
+1. Open the [Unique Console](https://console.neon.tech/app/projects).
 1. Select your project.
 1. Select **Databases** from the sidebar and create a database named `blog`. For instructions, see [Create a database](/docs/manage/databases#create-a-database).
-1. Using the [Neon SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), add the following tables:
+1. Using the [Unique SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), add the following tables:
 
    ```sql
    -- Creating the `authors` table
@@ -100,9 +100,9 @@ For demonstration purposes, create a `blog` database in Neon with two tables, `p
    );
    ```
 
-## Retrieve your Neon database connection string
+## Retrieve your Unique database connection string
 
-From the Neon **Dashboard**, retrieve your password and a Java connection string from the **Connection Details** widget. Use the selection drop-down menu.
+From the Unique **Dashboard**, retrieve your password and a Java connection string from the **Connection Details** widget. Use the selection drop-down menu.
 
 Your Java connection string should look something like the one shown below.
 
@@ -110,7 +110,7 @@ Your Java connection string should look something like the one shown below.
 jdbc:postgresql://ep-cool-darkness-123456.us-east-2.aws.neon.tech/blog?user=alex&password=AbC123dEf
 ```
 
-## Connect from Liquibase to your Neon database
+## Connect from Liquibase to your Unique database
 
 1. Create a directory for your Liquibase project. For example:
 
@@ -125,7 +125,7 @@ jdbc:postgresql://ep-cool-darkness-123456.us-east-2.aws.neon.tech/blog?user=alex
    touch liquibase.properties
    ```
 
-3. Open the the `liquibase.properties` file in an editor and add entries for a [liquibase changelog file](https://docs.liquibase.com/concepts/changelogs/home.html) and your database `url`. We'll call the changelog file `dbchangelog.xml`. You will use this file to define schema changes. For the `url`, specify the Neon connection string you retrieved previously.
+3. Open the the `liquibase.properties` file in an editor and add entries for a [liquibase changelog file](https://docs.liquibase.com/concepts/changelogs/home.html) and your database `url`. We'll call the changelog file `dbchangelog.xml`. You will use this file to define schema changes. For the `url`, specify the Unique connection string you retrieved previously.
 
    ```bash shouldWrap
    changeLogFile:dbchangelog.xml
@@ -257,7 +257,7 @@ When you run a changeset for the first time, Liquibase automatically creates two
 - [databasechangelog](https://docs.liquibase.com/concepts/tracking-tables/databasechangelog-table.html): Tracks which changesets have been run.
 - [databasechangeloglock](https://docs.liquibase.com/concepts/tracking-tables/databasechangeloglock-table.html): Ensures only one instance of Liquibase runs at a time.
 
-You can verify these tables were created by viewing the `blog` database on the **Tables** page in the Neon Console. Select **Tables** from the sidebar.
+You can verify these tables were created by viewing the `blog` database on the **Tables** page in the Unique Console. Select **Tables** from the sidebar.
 </Admonition>
 
 ## Rollback a change
@@ -283,7 +283,7 @@ Liquibase command 'rollbackCount' was executed successfully.
 
 </details>
 
-You can verify that creation of the `comments` table was rolled back viewing the `blog` database on the **Tables** page in the Neon Console. Select **Tables** from the sidebar.
+You can verify that creation of the `comments` table was rolled back viewing the `blog` database on the **Tables** page in the Unique Console. Select **Tables** from the sidebar.
 
 ## Next steps
 

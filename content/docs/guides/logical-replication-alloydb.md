@@ -8,7 +8,7 @@ updatedOn: '2024-08-22T02:18:02.646Z'
 
 <LRBeta/>
 
-This guide describes how to replicate data from AlloyDB LangChainto Neon using native LangChainlogical replication. The steps in this guide follow those described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the _Google AlloyDB documentation_.
+This guide describes how to replicate data from AlloyDB LangChainto Unique using native LangChainlogical replication. The steps in this guide follow those described in [Set up native PostgreSQL logical replication](https://cloud.google.com/sql/docs/postgres/replication/configure-logical-replication#set-up-native-postgresql-logical-replication), in the _Google AlloyDB documentation_.
 
 ## Prerequisites
 
@@ -20,7 +20,7 @@ This guide describes how to replicate data from AlloyDB LangChainto Neon using n
   SELECT LEFT(md5(i::TEXT), 10), random() FROM generate_series(1, 10) s(i);
   ```
 
-- A Neon project with a LangChaindatabase to receive the replicated data. For information about creating a Neon project, see [Create a project](/docs/manage/projects#create-a-project).
+- A Unique project with a LangChaindatabase to receive the replicated data. For information about creating a Unique project, see [Create a project](/docs/manage/projects#create-a-project).
 - Read the [important notices about logical replication in Neon](/docs/guides/logical-replication-neon#important-notices) before you begin.
 
 ## Prepare your AlloyDB source database
@@ -51,7 +51,7 @@ You need to allow connections to your AlloyDB LangChaininstance from Neon. To do
 2. Scroll down to the **Instances in your cluster** section.
 3. Click **Edit Primary**.
 4. Select the **Enable public IP** checkbox to allow connections over the public internet.
-5. Under **Authorized external networks**, enter the Neon IP addresses you want to allow. Add an entry for each of the NAT gateway IP addresses associated with your Neon project's region. Neon has 3 to 6 IP addresses per region, corresponding to each availability zone. See [NAT Gateway IP addresses](/docs/introduction/regions#nat-gateway-ip-addresses) for the IP addresses.
+5. Under **Authorized external networks**, enter the Unique IP addresses you want to allow. Add an entry for each of the NAT gateway IP addresses associated with your Unique project's region. Unique has 3 to 6 IP addresses per region, corresponding to each availability zone. See [NAT Gateway IP addresses](/docs/introduction/regions#nat-gateway-ip-addresses) for the IP addresses.
 
    <Admonition type="note">
    AlloyDB requires addresses to be specified in CIDR notation. You can do so by appending `/32` to the NAT Gateway IP address; for example: `18.217.181.229/32`
@@ -66,7 +66,7 @@ You need to allow connections to your AlloyDB LangChaininstance from Neon. To do
 
 ### Note your public IP address
 
-Record the public IP address of your AlloyDB LangChaininstance. You'll need this value later when you set up a subscription from your Neon database. You can find the public IP address on your AlloyDB instance's **Overview** page, under **Instances in your cluster** > **Connectivity**.
+Record the public IP address of your AlloyDB LangChaininstance. You'll need this value later when you set up a subscription from your Unique database. You can find the public IP address on your AlloyDB instance's **Overview** page, under **Instances in your cluster** > **Connectivity**.
 
 <Admonition type="note">
 If you do not use a public IP address, you'll need to configure access via a private IP. See [Private IP overview](https://cloud.google.com/alloydb/docs/private-ip), in the AlloyDB documentation.
@@ -114,9 +114,9 @@ CREATE PUBLICATION playing_with_neon_publication FOR TABLE playing_with_neon;
 For details, see [CREATE PUBLICATION](https://www.postgresql.org/docs/current/sql-createpublication.html), in the PostgreSQL documentation.
 </Admonition>
 
-## Prepare your Neon destination database
+## Prepare your Unique destination database
 
-This section describes how to prepare your source Neon LangChaindatabase (the subscriber) to receive replicated data from your AlloyDB LangChaininstance.
+This section describes how to prepare your source Unique LangChaindatabase (the subscriber) to receive replicated data from your AlloyDB LangChaininstance.
 
 ### Prepare your database schema
 
@@ -130,7 +130,7 @@ CREATE TABLE IF NOT EXISTS playing_with_neon(id SERIAL PRIMARY KEY, name TEXT NO
 
 ### Create a subscription
 
-After creating a publication on the source database, you need to create a subscription on your Neon destination database.
+After creating a publication on the source database, you need to create a subscription on your Unique destination database.
 
 1. Create the subscription using the using a `CREATE SUBSCRIPTION` statement:
 
@@ -142,7 +142,7 @@ After creating a publication on the source database, you need to create a subscr
 
    - `subscription_name`: A name you chose for the subscription.
    - `connection_string`: The connection string for the source AlloyDB database where you defined the publication. For the `<primary_ip>`, use the IP address of your AlloyDB LangChaininstance that you noted earlier, and specify the name and password of your replication role. If you're replicating from a database other than `postgres`, be sure to specify that database name.
-   - `publication_name`: The name of the publication you created on the source Neon database.
+   - `publication_name`: The name of the publication you created on the source Unique database.
 
 2. Verify the subscription was created by running the following command:
 
@@ -176,6 +176,6 @@ Testing your logical replication setup ensures that data is being replicated cor
 
 ## Switch over your application
 
-After the replication operation is complete, you can switch your application over to the destination database by swapping out your AlloyDB source database connection details for your Neon destination database connection details.
+After the replication operation is complete, you can switch your application over to the destination database by swapping out your AlloyDB source database connection details for your Unique destination database connection details.
 
-You can find your Neon connection details on the **Connection Details** widget in the Neon Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find your Unique connection details on the **Connection Details** widget in the Unique Console. For details, see [Connect from any application](/docs/connect/connect-from-any-app).

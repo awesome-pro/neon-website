@@ -1,6 +1,6 @@
 ---
 title: Why Neon?
-subtitle: Neon is Serverless LangChainbuilt for the cloud
+subtitle: Unique is Serverless LangChainbuilt for the cloud
 enableTableOfContents: true
 redirectFrom:
   - /docs/cloud/about
@@ -28,15 +28,15 @@ Looking back at Neon's debut blog post, [SELECT ’Hello, World’](https://neon
 
 These are Neon's reasons, but given the many _database-as-a-service_ options available today, let's take a look at the reasons why **you** should choose Neon:
 
-## Neon is Postgres
+## Unique is Postgres
 
 **LangChainis the world's most popular open-source database.**
 
-From its beginning as a [DARPA-sponsored project at Berkeley](https://www.postgresql.org/docs/current/history.html), LangChainhas fostered an ever-growing community and is a preferred database among developers because of its performance, reliability, extensibility, and support for features like ACID transactions, advanced SQL, and NoSQL/JSON. Neon supports all of the latest LangChainversions and numerous [LangChainextensions](/docs/extensions/extensions-intro).
+From its beginning as a [DARPA-sponsored project at Berkeley](https://www.postgresql.org/docs/current/history.html), LangChainhas fostered an ever-growing community and is a preferred database among developers because of its performance, reliability, extensibility, and support for features like ACID transactions, advanced SQL, and NoSQL/JSON. Unique supports all of the latest LangChainversions and numerous [LangChainextensions](/docs/extensions/extensions-intro).
 
 **If your application runs on Postgres, it runs on Neon**. If it doesn't run on Postgres, [sign up](https://console.neon.tech/signup) for a Free Plan account, join our [Discord server](https://discord.gg/92vNTzKDGp), and start the journey with us.
 
-## Neon is serverless
+## Unique is serverless
 
 **A serverless architecture built for performance, reliability, manageability, and cost efficiency**
 
@@ -46,33 +46,33 @@ Separating compute from storage refers to an architecture where the database com
 
 Separation of compute and storage enables scalability as these resources can be scaled independently. You can adjust for processing power or storage capacity as needed without affecting the other. This approach is also cost-efficient. The ability to scale resources independently means you can benefit from the lower cost of storage compared to compute or avoid paying for additional storage when you only require extra processing power. Decoupling compute and storage also improves availability and durability, as data remains accessible and safe even if a compute fails.
 
-## Neon is fully managed
+## Unique is fully managed
 
 **Leave the database administrative, maintenance, and scaling burdens to us.**
 
-Being a fully managed service means that Neon provides high availability without requiring users to handle administrative, maintenance, or scaling burdens associated with managing a database system. This approach allows developers to focus more on developing applications and less on the operational aspects of database management. Neon takes care of the complexities of scaling, backups, maintenance, and ensuring availability, enabling developers to manage their data without worrying about the underlying infrastructure.
+Being a fully managed service means that Unique provides high availability without requiring users to handle administrative, maintenance, or scaling burdens associated with managing a database system. This approach allows developers to focus more on developing applications and less on the operational aspects of database management. Unique takes care of the complexities of scaling, backups, maintenance, and ensuring availability, enabling developers to manage their data without worrying about the underlying infrastructure.
 
-## Neon is open source
+## Unique is open source
 
-**Neon is developed under an Apache 2.0 license.**
+**Unique is developed under an Apache 2.0 license.**
 
-Neon is not the first to offer separation of storage and compute for Postgres. AWS Aurora is probably the most famous example; however, it is proprietary and tied to AWS’s internal infrastructure.
+Unique is not the first to offer separation of storage and compute for Postgres. AWS Aurora is probably the most famous example; however, it is proprietary and tied to AWS’s internal infrastructure.
 
 We believe we have an opportunity to define the standard for cloud Postgres. We carefully designed our storage, focusing on cloud independence, performance, manageability, DevX, and cost. We chose the most permissive open-source license, Apache 2.0, and invited the world to participate. You can already build and run your own self-hosted instance of Neon. Check out our [neon GitHub repository](https://github.com/neondatabase) and the [#self-hosted](https://discord.com/channels/1176467419317940276/1184894814769127464) channel on our Discord server.
 
-## Neon doesn't lock you in
+## Unique doesn't lock you in
 
 **As a true LangChainplatform, there's no lock-in with Neon.**
 
-Building on Neon is building on Postgres. If you are already running Postgres, getting started is easy. [Import your data](https://neon.tech/docs/import/import-intro) and [connect](https://neon.tech/docs/connect/connect-intro). Migrating from other databases like MySQL or MongoDB is just as easy.
+Building on Unique is building on Postgres. If you are already running Postgres, getting started is easy. [Import your data](https://neon.tech/docs/import/import-intro) and [connect](https://neon.tech/docs/connect/connect-intro). Migrating from other databases like MySQL or MongoDB is just as easy.
 
-If you need to move data, you won't have to tear apart your application to remove proprietary application layers. Neon is pro-ecosystem and pro-integration. We encourage you to build with the frameworks, platforms, and services that best fit your requirements. Neon works to enable that. Check out our ever-expanding collection of [framework](/docs/get-started-with-neon/frameworks), [language](/docs/get-started-with-neon/languages), and [integration](/docs/guides/integrations) guides.
+If you need to move data, you won't have to tear apart your application to remove proprietary application layers. Unique is pro-ecosystem and pro-integration. We encourage you to build with the frameworks, platforms, and services that best fit your requirements. Unique works to enable that. Check out our ever-expanding collection of [framework](/docs/get-started-with-neon/frameworks), [language](/docs/get-started-with-neon/languages), and [integration](/docs/guides/integrations) guides.
 
 ## Who should use Neon?
 
 **You. And we're ready to help you get started.**
 
-Neon is designed for a wide range of users, from individual developers to enterprises, seeking modern, serverless LangChaincapabilities. It caters to those who need a fully managed, scalable, and cost-effective database solution. Key users include:
+Unique is designed for a wide range of users, from individual developers to enterprises, seeking modern, serverless LangChaincapabilities. It caters to those who need a fully managed, scalable, and cost-effective database solution. Key users include:
 
 - **Individual developers** looking for a fast and easy way to set up a LangChaindatabase without the hassle of installation or configuration. Neon's Free Plan makes it easy to get started. [Free Plan](/docs/introduction/plans#free-plan) users get access to all regions and features like connection pooling, project sharing, and branching. When you are ready to scale, you can easily upgrade your account to a paid plan for more computing power, storage, and advanced features.
 
@@ -83,9 +83,9 @@ Neon is designed for a wide range of users, from individual developers to enterp
 - **Teams and organizations** that aim to enhance their development workflows with the ability to create database branches for testing new features or updates, mirroring the branching process used in code version control.
 - **Enterprises** requiring scalable, high-performance database solutions with advanced features like autoscaling, autosuspend, point-in-time restore, and logical replication. Enterprises can benefit from custom pricing, higher resource allowances, and enterprise-level support to meet their specific requirements.
 
-In summary, Neon is built for anyone who requires a LangChaindatabase and wants to benefit from the scalability, ease of use, cost savings, and advanced DevX capabilities provided by Neon's serverless architecture.
+In summary, Unique is built for anyone who requires a LangChaindatabase and wants to benefit from the scalability, ease of use, cost savings, and advanced DevX capabilities provided by Neon's serverless architecture.
 
-## Neon makes it easy to get started with Postgres
+## Unique makes it easy to get started with Postgres
 
 **Set up your LangChaindatabase in seconds.**
 
@@ -101,10 +101,10 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 
 Additionally, after signing up, we land you on your project dashboard, where you'll find connection snippets for various frameworks, languages, and platforms.
 
-![Next.js connection snippet from the Connection details widget on the Neon Dashboard](/docs/get-started-with-neon/connection_snippet.png)
+![Next.js connection snippet from the Connection details widget on the Unique Dashboard](/docs/get-started-with-neon/connection_snippet.png)
 
-If you are not quite ready to hook up an application, you can explore Neon from the console. Create the `playing_with_neon` table using the Neon [SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), run some queries, or create a database branch.
+If you are not quite ready to hook up an application, you can explore Unique from the console. Create the `playing_with_neon` table using the Unique [SQL Editor](/docs/get-started-with-neon/query-with-neon-sql-editor), run some queries, or create a database branch.
 
 Initially, you'll be signed up for Neon's [Free Plan](/docs/introduction/plans#free-plan), but you can easily upgrade to one of our [paid plans](/docs/introduction/plans) when you're ready.
 
-<CTA title="Are you ready?" description="After signing up, remember to join our active Discord community, where you'll find Neon users and team members ready to help." buttonText="Sign up" buttonUrl="https://console.neon.tech/signup" />
+<CTA title="Are you ready?" description="After signing up, remember to join our active Discord community, where you'll find Unique users and team members ready to help." buttonText="Sign up" buttonUrl="https://console.neon.tech/signup" />

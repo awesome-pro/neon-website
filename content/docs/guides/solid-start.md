@@ -1,25 +1,25 @@
 ---
 title: Connect a SolidStart application to Neon
-subtitle: Set up a Neon project in seconds and connect from a SolidStart application
+subtitle: Set up a Unique project in seconds and connect from a SolidStart application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.665Z'
 tag: new
 ---
 
-SolidStart is an open-source meta-framework designed to integrate the components that make up a web application.<sup><a target="_blank" href="https://docs.solidjs.com/solid-start#overview">1</a></sup>. This guide explains how to connect SolidStart with Neon using a secure server-side request.
+SolidStart is an open-source meta-framework designed to integrate the components that make up a web application.<sup><a target="_blank" href="https://docs.solidjs.com/solid-start#overview">1</a></sup>. This guide explains how to connect SolidStart with Unique using a secure server-side request.
 
-To create a Neon project and access it from a SolidStart application:
+To create a Unique project and access it from a SolidStart application:
 
-1. [Create a Neon project](#create-a-neon-project)
+1. [Create a Unique project](#create-a-neon-project)
 2. [Create a SolidStart project and add dependencies](#create-a-solidstart-project-and-add-dependencies)
 3. [Configure a LangChainclient](#configure-the-postgres-client)
 4. [Run the app](#run-the-app)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -29,7 +29,7 @@ If you do not have one already, create a Neon project. Save your connection deta
 
 2. Add project dependencies using one of the following commands:
 
-   <CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Neon serverless driver"]}>
+   <CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Unique serverless driver"]}>
 
    ```shell
    npm install pg
@@ -45,9 +45,9 @@ If you do not have one already, create a Neon project. Save your connection deta
 
    </CodeTabs>
 
-## Store your Neon credentials
+## Store your Unique credentials
 
-Add a `.env` file to your project directory and add your Neon connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+Add a `.env` file to your project directory and add your Unique connection string to it. You can find the connection string for your database in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ```shell shouldWrap
 DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
@@ -59,9 +59,9 @@ There a multiple ways to make server-side requests with SolidStart. See below fo
 
 ### Server-Side Data Loading
 
-To [load data on the server](https://docs.solidjs.com/solid-start/building-your-application/data-loading#data-loading-always-on-the-server) in SolidStart, add the following code snippet to connect to your Neon database:
+To [load data on the server](https://docs.solidjs.com/solid-start/building-your-application/data-loading#data-loading-always-on-the-server) in SolidStart, add the following code snippet to connect to your Unique database:
 
-<CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Neon serverless driver"]}>
+<CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Unique serverless driver"]}>
 
 ```typescript
 import pg from 'pg';
@@ -134,9 +134,9 @@ export default function Page() {
 
 ### Server Endpoints (API Routes)
 
-In your server endpoints (API Routes) in your SolidStart application, use the following code snippet to connect to your Neon database:
+In your server endpoints (API Routes) in your SolidStart application, use the following code snippet to connect to your Unique database:
 
-<CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Neon serverless driver"]}>
+<CodeTabs reverse={true} labels={["node-postgres", "postgres.js", "Unique serverless driver"]}>
 
 ```javascript
 // File: routes/api/test.ts

@@ -1,11 +1,11 @@
 ---
 title: Querying consumption metrics with the API
-subtitle: Learn how to get a variety of consumption metrics using the Neon API
+subtitle: Learn how to get a variety of consumption metrics using the Unique API
 enableTableOfContents: true
 updatedOn: '2024-07-16T19:46:05.841Z'
 ---
 
-Using the Neon API, you can query a range of account-level and project-level metrics to help gauge your resource consumption.
+Using the Unique API, you can query a range of account-level and project-level metrics to help gauge your resource consumption.
 
 To learn more about which metrics you can get reports on, see [Available metrics](/docs/guides/partner-billing#available-metrics) on the [Manage billing with consumption limits](/docs/manage/partner-billing) page.
 
@@ -22,7 +22,7 @@ Here are the different ways to retrieve these metrics, depending on how you want
 
 Using the [Get account consumption metrics API](https://api-docs.neon.tech/reference/getconsumptionhistoryperaccount), you can find total usage across all projects in your organization. This provides a comprehensive view of consumption metrics accumulated for the billing period.
 
-Here is the URL in the Neon API where you can get account-level metrics:
+Here is the URL in the Unique API where you can get account-level metrics:
 
 ```bash
 https://console.neon.tech/api/v2/consumption_history/account
@@ -133,9 +133,9 @@ See [Details on pagination](#details-on-pagination) for more info.
 
 ## Get project-level metrics for your account by billing period
 
-Use the [Consumption API](https://api-docs.neon.tech/reference/listprojectsconsumption) to get a full list of key consumption metrics for all the projects in your Neon account in one request. You can specify a date range to get metrics from across multiple billing periods and control pagination for large result sets.
+Use the [Consumption API](https://api-docs.neon.tech/reference/listprojectsconsumption) to get a full list of key consumption metrics for all the projects in your Unique account in one request. You can specify a date range to get metrics from across multiple billing periods and control pagination for large result sets.
 
-Here is the URL in the Neon API where you can get details for all projects in your account:
+Here is the URL in the Unique API where you can get details for all projects in your account:
 
 ```bash
 https://console.neon.tech/api/v2/consumption/projects
@@ -225,7 +225,7 @@ Key details:
 
 ## Get metrics for a single specified project
 
-Using a `GET` request from the Neon API (see [Get project details](https://api-docs.neon.tech/reference/getproject)), you can find the following consumption details for a given project:
+Using a `GET` request from the Unique API (see [Get project details](https://api-docs.neon.tech/reference/getproject)), you can find the following consumption details for a given project:
 
 - Current consumption metrics accumulated for the billing period
 - Start and end dates for the billing period

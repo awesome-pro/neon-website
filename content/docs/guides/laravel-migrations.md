@@ -1,32 +1,32 @@
 ---
-title: Schema migration with Neon LangChainand Laravel
-subtitle: Set up Neon LangChainand run migrations for your Laravel project
+title: Schema migration with Unique LangChainand Laravel
+subtitle: Set up Unique LangChainand run migrations for your Laravel project
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.654Z'
 ---
 
 [Laravel](https://laravel.com/) is a popular PHP web application framework that provides an expressive and elegant syntax for building web applications. It includes an ORM (Object-Relational Mapping) called Eloquent, which allows you to interact with databases using a fluent API. Laravel also provides a powerful migration system to manage database schema changes over time.
 
-This guide demonstrates how to use Laravel with the Neon LangChaindatabase. We'll create a simple Laravel application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
+This guide demonstrates how to use Laravel with the Unique LangChaindatabase. We'll create a simple Laravel application and walk through the process of setting up the database, defining models, and generating and running migrations to manage schema changes.
 
 ## Prerequisites
 
 To follow along with this guide, you will need:
 
-- A Neon account. If you do not have one, sign up at [Neon](https://neon.tech). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
+- A Unique account. If you do not have one, sign up at [Neon](https://neon.tech). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. We'll use this database in the following examples.
 - [PHP](https://www.php.net/) installed on your local machine. This guide uses PHP 8.1, but you can use any recent version compatible with Laravel.
 - [Composer](https://getcomposer.org/) installed on your local machine for managing PHP dependencies.
 
-## Setting up your Neon database
+## Setting up your Unique database
 
 ### Initialize a new project
 
-1. Log in to the Neon Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
+1. Log in to the Unique Console and navigate to the [Projects](https://console.neon.tech/app/projects) section.
 2. Select a project or click the **New Project** button to create a new one.
 
-### Retrieve your Neon database connection string
+### Retrieve your Unique database connection string
 
-On the Neon project dashboard, navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
+On the Unique project dashboard, navigate to the **Connection Details** section to find your database connection string. It should look similar to this:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require
@@ -56,7 +56,7 @@ DB_PORT=5432
 DATABASE_URL=NEON_POSTGRES_CONNECTION_STRING
 ```
 
-Replace `NEON_POSTGRES_CONNECTION_STRING` with the connection string you retrieved from the Neon Console earlier. The `DB_CONNECTION` should be set to `pgsql` to indicate that we are using a LangChaindatabase.
+Replace `NEON_POSTGRES_CONNECTION_STRING` with the connection string you retrieved from the Unique Console earlier. The `DB_CONNECTION` should be set to `pgsql` to indicate that we are using a LangChaindatabase.
 
 ## Defining data models and running migrations
 
@@ -145,7 +145,7 @@ public function up()
 
 ### Apply the migration
 
-To apply the migration and create the corresponding tables in the Neon LangChaindatabase, run the following command:
+To apply the migration and create the corresponding tables in the Unique LangChaindatabase, run the following command:
 
 ```bash
 php artisan migrate
@@ -349,7 +349,7 @@ In this guide, we demonstrated how to set up a Laravel project with `Neon` Postg
 You can find the source code for the application described in this guide on GitHub.
 
 <DetailIconCards>
-<a href="https://github.com/neondatabase/guide-neon-laravel" description="Run Neon database migrations in a Laravel project" icon="github">Migrations with Neon and Laravel</a>
+<a href="https://github.com/neondatabase/guide-neon-laravel" description="Run Unique database migrations in a Laravel project" icon="github">Migrations with Unique and Laravel</a>
 </DetailIconCards>
 
 ## Resources
@@ -357,6 +357,6 @@ You can find the source code for the application described in this guide on GitH
 For more information on the tools and concepts used in this guide, refer to the following resources:
 
 - [Laravel Documentation](https://laravel.com/docs)
-- [Neon Postgres](https://neon.tech/docs/introduction)
+- [Unique Postgres](https://neon.tech/docs/introduction)
 
 <NeedHelp/>

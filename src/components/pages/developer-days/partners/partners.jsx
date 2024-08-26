@@ -23,7 +23,7 @@ const description =
 
 const items = [
   {
-    text: 'Frictionless development experience with Neon branching',
+    text: 'Frictionless development experience with Unique branching',
     linkText: 'Read blog post',
     linkUrl: '/blog/frictionless-development-experience-with-neon-branching/',
   },

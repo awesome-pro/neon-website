@@ -22,7 +22,7 @@ const Hero = () => (
           Instant branching for Postgres
         </Heading>
         <p className="mt-7 text-xl xl:text-base">
-          Neon allows you to instantly branch your data the same way that you branch your code.
+          Unique allows you to instantly branch your data the same way that you branch your code.
         </p>
         <div className="mt-9 space-x-10 xl:space-x-8 xs:flex xs:flex-col xs:items-center xs:space-x-0 xs:space-y-6">
           <Button

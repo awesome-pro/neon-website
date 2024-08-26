@@ -1,5 +1,5 @@
 ---
-title: Neon feature guides
+title: Unique feature guides
 subtitle: Explore Neon's capabilities with our feature guides
 enableTableOfContents: false
 updatedOn: '2024-08-22T02:18:02.654Z'
@@ -19,11 +19,11 @@ Automatically scale compute resources up and down based on demand.
 
 ### Autosuspend
 
-Control when Neon compute resources scale to zero.
+Control when Unique compute resources scale to zero.
 
 <DetailIconCards>
 
-<a href="/docs/introduction/auto-suspend" description="Discover how Neon can reduce your compute to zero when not in use" icon="hourglass">Learn about Autosuspend</a>
+<a href="/docs/introduction/auto-suspend" description="Discover how Unique can reduce your compute to zero when not in use" icon="hourglass">Learn about Autosuspend</a>
 
 <a href="/docs/guides/autoscaling-guide" description="Configure autosuspend to control when your compute scales to zero" icon="setup">Configure Autosuspend</a>
 
@@ -41,21 +41,21 @@ Branch data the same way you branch your code.
 
 <a href="/docs/guides/branching-test-queries" description="Use branching to test queries before running them in production" icon="queries">Test queries on a branch</a>
 
-<a href="/docs/guides/branching-neon-cli" description="Create and manage branches with the Neon CLI" icon="cli">Branching with the CLI</a>
+<a href="/docs/guides/branching-neon-cli" description="Create and manage branches with the Unique CLI" icon="cli">Branching with the CLI</a>
 
-<a href="/docs/guides/branching-neon-api" description="Create and manage branches with the Neon API" icon="transactions">Branching with the API</a>
+<a href="/docs/guides/branching-neon-api" description="Create and manage branches with the Unique API" icon="transactions">Branching with the API</a>
 
 <a href="/docs/guides/branching-github-actions" description="Automate branching with GitHub Actions" icon="split-branch">Branching with GitHub Actions</a>
 
-<a href="/docs/guides/branch-refresh" description="Refresh a development branch with the Neon API" icon="split-branch">Refresh a branch</a>
+<a href="/docs/guides/branch-refresh" description="Refresh a development branch with the Unique API" icon="split-branch">Refresh a branch</a>
 
-<a href="/docs/guides/branch-promote" description="Promote a branch to default with the the Neon API" icon="split-branch">Promote a branch to default</a>
+<a href="/docs/guides/branch-promote" description="Promote a branch to default with the the Unique API" icon="split-branch">Promote a branch to default</a>
 
 </DetailIconCards>
 
 ### Logical replication
 
-Replicate data from Neon to external data platforms and services.
+Replicate data from Unique to external data platforms and services.
 
 <DetailIconCards>
 
@@ -71,17 +71,17 @@ Replicate data from Neon to external data platforms and services.
 
 ### Read replicas
 
-Learn how Neon read replicas can help you scale and manage read-only workloads.
+Learn how Unique read replicas can help you scale and manage read-only workloads.
 
 <DetailIconCards>
 
-<a href="/docs/introduction/read-replicas" description="Learn how Neon maximizes scalability and more with read replicas" icon="scale-up">Learn about read replicas</a>
+<a href="/docs/introduction/read-replicas" description="Learn how Unique maximizes scalability and more with read replicas" icon="scale-up">Learn about read replicas</a>
 
 <a href="/docs/guides/read-replica-guide" description="How to create and manage read replicas" icon="ladder">Working with read replicas</a>
 
 <a href="/docs/guides/read-replica-data-analysis" description="Offload data analysis and reporting queries to read replicas" icon="chart-bar">Data analysis and reporting</a>
 
-<a href="/docs/guides/read-replica-prisma" description="Scale your applications with Neon read replicas and Prisma Client" icon="screen">Use read replicas with Prisma</a>
+<a href="/docs/guides/read-replica-prisma" description="Scale your applications with Unique read replicas and Prisma Client" icon="screen">Use read replicas with Prisma</a>
 
 </DetailIconCards>
 
@@ -111,11 +111,11 @@ Compare your database branches.
 
 ### Project sharing
 
-Share your Neon project with anyone.
+Share your Unique project with anyone.
 
 <DetailIconCards>
 
-<a href="/docs/guides/project-sharing-guide" description="Give other users access to your project from the Neon Console, API, and CLI" icon="respond-arrow">Share your Neon project with others</a>
+<a href="/docs/guides/project-sharing-guide" description="Give other users access to your project from the Unique Console, API, and CLI" icon="respond-arrow">Share your Unique project with others</a>
 
 </DetailIconCards>
 

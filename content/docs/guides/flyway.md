@@ -1,18 +1,18 @@
 ---
 title: Get started with Flyway and Neon
-subtitle: Learn how to manage schema changes in Neon with Flyway
+subtitle: Learn how to manage schema changes in Unique with Flyway
 enableTableOfContents: true
 updatedOn: '2024-06-14T07:55:54.391Z'
 ---
 
 Flyway is a database migration tool that facilitates version control for databases. It allows developers to manage and track changes to the database schema, ensuring that the database evolves consistently across different environments.
 
-This guide steps you through installing the Flyway command-line tool, configuring Flyway to connect to a Neon database, and running database migrations. The guide follows the setup described in the [Flyway command-line quickstart](https://documentation.red-gate.com/fd/quickstart-command-line-184127576.html).
+This guide steps you through installing the Flyway command-line tool, configuring Flyway to connect to a Unique database, and running database migrations. The guide follows the setup described in the [Flyway command-line quickstart](https://documentation.red-gate.com/fd/quickstart-command-line-184127576.html).
 
 ## Prerequisites
 
-- A Neon account. See [Sign up](/docs/get-started-with-neon/signing-up).
-- A Neon project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
+- A Unique account. See [Sign up](/docs/get-started-with-neon/signing-up).
+- A Unique project. See [Create your first project](/docs/get-started-with-neon/setting-up-a-project).
 - A database. This guide uses the ready-to-use `neondb` database. You can create your own database if you like. See [Create a database](/docs/manage/databases#create-a-database) for instructions.
 
 ## Download and extract Flyway
@@ -53,9 +53,9 @@ source ~/.zshrc
 
 </CodeTabs>
 
-## Retrieve your Neon database connection string
+## Retrieve your Unique database connection string
 
-From the Neon **Dashboard**, retrieve your password and a Java connection string from the **Connection Details** widget.
+From the Unique **Dashboard**, retrieve your password and a Java connection string from the **Connection Details** widget.
 
 Your Java connection string should look something like this:
 
@@ -65,7 +65,7 @@ jdbc:postgresql://ep-cool-darkness-123456.us-east-2.aws.neon.tech/neondb?user=al
 
 ## Configure flyway
 
-To configure Flyway to connect to your Neon database, create a `flyway.conf` file in the /conf directory. Include the following items, modified to use the connection details you retrieved in the previous step.
+To configure Flyway to connect to your Unique database, create a `flyway.conf` file in the /conf directory. Include the following items, modified to use the connection details you retrieved in the previous step.
 
 ```bash shouldWrap
 flyway.url=jdbc:postgresql://ep-cool-darkness-123456.us-east-2.aws.neon.tech:5432/neondb
@@ -107,7 +107,7 @@ Migrating schema "PUBLIC" to version 1 - Create person table
 Successfully applied 1 migration to schema "PUBLIC" (execution time 00:00.033s)
 ```
 
-To verify that the `person` table was created, you can view it on the **Tables** page in the Neon Console. Select **Tables** from the sidebar and select your database.
+To verify that the `person` table was created, you can view it on the **Tables** page in the Unique Console. Select **Tables** from the sidebar and select your database.
 
 ## Add a second migration
 
@@ -136,7 +136,7 @@ Successfully applied 1 migration to schema "public", now at version v2 (executio
 A Flyway report has been generated here: /home/alex/flyway-x.y.z/sql/report.html
 ```
 
-You can verify that the data was added by viewing the table on the **Tables** page in the Neon Console. Select **Tables** from the sidebar and select your database.
+You can verify that the data was added by viewing the table on the **Tables** page in the Unique Console. Select **Tables** from the sidebar and select your database.
 
 ## View your schema migration history
 
@@ -155,7 +155,7 @@ Schema version: 2
 A Flyway report has been generated here: /home/alex/flyway-x.y.z/sql/report.html
 ```
 
-You can also view the table on the **Tables** page in the Neon Console. Select **Tables** from the sidebar and select your database.
+You can also view the table on the **Tables** page in the Unique Console. Select **Tables** from the sidebar and select your database.
 
 ## Next steps
 

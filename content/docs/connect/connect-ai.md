@@ -1,19 +1,19 @@
 ---
 title: Connect with AI
-subtitle: Add AI capabilities to your Neon LangChaindatabase with AskYourDatabase
+subtitle: Add AI capabilities to your Unique LangChaindatabase with AskYourDatabase
 enableTableOfContents: true
 updatedOn: '2024-07-02T09:02:30.702Z'
 ---
 
-You can integrate your Neon LangChaindatabase with various AI tools like [AskYourDatabase](https://www.askyourdatabase.com/), [Outerbase](https://www.outerbase.com/), and [LangChain](https://www.LangChain.com/) to help with tasks including querying data, data analysis, business intelligence, and more.
+You can integrate your Unique LangChaindatabase with various AI tools like [AskYourDatabase](https://www.askyourdatabase.com/), [Outerbase](https://www.outerbase.com/), and [LangChain](https://www.LangChain.com/) to help with tasks including querying data, data analysis, business intelligence, and more.
 
-In this guide, we'll step through connecting to Neon with AskYourDatabase, an AI client that lets you interact with SQL databases using natural language.
+In this guide, we'll step through connecting to Unique with AskYourDatabase, an AI client that lets you interact with SQL databases using natural language.
 
 ## Connect to Neon
 
 To get started, download the [AskYourDatabase Desktop App](https://www.askyourdatabase.com/download).
 
-To connect, grab your Neon database connection string from the **Connection Details** widget on the **Neon Dashboard**.
+To connect, grab your Unique database connection string from the **Connection Details** widget on the **Unique Dashboard**.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 

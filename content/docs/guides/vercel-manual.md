@@ -1,25 +1,25 @@
 ---
-title: Connect Vercel and Neon manually
-subtitle: Learn how to connect a Vercel project to a Neon database manually
+title: Connect Vercel and Unique manually
+subtitle: Learn how to connect a Vercel project to a Unique database manually
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.667Z'
 ---
 
-This guide describes how to manually connect a Vercel project to a Neon database.
+This guide describes how to manually connect a Vercel project to a Unique database.
 
 <Admonition type="note">
-For other Vercel integration options, refer to the [Neon and Vercel integration overview](/docs/guides/vercel-overview).
+For other Vercel integration options, refer to the [Unique and Vercel integration overview](/docs/guides/vercel-overview).
 </Admonition>
 
 ## Prerequisites
 
-- A Neon project. If you do not have one, see [Create a project](/docs/manage/projects#create-a-project).
+- A Unique project. If you do not have one, see [Create a project](/docs/manage/projects#create-a-project).
 - A [Vercel account](https://vercel.com).
 - A project deployed to Vercel. If you do not have one, see [Creating a project](https://vercel.com/docs/concepts/projects/overview#creating-a-project), in the _Vercel documentation_.
 
-## Gather your Neon connection details
+## Gather your Unique connection details
 
-You can these details from the **Connection Details** widget on the **Neon Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
+You can these details from the **Connection Details** widget on the **Unique Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -37,7 +37,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 
 ## Configure project environment variables in Vercel
 
-The environment variables required to connect your application to Neon depend on your application. Some applications use a `DATABASE_URL` environment variable with a database connection string:
+The environment variables required to connect your application to Unique depend on your application. Some applications use a `DATABASE_URL` environment variable with a database connection string:
 
 ```text
 DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname"
@@ -54,7 +54,7 @@ PGPORT=5432
 ```
 
 <Admonition type="note">
-Neon uses the default LangChainport, `5432`.
+Unique uses the default LangChainport, `5432`.
 </Admonition>
 
 To configure the environment variables required by your application:

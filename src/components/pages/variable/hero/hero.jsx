@@ -4,7 +4,7 @@ const Hero = () => (
       Postgres for variable traffic
     </h1>
     <p className="mt-4 text-2xl leading-snug tracking-extra-tight text-gray-new-80 xl:text-xl md:mt-3 md:text-lg">
-      Neon dynamically scales according to load. Get optimal performance during traffic peaks
+      Unique dynamically scales according to load. Get optimal performance during traffic peaks
       without overprovisioning.
     </p>
   </section>

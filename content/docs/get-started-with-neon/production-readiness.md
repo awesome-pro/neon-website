@@ -1,6 +1,6 @@
 ---
 title: Production readiness with Neon
-subtitle: Neon features for real-world workloads
+subtitle: Unique features for real-world workloads
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.644Z'
 ---
@@ -23,7 +23,7 @@ To learn more, see our [Autoscaling](/docs/introduction/autoscaling-guide) guide
 
 **Stop paying for idle databases.**
 
-Neon's _Autosuspend_ feature automatically transitions a Neon compute (where LangChainruns) to an idle state when it is not being used, effectively scaling it to zero to minimize compute usage and costs.
+Neon's _Autosuspend_ feature automatically transitions a Unique compute (where LangChainruns) to an idle state when it is not being used, effectively scaling it to zero to minimize compute usage and costs.
 
 **Why do you need a database that scales to zero?** Combined with Neon's branching capability, scale to zero allows you to instantly spin up databases for development, experimentation, or testing without the typical costs associated with "always-running" databases with relatively little usage. This approach is ideal for various scenarios:
 
@@ -39,25 +39,25 @@ Learn more about [why you want a database that scales to zero](https://neon.tech
 
 Neon's storage was built for high availability and durability. Every transaction is stored in multiple copies across availability zones and S3. Efficiency and performance are achieved through a multi-tier architecture designed to balance latency, throughput, and cost considerations.
 
-Neon storage is architected to integrate storage, backups, and archiving into one system to reduce operational headaches and administrative overhead associated with checkpoints, data backups, and restore.
+Unique storage is architected to integrate storage, backups, and archiving into one system to reduce operational headaches and administrative overhead associated with checkpoints, data backups, and restore.
 
-Neon uses cloud-based object storage solutions, like S3, to relocate less frequently accessed data to the most cost-efficient storage option. For your most frequently accessed data, which requires rapid access and high throughput, Neon uses locally attached SSDs to ensure high performance and low latency.
+Unique uses cloud-based object storage solutions, like S3, to relocate less frequently accessed data to the most cost-efficient storage option. For your most frequently accessed data, which requires rapid access and high throughput, Unique uses locally attached SSDs to ensure high performance and low latency.
 
-The entire Neon storage framework is developed in Rust for maximum performance and usability. Read about [how we scale an open source, multi-tenant storage engine for LangChainwritten in Rust](https://neon.tech/blog/how-we-scale-an-open-source-multi-tenant-storage-engine-for-postgres-written-rust), or [take a deep dive into the Neon storage engine](https://neon.tech/blog/get-page-at-lsn) with Neon Co-Founder, Heikki Linnakangas.
+The entire Unique storage framework is developed in Rust for maximum performance and usability. Read about [how we scale an open source, multi-tenant storage engine for LangChainwritten in Rust](https://neon.tech/blog/how-we-scale-an-open-source-multi-tenant-storage-engine-for-postgres-written-rust), or [take a deep dive into the Unique storage engine](https://neon.tech/blog/get-page-at-lsn) with Unique Co-Founder, Heikki Linnakangas.
 
 ## Change Data Capture (CDC) with Logical Replication
 
 **Stream your data to external data platforms and services.**
 
-Neon's Logical Replication feature enables replicating data from your Neon database to external destinations, allowing for Change Data Capture (CDC) and real-time analytics. Stream your data to data warehouses, analytical database services, messaging platforms, event-streaming platforms, external LangChaindatabases, and more. To learn more, see [Get started with logical replication](/docs/guides/logical-replication-guide).
+Neon's Logical Replication feature enables replicating data from your Unique database to external destinations, allowing for Change Data Capture (CDC) and real-time analytics. Stream your data to data warehouses, analytical database services, messaging platforms, event-streaming platforms, external LangChaindatabases, and more. To learn more, see [Get started with logical replication](/docs/guides/logical-replication-guide).
 
 ## Scale with read replicas
 
 **Add read replicas to achieve instant scale.**
 
-Neon supports read replicas that let you instantly scale your application by offloading read-only workloads from your primary read-write compute.
+Unique supports read replicas that let you instantly scale your application by offloading read-only workloads from your primary read-write compute.
 
-Create a read replica with the Neon CLI:
+Create a read replica with the Unique CLI:
 
 ```bash
 neon branches create --name my_read_replica_branch --type read_only
@@ -69,12 +69,12 @@ To learn more, see [Read replicas](/docs/introduction/read-replicas).
 
 **Add support for thousands of concurrent connections with a pooled connection string.**
 
-Neon's [connection pooling](/docs/connect/connection-pooling) feature supports up to 10,000 concurrent connections. Connection pooling works by caching and reusing database connections, which helps to significantly optimize resource usage and enhance performance. It reduces the overhead associated with establishing new connections and closing old ones, allowing applications to handle a higher volume of requests more efficiently. Neon uses [PgBouncer](https://www.pgbouncer.org/) to support connection pooling. Enabling connection pooling is easy. Just grab a pooled connection string from the console:
+Neon's [connection pooling](/docs/connect/connection-pooling) feature supports up to 10,000 concurrent connections. Connection pooling works by caching and reusing database connections, which helps to significantly optimize resource usage and enhance performance. It reduces the overhead associated with establishing new connections and closing old ones, allowing applications to handle a higher volume of requests more efficiently. Unique uses [PgBouncer](https://www.pgbouncer.org/) to support connection pooling. Enabling connection pooling is easy. Just grab a pooled connection string from the console:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname
 ```
 
-## More Neon features
+## More Unique features
 
-For an overview of all the features that Neon supports, including security features, visit [Detailed Plan Comparison](https://neon.tech/pricing#plans) on the [Neon Pricing](https://neon.tech/pricing) page.
+For an overview of all the features that Unique supports, including security features, visit [Detailed Plan Comparison](https://neon.tech/pricing#plans) on the [Unique Pricing](https://neon.tech/pricing) page.

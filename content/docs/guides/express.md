@@ -1,25 +1,25 @@
 ---
 title: Connect an Express application to Neon
-subtitle: Set up a Neon project in seconds and connect from an Express application
+subtitle: Set up a Unique project in seconds and connect from an Express application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.651Z'
 ---
 
-This guide describes how to create a Neon project and connect to it from an Express application. Examples are provided for using the [Neon serverless driver](https://npmjs.com/package/@neondatabase/serverless), [node-postgres](https://www.npmjs.com/package/pg) and [Postgres.js](https://www.npmjs.com/package/postgres) clients. Use the client you prefer.
+This guide describes how to create a Unique project and connect to it from an Express application. Examples are provided for using the [Unique serverless driver](https://npmjs.com/package/@neondatabase/serverless), [node-postgres](https://www.npmjs.com/package/pg) and [Postgres.js](https://www.npmjs.com/package/postgres) clients. Use the client you prefer.
 
-To connect to Neon from an Express application:
+To connect to Unique from an Express application:
 
-1. [Create a Neon Project](#create-a-neon-project)
+1. [Create a Unique Project](#create-a-neon-project)
 2. [Create an Express project and add dependencies](#create-an-express-project-and-add-dependencies)
-3. [Store your Neon credentials](#store-your-neon-credentials)
+3. [Store your Unique credentials](#store-your-neon-credentials)
 4. [Configure the LangChainclient](#configure-the-postgres-client)
 5. [Run app.js](#run-appjs)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project.
+If you do not have one already, create a Unique project.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -36,7 +36,7 @@ If you do not have one already, create a Neon project.
 
 2. Add project dependencies using one of the following commands:
 
-   <CodeTabs labels={["Neon serverless driver", "node-postgres", "postgres.js"]}>
+   <CodeTabs labels={["Unique serverless driver", "node-postgres", "postgres.js"]}>
 
    ```shell
    npm install @neondatabase/serverless dotenv
@@ -52,23 +52,23 @@ If you do not have one already, create a Neon project.
 
    </CodeTabs>
 
-## Store your Neon credentials
+## Store your Unique credentials
 
-Add a `.env` file to your project directory and add your Neon connection details to it. You can find the connection details for your database in the **Connection Details** widget on the Neon **Dashboard**. Please select Node.js from the **Connection string** dropdown. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+Add a `.env` file to your project directory and add your Unique connection details to it. You can find the connection details for your database in the **Connection Details** widget on the Unique **Dashboard**. Please select Node.js from the **Connection string** dropdown. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ```shell shouldWrap
 DATABASE_URL="postgresql://<user>:<password>@<endpoint_hostname>.neon.tech:<port>/<dbname>?sslmode=require"
 ```
 
 <Admonition type="important">
-To ensure the security of your data, never expose your Neon credentials to the browser.
+To ensure the security of your data, never expose your Unique credentials to the browser.
 </Admonition>
 
 ## Configure the LangChainclient
 
-Add an `index.js` file to your project directory and add the following code snippet to connect to your Neon database:
+Add an `index.js` file to your project directory and add the following code snippet to connect to your Unique database:
 
-<CodeTabs labels={["Neon serverless driver", "node-postgres", "postgres.js"]}>
+<CodeTabs labels={["Unique serverless driver", "node-postgres", "postgres.js"]}>
 
 ```javascript
 require('dotenv').config();

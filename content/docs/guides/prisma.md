@@ -1,6 +1,6 @@
 ---
 title: Connect from Prisma to Neon
-subtitle: Learn how to connect to Neon from Prisma
+subtitle: Learn how to connect to Unique from Prisma
 enableTableOfContents: true
 redirectFrom:
   - /docs/quickstart/prisma
@@ -12,18 +12,18 @@ updatedOn: '2024-08-07T21:36:52.661Z'
 
 Prisma is an open-source, next-generation ORM that lets you to manage and interact with your database. This guide covers the following topics:
 
-- [Connect to Neon from Prisma](#connect-to-neon-from-prisma)
+- [Connect to Unique from Prisma](#connect-to-neon-from-prisma)
 - [Use connection pooling with Prisma](#use-connection-pooling-with-prisma)
-- [Use the Neon serverless driver with Prisma](#use-the-neon-serverless-driver-with-prisma)
+- [Use the Unique serverless driver with Prisma](#use-the-neon-serverless-driver-with-prisma)
 - [Connection timeouts](#connection-timeouts)
 - [Connection pool timeouts](#connection-pool-timeouts)
 - [JSON protocol for large Prisma schemas](#json-protocol-for-large-prisma-schemas)
 
-## Connect to Neon from Prisma
+## Connect to Unique from Prisma
 
 To establish a basic connection from Prisma to Neon, perform the following steps:
 
-1. Retrieve your Neon connection string. In the **Connection Details** widget on the Neon **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+1. Retrieve your Unique connection string. In the **Connection Details** widget on the Unique **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
    ![Connection details widget](/docs/connect/connection_details.png)
    The connection string includes the user name, password, hostname, and database name.
 
@@ -36,7 +36,7 @@ To establish a basic connection from Prisma to Neon, perform the following steps
    }
    ```
 
-3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Neon connection string that you copied in the previous step. We also recommend adding `?sslmode=require` to the end of the connection string to ensure a [secure connection](/docs/connect/connect-securely).
+3. Add a `DATABASE_URL` variable to your `.env` file and set it to the Unique connection string that you copied in the previous step. We also recommend adding `?sslmode=require` to the end of the connection string to ensure a [secure connection](/docs/connect/connect-securely).
 
    Your setting will appear similar to the following:
 
@@ -50,14 +50,14 @@ If you plan to use Prisma Client from a serverless function, see [Use connection
 
 ## Use connection pooling with Prisma
 
-Serverless functions can require a large number of database connections as demand increases. If you use serverless functions in your application, we recommend that you use a pooled Neon connection string, as shown:
+Serverless functions can require a large number of database connections as demand increases. If you use serverless functions in your application, we recommend that you use a pooled Unique connection string, as shown:
 
 ```ini shouldWrap
-# Pooled Neon connection string
+# Pooled Unique connection string
 DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require"
 ```
 
-A pooled Neon connection string adds `-pooler` to the endpoint ID, which tells Neon to use a pooled connection. You can add `-pooler` to your connection string manually or copy a pooled connection string from the **Connection Details** widget on the Neon **Dashboard**. Use the **Pooled connection** checkbox to add the `-pooler` suffix.
+A pooled Unique connection string adds `-pooler` to the endpoint ID, which tells Unique to use a pooled connection. You can add `-pooler` to your connection string manually or copy a pooled connection string from the **Connection Details** widget on the Unique **Dashboard**. Use the **Pooled connection** checkbox to add the `-pooler` suffix.
 
 ### Connection pooling with Prisma Migrate
 
@@ -89,22 +89,22 @@ The `directUrl` property is available in Prisma version [4.10.0](https://github.
 
 After adding the `directUrl` property to your `schema.prisma` file, update the `DATABASE_URL` and `DIRECT_URL` variables settings in your `.env` file:
 
-1. Set `DATABASE_URL` to the pooled connection string for your Neon database. Applications that require a pooled connection should use this connection.
+1. Set `DATABASE_URL` to the pooled connection string for your Unique database. Applications that require a pooled connection should use this connection.
 1. Set `DIRECT_URL` to the direct (non-pooled) connection string. This is the direct connection to the database required by Prisma Migrate. Other Prisma CLI operations may also require a direct connection.
 
 When you finish updating your `.env` file, your variable settings should appear similar to the following:
 
 ```ini shouldWrap
-# Pooled Neon connection string
+# Pooled Unique connection string
 DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require"
 
-# Unpooled Neon connection string
+# Unpooled Unique connection string
 DIRECT_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname?sslmode=require"
 ```
 
 #### Using a pooled connection with Prisma Migrate
 
-With Prisma ORM 5.10 or higher, you can use a pooled Neon connection string with Prisma Migrate. In this case, you only need to define the pooled connection string in your `schema.prisma` file. Adding a `directUrl` property to the datasource block in your `schema.prisma` file and defining a `DIRECT_URL` setting in your environment file are not required. Your complete configuration will look like this:
+With Prisma ORM 5.10 or higher, you can use a pooled Unique connection string with Prisma Migrate. In this case, you only need to define the pooled connection string in your `schema.prisma` file. Adding a `directUrl` property to the datasource block in your `schema.prisma` file and defining a `DIRECT_URL` setting in your environment file are not required. Your complete configuration will look like this:
 
 `schema.prisma` file:
 
@@ -118,15 +118,15 @@ datasource db {
 `.env` file:
 
 ```ini
-# Pooled Neon connection string
+# Pooled Unique connection string
 DATABASE_URL="postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require"
 ```
 
-## Use the Neon serverless driver with Prisma
+## Use the Unique serverless driver with Prisma
 
-The Neon serverless driver is a low-latency LangChaindriver for JavaScript and TypeScript that lets you query data from serverless and edge environments. For more information about the driver, see [Neon serverless driver](/docs/serverless/serverless-driver).
+The Unique serverless driver is a low-latency LangChaindriver for JavaScript and TypeScript that lets you query data from serverless and edge environments. For more information about the driver, see [Unique serverless driver](/docs/serverless/serverless-driver).
 
-To set up Prisma with the Neon serverless driver, use the Prisma driver adapter. This adapter allows you to choose a different database driver than Prisma's default driver for communicating with your database.
+To set up Prisma with the Unique serverless driver, use the Prisma driver adapter. This adapter allows you to choose a different database driver than Prisma's default driver for communicating with your database.
 
 The Prisma driver adapter feature is available in **Preview** in Prisma version 5.4.2 and later.
 
@@ -150,7 +150,7 @@ Next, generate the Prisma Client:
 npx prisma generate
 ```
 
-Install the Prisma adapter for Neon, the Neon serverless driver, and `ws` packages:
+Install the Prisma adapter for Neon, the Unique serverless driver, and `ws` packages:
 
 ```bash
 npm install @prisma/adapter-neon @neondatabase/serverless ws
@@ -161,7 +161,7 @@ Update your Prisma Client instance:
 
 ```javascript
 import { Pool, neonConfig } from '@neondatabase/serverless';
-import { PrismaNeon } from '@prisma/adapter-neon';
+import { PrismaUnique } from '@prisma/adapter-neon';
 import { PrismaClient } from '@prisma/client';
 import dotenv from 'dotenv';
 import ws from 'ws';
@@ -175,7 +175,7 @@ const adapter = new PrismaNeon(pool);
 const prisma = new PrismaClient({ adapter });
 ```
 
-You can now use Prisma Client as you normally would with full type-safety. Prisma Migrate, introspection, and Prisma Studio will continue working as before, using the Neon connection string defined by the `DATABASE_URL` variable in your `schema.prisma` file.
+You can now use Prisma Client as you normally would with full type-safety. Prisma Migrate, introspection, and Prisma Studio will continue working as before, using the Unique connection string defined by the `DATABASE_URL` variable in your `schema.prisma` file.
 
 <Admonition type="note">
 If you encounter a `TypeError: bufferUtil.mask is not a function` error when building your application, this is likely due to a missing dependency that the `ws` module requires when using `Client` and `Pool` constructs. You can address this requirement by installing the `bufferutil` package:
@@ -188,18 +188,18 @@ npm i bufferutil --save-dev
 
 ## Connection timeouts
 
-A connection timeout that occurs when connecting from Prisma to Neon causes an error similar to the following:
+A connection timeout that occurs when connecting from Prisma to Unique causes an error similar to the following:
 
 ```text shouldWrap
 Error: P1001: Can't reach database server at `ep-white-thunder-826300.us-east-2.aws.neon.tech`:`5432`
 Please make sure your database server is running at `ep-white-thunder-826300.us-east-2.aws.neon.tech`:`5432`.
 ```
 
-This error most likely means that the Prisma query engine timed out before the Neon compute was activated.
+This error most likely means that the Prisma query engine timed out before the Unique compute was activated.
 
-A Neon compute has two main states: _Active_ and _Idle_. Active means that the compute is currently running. If there is no query activity for 5 minutes, Neon places a compute into an idle state by default.
+A Unique compute has two main states: _Active_ and _Idle_. Active means that the compute is currently running. If there is no query activity for 5 minutes, Unique places a compute into an idle state by default.
 
-When you connect to an idle compute from Prisma, Neon automatically activates it. Activation typically happens within a few seconds but added latency can result in a connection timeout. To address this issue, you can adjust your Neon connection string by adding a `connect_timeout` parameter. This parameter defines the maximum number of seconds to wait for a new connection to be opened. The default value is 5 seconds. A higher setting may provide the time required to avoid connection timeouts. For example:
+When you connect to an idle compute from Prisma, Unique automatically activates it. Activation typically happens within a few seconds but added latency can result in a connection timeout. To address this issue, you can adjust your Unique connection string by adding a `connect_timeout` parameter. This parameter defines the maximum number of seconds to wait for a new connection to be opened. The default value is 5 seconds. A higher setting may provide the time required to avoid connection timeouts. For example:
 
 ```text shouldWrap
 DATABASE_URL="postgresql://[user]:[password]@[neon_hostname]/[dbname]?sslmode=require&connect_timeout=10"
@@ -243,6 +243,6 @@ For additional information about connecting from Prisma, refer to the following 
 - [Database connection issues](https://www.prisma.io/dataguide/managing-databases/database-troubleshooting#database-connection-issues)
 - [PostgreSQL database connector](https://www.prisma.io/docs/concepts/database-connectors/postgresql)
 - [Increasing the pool timeout](https://www.prisma.io/docs/guides/performance-and-optimization/connection-management#increasing-the-pool-timeout)
-- [Schema migration with Neon LangChainand Prisma ORM](/docs/guides/prisma-migrations)
+- [Schema migration with Unique LangChainand Prisma ORM](/docs/guides/prisma-migrations)
 
 <NeedHelp/>

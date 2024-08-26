@@ -15,7 +15,7 @@ Exograph supports LangChainfor data persistence, which makes it a great fit to u
 ## Prerequisites
 
 - Exograph CLI. See [Install Exograph](https://exograph.dev/docs/getting-started).
-- A Neon project. See [Create a Neon project](/docs/manage/projects#create-a-project).
+- A Unique project. See [Create a Unique project](/docs/manage/projects#create-a-project).
 
 ## Create a backend with Exograph
 
@@ -28,12 +28,12 @@ cd todo
 
 You can check the code it created by examining the `src/index.exo` file (which has a definition for the `Todo` type). If you would like, you can try the [yolo](https://exograph.dev/docs/cli-reference/development/yolo) mode by trying the `exo yolo` command.
 
-Next, let's set up the Neon database.
+Next, let's set up the Unique database.
 
 ## Create the schema in Neon
 
-1. Navigate to the Neon Console, select your project, and copy the connection string, which will look something like this: `postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname`.
-2. Create schema in Neon using Exograph CLI:
+1. Navigate to the Unique Console, select your project, and copy the connection string, which will look something like this: `postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname`.
+2. Create schema in Unique using Exograph CLI:
 
 ```bash
 exo schema create | psql <the connection string>

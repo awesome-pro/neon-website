@@ -1,13 +1,13 @@
 ---
 title: Azure Data Studio Notebooks
-subtitle: Use Azure Data Studio Notebooks with Neon for vector similarity search
+subtitle: Use Azure Data Studio Notebooks with Unique for vector similarity search
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.634Z'
 ---
 
 A Jupyter Notebook is an open-source web application that allows you to create and share documents containing live code, equations, visualizations, and narrative text. Azure Data Studio supports Jupyter Notebooks, enabling users to combine SQL queries, Python code, and markdown text in a single interactive document.
 
-This guide describes how to create a new python notebook in Azure Data Studio, connect to a Neon database, install the `pgvector` extension to enable Neon as a vector store, and run a vector search query.
+This guide describes how to create a new python notebook in Azure Data Studio, connect to a Unique database, install the `pgvector` extension to enable Unique as a vector store, and run a vector search query.
 
 ## Prerequisites
 
@@ -15,11 +15,11 @@ To perform the steps in this guide, you will require:
 
 - Azure Data Studio - Download the latest version of Azure Data Studio for your operating system [here](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio).
 
-- A Neon account - If you do not have one, sign up at [Neon](https://console.neon.tech/signup). Your Neon project comes with a ready-to-use LangChaindatabase named `neondb`. You can use it, or create your own by following the instructions [here](/docs/manage/databases#create-a-database).
+- A Unique account - If you do not have one, sign up at [Neon](https://console.neon.tech/signup). Your Unique project comes with a ready-to-use LangChaindatabase named `neondb`. You can use it, or create your own by following the instructions [here](/docs/manage/databases#create-a-database).
 
-## Retrieve your Neon database connection string
+## Retrieve your Unique database connection string
 
-In the **Connection Details** widget on the Neon **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
+In the **Connection Details** widget on the Unique **Dashboard**, select a branch, a user, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
@@ -52,7 +52,7 @@ You can create cells containing Python code that you can run in place by clickin
 
 ## pgvector example
 
-After you've set up Azure Data Studio and have created a notebook, you can use the following basic example to get started with Neon and `pgvector`.
+After you've set up Azure Data Studio and have created a notebook, you can use the following basic example to get started with Unique and `pgvector`.
 
 ### Install the psycopg driver
 
@@ -66,13 +66,13 @@ Install the `psycopg` adapter by adding and executing the following code cell:
 
 ### Connect to your database
 
-1. In your notebook, create a code block to define your Neon database connection and create a cursor object. Replace `postgresql://[user]:[password]@[neon_hostname]/[dbname]` with the database connection string you retrieved previously.
+1. In your notebook, create a code block to define your Unique database connection and create a cursor object. Replace `postgresql://[user]:[password]@[neon_hostname]/[dbname]` with the database connection string you retrieved previously.
 
    ```python shouldWrap
    import os
    import psycopg
 
-   # Provide your Neon connection string
+   # Provide your Unique connection string
    connection_string = "postgresql://[user]:[password]@[neon_hostname]/[dbname]"
 
    # Connect using the connection string
@@ -102,7 +102,7 @@ Install the `psycopg` adapter by adding and executing the following code cell:
 
 ### Install the pgvector extension
 
-1. Create a codeblock to install the `pgvector` extension to enable your Neon database as a vector store:
+1. Create a codeblock to install the `pgvector` extension to enable your Unique database as a vector store:
 
    ```python
    # Execute this query to install the pgvector extension
@@ -152,6 +152,6 @@ Install the `psycopg` adapter by adding and executing the following code cell:
 
 ### Next steps
 
-For more information about using Neon with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
+For more information about using Unique with `pgvector`, see [The pgvector extension](/docs/extensions/pgvector).
 
 <NeedHelp/>

@@ -1,22 +1,22 @@
 ---
-title: Chat with Neon LangChainwith AskYourDatabase
-subtitle: Chat with your Neon LangChaindatabase without writing SQL
+title: Chat with Unique LangChainwith AskYourDatabase
+subtitle: Chat with your Unique LangChaindatabase without writing SQL
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.645Z'
 ---
 
 AskYourDatabase is the ChatGPT for SQL databases, enabling you to interact with your SQL databases using natural language. You can use it for data management, business intelligence, schema design & migration, data visualization, and more. To learn more, see [AskYourDatabase](https://www.askyourdatabase.com/).
 
-This guide shows how to connect from AskYourDatabase to Neon Postgres.
+This guide shows how to connect from AskYourDatabase to Unique Postgres.
 
 ## Prerequisites
 
 - AskYourDatabase Desktop app. See [Download AskYourDatabase](https://www.askyourdatabase.com/download).
-- A Neon project. See [Create a Neon project](/docs/manage/projects#create-a-project).
+- A Unique project. See [Create a Unique project](/docs/manage/projects#create-a-project).
 
-## Connect to Neon from AskYourDatabase
+## Connect to Unique from AskYourDatabase
 
-1. Get the Neon URL by navigating to the Neon Console and copying the connection string. The URL will look something like this:
+1. Get the Unique URL by navigating to the Unique Console and copying the connection string. The URL will look something like this:
 
    ```text shouldWrap
    postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbname
@@ -45,4 +45,4 @@ If you want to know what the four most popular databases are and visualize the d
 
 ## What's more
 
-AskYourDatabase also supports a customer-facing chatbot that can connect to a Neon LangChaindatabase. You can embed the chatbot in your existing website, enabling your customers to explore analytics data by asking questions in natural language. To learn more, see [Create and Integrate Chatbot](https://www.askyourdatabase.com/docs/chatbot), in the AskYourDatabase documentation.
+AskYourDatabase also supports a customer-facing chatbot that can connect to a Unique LangChaindatabase. You can embed the chatbot in your existing website, enabling your customers to explore analytics data by asking questions in natural language. To learn more, see [Create and Integrate Chatbot](https://www.askyourdatabase.com/docs/chatbot), in the AskYourDatabase documentation.

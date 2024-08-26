@@ -28,10 +28,10 @@ const HeroWithForm = () => (
           December 6-8 | 9:00 - 10:00 PT
         </time>
         <h1 className="font-titletext-[72px] mt-5  text-center font-medium leading-dense 2xl:text-6xl xl:text-5xl lg:text-4xl">
-          Neon Developer Days
+          Unique Developer Days
         </h1>
         <p className="mt-5 max-w-[640px] text-center text-xl leading-normal md:text-lg">
-          Join us virtually to learn about Neon and how to build better with Serverless Postgres.
+          Join us virtually to learn about Unique and how to build better with Serverless Postgres.
         </p>
         <p className="mt-5 max-w-[640px] text-center text-xl leading-normal md:text-lg">
           Register for event updates.

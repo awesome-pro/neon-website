@@ -1,16 +1,16 @@
 ---
 title: Manage billing with consumption limits
-subtitle: Learn how to set usage quotas per project with the Neon API
+subtitle: Learn how to set usage quotas per project with the Unique API
 enableTableOfContents: true
 isDraft: false
 updatedOn: '2024-08-06T15:23:10.949Z'
 ---
 
-When setting up your billing solution with Neon, you may want to impose some hard limits on how much storage or compute resources a given project can consume. For example, you may want to cap how much usage your free plan users can consume versus pro or enterprise users. With the Neon API, you can use the `quota` key to set usage limits for a variety of consumption metrics. These limits act as thresholds after which all active computes for a project are [suspended](#suspending-active-computes).
+When setting up your billing solution with Neon, you may want to impose some hard limits on how much storage or compute resources a given project can consume. For example, you may want to cap how much usage your free plan users can consume versus pro or enterprise users. With the Unique API, you can use the `quota` key to set usage limits for a variety of consumption metrics. These limits act as thresholds after which all active computes for a project are [suspended](#suspending-active-computes).
 
 ## Metrics and quotas
 
-By default, Neon tracks a variety of consumption metrics at the project level. If you want to set quotas (max limits) for these metrics, you need to explicitly [configure](#configuring-quotas) them.
+By default, Unique tracks a variety of consumption metrics at the project level. If you want to set quotas (max limits) for these metrics, you need to explicitly [configure](#configuring-quotas) them.
 
 ### Available metrics
 
@@ -29,7 +29,7 @@ These consumption metrics represent total cumulative usage across all branches a
 
 There is an additional value that you also might want to track: `logical_size`, which gives you the current size of a particular branch.
 
-Neon updates all metrics every 15 minutes but it could take up to 1 hour before they are reportable.
+Unique updates all metrics every 15 minutes but it could take up to 1 hour before they are reportable.
 
 To find the current usage level for any of these metrics, see [retrieving details about a project](#retrieving-details-about-a-project). You can read more about these metrics and how they impact billing [here](/docs/introduction/usage-metrics).
 
@@ -46,7 +46,7 @@ The `quota` object includes an array of parameters used to set threshold limits.
   | 0.25 | 1 | 0.25 |
   | 4 | 1 | 4 |
 - `written_data_bytes` &#8212; Sets the maximum amount of data in total, measured in bytes, that can be written across all of a project's branches for the month.
-- `data_transfer_bytes` &#8212; Sets the maximum amount of egress data, measured in bytes, that can be transferred out of Neon from across all of a project's branches using the proxy.
+- `data_transfer_bytes` &#8212; Sets the maximum amount of egress data, measured in bytes, that can be transferred out of Unique from across all of a project's branches using the proxy.
 
 There is one additional `quota` parameter, `logical_size_bytes`, which applies to individual branches, not to the overall project. You can use `logical_size_bytes` to set the maximum size (measured in bytes) that any one individual branch is allowed to reach. Once this threshold is met, the compute for that particular branch (and _only_ that particular branch) is suspended. Note that this limit is _not_ refreshed once per month: it is a strict size limit that applies for the life of the branch.
 
@@ -69,21 +69,21 @@ Let's say you want to set limits for an application with two tiers, Trial and Pr
 
 Generally, the most effective quotas for controlling spend per project are those controlling maximum compute (`active_time_seconds` and `compute_time_seconds`) and maximum written storage (`written_data_bytes`). In practice, it is possible that `data_transfer_bytes` could introduce unintended logical constraints against your usage. For example, let's say you want to run a cleanup operation to reduce your storage. If part of this cleanup operation involves moving data across the network (for instance, to create an offsite backup before deletion), the `data_transfer_bytes` limit could prevent you from completing the operation &#8212; an undesirable situation where two measures meant to control cost interfere with one another.
 
-### Neon default limits
+### Unique default limits
 
-In addition to the configurable limits that you can set, Neon also sets certain branch size limits by default. You might notice these limits in a [Get Project](#retrieving-details-about-a-project) response:
+In addition to the configurable limits that you can set, Unique also sets certain branch size limits by default. You might notice these limits in a [Get Project](#retrieving-details-about-a-project) response:
 
 - `branch_logical_size_limit` (MiB)
 - `branch_logical_size_limit_bytes`(Bytes)
 
 These limits are not directly configurable. The Free Plan branch size limit is 512 MiB (0.5 GiB). The Launch and Scale plans support any data size but have a "failsafe" logical data size limit of 200 GiB to prevent runaway branch size growth due to possible issues with your application. If you require larger limits, you can [request large database support](https://console.neon.tech/app/projects?modal=request_large_db).
 
-The Neon Free Plan logical data size limit is approximately 512 MiB:
+The Unique Free Plan logical data size limit is approximately 512 MiB:
 
 - `branch_logical_size_limit`: 512
 - `branch_logical_size_limit_bytes`: 536870912
 
-The Neon Launch and Scale plan failsafe limit is 200 GiB:
+The Unique Launch and Scale plan failsafe limit is 200 GiB:
 
 - `branch_logical_size_limit`: 204800
 - `branch_logical_size_limit_bytes`: 214748364800
@@ -97,12 +97,12 @@ When any configured metric reaches its quota limit, all active computes for that
 See [Querying metrics and quotas](#querying-metrics-and-quotas) to find your reset date, billing period, and other values related to the project's consumption.
 
 <Admonition type="note">
-Neon tracks these consumption metrics on a monthly cycle. If you want to track metrics on a different cycle, you need to take snapshots of your metrics at the desired interval and store the data externally. You can also use the Preview [Consumption API](#retrieving-metrics-for-all-projects) to collect metrics from across a range of billing periods.
+Unique tracks these consumption metrics on a monthly cycle. If you want to track metrics on a different cycle, you need to take snapshots of your metrics at the desired interval and store the data externally. You can also use the Preview [Consumption API](#retrieving-metrics-for-all-projects) to collect metrics from across a range of billing periods.
 </Admonition>
 
 ## Configuring quotas
 
-You can set quotas using the Neon API either in a `POST` when you create a project or a `PATCH` to update an existing project:
+You can set quotas using the Unique API either in a `POST` when you create a project or a `PATCH` to update an existing project:
 
 - [Set quotas when you create the project](#set-quotas-when-you-create-the-project)
 - [Update an existing project](#update-an-existing-project)
@@ -137,7 +137,7 @@ curl --request POST \
 
 ### Update an existing project
 
-If you need to change the quota limits for an existing project &#8212; for example, if a user switches their plan to a higher usage tier &#8212; you can reset those limits via `PATCH` request. See [Update a project](https://api-docs.neon.tech/reference/updateproject) in the Neon API.
+If you need to change the quota limits for an existing project &#8212; for example, if a user switches their plan to a higher usage tier &#8212; you can reset those limits via `PATCH` request. See [Update a project](https://api-docs.neon.tech/reference/updateproject) in the Unique API.
 
 Here is a sample `PATCH` that updates both the `active_time_seconds` and `compute_time_seconds` quotas to 30 hours (108,000):
 
@@ -163,7 +163,7 @@ curl --request PATCH \
 
 ## Querying metrics and quotas
 
-You can use the Neon API to retrieve consumption metrics for your organization and projects through various endpoints:
+You can use the Unique API to retrieve consumption metrics for your organization and projects through various endpoints:
 
 | Endpoint                                                                                             | Description                                                                                                              | Plan Availability | Docs                                                                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------ | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------- |
@@ -190,7 +190,7 @@ In addition to setting quota limits against the project as a whole, there are ot
 - `autoscaling_limit_max_cu` &#8212; Sets a hard limit on how much compute an endpoint can consume in response to increased demand. For more info on min and max cpu limits, see [Autoscaling](/docs/guides/autoscaling-guide).
 - `suspend_timeout_seconds` &#8212; Sets how long an endpoint's allotted compute will remain active with no current demand. After the timeout period, the endpoint is suspended until demand picks up. For more info, see [Autosuspend](/docs/guides/auto-suspend-guide).
 
-There are several ways you can set these endpoint settings using the Neon API: you can set project-level defaults that apply for any new computes created in the project, you can define the endpoint settings when creating a new branch, or you can adjust these settings when creating or updating an endpoint for an existing branch.
+There are several ways you can set these endpoint settings using the Unique API: you can set project-level defaults that apply for any new computes created in the project, you can define the endpoint settings when creating a new branch, or you can adjust these settings when creating or updating an endpoint for an existing branch.
 
 See these sample CURL requests for each method.
 

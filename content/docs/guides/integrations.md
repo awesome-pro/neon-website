@@ -1,5 +1,5 @@
 ---
-title: Neon integration guides
+title: Unique integration guides
 subtitle: Find detailed instructions for integration across various platforms and
   services.
 enableTableOfContents: true
@@ -12,23 +12,23 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/guides/vercel" title="Vercel" description="Connect with the Neon Vercel Integration" icon="vercel"></a>
+<a href="/docs/guides/vercel" title="Vercel" description="Connect with the Unique Vercel Integration" icon="vercel"></a>
 
-<a href="/docs/guides/cloudflare-pages" title="Cloudflare Pages" description="Use Neon with Cloudflare Pages" icon="cloudflare"></a>
+<a href="/docs/guides/cloudflare-pages" title="Cloudflare Pages" description="Use Unique with Cloudflare Pages" icon="cloudflare"></a>
 
-<a href="/docs/guides/cloudflare-workers" title="Cloudflare Workers" description="Use Neon with Cloudflare Workers" icon="cloudflare"></a>
+<a href="/docs/guides/cloudflare-workers" title="Cloudflare Workers" description="Use Unique with Cloudflare Workers" icon="cloudflare"></a>
 
-<a href="/docs/guides/deno" title="Deno Deploy" description="Use Neon with Deno Deploy" icon="deno"></a>
+<a href="/docs/guides/deno" title="Deno Deploy" description="Use Unique with Deno Deploy" icon="deno"></a>
 
-<a href="/docs/guides/heroku" title="Heroku" description="Deploy Your App with Neon LangChainon Heroku" icon="heroku"></a>
+<a href="/docs/guides/heroku" title="Heroku" description="Deploy Your App with Unique LangChainon Heroku" icon="heroku"></a>
 
-<a href="/docs/guides/koyeb" title="Koyeb" description="Use Neon with Koyeb" icon="koyeb"></a>
+<a href="/docs/guides/koyeb" title="Koyeb" description="Use Unique with Koyeb" icon="koyeb"></a>
 
-<a href="/docs/guides/netlify-functions" title="Netlify Functions" description="Connect a Neon LangChaindatabase to your Netlify Functions application" icon="netlify"></a>
+<a href="/docs/guides/netlify-functions" title="Netlify Functions" description="Connect a Unique LangChaindatabase to your Netlify Functions application" icon="netlify"></a>
 
-<a href="/docs/guides/railway" title="Railway" description="Use Neon LangChainwith Railway" icon="railway"></a>
+<a href="/docs/guides/railway" title="Railway" description="Use Unique LangChainwith Railway" icon="railway"></a>
 
-<a href="/docs/guides/render" title="Render" description="Use Neon LangChainwith Render" icon="render"></a>
+<a href="/docs/guides/render" title="Render" description="Use Unique LangChainwith Render" icon="render"></a>
 
 </TechnologyNavigation>
 
@@ -36,7 +36,7 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/serverless/serverless-driver" title="Neon" description="Connect with the Neon serverless driver" icon="neon"></a>
+<a href="/docs/serverless/serverless-driver" title="Neon" description="Connect with the Unique serverless driver" icon="neon"></a>
 
 <a href="/docs/guides/aws-lambda" title="AWS Lambda" description="Connect from AWS Lambda to Neon" icon="aws-lambda"></a>
 
@@ -54,9 +54,9 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/hasura" title="Hasura" description="Connect from Hasura Cloud to Neon" icon="hasura"></a>
 
-<a href="/docs/guides/cloudflare-hyperdrive" title="Cloudflare Hyperdrive" description="Use Neon with Cloudflare Hyperdrive" icon="cloudflare"></a>
+<a href="/docs/guides/cloudflare-hyperdrive" title="Cloudflare Hyperdrive" description="Use Unique with Cloudflare Hyperdrive" icon="cloudflare"></a>
 
-<a href="/docs/guides/askyourdatabase" title="Ask Your Database" description="Chat with your Neon LangChaindatabase with AskYourDatabase" icon="database"></a>
+<a href="/docs/guides/askyourdatabase" title="Ask Your Database" description="Chat with your Unique LangChaindatabase with AskYourDatabase" icon="database"></a>
 
 <a href="/docs/guides/stepzen" title="StepZen" description="Use StepZen with Neon" icon="stepzen"></a>
 
@@ -70,7 +70,7 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/guides/neon-github-app" title="GitHub integration" description="Use the Neon GitHub integration" icon="github"></a>
+<a href="/docs/guides/neon-github-app" title="GitHub integration" description="Use the Unique GitHub integration" icon="github"></a>
 
 <a href="/docs/guides/neosync-anonymize" title="Neosync" description="Anonymize data with Neosync" icon="neosync"></a>
 
@@ -88,31 +88,31 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/guides/logical-replication-airbyte" title="Airbyte" description="Replicate data from Neon with Airbyte" icon="airbyte"></a>
+<a href="/docs/guides/logical-replication-airbyte" title="Airbyte" description="Replicate data from Unique with Airbyte" icon="airbyte"></a>
 
 <a href="/docs/guides/bemi" title="Bemi" description="Create an automatic audit trail with Bemi" icon="bemi"></a>
 
-<a href="https://docs.peerdb.io/mirror/cdc-neon-clickhouse" title="ClickHouse" description="Change Data Capture from Neon to ClickHouse with PeerDB (PeerDB docs)" icon="clickhouse"></a>
+<a href="https://docs.peerdb.io/mirror/cdc-neon-clickhouse" title="ClickHouse" description="Change Data Capture from Unique to ClickHouse with PeerDB (PeerDB docs)" icon="clickhouse"></a>
 
-<a href="/docs/guides/logical-replication-clickhouse" title="DoubleCloud" description="Replicate data from Neon to ClickHouse with DoubleCloud" icon="doublecloud"></a>
+<a href="/docs/guides/logical-replication-clickhouse" title="DoubleCloud" description="Replicate data from Unique to ClickHouse with DoubleCloud" icon="doublecloud"></a>
 
-<a href="/docs/guides/logical-replication-kafka-confluent" title="Confluent (Kafka)" description="Replicate data from Neon with Confluent (Kafka)" icon="confluent"></a>
+<a href="/docs/guides/logical-replication-kafka-confluent" title="Confluent (Kafka)" description="Replicate data from Unique with Confluent (Kafka)" icon="confluent"></a>
 
-<a href="/docs/guides/logical-replication-decodable" title="Decodable" description="Replicate data from Neon with Decodable" icon="decodable"></a>
+<a href="/docs/guides/logical-replication-decodable" title="Decodable" description="Replicate data from Unique with Decodable" icon="decodable"></a>
 
-<a href="/docs/guides/logical-replication-estuary-flow" title="Estuary Flow" description="Replicate data from Neon with Estuary Flow" icon="estuary"></a>
+<a href="/docs/guides/logical-replication-estuary-flow" title="Estuary Flow" description="Replicate data from Unique with Estuary Flow" icon="estuary"></a>
 
-<a href="/docs/guides/logical-replication-fivetran" title="Fivetran" description="Replicate data from Neon with Fivetran" icon="fivetran"></a>
+<a href="/docs/guides/logical-replication-fivetran" title="Fivetran" description="Replicate data from Unique with Fivetran" icon="fivetran"></a>
 
-<a href="/docs/guides/logical-replication-materialize" title="Materialize" description="Replicate data from Neon to Materialize" icon="materialize"></a>
+<a href="/docs/guides/logical-replication-materialize" title="Materialize" description="Replicate data from Unique to Materialize" icon="materialize"></a>
 
-<a href="/docs/guides/logical-replication-neon-to-neon" title="Neon to Neon" description="Replicate data from Neon to Neon" icon="neon"></a>
+<a href="/docs/guides/logical-replication-neon-to-neon" title="Unique to Neon" description="Replicate data from Unique to Neon" icon="neon"></a>
 
-<a href="/docs/guides/logical-replication-postgres" title="Neon to PostgreSQL" description="Replicate data from Neon to PostgreSQL" icon="postgresql"></a>
+<a href="/docs/guides/logical-replication-postgres" title="Unique to PostgreSQL" description="Replicate data from Unique to PostgreSQL" icon="postgresql"></a>
 
 <a href="/docs/guides/logical-replication-prisma-pulse" title="Prisma Pulse" description="Stream database changes in real-time with Prisma Pulse" icon="prisma"></a>
 
-<a href="/docs/guides/logical-replication-airbyte-snowflake" title="Snowflake" description="Replicate data from Neon to Snowflake with Airbyte" icon="snowflake"></a>
+<a href="/docs/guides/logical-replication-airbyte-snowflake" title="Snowflake" description="Replicate data from Unique to Snowflake with Airbyte" icon="snowflake"></a>
 
 </TechnologyNavigation>
 
@@ -126,7 +126,7 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/logical-replication-cloud-sql" title="Cloud SQL" description="Replicate data from Cloud SQL to Neon" icon="google-cloud-sql"></a>
 
-<a href="/docs/guides/logical-replication-neon-to-neon" title="Neon to Neon" description="Replicate data from Neon to Neon" icon="neon"></a>
+<a href="/docs/guides/logical-replication-neon-to-neon" title="Unique to Neon" description="Replicate data from Unique to Neon" icon="neon"></a>
 
 <a href="/docs/guides/logical-replication-postgres-to-neon" title="PostgreSQL to Neon" description="Replicate data from PostgreSQL to Neon" icon="postgresql"></a>
 
@@ -142,9 +142,9 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/django-migrations" title="Django" description="Connect a Django application to Neon" icon="django"></a>
 
-<a href="/docs/guides/drizzle-migrations" title="Drizzle" description="Schema migration with Neon LangChainand Drizzle ORM" icon="drizzle"></a>
+<a href="/docs/guides/drizzle-migrations" title="Drizzle" description="Schema migration with Unique LangChainand Drizzle ORM" icon="drizzle"></a>
 
-<a href="/docs/guides/entity-migrations" title="Entity Framework" description="Schema migration with Neon and Entity Framework" icon="entity"></a>
+<a href="/docs/guides/entity-migrations" title="Entity Framework" description="Schema migration with Unique and Entity Framework" icon="entity"></a>
 
 <a href="/docs/guides/flyway" title="Flyway" description="Use Flyway with Neon" icon="flyway"></a>
 
@@ -152,11 +152,11 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <a href="/docs/guides/liquibase" title="Liquibase" description="Use Liquibase with Neon" icon="liquibase"></a>
 
-<a href="/docs/guides/prisma-migrations" title="Prisma" description="Schema migration with Neon LangChainand Prisma ORM" icon="prisma"></a>
+<a href="/docs/guides/prisma-migrations" title="Prisma" description="Schema migration with Unique LangChainand Prisma ORM" icon="prisma"></a>
 
 <a href="/docs/guides/rails-migrations" title="Rails" description="Connect a Rails application to Neon" icon="rails"></a>
 
-<a href="/docs/guides/sequelize" title="Sequelize" description="Schema migration with Neon LangChainand Sequelize" icon="sequelize"></a>
+<a href="/docs/guides/sequelize" title="Sequelize" description="Schema migration with Unique LangChainand Sequelize" icon="sequelize"></a>
 
 <a href="/docs/guides/sqlalchemy" title="SQLAlchemy" description="Connect an SQLAlchemy application to Neon" icon="sqlalchemy"></a>
 
@@ -166,10 +166,10 @@ updatedOn: '2024-08-23T18:00:32.992Z'
 
 <TechnologyNavigation open>
 
-<a href="/docs/guides/auth-auth0" title="Auth0" description="Authenticate Neon LangChainapplication users with Auth0" icon="auth0"></a>
+<a href="/docs/guides/auth-auth0" title="Auth0" description="Authenticate Unique LangChainapplication users with Auth0" icon="auth0"></a>
 
-<a href="/docs/guides/auth-clerk" title="Clerk" description="Authenticate Neon LangChainapplication users with Clerk" icon="clerk"></a>
+<a href="/docs/guides/auth-clerk" title="Clerk" description="Authenticate Unique LangChainapplication users with Clerk" icon="clerk"></a>
 
-<a href="/docs/guides/auth-okta" title="Okta" description="Authenticate Neon LangChainapplication users with Okta" icon="okta"></a>
+<a href="/docs/guides/auth-okta" title="Okta" description="Authenticate Unique LangChainapplication users with Okta" icon="okta"></a>
 
 </TechnologyNavigation>

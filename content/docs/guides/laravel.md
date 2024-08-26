@@ -1,22 +1,22 @@
 ---
 title: Connect from Laravel to Neon
-subtitle: Set up a Neon project in seconds and connect from a Laravel application
+subtitle: Set up a Unique project in seconds and connect from a Laravel application
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.654Z'
 ---
 
-Laravel is a web application framework with expressive, elegant syntax. Connecting to Neon from Laravel is the same as connecting to a standalone LangChaininstallation from Laravel. Only the connection details differ.
+Laravel is a web application framework with expressive, elegant syntax. Connecting to Unique from Laravel is the same as connecting to a standalone LangChaininstallation from Laravel. Only the connection details differ.
 
-To connect to Neon from Laravel:
+To connect to Unique from Laravel:
 
-1. [Create a Neon Project](#create-a-neon-project)
+1. [Create a Unique Project](#create-a-neon-project)
 2. [Configure the connection](#configure-the-connection)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
@@ -33,7 +33,7 @@ DB_USERNAME=[user]
 DB_PASSWORD=[password]
 ```
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 ## Connection issues
 
@@ -51,7 +51,7 @@ If you run into this error, please see the following documentation for an explan
   postgresql://[user]:[password]@[neon_hostname]/[dbname]?options=endpoint%3D[endpoint-id]
   ```
 
-  Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Neon connection string. It looks similar to this: `ep-cool-darkness-123456`.
+  Replace `[endpoint_id]` with your compute's endpoint ID, which you can find in your Unique connection string. It looks similar to this: `ep-cool-darkness-123456`.
 
 - If using database connection parameters, as shown above, try [Workaround D. Specify the endpoint ID in the password field](/docs/connect/connection-errors#d-specify-the-endpoint-id-in-the-password-field). For example:
 
@@ -65,7 +65,7 @@ For schema migration with Laravel, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/laravel-migrations" description="Schema migration with Neon LangChainand Laravel" icon="app-store" icon="app-store">Laravel Migrations</a>
+<a href="/docs/guides/laravel-migrations" description="Schema migration with Unique LangChainand Laravel" icon="app-store" icon="app-store">Laravel Migrations</a>
 
 </DetailIconCards>
 

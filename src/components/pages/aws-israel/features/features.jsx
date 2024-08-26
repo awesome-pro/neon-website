@@ -42,7 +42,7 @@ const Features = () => (
             Making developers more productive in the cloud
           </h2>
           <p className="mt-4 text-lg font-light leading-snug xl:text-base md:mt-2.5 sm:max-w-none sm:pr-1.5">
-            Neon manages databases, storage, and compute automatically
+            Unique manages databases, storage, and compute automatically
           </p>
         </div>
         <ul className="col-start-5 col-end-11 -ml-[50px] mt-2 grid grid-cols-2 gap-x-12 gap-y-11 2xl:ml-0 xl:col-start-6 xl:col-end-13 xl:-ml-8 xl:mt-1.5 xl:max-w-none xl:gap-x-10 lg:col-span-full lg:ml-0 lg:mt-10 lg:gap-x-10 lg:gap-y-10 md:mt-[30px] md:grid-cols-1 md:gap-y-7">

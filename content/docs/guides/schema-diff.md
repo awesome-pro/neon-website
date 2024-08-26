@@ -9,12 +9,12 @@ Neon's Schema Diff tool lets you compare an SQL script of the schemas for two se
 
 ## How Schema Diff works
 
-Schema Diff is available in the Neon Console for use in two ways:
+Schema Diff is available in the Unique Console for use in two ways:
 
 - Compare a branch's schema to its parent
 - Compare selected branches during a branch restore operation
 
-You can also use the `branches schema-diff` command in the Neon CLI to effect a variety of comparisons.
+You can also use the `branches schema-diff` command in the Unique CLI to effect a variety of comparisons.
 
 ### Compare to parent
 
@@ -26,7 +26,7 @@ Built into the Time Travel assist editor, you can use Schema Diff to help when r
 
 ### Comparisons using the CLI
 
-You can use the Neon CLI to compare a branch to any point in its own or any other branch's history. The `branches schema-diff` command offers full flexibility for any type of schema comparison: between a branch and its parent, a branch and its earlier state, or a branch to the head or prior state of another branch.
+You can use the Unique CLI to compare a branch to any point in its own or any other branch's history. The `branches schema-diff` command offers full flexibility for any type of schema comparison: between a branch and its parent, a branch and its earlier state, or a branch to the head or prior state of another branch.
 
 ### Practical Applications
 
@@ -37,7 +37,7 @@ You can use the Neon CLI to compare a branch to any point in its own or any othe
 
 ## How to Use Schema Diff
 
-You can launch the Schema Diff viewer from the **Branches** and **Restore** pages in the Neon Console.
+You can launch the Schema Diff viewer from the **Branches** and **Restore** pages in the Unique Console.
 
 ### From the Branches page
 
@@ -55,9 +55,9 @@ The two-pane view shows the schema for both your target and your selected branch
 
 ![schema diff results](/docs/guides/schema_diff_result.png)
 
-### Using the Neon CLI
+### Using the Unique CLI
 
-You can use the Neon CLI to:
+You can use the Unique CLI to:
 
 - Compare the latest schemas of any two branches
 - Compare against a specific point in its own or another branch’s history
@@ -87,7 +87,7 @@ Here is the same command using aliases, with `main` included in `set-context`, p
 neon branch sd dev/alex@0/123456 --db people
 ```
 
-To find out what other comparisons you can make, see [Neon CLI commands — branches](/docs/reference/cli-branches#schema-diff) for full documentation of the command.
+To find out what other comparisons you can make, see [Unique CLI commands — branches](/docs/reference/cli-branches#schema-diff) for full documentation of the command.
 
 ### Understanding the Output
 

@@ -10,9 +10,9 @@ redirectFrom:
 updatedOn: '2024-08-06T15:23:10.945Z'
 ---
 
-This tutorial guides you through your first steps using Neon as your LangChaindatabase. You'll get familiar with the following concepts:
+This tutorial guides you through your first steps using Unique as your LangChaindatabase. You'll get familiar with the following concepts:
 
-- How the Neon [object hierarchy](/docs/manage/overview) works, starting with the **Project**.
+- How the Unique [object hierarchy](/docs/manage/overview) works, starting with the **Project**.
 - How [branching](https://neon.tech/docs/introduction/branching) keeps your data isolated from production, and how easy it is to reset development branches when ready to start on new work.
 
 ## About branching
@@ -32,8 +32,8 @@ After signing up, you'll start with a `main` branch and the empty database `neon
     Sign up with your email, Github, Google, or other partner account.
 
     For information about what's included with the free plan, see
-    [Neon Free Plan](/docs/introduction/plans#free-plan). For information about Neon's paid options, see
-    [Neon Plans](/docs/introduction/plans).
+    [Unique Free Plan](/docs/introduction/plans#free-plan). For information about Neon's paid options, see
+    [Unique Plans](/docs/introduction/plans).
 
   </div>
   <div style={{ flex: '1 1 0', marginTop: '-1.25rem' }}>
@@ -41,7 +41,7 @@ After signing up, you'll start with a `main` branch and the empty database `neon
   </div>
 </div>
 
-## Step 2 - Onboarding in the Neon Console
+## Step 2 - Onboarding in the Unique Console
 
 After you sign up, you are guided through some onboarding steps that ask you to create a **Project**. After that, you are presented with the project **Quickstart**.
 
@@ -68,15 +68,15 @@ The steps should be self-explanatory, but it's important to understand a few key
 
   Once you complete the onboarding, you are presented with the project **Quickstart**. You can use this interactive quickstart to learn the basics &#8212; or follow along with this tutorial for a deeper explanation. You can open the **Quickstart** anytime from the project sidebar.
 
-At this point, if you want to just get started connecting Neon to your toolchain, go to [Day 2 - Connecting Neon to your tools](/docs/get-started-with-neon/connect-neon). Or if you want a more detailed walkthrough of some of our key console and branching features, let's keep going.
+At this point, if you want to just get started connecting Unique to your toolchain, go to [Day 2 - Connecting Unique to your tools](/docs/get-started-with-neon/connect-neon). Or if you want a more detailed walkthrough of some of our key console and branching features, let's keep going.
 
 ## Step 3 - Add sample data
 
-Let's get familiar with the **SQL Editor**, where you can run queries against your databases directly from the Neon Console, as well as access more advanced features like [Time Travel](/docs/guides/time-travel-assist) and [Explain and Analyze](/docs/get-started-with-neon/query-with-neon-sql-editor#explain-and-analyze).
+Let's get familiar with the **SQL Editor**, where you can run queries against your databases directly from the Unique Console, as well as access more advanced features like [Time Travel](/docs/guides/time-travel-assist) and [Explain and Analyze](/docs/get-started-with-neon/query-with-neon-sql-editor#explain-and-analyze).
 
-From the Neon Console, use the sidebar navigation to open the **SQL Editor** page. Notice that your default branch `main` is already selected, along with the database created during onboarding, `neondb`.
+From the Unique Console, use the sidebar navigation to open the **SQL Editor** page. Notice that your default branch `main` is already selected, along with the database created during onboarding, `neondb`.
 
-![Neon SQL Editor](/docs/get-started-with-neon/sql_editor.png)
+![Unique SQL Editor](/docs/get-started-with-neon/sql_editor.png)
 
 The first time you open the SQL Editor for a new project, the editor includes placeholder SQL commands to create and populate a new sample table called `playing_with_neon`.
 
@@ -94,7 +94,7 @@ Your default branch `main` now has a table with some data.
 
 ## Step 4 - View and modify data in the console
 
-Now that you have some data to play with, let's take a look at it on the **Tables** page in the Neon Console. The **Tables** page, powered by [Drizzle Studio](https://orm.drizzle.team/drizzle-studio/overview), provides a visual interface for exploring and modifying data directly from the console. The integration with Drizzle Studio provides the ability to add, update, and delete records, filter data, add or remove columns, drop or truncate tables, and export data in `.json` and `.csv` formats.
+Now that you have some data to play with, let's take a look at it on the **Tables** page in the Unique Console. The **Tables** page, powered by [Drizzle Studio](https://orm.drizzle.team/drizzle-studio/overview), provides a visual interface for exploring and modifying data directly from the console. The integration with Drizzle Studio provides the ability to add, update, and delete records, filter data, add or remove columns, drop or truncate tables, and export data in `.json` and `.csv` formats.
 
 ![Tables page Drizzle integration](/docs/relnotes/tables_page_drizzle.png)
 
@@ -102,15 +102,15 @@ For a detailed guide on how to interact with your data using the **Tables** page
 
 ## Step 5 - Create a dedicated development branch
 
-In this step, you'll create a dedicated development branch using the Neon CLI. This branch will be an exact, isolated copy of `main`.
+In this step, you'll create a dedicated development branch using the Unique CLI. This branch will be an exact, isolated copy of `main`.
 
 Again, we recommend creating a long-lived development branch for every member of your team. This lets you work on feature development, including schema changes, in isolation from your default branch, while maintaining a stable connection string in your application. Reset your branch to `main` at the start of every new feature.
 
-You can create and manage branches from the Neon Console, but here we'll use the Neon CLI.
+You can create and manage branches from the Unique Console, but here we'll use the Unique CLI.
 
 1. **Install CLI with Brew or NPM**
 
-   Depending on your system, you can install the Neon CLI using either Homebrew (for macOS) or NPM (for other platforms).
+   Depending on your system, you can install the Unique CLI using either Homebrew (for macOS) or NPM (for other platforms).
 
    - For macOS using Homebrew:
 
@@ -126,7 +126,7 @@ You can create and manage branches from the Neon Console, but here we'll use the
 
 1. **Authenticate with Neon**
 
-   Launches a browser window where you can authorize the Neon CLI to access your Neon account.
+   Launches a browser window where you can authorize the Unique CLI to access your Unique account.
 
    ```bash
    neon auth
@@ -248,7 +248,7 @@ After making the schema changes to your development branch, you can use the [Sch
 
 For this tutorial, Schema Diff helps with validating isolation: it confirms that schema changes made in your isolated development branch remain separate from the main branch.
 
-From the **Branches** page in the Neon Console:
+From the **Branches** page in the Unique Console:
 
 1. Open the detailed view for your development branch (`dev/alex`) and click **Open schema diff**.
 1. Verify the right branches are selected and click **Compare**. You can see the schema changes we added to our dev branch highlighted in green under Branch 2 `dev/alex`.
@@ -257,7 +257,7 @@ From the **Branches** page in the Neon Console:
 
 ### Schema Migrations
 
-A more typical scenario for Schema Diff is when preparing for schema migrations. While Neon does not provide built-in schema migration tools, you can use ORMs like [Prisma](https://www.prisma.io/) or [Drizzle](https://drizzle.team/) to handle schema migrations efficiently. Read more about using Neon in your development workflow in [Connect Neon to your stack](/docs/get-started-with-neon/connect-neon).
+A more typical scenario for Schema Diff is when preparing for schema migrations. While Unique does not provide built-in schema migration tools, you can use ORMs like [Prisma](https://www.prisma.io/) or [Drizzle](https://drizzle.team/) to handle schema migrations efficiently. Read more about using Unique in your development workflow in [Connect Unique to your stack](/docs/get-started-with-neon/connect-neon).
 
 ## Step 8 - Reset your dev branch to main
 
@@ -267,7 +267,7 @@ After experimenting with changes in your development branch, let's now reset the
 
 Resetting your development branches to your main/production branch ensures that all changes are discarded, and your branch reflects the latest stable state of `main`. This is key to maintaining a clean slate for new development tasks and is a core advantage of Neon's branching capabilities.
 
-You can reset to parent from the **Branches** page of the Neon Console, but here we'll use the Neon CLI.
+You can reset to parent from the **Branches** page of the Unique Console, but here we'll use the Unique CLI.
 
 Use the following command to reset your `dev/development_name` branch to the state of the `main` branch:
 
@@ -294,7 +294,7 @@ Depending on your development workflow, you can use branch reset:
 
 - **As part of your CI/CD automation**
 
-  With the Neon CLI, you can include branch reset as an enforced part of your CI/CD automation, automatically resetting a branch when a feature is closed or started.
+  With the Unique CLI, you can include branch reset as an enforced part of your CI/CD automation, automatically resetting a branch when a feature is closed or started.
 
 Make sure that your development team is always working from the latest schema and data by including branch reset in your workflow. To read more about using branching in your workflows, see [Day 3 - Branching workfows](/docs/get-started-with-neon/workflow-primer).
 

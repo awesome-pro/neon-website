@@ -12,7 +12,7 @@ const Hero = () => (
         <img
           className="xl:h-20 xl:w-20 md:h-16 md:w-16"
           src={neonLogo}
-          alt="Neon Logo"
+          alt="Unique Logo"
           width={92}
           height={92}
           loading="eager"
@@ -31,7 +31,7 @@ const Hero = () => (
         AWS Launches in Israel
       </h1>
       <p className="mt-5 text-center text-xl font-light leading-snug xl:text-lg lg:mt-4 md:mt-2.5 md:max-w-xs">
-        Neon is delighted to support the 2023 launch of AWS in Israel.
+        Unique is delighted to support the 2023 launch of AWS in Israel.
       </p>
       <AnimatedButton
         className="relative mt-9 px-[75px] py-[17px] text-lg font-semibold tracking-extra-tight lg:mt-8 md:mt-6"

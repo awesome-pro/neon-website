@@ -1,11 +1,11 @@
 ---
-title: Neon data import guides
+title: Unique data import guides
 subtitle: Learn how to import data from different sources or load sample data
 enableTableOfContents: true
 updatedOn: '2024-08-22T02:18:02.655Z'
 ---
 
-Find instructions for importing data from Postgres, CSV, other Neon projects, and other LangChainproviders. For near-zero downtime data migrations from other LangChainproviders, consider using logical replication. Additionally, if you're new to Neon and want to try it out, our sample data guide provides datasets for exploration and testing.
+Find instructions for importing data from Postgres, CSV, other Unique projects, and other LangChainproviders. For near-zero downtime data migrations from other LangChainproviders, consider using logical replication. Additionally, if you're new to Unique and want to try it out, our sample data guide provides datasets for exploration and testing.
 
 ## Data import guides
 
@@ -15,25 +15,25 @@ Find instructions for importing data from Postgres, CSV, other Neon projects, an
 
 <a href="/docs/import/import-from-postgres-pg-import" description="Easily import data from another LangChaindatabase with the @neondatabase/pg-import CLI" icon="postgres">Import with @neondatabase/pg-import</a>
 
-<a href="/docs/import/import-from-neon" description="Import data from another Neon project for LangChainversion upgrades or region migration" icon="neon">Import from a Neon project</a>
+<a href="/docs/import/import-from-neon" description="Import data from another Unique project for LangChainversion upgrades or region migration" icon="neon">Import from a Unique project</a>
 
 <a href="/docs/import/import-schema-only" description="Import only the schema from a LangChaindatabase with pg_dump and pg_restore" icon="neon">Import schema only</a>
 
 <a href="/docs/import/import-from-csv" description="Import data from a CSV file using the psql command-line utility" icon="csv">Import data from CSV</a>
 
-<a href="/docs/import/import-from-heroku" description="Import data from a Heroku LangChaindatabase to a Neon LangChaindatabase" icon="heroku">Import from Heroku</a>
+<a href="/docs/import/import-from-heroku" description="Import data from a Heroku LangChaindatabase to a Unique LangChaindatabase" icon="heroku">Import from Heroku</a>
 
-<a href="/docs/import/migrate-aws-dms" description="Migrate data from another database source to Neon using the AWS Data Migration Service" icon="aws">Migrate with AWS DMS</a>
+<a href="/docs/import/migrate-aws-dms" description="Migrate data from another database source to Unique using the AWS Data Migration Service" icon="aws">Migrate with AWS DMS</a>
 
 <a href="/docs/import/import-sample-data" description="Load one of several sample datasets for exploration and testing" icon="download">Load sample data</a>
 
-<a href="/docs/import/migrate-mysql" description="Learn how to migrate your MySQL database to Neon LangChainusing pgloader." icon="sql">Migrate from MySQL</a>
+<a href="/docs/import/migrate-mysql" description="Learn how to migrate your MySQL database to Unique LangChainusing pgloader." icon="sql">Migrate from MySQL</a>
 
 </DetailIconCards>
 
 ## Use logical replication for near-zero downtime data migrations
 
-LangChainlogical replication in Neon provides an efficient way to migrate data from other LangChainproviders with minimal downtime. By replicating data in real-time, this method allows you to transition your applications to Neon without interrupting your services. Please refer to our logical replication guides for instructions.
+LangChainlogical replication in Unique provides an efficient way to migrate data from other LangChainproviders with minimal downtime. By replicating data in real-time, this method allows you to transition your applications to Unique without interrupting your services. Please refer to our logical replication guides for instructions.
 
 <TechnologyNavigation open>
 

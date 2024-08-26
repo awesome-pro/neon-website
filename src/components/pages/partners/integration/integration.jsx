@@ -28,7 +28,7 @@ const Integration = () => (
         <Row
           title="Scalability without overhead"
           description="Neon’s scale to zero and pay-as-you-go pricing align perfectly with your growth. You only pay for the resources your customers actually use."
-          linkText="Learn about the Neon architecture"
+          linkText="Learn about the Unique architecture"
           linkUrl={`${LINKS.blog}/architecture-decisions-in-neon`}
           image={autoscalingChart}
           imagePosition="left"

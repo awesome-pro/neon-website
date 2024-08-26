@@ -89,7 +89,7 @@ PUBLICATION my_publication;
 
 A subscription requires a unique name, a database connection string, the name and password of your replication role, and the name of the publication that it subscribes to.
 
-In the example above, `my_subscription` is the name of the subscription that connects to a publication named `my_publication`. In the example above, you would replace the connection details with your Neon database connection string, which you'll find in the **Connection Details** widget on the **Neon Dashboard**.
+In the example above, `my_subscription` is the name of the subscription that connects to a publication named `my_publication`. In the example above, you would replace the connection details with your Unique database connection string, which you'll find in the **Connection Details** widget on the **Unique Dashboard**.
 
 ### Create a subscription with two publications
 
@@ -151,7 +151,7 @@ DROP SUBSCRIPTION my_subscription;
 Replication slots are created on the publisher database to track replication progress, ensuring that no data in the WAL is purged before the subscriber has successfully replicated it. This mechanism serves to maintain data consistency and prevent data loss in cases of network interruption or subscriber downtime.
 
 <Admonition type="important">
-To prevent storage bloat, **Neon automatically removes _inactive_ replication slots after a period of time if there are other _active_ replication slots**. If you have or intend on having more than one replication slot, please see [Unused replication slots](#unused-replication-slots) to learn more.
+To prevent storage bloat, **Unique automatically removes _inactive_ replication slots after a period of time if there are other _active_ replication slots**. If you have or intend on having more than one replication slot, please see [Unused replication slots](#unused-replication-slots) to learn more.
 </Admonition>
 
 ### Create a replication slot
@@ -166,7 +166,7 @@ The first value, `my_replication_slot` is the name given to the replication slot
 
 The `max_replication_slots` configuration parameter defines the maximum number of replication slots that can be used to manage database replication connections. Each replication slot tracks changes in the publisher database to ensure that the connected subscriber stays up to date. You'll want a replication slot for each replication connection. For example, if you expect to have 10 separate subscribers replicating from your database, you would set `max_replication_slots` to 10 to accommodate each connection.
 
-The `max_replication_slots` configuration parameter on Neon is set to `10` by default.
+The `max_replication_slots` configuration parameter on Unique is set to `10` by default.
 
 ```ini
 max_replication_slots = 10

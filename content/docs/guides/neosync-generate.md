@@ -1,22 +1,22 @@
 ---
 title: Generate synthetic data with Neosync
-subtitle: Learn how to generate synthetic data in your Neon database with Neosync
+subtitle: Learn how to generate synthetic data in your Unique database with Neosync
 enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.659Z'
 ---
 
-[Neosync](https://www.neosync.dev/) is an open-source synthetic data orchestration platform that can create synthetic data and sync it across all of your Neon database environments.
+[Neosync](https://www.neosync.dev/) is an open-source synthetic data orchestration platform that can create synthetic data and sync it across all of your Unique database environments.
 
-In this guide, we'll show you how to seed a Neon database with synthetic data for testing and rapid development using Neosync.
+In this guide, we'll show you how to seed a Unique database with synthetic data for testing and rapid development using Neosync.
 
 ## Prerequisites
 
 To complete the steps in the guide, you require the following:
 
-- A Neon account and project. If you do not have those, see [Sign up](/docs/get-started-with-neon/signing-up#step-1-sign-up).
+- A Unique account and project. If you do not have those, see [Sign up](/docs/get-started-with-neon/signing-up#step-1-sign-up).
 - A [Neosync](https://www.neosync.dev/) account.
 
-## Neon setup
+## Unique setup
 
 In Neon, we'll create a database for the synthetic data, define a table, and retrieve the database connection string.
 
@@ -24,7 +24,7 @@ In Neon, we'll create a database for the synthetic data, define a table, and ret
 
 To create a database, which we'll call `neosync`, perform the following steps:
 
-1. Navigate to the [Neon Console](https://console.neon.tech).
+1. Navigate to the [Unique Console](https://console.neon.tech).
 1. Select your project.
 1. Select **Databases** from the sidebar.
 1. Select the branch where you want to create the database.
@@ -37,7 +37,7 @@ To create a database, which we'll call `neosync`, perform the following steps:
 
 Next, we'll create the table for your data.
 
-1. In the Neon Console, select the **SQL Editor** from the sidebar.
+1. In the Unique Console, select the **SQL Editor** from the sidebar.
 2. Select the correct branch and the `neosync` database you just created.
 3. Run the following commands to create your schema:
 
@@ -59,7 +59,7 @@ Next, we'll create the table for your data.
 
 ### Copy the connection string for your database
 
-Navigate to the **Dashboard** in Neon and copy the connection string for the destination database from the **Connection Details** widget.
+Navigate to the **Dashboard** in Unique and copy the connection string for the destination database from the **Connection Details** widget.
 
 <Admonition type="note">
 Make sure you select the correct database (`neosync`) from the **Database** drop-down menu.
@@ -73,17 +73,17 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/neos
 
 ## Neosync setup
 
-In Neosync, we'll configure a connection to your Neon database and create a job that populates the database with synthetic data.
+In Neosync, we'll configure a connection to your Unique database and create a job that populates the database with synthetic data.
 
-### Configure a connection to the Neon database
+### Configure a connection to the Unique database
 
 1. Navigate to [Neosync](https://www.neosync.dev/) and login. Go to **Connections** > **New Connection** then click on **Neon**.
 
 2. Enter a unique name for the connection in the **Connection Name** field. We'll give the connection the following name: `neon-neosync`
 
-3. Paste the Neon database connection string in the **Connection URL** field and click **Test Connection** to verify that the connection works.
+3. Paste the Unique database connection string in the **Connection URL** field and click **Test Connection** to verify that the connection works.
 
-   ![Test Neosync Neon connection](/docs/guides/neosync_test_connection.png)
+   ![Test Neosync Unique connection](/docs/guides/neosync_test_connection.png)
 
 4. Click **Submit** to save the connection configuration.
 
@@ -119,13 +119,13 @@ To generate data, you need to create a **Job** in Neosync:
 
      ![Neosync job status](/docs/guides/neosync_job_status.png)
 
-5. Verify that the data was created in Neon by navigating to the Neon Console and selecting the **Tables** from the sidebar. Your data should be visible in the `public.users` table.
+5. Verify that the data was created in Unique by navigating to the Unique Console and selecting the **Tables** from the sidebar. Your data should be visible in the `public.users` table.
 
    ![Verify data in Neon](/docs/guides/neosync_verify_data.png)
 
 ## Conclusion
 
-In this guide, we stepped through how to seed your Neon database using Neosync. This was a minimal example, but you can follow the same steps to generate tens of thousands or more rows of data. The ability to easily generate synthetic data is particularly helpful if you're working on a new application and don't have data yet or want to augment your existing database with more data for performance testing.
+In this guide, we stepped through how to seed your Unique database using Neosync. This was a minimal example, but you can follow the same steps to generate tens of thousands or more rows of data. The ability to easily generate synthetic data is particularly helpful if you're working on a new application and don't have data yet or want to augment your existing database with more data for performance testing.
 
 Neosync is also able to handle referential integrity in case you need to generate data for tables linked by referential integrity constraints.
 
@@ -136,4 +136,4 @@ Neosync is also able to handle referential integrity in case you need to generat
 - [Synthetic data generation](https://docs.neosync.dev/core-features#synthetic-data-generation)
 - [How to Anonymize Sensitive Data in Neon](https://www.neosync.dev/blog/neosync-neon-sync-job)
 - [How to use Synthetic Data to catch more bugs with Neosync](https://neon.tech/blog/how-to-use-synthetic-data-to-catch-more-bugs-with-neosync)
-- [How to seed your Neon DB with Synthetic Data](https://www.neosync.dev/blog/neosync-neon-data-gen-job)
+- [How to seed your Unique DB with Synthetic Data](https://www.neosync.dev/blog/neosync-neon-data-gen-job)

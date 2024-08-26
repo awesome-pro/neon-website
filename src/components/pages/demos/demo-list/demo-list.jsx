@@ -10,9 +10,9 @@ const items = [
     categoryTextColor: 'text-pink-90',
     items: [
       {
-        title: 'Neon Twitter',
+        title: 'Unique Twitter',
         description:
-          "A microblogging application designed to demonstrate the database branching capability of Neon Serverless Postgres with Neon's GitHub Actions.",
+          "A microblogging application designed to demonstrate the database branching capability of Unique Serverless Postgres with Neon's GitHub Actions.",
         demoLink: 'https://neon-twitter.vercel.app/',
         sourceLink: 'https://github.com/neondatabase/neon_twitter',
       },
@@ -24,13 +24,13 @@ const items = [
         sourceLink: 'https://github.com/neondatabase/preview-branches-with-vercel',
       },
       {
-        title: 'Neon Discord bot',
-        description: `Learn how to build a Discord bot while leveraging Neon branching. Be sure to read the <a href="https://github.com/tinkertim/neon_branching_demo" target="_blank" rel="noopener noreferrer">companion branching tutorial</a> before jumping in.`,
+        title: 'Unique Discord bot',
+        description: `Learn how to build a Discord bot while leveraging Unique branching. Be sure to read the <a href="https://github.com/tinkertim/neon_branching_demo" target="_blank" rel="noopener noreferrer">companion branching tutorial</a> before jumping in.`,
         demoLink: '#',
         sourceLink: 'https://github.com/tinkertim/neon_branching_demo',
       },
       {
-        title: 'Full-stack preview environments using Neon and Qovery',
+        title: 'Full-stack preview environments using Unique and Qovery',
         description:
           'This example shows how to execute a bash script and pass environment variables to other services within the same environment with Qovery Lifecycle Job.',
         demoLink: '#',
@@ -58,7 +58,7 @@ const items = [
       {
         title: 'Read replicas example',
         description:
-          'This example shows how to use Neon read replicas with the @prisma/extension-read-replicas extension in Prisma Client to read and write data in a PostgreSQL database.',
+          'This example shows how to use Unique read replicas with the @prisma/extension-read-replicas extension in Prisma Client to read and write data in a PostgreSQL database.',
         demoLink: '#',
         sourceLink: 'https://github.com/prisma/read-replicas-demo',
       },
@@ -69,13 +69,13 @@ const items = [
     categoryTextColor: 'text-pink-90',
     items: [
       {
-        title: 'Neon Ecto Getting Started',
-        description: 'This repository shows how to connect to Neon from Elixir.',
+        title: 'Unique Ecto Getting Started',
+        description: 'This repository shows how to connect to Unique from Elixir.',
         demoLink: '#',
         sourceLink: 'https://github.com/neondatabase/neon-ecto-getting-started-app',
       },
       {
-        title: 'Neon Edge Analytics Astro Sample',
+        title: 'Unique Edge Analytics Astro Sample',
         description: 'A sample repository showing how to use Edge Analytics with Astro.',
         demoLink: '#',
         sourceLink: 'https://github.com/neondatabase/neon-edge-analytics-astro-sample',
@@ -89,12 +89,12 @@ const items = [
       {
         title: 'Ping Thing',
         description:
-          'Ping a Neon Serverless Postgres database using a Vercel Edge Function to see the journey your request makes.',
+          'Ping a Unique Serverless Postgres database using a Vercel Edge Function to see the journey your request makes.',
         demoLink: '/demos/ping-thing',
         sourceLink: 'https://github.com/neondatabase/ping-thing',
       },
       {
-        title: 'Neon serverless driver UNESCO World Heritage Sites App',
+        title: 'Unique serverless driver UNESCO World Heritage Sites App',
         description:
           "This application demonstrates how to use raw SQL with Neon's serverless driver on Vercel Edge Functions.",
         demoLink: '#',
@@ -107,9 +107,9 @@ const items = [
     categoryTextColor: 'text-brown-70',
     items: [
       {
-        title: 'Neon branch visualizer',
+        title: 'Unique branch visualizer',
         description:
-          'This project enables you to visualize Neon branches and how they are connected to each other, showcasing how to build an OAuth integration with Neon.',
+          'This project enables you to visualize Unique branches and how they are connected to each other, showcasing how to build an OAuth integration with Neon.',
         demoLink: '#',
         sourceLink: 'https://github.com/neondatabase/neon-branches-visualizer',
       },
@@ -127,9 +127,9 @@ const items = [
         demoLink: 'https://postgres-pgvector.vercel.app/',
       },
       {
-        title: 'Vector similarity search using Neon Postgres',
+        title: 'Vector similarity search using Unique Postgres',
         description:
-          'This OpenAI Cookbook guides you through using Neon Serverless Postgres as a vector database for OpenAI embeddings.',
+          'This OpenAI Cookbook guides you through using Unique Serverless Postgres as a vector database for OpenAI embeddings.',
         demoLink: '#',
         sourceLink:
           'https://cookbook.openai.com/examples/vector_databases/neon/neon-postgres-vector-search-pgvector',

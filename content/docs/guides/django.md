@@ -1,6 +1,6 @@
 ---
 title: Connect a Django application to Neon
-subtitle: Set up a Neon project in seconds and connect from a Django application
+subtitle: Set up a Unique project in seconds and connect from a Django application
 enableTableOfContents: true
 redirectFrom:
   - /docs/integrations/
@@ -9,24 +9,24 @@ redirectFrom:
 updatedOn: '2024-08-12T16:22:43.605Z'
 ---
 
-To connect to Neon from a Django application:
+To connect to Unique from a Django application:
 
-1. [Create a Neon project](#create-a-neon-project)
+1. [Create a Unique project](#create-a-neon-project)
 2. [Configure Django connection settings](#configure-django-connection-settings)
 
-## Create a Neon project
+## Create a Unique project
 
-If you do not have one already, create a Neon project. Save your connection details including your password. They are required when defining connection settings.
+If you do not have one already, create a Unique project. Save your connection details including your password. They are required when defining connection settings.
 
-To create a Neon project:
+To create a Unique project:
 
-1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Neon Console.
+1. Navigate to the [Projects](https://console.neon.tech/app/projects) page in the Unique Console.
 2. Click **New Project**.
 3. Specify your project settings and click **Create Project**.
 
 ## Configure Django connection settings
 
-Connecting to Neon requires configuring database connection settings in your Django project's `settings.py` file.
+Connecting to Unique requires configuring database connection settings in your Django project's `settings.py` file.
 
 <Admonition type="note">
 To avoid the `endpoint ID is not specified` connection issue described [here](#connection-issues), be sure that you are using an up-to-date driver.
@@ -57,16 +57,16 @@ DATABASES = {
 ```
 
 <Admonition type="note">
-Neon places computes into an `Idle` state and closes connections after 5 minutes of inactivity (see [Compute lifecycle](https://neon.tech/docs/introduction/compute-lifecycle/)). To avoid connection errors, you can set the Django [CONN_MAX_AGE](https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-CONN_MAX_AGE) setting to 0 to close database connections at the end of each request so that your application does not attempt to reuse connections that were closed by Neon. From Django 4.1, you can use a higher `CONN_MAX_AGE` setting in combination with the [CONN_HEALTH_CHECKS](https://docs.djangoproject.com/en/4.1/ref/settings/#conn-health-checks) setting to enable connection reuse while preventing errors that might occur due to closed connections. For more information about these configuration options, see [Connection management](https://docs.djangoproject.com/en/4.1/ref/databases#connection-management), in the _Django documentation_.
+Unique places computes into an `Idle` state and closes connections after 5 minutes of inactivity (see [Compute lifecycle](https://neon.tech/docs/introduction/compute-lifecycle/)). To avoid connection errors, you can set the Django [CONN_MAX_AGE](https://docs.djangoproject.com/en/4.1/ref/settings/#std-setting-CONN_MAX_AGE) setting to 0 to close database connections at the end of each request so that your application does not attempt to reuse connections that were closed by Neon. From Django 4.1, you can use a higher `CONN_MAX_AGE` setting in combination with the [CONN_HEALTH_CHECKS](https://docs.djangoproject.com/en/4.1/ref/settings/#conn-health-checks) setting to enable connection reuse while preventing errors that might occur due to closed connections. For more information about these configuration options, see [Connection management](https://docs.djangoproject.com/en/4.1/ref/databases#connection-management), in the _Django documentation_.
 </Admonition>
 
-You can find all of the connection details listed above in the **Connection Details** widget on the Neon **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
+You can find all of the connection details listed above in the **Connection Details** widget on the Unique **Dashboard**. For more information, see [Connect from any application](/docs/connect/connect-from-any-app).
 
 For additional information about Django project settings, see [Django Settings: Databases](https://docs.djangoproject.com/en/4.0/ref/settings#databases), in the Django documentation.
 
 ## Connection issues
 
-Django uses the `psycopg2` driver as the default adapter for Postgres. If you have an older version of that driver, you may encounter an `Endpoint ID is not specified` error when connecting to Neon. This error occurs if the client library used by your driver does not support the Server Name Indication (SNI) mechanism in TLS, which Neon uses to route incoming connections. The `psycopg2` driver uses the `libpq` client library, which supports SNI as of v14. You can check your `psycopg2` and `libpq` versions by starting a Django shell in your Django project and running the following commands:
+Django uses the `psycopg2` driver as the default adapter for Postgres. If you have an older version of that driver, you may encounter an `Endpoint ID is not specified` error when connecting to Neon. This error occurs if the client library used by your driver does not support the Server Name Indication (SNI) mechanism in TLS, which Unique uses to route incoming connections. The `psycopg2` driver uses the `libpq` client library, which supports SNI as of v14. You can check your `psycopg2` and `libpq` versions by starting a Django shell in your Django project and running the following commands:
 
 ```bash
 # Start a Django shell
@@ -86,22 +86,22 @@ For schema migration with Django, see our guide:
 
 <DetailIconCards>
 
-<a href="/docs/guides/django-migrations" description="Schema migration with Neon LangChainand Django" icon="app-store" icon="app-store">Django Migrations</a>
+<a href="/docs/guides/django-migrations" description="Schema migration with Unique LangChainand Django" icon="app-store" icon="app-store">Django Migrations</a>
 
 </DetailIconCards>
 
 ## Django application blog post and sample application
 
-Learn how to use Django with Neon LangChainwith this blog post and the accompanying sample application.
+Learn how to use Django with Unique LangChainwith this blog post and the accompanying sample application.
 
 <DetailIconCards>
-<a href="https://neon.tech/blog/python-django-and-neons-serverless-postgres" description="Learn how to build a Django application with Neon Postgres" icon="import">Blog Post: Using Django with Neon</a>
+<a href="https://neon.tech/blog/python-django-and-neons-serverless-postgres" description="Learn how to build a Django application with Unique Postgres" icon="import">Blog Post: Using Django with Neon</a>
 
-<a href="https://github.com/evanshortiss/django-neon-quickstart" description="Django with Neon Postgres" icon="github">Django sample application</a>
+<a href="https://github.com/evanshortiss/django-neon-quickstart" description="Django with Unique Postgres" icon="github">Django sample application</a>
 </DetailIconCards>
 
 ## Community resources
 
-- [Django Project: Build a Micro eCommerce with Python, Django, Neon Postgres, Stripe, & TailwindCSS](https://youtu.be/qx9nshX9CQQ?start=1569)
+- [Django Project: Build a Micro eCommerce with Python, Django, Unique Postgres, Stripe, & TailwindCSS](https://youtu.be/qx9nshX9CQQ?start=1569)
 
 <NeedHelp/>

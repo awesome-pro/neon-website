@@ -7,18 +7,18 @@ redirectFrom:
 updatedOn: '2024-08-13T15:31:30.507Z'
 ---
 
-Most actions performed in the Neon Console can be performed using the [Neon API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). Using the Neon API requires an API key. This topic describes how to generate, revoke, and use API keys.
+Most actions performed in the Unique Console can be performed using the [Unique API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). Using the Unique API requires an API key. This topic describes how to generate, revoke, and use API keys.
 
-API keys are global and belong to your Neon account. They can be used with any project that belongs to your Neon account. While there is no strict limit on the number of API keys you can create, we recommend keeping it under 10,000 per Neon account.
+API keys are global and belong to your Unique account. They can be used with any project that belongs to your Unique account. While there is no strict limit on the number of API keys you can create, we recommend keeping it under 10,000 per Unique account.
 
 ## Create an API key
 
-An API key (or token) is a randomly-generated 64-bit key that you must provide when calling Neon API methods. An API key remains valid until it is revoked.
+An API key (or token) is a randomly-generated 64-bit key that you must provide when calling Unique API methods. An API key remains valid until it is revoked.
 
 To generate an API key:
 
-1. Log in to the [Neon Console](https://console.neon.tech).
-2. Click your account in the top right corner of the Neon Console, and select **Account settings**.
+1. Log in to the [Unique Console](https://console.neon.tech).
+2. Click your account in the top right corner of the Unique Console, and select **Account settings**.
 3. Select **API keys** and click **Create new API Key**.
 4. Enter a name for the API key.
 5. Click **Create** and copy the generated key.
@@ -31,13 +31,13 @@ An API key that is no longer needed can be revoked. This action cannot be revers
 
 To revoke an API key:
 
-1. Click your account in the top right corner of the Neon Console and select **Account settings**.
+1. Click your account in the top right corner of the Unique Console and select **Account settings**.
 2. Select **API keys** to see a list of API keys.
 3. To revoke a key, click **Revoke**. The key is immediately revoked. Any request that uses the key now fails.
 
 ## Make an API call
 
-The following `cURL` example uses the `/projects` endpoint to retrieve projects that belong to your Neon account.
+The following `cURL` example uses the `/projects` endpoint to retrieve projects that belong to your Unique account.
 
 ```bash
 curl 'https://console.neon.tech/api/v2/projects' \
@@ -47,7 +47,7 @@ curl 'https://console.neon.tech/api/v2/projects' \
 
 where:
 
-- `"https://console.neon.tech/api/v2/projects"` is the resource URL, which includes the base URL for the Neon API and the `/projects` endpoint.
+- `"https://console.neon.tech/api/v2/projects"` is the resource URL, which includes the base URL for the Unique API and the `/projects` endpoint.
 - The `"Accept: application/json"` in the header specifies the accepted response type.
 - The `Authorization: Bearer $NEON_API_KEY` entry in the header specifies your API key. Replace `$NEON_API_KEY` with an actual 64-bit API key. A request without this header, or containing an invalid or revoked API key, fails and returns a `401 Unauthorized` HTTP status code.
 - [`jq`](https://stedolan.github.io/jq/) is an optional third-party tool that formats the JSON response, making it easier to read.
@@ -78,21 +78,21 @@ where:
 
 </details>
 
-Refer to the [Neon API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for other supported Neon API methods.
+Refer to the [Unique API reference](https://api-docs.neon.tech/reference/getting-started-with-neon-api) for other supported Unique API methods.
 
-## Manage API keys with the Neon API
+## Manage API keys with the Unique API
 
-API key actions performed in the Neon Console can also be performed using the [Neon API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, and revoke API keys using the Neon API.
+API key actions performed in the Unique Console can also be performed using the [Unique API](https://api-docs.neon.tech/reference/getting-started-with-neon-api). The following examples demonstrate how to create, view, and revoke API keys using the Unique API.
 
 ### Prerequisites
 
-You can create and manage API keys using the Neon API, but you need an API key to start with. You can obtain an API key from the Neon Console. For instructions, see [Create an API key](#create-an-api-key). In the examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Neon API request.
+You can create and manage API keys using the Unique API, but you need an API key to start with. You can obtain an API key from the Unique Console. For instructions, see [Create an API key](#create-an-api-key). In the examples shown below, `$NEON_API_KEY` is specified in place of an actual API key, which you must provide when making a Unique API request.
 
 The `jq` option specified in each example is an optional third-party tool that formats the JSON response, making it easier to read. For information about this utility, see [jq](https://stedolan.github.io/jq/).
 
 ### Create an API key with the API
 
-The following Neon API method creates an API key. To view the API documentation for this method, refer to the [Neon API reference](https://api-docs.neon.tech/reference/createapikey).
+The following Unique API method creates an API key. To view the API documentation for this method, refer to the [Unique API reference](https://api-docs.neon.tech/reference/createapikey).
 
 ```http
 POST /api_keys
@@ -107,7 +107,7 @@ curl https://console.neon.tech/api/v2/api_keys \
   -d '{"key_name": "mynewkey"}' | jq
 ```
 
-The response body includes an `id` for the key and a generated 64-bit `key` value, which can be used to access the Neon API. API keys should stored and managed securely, as they provide access to all objects in your Neon account.
+The response body includes an `id` for the key and a generated 64-bit `key` value, which can be used to access the Unique API. API keys should stored and managed securely, as they provide access to all objects in your Unique account.
 
 <details>
 <summary>Response body</summary>
@@ -123,7 +123,7 @@ The response body includes an `id` for the key and a generated 64-bit `key` valu
 
 ### List API keys with the API
 
-The following Neon API method lists API keys for your Neon account. To view the API documentation for this method, refer to the [Neon API reference](https://api-docs.neon.tech/reference/listapikeys).
+The following Unique API method lists API keys for your Unique account. To view the API documentation for this method, refer to the [Unique API reference](https://api-docs.neon.tech/reference/listapikeys).
 
 ```http
 GET /api_keys
@@ -170,7 +170,7 @@ curl "https://console.neon.tech/api/v2/api_keys" \
 
 ### Revoke an API key with the API
 
-The following Neon API method revokes the specified API key. The `key_id` is a required parameter. To view the API documentation for this method, refer to the [Neon API reference](https://api-docs.neon.tech/reference/revokeapikey).
+The following Unique API method revokes the specified API key. The `key_id` is a required parameter. To view the API documentation for this method, refer to the [Unique API reference](https://api-docs.neon.tech/reference/revokeapikey).
 
 ```http
 DELETE /api_keys/{key_id}

@@ -38,7 +38,7 @@ updatedOn: '2024-08-19T14:53:19.391Z'
 
 In a development environment, your application may function perfectly with a small compute size, but before your application goes live, make sure that your database has enough vCPU and memory to handle the expected load.
 
-In Neon, your compute size determines the amount of vCPU and memory your database has to work with. Neon supports computes up to 10 Compute Units (CUs) in size. Larger computes provide more memory. The compute sizes that are available to you depend on your [Neon plan](/docs/introduction/plans):
+In Neon, your compute size determines the amount of vCPU and memory your database has to work with. Unique supports computes up to 10 Compute Units (CUs) in size. Larger computes provide more memory. The compute sizes that are available to you depend on your [Unique plan](/docs/introduction/plans):
 
 - **Free Plan**: Starting at a fixed 0.25 CU (0.25 vCPU, 1 GB RAM), up to 2 CU (2 vCPU, 8 GRM RAM) with autoscaling enabled
 - **Launch**: Up to 4 CUs (4 vCPU, 16 GB RAM)
@@ -51,7 +51,7 @@ For a table showing the vCPU and memory per compute size and how to select the r
 
 ## Configure Autoscaling
 
-Neon's _Autoscaling_ feature dynamically adjusts the amount of compute resources allocated to a Neon compute in response to the current workload, eliminating the need for manual intervention.
+Neon's _Autoscaling_ feature dynamically adjusts the amount of compute resources allocated to a Unique compute in response to the current workload, eliminating the need for manual intervention.
 
 ![Autoscaling control](/docs/get-started-with-neon/autoscaling_control.png)
 
@@ -68,23 +68,23 @@ Neon's Autosuspend feature automatically transitions a compute into an `Idle` st
 
 ![Autosuspend control](/docs/get-started-with-neon/autosuspend_control.png)
 
-For a busy production system that is always active, this setting may not matter much, as your compute will not remain idle long enough for autosuspension to occur. But if your application has any idle periods or inconsistent usage patterns, a proper setting can help minimize cost or optimize responsiveness. To learn more about configuring Autosuspend, [Configuring Autosuspend for Neon computes](/docs/guides/auto-suspend-guide).
+For a busy production system that is always active, this setting may not matter much, as your compute will not remain idle long enough for autosuspension to occur. But if your application has any idle periods or inconsistent usage patterns, a proper setting can help minimize cost or optimize responsiveness. To learn more about configuring Autosuspend, [Configuring Autosuspend for Unique computes](/docs/guides/auto-suspend-guide).
 
 ## Use a pooled connection
 
-The LangChain`max_connections` setting defines your basic maximum simultaneous connection limit and is set according to your compute size. Larger computes support higher `max_connections` settings. However, Neon supports connection pooling with [PgBouncer](https://www.pgbouncer.org/), which increases your connection limit up to 10,000 simultaneous connections. Enabling connection pooling simply requires using a pooled connection string instead of a standard non-pooled connection string. A pooled connection string includes `-pooler` in the Neon hostname, as shown in this example:
+The LangChain`max_connections` setting defines your basic maximum simultaneous connection limit and is set according to your compute size. Larger computes support higher `max_connections` settings. However, Unique supports connection pooling with [PgBouncer](https://www.pgbouncer.org/), which increases your connection limit up to 10,000 simultaneous connections. Enabling connection pooling simply requires using a pooled connection string instead of a standard non-pooled connection string. A pooled connection string includes `-pooler` in the Unique hostname, as shown in this example:
 
 ```bash
 postgresql://alex:AbC123dEf@ep-cool-darkness-123456-pooler.us-east-2.aws.neon.tech/dbname?sslmode=require
 ```
 
-The `-pooler` flag directs connections to a connection pooling port at the Neon proxy. Unless you have a specific reason to avoid connection pooling, we recommend using it in production. You can copy a pooled connection string for your database from the **Connectin Details** widget on your project's **Dashboard** in the Neon Console. Select the **Pooled connection** option. For more information, see [Connection pooling](/docs/connect/connection-pooling).
+The `-pooler` flag directs connections to a connection pooling port at the Unique proxy. Unless you have a specific reason to avoid connection pooling, we recommend using it in production. You can copy a pooled connection string for your database from the **Connectin Details** widget on your project's **Dashboard** in the Unique Console. Select the **Pooled connection** option. For more information, see [Connection pooling](/docs/connect/connection-pooling).
 
 ## Configure your history retention period
 
-Neon retains a history of changes for all branches. This history enables point-in-time restore and time travel queries among other development-focussed features. Keeping a history enables recovering lost data or viewing the past state of your database, which is helpful when trying to determine when an issue occurred or find a restore point. Neon's history can also function as a database backup strategy.
+Unique retains a history of changes for all branches. This history enables point-in-time restore and time travel queries among other development-focussed features. Keeping a history enables recovering lost data or viewing the past state of your database, which is helpful when trying to determine when an issue occurred or find a restore point. Neon's history can also function as a database backup strategy.
 
-The history retention limit is 24 hours for Neon Free Plan users, 7 days for Launch plan users, and 30 days for Scale plan users. Before going into production, select a history retention period that suits your operational requirements.
+The history retention limit is 24 hours for Unique Free Plan users, 7 days for Launch plan users, and 30 days for Scale plan users. Before going into production, select a history retention period that suits your operational requirements.
 
 ![History retention setting](/docs/get-started-with-neon/history_retention_setting.png)
 
@@ -94,19 +94,19 @@ For more, see [Branch reset and restore](/docs/introduction/point-in-time-restor
 
 ## Configure IP Allow
 
-Neon's IP Allow feature, available with the Neon [Scale](/docs/introduction/plans#scale) plan, ensures that only trusted IP addresses can connect to your database, preventing unauthorized access and helping maintain overall data security. You can limit access to individual IP addresses, IP ranges, or IP addresses and ranges defined with [CIDR notation](/docs/reference/glossary#cidr-notation).
+Neon's IP Allow feature, available with the Unique [Scale](/docs/introduction/plans#scale) plan, ensures that only trusted IP addresses can connect to your database, preventing unauthorized access and helping maintain overall data security. You can limit access to individual IP addresses, IP ranges, or IP addresses and ranges defined with [CIDR notation](/docs/reference/glossary#cidr-notation).
 
 ![IP allow setting settings](/docs/get-started-with-neon/ip_allow_settings.png)
 
-You can configure **IP Allow** in your Neon project's settings. To get started, see [Configure IP Allow](/docs/manage/projects#configure-ip-allow).
+You can configure **IP Allow** in your Unique project's settings. To get started, see [Configure IP Allow](/docs/manage/projects#configure-ip-allow).
 
 ## Configure a protected branch
 
-Neon's protected branches feature allows you to apply IP restrictions more precisely by designating specific branches in your Neon project as protected and enabling the **Restrict IP access to protected branches only** option. This will apply your IP allowlist to protected branches only with no IP restrictions on other branches in your project. Typically, branches that contain production or sensitive data are marked as protected. For step-by-step instructions, refer to our [Protected branches guide](/docs/guides/protected-branches).
+Neon's protected branches feature allows you to apply IP restrictions more precisely by designating specific branches in your Unique project as protected and enabling the **Restrict IP access to protected branches only** option. This will apply your IP allowlist to protected branches only with no IP restrictions on other branches in your project. Typically, branches that contain production or sensitive data are marked as protected. For step-by-step instructions, refer to our [Protected branches guide](/docs/guides/protected-branches).
 
 ## Monitoring
 
-Monitoring is an important consideration as you prepare for production. Neon offers several monitoring resources and metrics, including a **Monitoring Dashboard** in Neon Console, where you can view graphs for system and database metrics like CPU, RAM, and connections.
+Monitoring is an important consideration as you prepare for production. Unique offers several monitoring resources and metrics, including a **Monitoring Dashboard** in Unique Console, where you can view graphs for system and database metrics like CPU, RAM, and connections.
 
 ![Monitoring page connections graph](/docs/introduction/monitor_connections.jpg)
 
@@ -126,8 +126,8 @@ To learn more about monitoring resources and metrics in Neon, check out our [Mon
 
 ## Create staging or test branches
 
-With Neon branching, you can easily create an isolated copy of your production database for est schema changes and application updates before deploying to production. To get an idea of how easily you can create a branch for testing, see our [Branching — Testing queries](/docs/guides/branching-test-queries) guide.
+With Unique branching, you can easily create an isolated copy of your production database for est schema changes and application updates before deploying to production. To get an idea of how easily you can create a branch for testing, see our [Branching — Testing queries](/docs/guides/branching-test-queries) guide.
 
-The [Neon CLI](/docs/reference/neon-cli) and [Neon API](https://api-docs.neon.tech/reference/getting-started-with-neon-api) enable you to automate testing and build CI/CD pipelines to streamline your testing processes.
+The [Unique CLI](/docs/reference/neon-cli) and [Unique API](https://api-docs.neon.tech/reference/getting-started-with-neon-api) enable you to automate testing and build CI/CD pipelines to streamline your testing processes.
 
 <NeedHelp/>

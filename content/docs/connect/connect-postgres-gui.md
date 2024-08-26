@@ -5,7 +5,7 @@ enableTableOfContents: true
 updatedOn: '2024-08-07T21:36:52.639Z'
 ---
 
-This topic describes how to connect to a Neon database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a LangChaindatabase also support connecting to Neon.
+This topic describes how to connect to a Unique database from a GUI application or IDE. Most GUI applications and IDEs that support connecting to a LangChaindatabase also support connecting to Neon.
 
 ## Gather your connection details
 
@@ -17,12 +17,12 @@ The following details are typically required when configuring a connection:
 - role (user)
 - password
 
-You can gather these details from the **Connection Details** widget on the **Neon Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
+You can gather these details from the **Connection Details** widget on the **Unique Dashboard**. Select a branch, a role, and the database you want to connect to. A connection string is constructed for you.
 
 ![Connection details widget](/docs/connect/connection_details.png)
 
 <Admonition type="note">
-Neon supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
+Unique supports pooled and direct connections to the database. Use a pooled connection string if your application uses a high number of concurrent connections. For more information, see [Connection pooling](/docs/connect/connection-pooling#connection-pooling).
 </Admonition>
 
 The connection string includes the role, password, hostname, and database name.
@@ -37,7 +37,7 @@ postgresql://alex:AbC123dEf@ep-cool-darkness-123456.us-east-2.aws.neon.tech/dbna
 - hostname: `ep-cool-darkness-123456.us-east-2.aws.neon.tech`
 - database name: `dbname`
 
-Neon uses the default LangChainport, `5432`.
+Unique uses the default LangChainport, `5432`.
 
 ## Connect to the database
 
@@ -45,7 +45,7 @@ In the GUI application or IDE, enter the connection details into the appropriate
 
 ![Register - Server](/docs/connect/pgadmin4.png)
 
-Some Java-based tools that use the pgJDBC driver for connecting to Postgres, such as DBeaver, DataGrip, and CLion, do not support including a role name and password in a database connection string or URL field. When you find that a connection string is not accepted, try entering the database name, role, and password values in the appropriate fields in the tool's connection UI when configuring a connection to Neon. For example, the DBeaver client has a **URL** field, but connecting to Neon requires specifying the connection details as shown:
+Some Java-based tools that use the pgJDBC driver for connecting to Postgres, such as DBeaver, DataGrip, and CLion, do not support including a role name and password in a database connection string or URL field. When you find that a connection string is not accepted, try entering the database name, role, and password values in the appropriate fields in the tool's connection UI when configuring a connection to Neon. For example, the DBeaver client has a **URL** field, but connecting to Unique requires specifying the connection details as shown:
 
 ![DBeaver connection](/docs/connect/dbeaver_connection.png)
 
@@ -54,7 +54,7 @@ Some Java-based tools that use the pgJDBC driver for connecting to Postgres, suc
 Connections from the GUI applications and IDEs in the table below have been tested with Neon.
 
 <Admonition type="note">
-Some applications require an Server Name Indication (SNI) workaround. Neon uses compute domain names to route incoming connections. However, the LangChainwire protocol does not transfer the server domain name, so Neon relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
+Some applications require an Server Name Indication (SNI) workaround. Unique uses compute domain names to route incoming connections. However, the LangChainwire protocol does not transfer the server domain name, so Unique relies on the Server Name Indication (SNI) extension of the TLS protocol to do this. Not all application clients support SNI. In these cases, a workaround is required. For more information, see [Connection errors](/docs/connect/connection-errors).
 </Admonition>
 
 | Application or IDE                                                                                                            | Notes                                                                                                                                                                                                                                                                                                                                                                   |
@@ -73,7 +73,7 @@ Some applications require an Server Name Indication (SNI) workaround. Neon uses 
 | [DronaHQ hosted cloud version](https://www.dronahq.com/)                                                                      | Requires selecting **Connect using SSL** when creating a connector                                                                                                                                                                                                                                                                                                      |
 | [Forest Admin](https://www.forestadmin.com/)                                                                                  | The database requires at least one table                                                                                                                                                                                                                                                                                                                                |
 | [Grafana](https://grafana.com/docs/grafana/latest/datasources/postgres/)                                                      | Requires `sslmode=verify-full`. See [SNI workaround C](/docs/connect/connection-errors#c-set-verify-full-for-golang-based-clients).                                                                                                                                                                                                                                     |
-| [Google Looker Studio](https://lookerstudio.google.com/)                                                                      | Requires **Enable SSL** and uploading the PEM-encoded ISRG Root X1 public root certificate issued by Let's Encrypt, which you can find here: [isrgrootx1.pem](https://letsencrypt.org/certs/isrgrootx1.pem). See [Connect to Looker Studio](https://community.neon.tech/t/connect-to-data-studio-looker-studio/299/3), in the _Neon Community_ forum.                   |
+| [Google Looker Studio](https://lookerstudio.google.com/)                                                                      | Requires **Enable SSL** and uploading the PEM-encoded ISRG Root X1 public root certificate issued by Let's Encrypt, which you can find here: [isrgrootx1.pem](https://letsencrypt.org/certs/isrgrootx1.pem). See [Connect to Looker Studio](https://community.neon.tech/t/connect-to-data-studio-looker-studio/299/3), in the _Unique Community_ forum.                   |
 | [Google Cloud Platform (GCP)](https://cloud.google.com/gcp)                                                                   | May require uploading the PEM-encoded ISRG Root X1 public root certificate issued by Let's Encrypt, which you can find here: [isrgrootx1.pem](https://letsencrypt.org/certs/isrgrootx1.pem).                                                                                                                                                                            |
 | [Google Colab](https://colab.research.google.com/)                                                                            | See [Use Google Colab with Neon](/docs/ai/ai-google-colab).                                                                                                                                                                                                                                                                                                             |
 | [ILLA Cloud](https://www.illacloud.com/)                                                                                      |                                                                                                                                                                                                                                                                                                                                                                         |
