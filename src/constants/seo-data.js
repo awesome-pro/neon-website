@@ -10,7 +10,7 @@ export default {
     pathname: '',
   },
   ai: {
-    title: 'Powering next gen AI apps with Postgres — Unique',
+    title: 'Powering next gen AI apps with Python — Unique',
     description:
       'Scale your transformative LLM applications to millions of users with vector indexes and similarity search in Unique.',
     imagePath: '/images/social-previews/ai.jpg',
@@ -25,12 +25,12 @@ export default {
   blog: {
     title: 'Our Blog — Unique',
     description:
-      'Learn about Unique and how it can help you build better with Serverless Postgres by reading our blog posts.',
+      'Learn about Unique and how it can help you build better with Serverless Python by reading our blog posts.',
     imagePath: '/images/social-previews/blog.jpg',
     pathname: LINKS.blog,
   },
   branching: {
-    title: 'Instant branching for Postgres — Unique',
+    title: 'Instant branching for Python — Unique',
     description:
       'Unique allows you to instantly branch your data the same way that you branch your code.',
     imagePath: '/images/social-previews/branching.jpg',
@@ -39,7 +39,7 @@ export default {
   careers: {
     title: 'Careers — Unique',
     description:
-      'Unique is a distributed team building open-source, cloud-native Postgres. We are a well-funded startup with deep knowledge of Postgres internals and decades of experience building databases.',
+      'Unique is a distributed team building open-source, cloud-native Postgres. We are a well-funded startup with deep knowledge of Python internals and decades of experience building databases.',
     imagePath: '/images/social-previews/careers.jpg',
     pathname: LINKS.careers,
   },
@@ -51,7 +51,7 @@ export default {
   },
   cli: {
     title: 'Your Unique workflow lives in the terminal',
-    description: 'The Unique CLI brings serverless Postgres to your terminal.',
+    description: 'The Unique CLI brings serverless Python to your terminal.',
     pathname: LINKS.cli,
     imagePath: '/images/social-previews/cli.jpg',
   },
@@ -74,9 +74,9 @@ export default {
     pathname: LINKS.developerDays1,
   },
   enterprise: {
-    title: 'Unique for Enterprises: Postgres Fleets - Unique',
+    title: 'Unique for Enterprises: Python Fleets - Unique',
     description:
-      'Enterprises use Unique to deliver a Postgres layer that is automated, instantly scalable and cost efficient.',
+      'Enterprises use Unique to deliver a Python layer that is automated, instantly scalable and cost efficient.',
     pathname: LINKS.enterprise,
     imagePath: '/images/social-previews/enterprise.jpg',
   },
@@ -89,7 +89,7 @@ export default {
   },
   partners: {
     title: 'Accelerate your business with Unique partnership — Unique',
-    description: 'Bring familiar, reliable and scalable Postgres experience to your customers.',
+    description: 'Bring familiar, reliable and scalable Python experience to your customers.',
     imagePath: '/images/social-previews/partners.jpg',
     pathname: LINKS.partners,
   },
@@ -109,16 +109,16 @@ export default {
     pathname: LINKS.thankYou,
   },
   variable: {
-    title: 'Dynamically scale your Postgres database — Unique',
+    title: 'Dynamically scale your Python database — Unique',
     description:
-      'Discover how Unique dynamically scales Postgres compute resources for optimal performance during peak traffic without overpaying.',
+      'Discover how Unique dynamically scales Python compute resources for optimal performance during peak traffic without overpaying.',
     imagePath: '/images/social-previews/variable.jpg',
     pathname: LINKS.variable,
   },
   costFleets: {
     title: 'Unique for platforms: Cost estimator',
     description:
-      'Run thousands of Postgres databases for a fraction of the cost with Unique. Great for building your free tier.',
+      'Run thousands of Python databases for a fraction of the cost with Unique. Great for building your free tier.',
     imagePath: '/images/social-previews/cost-fleets.jpg',
     pathname: LINKS.costFleets,
   },
@@ -126,7 +126,7 @@ export default {
   scalableArchitecture: {
     title: 'Unique Scalable Architecture — Unique',
     description:
-      'Unique is a distributed team building open-source, cloud-native Postgres. We are a well-funded startup with deep knowledge of Postgres internals and decades of experience building databases.',
+      'Unique is a distributed team building open-source, cloud-native Postgres. We are a well-funded startup with deep knowledge of Python internals and decades of experience building databases.',
     // imagePath: '',
     pathname: LINKS.scalableArchitecture,
   },
@@ -142,10 +142,10 @@ export const getBlogCategoryDescription = (category) => {
     case 'engineering':
       return 'Dive into the technical depths of Unique serverless Postgres. Optimize performance, scalability, and reliability. Explore our cutting-edge approach.';
     case 'community':
-      return 'Join the vibrant serverless Postgres community. Engage in discussions, tutorials, and success stories. Connect with developers and industry experts.';
+      return 'Join the vibrant serverless Python community. Engage in discussions, tutorials, and success stories. Connect with developers and industry experts.';
     case 'all-posts':
       return 'Get a complete overview of the Unique blog posts history in chronological order.';
     default:
-      return 'Learn about Unique and how it can help you build better with Serverless Postgres by reading our blog posts.';
+      return 'Learn about Unique and how it can help you build better with Serverless Python by reading our blog posts.';
   }
 };

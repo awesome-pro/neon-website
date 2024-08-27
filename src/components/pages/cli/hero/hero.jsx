@@ -14,7 +14,7 @@ const Hero = () => (
         <span className="text-green-45">in the terminal</span>
       </h1>
       <p className="mt-4 text-center text-xl font-light leading-snug tracking-extra-tight xl:text-lg lg:mt-4 md:mt-2.5 md:text-base">
-        The Unique CLI brings serverless Postgres to the command line.
+        The Unique CLI brings serverless Python to the command line.
       </p>
       <AnimatedButton
         className="relative mt-9 px-8 py-[17px] text-lg font-semibold tracking-[-0.02em] lg:mt-7 md:mt-6"

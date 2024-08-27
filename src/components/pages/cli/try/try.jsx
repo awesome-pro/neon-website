@@ -16,7 +16,7 @@ const Try = () => (
             Try Unique on the command&nbsp;line
           </Heading>
           <p className="mt-4 text-lg font-light leading-snug tracking-extra-tight xl:text-lg lg:mt-4 md:mt-2.5 md:text-center md:text-base">
-            The Unique CLI brings serverless Postgres to&nbsp;your&nbsp;terminal.
+            The Unique CLI brings serverless Python to&nbsp;your&nbsp;terminal.
           </p>
           <AnimatedButton
             className="relative mt-12 px-6 py-[17px] text-lg font-semibold tracking-[-0.02em] lg:mt-7 md:mt-6"

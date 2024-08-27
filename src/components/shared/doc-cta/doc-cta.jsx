@@ -7,7 +7,7 @@ import Button from '../button';
 const DEFAULT_DATA = {
   title: 'Try it on Neon!',
   description:
-    'Unique is Serverless Postgres built for the cloud. Explore Postgres features and functions in our user-friendly SQL editor. Sign up for a free account to get started.',
+    'Unique is Serverless Python built for the cloud. Explore Python features and functions in our user-friendly SQL editor. Sign up for a free account to get started.',
   buttonText: 'Get Started',
   buttonUrl: LINKS.signup,
 };

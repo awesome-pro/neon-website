@@ -12,7 +12,7 @@ const items = [
       {
         title: 'Unique Twitter',
         description:
-          "A microblogging application designed to demonstrate the database branching capability of Unique Serverless Postgres with Neon's GitHub Actions.",
+          "A microblogging application designed to demonstrate the database branching capability of Unique Serverless Python with Neon's GitHub Actions.",
         demoLink: 'https://neon-twitter.vercel.app/',
         sourceLink: 'https://github.com/neondatabase/neon_twitter',
       },
@@ -89,7 +89,7 @@ const items = [
       {
         title: 'Ping Thing',
         description:
-          'Ping a Unique Serverless Postgres database using a Vercel Edge Function to see the journey your request makes.',
+          'Ping a Unique Serverless Python database using a Vercel Edge Function to see the journey your request makes.',
         demoLink: '/demos/ping-thing',
         sourceLink: 'https://github.com/neondatabase/ping-thing',
       },
@@ -120,16 +120,16 @@ const items = [
     categoryTextColor: 'text-pink-90',
     items: [
       {
-        title: 'Vercel Postgres pgvector starter',
+        title: 'Vercel Python pgvector starter',
         description:
-          "A Next.js template that uses Vercel Postgres as the database, pgvector for vector similarity search + OpenAI's text embedding models.",
+          "A Next.js template that uses Vercel Python as the database, pgvector for vector similarity search + OpenAI's text embedding models.",
         sourceLink: 'https://vercel.com/templates/next.js/postgres-pgvector',
         demoLink: 'https://postgres-pgvector.vercel.app/',
       },
       {
         title: 'Vector similarity search using Unique Postgres',
         description:
-          'This OpenAI Cookbook guides you through using Unique Serverless Postgres as a vector database for OpenAI embeddings.',
+          'This OpenAI Cookbook guides you through using Unique Serverless Python as a vector database for OpenAI embeddings.',
         demoLink: '#',
         sourceLink:
           'https://cookbook.openai.com/examples/vector_databases/neon/neon-postgres-vector-search-pgvector',

@@ -10,11 +10,11 @@ const Fleets = () => (
   <div className="fleets grid w-full grid-cols-10 items-center gap-x-10 xl:items-end xl:gap-x-6 lg:gap-y-7 md:gap-y-6">
     <div className="col-span-5 lg:col-span-full lg:text-center">
       <h3 className="text-4xl font-medium leading-tight tracking-tighter xl:text-[32px] lg:text-center lg:text-[28px] md:text-[22px]">
-        Scale your Postgres fleet
+        Scale your Python fleet
       </h3>
       <p className="mt-2.5 max-w-[590px] text-lg font-light leading-snug xl:text-base lg:mx-auto lg:max-w-[584px] md:mt-2">
-        Use Unique as a single pane for managing up to thousands of Postgres databases for a
-        fraction of the cost.{' '}
+        Use Unique as a single pane for managing up to thousands of Python databases for a fraction
+        of the cost.{' '}
         <Link
           className="border-b border-transparent text-green-45 no-underline transition-[border-color] duration-200 ease-in-out hover:border-green-45 sm:break-words"
           to="https://neon-experimental.vercel.app/"

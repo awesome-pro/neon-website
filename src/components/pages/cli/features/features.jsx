@@ -37,7 +37,7 @@ const Features = () => (
         className="mx-auto max-w-3xl text-center text-[52px] font-medium leading-none tracking-extra-tight xl:max-w-[640px] xl:text-[44px] lg:max-w-xl lg:text-4xl md:max-w-md md:text-[32px]"
         tag="h2"
       >
-        Cut out the clicks. Command Unique Postgres from the terminal
+        Cut out the clicks. Command Unique Python from the terminal
       </Heading>
       <CardItemsList
         className="mt-14 gap-x-[18px] xl:mt-10 xl:gap-x-6 lg:gap-x-4 md:mt-8 md:gap-y-4"
