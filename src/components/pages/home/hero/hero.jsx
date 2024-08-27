@@ -139,7 +139,6 @@ const Hero = () => {
               className="pointer-events-auto relative mt-[26px] h-11 w-[144px] text-[15px] !font-semibold tracking-tighter xl:mt-8 lg:mt-6 sm:h-10"
               theme="primary"
               to={LINKS.signup}
-              target="_blank"
               tag_name="Hero"
             >
               Get Started
@@ -147,8 +146,7 @@ const Hero = () => {
             <Button
               className="pointer-events-auto relative mt-[26px] h-11 w-[144px] border-2 bg-transparent text-[15px] !font-semibold tracking-tighter text-primary-1 hover:border-primary-1 hover:bg-primary-1/10 xl:mt-8 lg:mt-6 sm:h-10"
               theme="primary"
-              to={LINKS.signup}
-              target="_blank"
+              to={LINKS.docs}
               tag_name="Hero"
             >
               Docs

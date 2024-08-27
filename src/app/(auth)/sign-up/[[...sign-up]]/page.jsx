@@ -4,10 +4,10 @@ import Link from 'next/link';
 import React from 'react';
 
 const SignUpPage = () => (
-  <div className='flex min-h-screen w-full flex-col items-center justify-between bg-[url("/bg.jpg")] bg-cover bg-center'>
+  <div className='flex min-h-screen w-full flex-col items-center justify-between bg-[url("/auth/signin.png")] bg-cover bg-center'>
     <span className="w-full ">
       <Link href="/">
-        <Image src="/logo.svg" width={100} height={100} alt="logo" className="hover:z-20" />
+        <Image src="/auth/logo.png" width={100} height={100} alt="logo" className="hover:z-20" />
       </Link>
     </span>
     <SignUp />

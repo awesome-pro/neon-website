@@ -12,7 +12,7 @@ const items = [
       {
         title: 'Unique Twitter',
         description:
-          "A microblogging application designed to demonstrate the database branching capability of Unique Serverless Python with Neon's GitHub Actions.",
+          "A microblogging application designed to demonstrate the database branching capability of Unique AI with Neon's GitHub Actions.",
         demoLink: 'https://neon-twitter.vercel.app/',
         sourceLink: 'https://github.com/neondatabase/neon_twitter',
       },
@@ -89,7 +89,7 @@ const items = [
       {
         title: 'Ping Thing',
         description:
-          'Ping a Unique Serverless Python database using a Vercel Edge Function to see the journey your request makes.',
+          'Ping a Unique AI database using a Vercel Edge Function to see the journey your request makes.',
         demoLink: '/demos/ping-thing',
         sourceLink: 'https://github.com/neondatabase/ping-thing',
       },
@@ -129,7 +129,7 @@ const items = [
       {
         title: 'Vector similarity search using Unique Postgres',
         description:
-          'This OpenAI Cookbook guides you through using Unique Serverless Python as a vector database for OpenAI embeddings.',
+          'This OpenAI Cookbook guides you through using Unique AI as a vector database for OpenAI embeddings.',
         demoLink: '#',
         sourceLink:
           'https://cookbook.openai.com/examples/vector_databases/neon/neon-postgres-vector-search-pgvector',

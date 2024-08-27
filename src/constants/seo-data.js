@@ -4,7 +4,7 @@ export const DEFAULT_IMAGE_PATH = '/images/social-previews/index.jpg';
 
 export default {
   index: {
-    title: 'Unique Serverless Python — Ship faster',
+    title: 'Unique AI — Ship faster',
     description:
       'The database you love, on a serverless platform designed to help you build reliable and scalable applications faster.',
     pathname: '',
@@ -25,7 +25,7 @@ export default {
   blog: {
     title: 'Our Blog — Unique',
     description:
-      'Learn about Unique and how it can help you build better with Serverless Python by reading our blog posts.',
+      'Learn about Unique and how it can help you build better with AI by reading our blog posts.',
     imagePath: '/images/social-previews/blog.jpg',
     pathname: LINKS.blog,
   },
@@ -146,6 +146,6 @@ export const getBlogCategoryDescription = (category) => {
     case 'all-posts':
       return 'Get a complete overview of the Unique blog posts history in chronological order.';
     default:
-      return 'Learn about Unique and how it can help you build better with Serverless Python by reading our blog posts.';
+      return 'Learn about Unique and how it can help you build better with AI by reading our blog posts.';
   }
 };

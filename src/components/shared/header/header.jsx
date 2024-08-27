@@ -1,3 +1,4 @@
+import { SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
 import clsx from 'clsx';
 import Image from 'next/image';
 import PropTypes from 'prop-types';
@@ -174,14 +175,19 @@ const Sidebar = async ({ isDarkTheme }) => {
         <GithubStarCounter isDarkTheme={isDarkTheme} starsCount={starsCount} />
       </Suspense>
 
-      <Button
-        className="h-8 px-6 text-[13px] font-semibold leading-none tracking-extra-tight transition-colors duration-200 lg:hidden"
-        to={LINKS.signup}
-        theme="primary"
-        tag_name="Header"
-      >
-        Get Started
-      </Button>
+      <SignedIn>
+        <UserButton />
+      </SignedIn>
+      <SignedOut>
+        <Button
+          className="h-8 px-6 text-[13px] font-semibold leading-none tracking-extra-tight transition-colors duration-200 lg:hidden"
+          to={LINKS.signup}
+          theme="primary"
+          tag_name="Header"
+        >
+          Get Started
+        </Button>
+      </SignedOut>
     </div>
   );
 };
