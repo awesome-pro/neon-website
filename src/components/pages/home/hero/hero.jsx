@@ -124,7 +124,7 @@ const Hero = () => {
           <div className=" flex items-center justify-center">
             <FlipWords
               words={words2}
-              className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[34px]"
+              className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[30px]"
             />{' '}
             <br />
             <h1 className="text-primary font-title text-[72px] font-medium leading-none -tracking-[0.03em] text-primary-1 xl:text-[64px] lg:text-[48px] md:text-[40px] sm:text-[32px]">

@@ -24,6 +24,7 @@
     "test": "npx cypress open"
   },
   "dependencies": {
+    "@clerk/nextjs": "^5.3.4",
     "@docsearch/react": "^3.6.0",
     "@headlessui/react": "^1.7.19",
     "@headlessui/tailwindcss": "^0.2.0",

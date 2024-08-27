@@ -7,11 +7,11 @@ import { getAboutPage } from 'utils/api-pages';
 import getMetadata from 'utils/get-metadata';
 
 const AboutUsPage = async () => (
-    <Layout>
-      <Hero />
-      <Investors />
-    </Layout>
-  );
+  <Layout>
+    <Hero />
+    <Investors />
+  </Layout>
+);
 
 export async function generateMetadata() {
   const page = await getAboutPage();

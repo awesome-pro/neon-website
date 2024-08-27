@@ -46,7 +46,7 @@ export default {
   privacyPolicy: '/privacy-policy',
   scaleTrial: '/scale-trial',
   security: '/docs/security/security-overview',
-  signup: '/signup',
+  signup: '/sign-up',
   subprocessors: '/subprocessors',
   support: '/docs/introduction/support',
   terms: '/terms-of-service',

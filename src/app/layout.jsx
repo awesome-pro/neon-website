@@ -9,6 +9,9 @@ import { ActiveLabelProvider } from '../components/pages/doc/code-tabs/CodeTabsC
 import { inter, esbuild } from './fonts';
 import ThemeProvider from './provider';
 
+// eslint-disable-next-line import/order
+import { ClerkProvider } from '@clerk/nextjs';
+
 export const preferredRegion = 'edge';
 
 export const viewport = {
@@ -20,19 +23,21 @@ export const viewport = {
 
 // eslint-disable-next-line react/prop-types
 const RootLayout = ({ children }) => (
-  <html lang="en" className={`${inter.variable} ${esbuild.variable} dark`}>
-    <head>
-      {process.env.NODE_ENV === 'production' && (
-        <Script strategy="afterInteractive" src="https://neonapi.io/cb.js" />
-      )}
-      <link rel="preconnect" href="https://console.neon.tech" />
-    </head>
-    <body>
-      <ThemeProvider>
-        <ActiveLabelProvider>{children}</ActiveLabelProvider>
-      </ThemeProvider>
-    </body>
-  </html>
+  <ClerkProvider>
+    <html lang="en" className={`${inter.variable} ${esbuild.variable} dark`}>
+      <head>
+        {process.env.NODE_ENV === 'production' && (
+          <Script strategy="afterInteractive" src="https://neonapi.io/cb.js" />
+        )}
+        <link rel="preconnect" href="https://console.neon.tech" />
+      </head>
+      <body>
+        <ThemeProvider>
+          <ActiveLabelProvider>{children}</ActiveLabelProvider>
+        </ThemeProvider>
+      </body>
+    </html>
+  </ClerkProvider>
 );
 
 export default RootLayout;
