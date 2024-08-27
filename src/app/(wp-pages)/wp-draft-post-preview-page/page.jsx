@@ -2,7 +2,6 @@
 /* eslint-disable react/prop-types */
 import { notFound } from 'next/navigation';
 
-import PreviewWarning from 'components/pages/blog-post/preview-warning';
 import Hero from 'components/pages/landing/hero';
 import CTA from 'components/pages/pricing/cta';
 import Container from 'components/shared/container';
